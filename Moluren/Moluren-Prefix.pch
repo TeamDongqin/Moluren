@@ -1,0 +1,42 @@
+//
+//  Moluren-Prefix.pch
+//  Moluren
+//
+//  Created by tcl-macpro on 14-10-12.
+//  Copyright (c) 2014年 com.teamdongqin. All rights reserved.
+//
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#endif
+
+
+#ifndef Moluren_Moluren_Prefix_pch
+#define Moluren_Moluren_Prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#define UIColorFromRGB(rgbValue) [UIColor \
+colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
+blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+#import "GlobalUI.h"
+
+//聊天界面输入框的高度
+#define INPUT_HEIGHT 46.0f
+//程序所有界面标题栏的高度
+#define TITLE_BAR_HEIGHT 60.0f
+
+#define defaultAvaterName @"Moluren_avater"
+
+//默认创建的数据库名称
+#define kDefaultDBName @"Moluren.sqlite"
+//保存聊天记录的表
+#define kHistoryTableName @"MChatHistory"
+
+#import "AppDelegate.h"
+
+#endif
