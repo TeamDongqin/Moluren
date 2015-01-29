@@ -450,10 +450,10 @@
         
         [navigationController initWithRootViewController1:molurenHistoryViewController];
         
-        //[self.navigationController pushViewController:molurenHistoryViewController animated:YES];
+        [self.navigationController pushViewController:molurenHistoryViewController animated:YES];
         
-        [navigationController pushViewController:molurenHistoryViewController];
-        [navigationController viewWillAppear:YES];
+        //[navigationController pushViewController:molurenHistoryViewController];
+        //[navigationController viewWillAppear:YES];
         
 //        NextHistoryPage *nextPage = [[NextHistoryPage alloc] init];
 //        [self.navigator pushViewController:nextPage];
