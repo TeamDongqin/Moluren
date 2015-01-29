@@ -168,6 +168,7 @@
                                                                                self.view.frame.size.height - inputViewHeight,self.view.frame.size.width,inputViewHeight)];
     self.messageToolView.delegate = self;
     [self.view addSubview:self.messageToolView];
+    self.messageToolView.autoresizesSubviews = YES;
     
     [self shareShareMeun];
 }
@@ -185,7 +186,7 @@
         
         
         ZBMessageShareMenuItem *sharePicItem = [[ZBMessageShareMenuItem alloc]initWithNormalIconImage:[UIImage imageNamed:@"sharemore_pic_ios7"]
-                                                                                                title:@"照片"];
+                                                                                                title:@"历史记录"];
         ZBMessageShareMenuItem *shareVideoItem = [[ZBMessageShareMenuItem alloc]initWithNormalIconImage:[UIImage imageNamed:@"sharemore_video_ios7"]
                                                                                                   title:@"拍摄"];
         ZBMessageShareMenuItem *shareLocItem = [[ZBMessageShareMenuItem alloc]initWithNormalIconImage:[UIImage imageNamed:@"sharemore_location_ios7"]
@@ -445,7 +446,7 @@
         
         //self.window.rootViewController = navigationController;
         
-        DYNavigationController *navigationController = self.navigationController;
+        /*DYNavigationController *navigationController = self.navigationController;
         navigationController.viewControllerStack = [[NSMutableArray alloc] initWithArray: self.navigationController.viewControllers];
         
         [navigationController initWithRootViewController1:molurenHistoryViewController];
@@ -453,7 +454,9 @@
         //[self.navigationController pushViewController:molurenHistoryViewController animated:YES];
         
         [navigationController pushViewController:molurenHistoryViewController];
-        [navigationController viewWillAppear:YES];
+        [navigationController viewWillAppear:YES];*/
+        molurenHistoryViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+        [self presentModalViewController:molurenHistoryViewController animated:YES];
         
 //        NextHistoryPage *nextPage = [[NextHistoryPage alloc] init];
 //        [self.navigator pushViewController:nextPage];

@@ -34,6 +34,34 @@
     // Do any additional setup after loading the view.
     
     [self setup];
+    
+    UISwipeGestureRecognizer *recognizer = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipeFrom:)];
+    
+    [recognizer setDirection:(UISwipeGestureRecognizerDirectionRight)];
+    [[self view] addGestureRecognizer:recognizer];
+}
+
+-(void)handleSwipeFrom:(UISwipeGestureRecognizer *)recognizer{
+    if(recognizer.direction==UISwipeGestureRecognizerDirectionDown) {
+        NSLog(@"swipe down");
+        //执行程序
+    }
+    if(recognizer.direction==UISwipeGestureRecognizerDirectionUp) {
+        NSLog(@"swipe up");
+        //执行程序
+    }
+    
+    if(recognizer.direction==UISwipeGestureRecognizerDirectionLeft) {
+        NSLog(@"swipe left");
+        //执行程序
+    }
+    if(recognizer.direction==UISwipeGestureRecognizerDirectionRight) {
+        
+        NSLog(@"swipe right");
+        //执行程序
+        [self dismissModalViewControllerAnimated:YES];
+    }
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated

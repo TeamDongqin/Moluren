@@ -179,7 +179,7 @@
     UIButton *multiMediaSendBut = [self createButtonWithImage:[UIImage imageNamed:@"TypeSelectorBtn_Black_ios7@2x.png"]
                                                     HLImage:nil];
     
-    self.multiMediaSendButton.tag = 0;
+    multiMediaSendBut.tag = 0;
     [multiMediaSendBut addTarget:self
                                   action:@selector(messageStyleButtonClicked:)
                         forControlEvents:UIControlEventTouchUpInside];
@@ -205,6 +205,7 @@
     
     self.multiMediaSendButton = multiMediaSendBut;
     [self addSubview:self.multiMediaSendButton];
+    self.autoresizesSubviews = YES;
     /*
     // 发送表情
     self.faceSendButton = [self createButtonWithImage:[UIImage imageNamed:@"ToolViewEmotion_ios7"]
@@ -232,36 +233,38 @@
     ZBMessageTextView *textView = [[ZBMessageTextView alloc] initWithFrame:CGRectZero];
     textView.returnKeyType = UIReturnKeySend;
     textView.enablesReturnKeyAutomatically = YES; // UITextView内部判断send按钮是否可以用
-    textView.placeHolder = @"发送新评论";
+    textView.placeHolder = @"说点儿什么呢?";
     textView.delegate = self;
-    self.messageInputTextView = textView;
     switch (style)
     {
         case ZBMessageInputViewStyleQuasiphysical:
         {
             
-           _messageInputTextView.frame = CGRectMake(horizontalPadding + buttonSize +5.0f,
+           textView.frame = CGRectMake(horizontalPadding + buttonSize +5.0f,
                                                    3.0f,
                                                    CGRectGetWidth(self.bounds)- buttonSize -2*horizontalPadding- 10.0f,
                                                    buttonSize);
-            _messageInputTextView.backgroundColor = [UIColor whiteColor];
+            textView.backgroundColor = [UIColor whiteColor];
             
             break;
         }
         case ZBMessageInputViewStyleDefault:
         {
-            _messageInputTextView.frame = CGRectMake(horizontalPadding + buttonSize +5.0f,4.5f,CGRectGetWidth(self.bounds)- buttonSize -2*horizontalPadding- 10.0f,buttonSize);
-            _messageInputTextView.backgroundColor = [UIColor clearColor];
-            _messageInputTextView.layer.borderColor = [UIColor colorWithWhite:0.8f alpha:1.0f].CGColor;
-            _messageInputTextView.layer.borderWidth = 0.65f;
-            _messageInputTextView.layer.cornerRadius = 6.0f;
+            textView.frame = CGRectMake(horizontalPadding + buttonSize +5.0f,4.5f,CGRectGetWidth(self.bounds)- buttonSize -2*horizontalPadding- 10.0f,buttonSize);
+            textView.backgroundColor = [UIColor clearColor];
+            textView.layer.borderColor = [UIColor colorWithWhite:0.8f alpha:1.0f].CGColor;
+            textView.layer.borderWidth = 0.65f;
+            textView.layer.cornerRadius = 6.0f;
             
             break;
         }
         default:
             break;
     }
+    self.messageInputTextView = textView;
+    self.messageInputTextView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     [self addSubview:self.messageInputTextView];
+    self.autoresizesSubviews = YES;
 	
 //    LS03
 //    self.messageInputTextView.hidden = !self.voiceChangeButton.selected;
