@@ -6,14 +6,15 @@
 //  Copyright (c) 2015年 com.teamdongqin. All rights reserved.
 //
 
-#import "NextHistoryPage.h"
+#import "NextHistoryViewController.h"
 
-@interface NextHistoryPage ()
+@interface NextHistoryViewController ()
 //TEST
 @end
 
-@implementation NextHistoryPage
+@implementation NextHistoryViewController
 
+#pragma mark - View Life Cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -34,6 +35,18 @@
     pushInstruction.shadowOffset = CGSizeMake(0, 1);
     pushInstruction.shadowColor = [UIColor whiteColor];
     [self.view addSubview:pushInstruction];
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    //[self.navigationController setNavigationBarHidden:YES animated:animated];
+    [super viewWillAppear:animated];
+}
+
+-(void)viewDidDisappear:(BOOL)animated
+{
+    //[self.navigationController setNavigationBarHidden:NO animated:animated];
+    [super viewWillDisappear:animated];
 }
 
 - (void)didReceiveMemoryWarning {

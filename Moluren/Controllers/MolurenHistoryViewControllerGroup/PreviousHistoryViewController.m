@@ -6,9 +6,9 @@
 //  Copyright (c) 2015年 com.teamdongqin. All rights reserved.
 //
 
-#import "PreviousHistoryPage.h"
-#import "PreviousHistoryPage.h"
-#import "NextHistoryPage.h"
+#import "PreviousHistoryViewController.h"
+#import "PreviousHistoryViewController.h"
+#import "NextHistoryViewController.h"
 #import "MolurenHistoryDetailViewController.h"
 #import "ChatHistoryEntity.h"
 #import "JSBubbleMessageCell.h"
@@ -16,18 +16,15 @@
 #define SummaryViewWidth  MainScreenWidth
 #define SummaryViewHeight 120
 
-@interface PreviousHistoryPage ()
+@interface PreviousHistoryViewController ()
 
 @property (nonatomic,strong) SharedSingleConfig *sharedConfig;
 @property (nonatomic, strong) NSString *sid;
 @property (nonatomic, strong) UIView * summaryView;
 
--(void)pushNextHistoryPage;
--(void)pushPreviousHistoryPage;
-
 @end
 
-@implementation PreviousHistoryPage
+@implementation PreviousHistoryViewController
 
 #pragma mark - View Life Cycle
 - (void)viewDidLoad {
@@ -41,7 +38,7 @@
 {
     _hisData = [NSMutableArray arrayWithArray:[hisDB findWithSidForDetail:self.sid limit:10000]];
     [self.tableView reloadData];
-    [[self navigationController] setNavigationBarHidden:NO animated:YES];
+    //[[self navigationController] setNavigationBarHidden:NO animated:YES];
     [self scrollToBottomAnimated:YES];
     
     [self.navigationController setNavigationBarHidden:YES animated:animated];
@@ -114,20 +111,6 @@
     UIViewController *anotherDetailViewController = [[UIViewController alloc] init];
     anotherDetailViewController.view.backgroundColor = [UIColor lightGrayColor];
     return anotherDetailViewController;
-}
-
-#pragma mark - Swipe Operations
-- (void)pushPreviousHistoryPage{
-    PreviousHistoryPage *prevPage = [[PreviousHistoryPage alloc] init];
-    [self.navigator pushViewController:prevPage];
-    //[prevPage release];
-}
-
-- (void)pushNextHistoryPage{
-    NextHistoryPage *nextPage = [[NextHistoryPage alloc] init];
-    [self.navigator pushViewController:nextPage];
-    //    [self.navigationController pushViewController:nextPage animated:YES];
-    //[nextPage release];
 }
 
 #pragma mark - Chat Log Module : Setup

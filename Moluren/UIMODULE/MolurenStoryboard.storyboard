@@ -122,7 +122,7 @@
         <!--HistoryDataVC-->
         <scene sceneID="waN-An-PAg">
             <objects>
-                <viewController storyboardIdentifier="CurrentHistoryVC" id="3qN-0V-8Kz" userLabel="HistoryDataVC" customClass="CurrentHistoryViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CurrentHistoryVC" id="3qN-0V-8Kz" userLabel="HistoryDataVC" customClass="HistoryViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UJQ-oa-qQq"/>
                         <viewControllerLayoutGuide type="bottom" id="Fp7-4O-Pjr"/>

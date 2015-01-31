@@ -26,6 +26,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
 #import "DYNavigationController.h"
+#import "HistoryViewController.h"
 
 #define ANIMATION_DURATION 0.4
 #define ANIMATION_DELAY 0
@@ -41,6 +42,9 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 - (void)tearDownGestureRecognizers:(UIViewController *)viewController;
 - (void)popCurrentViewOut:(UIGestureRecognizer *)gestureRecognizer;
 - (void)pushNewViewIn:(UIGestureRecognizer *)gestureRecognizer;
+
+@property (nonatomic, assign) int HistoryDBIndex; // Bad
+
 
 @end
 
@@ -77,53 +81,77 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
         // Add the root view into current view hierarchy
         [self.view addSubview:rootViewController.view];
+        
+        self.HistoryVCIndex = 0;
     }
     return self;
 }
 
-- (void)pushViewController:(UIViewController *)viewController {
-    // Place the new view to the right next to the current view
-    viewController.view.frame = CGRectOffset(self.view.bounds, self.view.bounds.size.width, 0);
-
-    // Add the new view to our view hierarchy so that it displays on screen.
-    [self.view addSubview:viewController.view];
-
-    // Start animation
-    [UIView animateWithDuration:ANIMATION_DURATION delay:ANIMATION_DELAY options:UIViewAnimationCurveEaseInOut animations:^{
-        [self currentViewController].view.frame = CGRectOffset(self.view.bounds, -self.view.bounds.size.width, 0);
-        viewController.view.frame = self.view.bounds;
-    }   completion:^(BOOL finished) {
-        if (finished) {
-            // Connect DYNavigationController to viewController if needed
-            [self setNavigatorIfNeeded:viewController];
-
-            // Set up gesture recognizer so that we can respond to swipes
-            [self setUpGestureRecognizers:viewController];
-
-            // Add the new controller to our viewControllerStack
-            [self.viewControllerStack addObject:viewController];
-        }
-    }];
+-(id)SetupHistoryViews{
+    HistoryViewController *molurenHistoryViewController = [[HistoryViewController alloc] initWithSid:@"37"];
+    self.HistoryDBIndex = 37; // Bad
+    
+    [self initWithRootViewController1:molurenHistoryViewController];
+    
+    // Bad: Self Push
+    [self pushViewController:molurenHistoryViewController];
+    
+    return self;
 }
 
-- (void)popViewController {
-    // Sanity check - We only pop when there are at least two viewControllers in the stack,
-    // otherwise there is nothing to pop
-    if (self.viewControllerStack.count < 2) return;
+- (void)pushViewController:(UIViewController *)viewController {
+    
+    //[self setNavigatorIfNeeded:viewController];
+    
+    // Set up gesture recognizer so that we can respond to swipes
+    [self setUpGestureRecognizers:viewController];
+    
+    // Add the new controller to our viewControllerStack
+    //[self.viewControllerStack addObject:viewController];
+    
+    [super pushViewController:viewController animated:YES];
+    
+    // Place the new view to the right next to the current view
+    //viewController.view.frame = CGRectOffset(self.view.bounds, self.view.bounds.size.width, 0);
+
+    // Add the new view to our view hierarchy so that it displays on screen.
+    //[self.view addSubview:viewController.view];
 
     // Start animation
-    [UIView animateWithDuration:ANIMATION_DURATION delay:ANIMATION_DELAY options:UIViewAnimationCurveEaseInOut animations:^{
-        [self currentViewController].view.frame = CGRectOffset(self.view.bounds, self.view.bounds.size.width, 0);
-        [self previousViewController].view.frame = self.view.bounds;
-    } completion:^(BOOL finished) {
-        if (finished) {
-            // Tear down gesture recognizers
-            [self tearDownGestureRecognizers:[self currentViewController]];
+//    [UIView animateWithDuration:ANIMATION_DURATION delay:ANIMATION_DELAY options:UIViewAnimationCurveEaseInOut animations:^{
+//        [self currentViewController].view.frame = CGRectOffset(self.view.bounds, -self.view.bounds.size.width, 0);
+//        viewController.view.frame = self.view.bounds;
+//    }   completion:^(BOOL finished) {
+//        if (finished) {
+//            // Connect DYNavigationController to viewController if needed
+//            [self setNavigatorIfNeeded:viewController];
+//
+//            // Set up gesture recognizer so that we can respond to swipes
+//            [self setUpGestureRecognizers:viewController];
+//
+//            // Add the new controller to our viewControllerStack
+//            [self.viewControllerStack addObject:viewController];
+//        }
+//    }];
+}
 
-            // Remove current view controller from viewControllerStack
-            [self.viewControllerStack removeLastObject];
-        }
-    }];
+-(void)popViewController{
+//    // Start animation
+//    [UIView animateWithDuration:ANIMATION_DURATION delay:ANIMATION_DELAY options:UIViewAnimationCurveEaseInOut animations:^{
+//        [self currentViewController].view.frame = CGRectOffset(self.view.bounds, self.view.bounds.size.width, 0);
+//        [self previousViewController].view.frame = self.view.bounds;
+//    } completion:^(BOOL finished) {
+//        if (finished) {
+//            // Tear down gesture recognizers
+//            [self tearDownGestureRecognizers:[self currentViewController]];
+//            
+//            // Remove current view controller from viewControllerStack
+//            [self.viewControllerStack removeLastObject];
+//        }
+//    }];
+    
+    [self tearDownGestureRecognizers:[self.viewControllerStack lastObject]];
+    [super popViewControllerAnimated:YES];
 }
 
 #pragma mark - Private implementation
@@ -163,23 +191,43 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 }
 
 - (void)popCurrentViewOut:(UIGestureRecognizer *)gestureRecognizer {
-    [self popViewController];
+    [self SwitchToPrevHistoryVC];
 }
 
 - (void)pushNewViewIn:(UIGestureRecognizer *)gestureRecognizer {
     // If current view controller responds to viewControllerToPush, then acquire that view controller
     // and push it to the view hierarchy.
-    UIViewController *currentViewController = [self currentViewController];
-    if ([currentViewController respondsToSelector:@selector(viewControllerToPush)]) {
-        UIViewController *newViewController = [currentViewController performSelector:@selector(viewControllerToPush)];
-        [self pushViewController:newViewController];
-    }
+//    UIViewController *currentViewController = [self currentViewController];
+//    if ([currentViewController respondsToSelector:@selector(viewControllerToPush)]) {
+//        UIViewController *newViewController = [currentViewController performSelector:@selector(viewControllerToPush)];
+//        [self pushViewController:newViewController];
+//    }
+    
+    [self SwitchToNextHistoryVC];
 }
 
 - (void)dealloc {
     //[_viewControllerStack release];
     _viewControllerStack = nil;
     //[super dealloc];
+}
+
+#pragma mark - Swich History ViewController
+-(void)SwitchToNextHistoryVC {
+    self.HistoryDBIndex ++;
+    HistoryViewController *historyVC = [[HistoryViewController alloc] initWithSid:[NSString stringWithFormat: @"%ld", (long)self.HistoryDBIndex]];
+    [self pushViewController:historyVC];
+    self.HistoryVCIndex ++;
+}
+
+-(void)SwitchToPrevHistoryVC {
+    // Sanity check - We only pop when there are at least two viewControllers in the stack,
+    // otherwise there is nothing to pop
+    if (self.HistoryVCIndex <= 1) return;
+    
+    [self popViewController];
+    
+    self.HistoryVCIndex --;
 }
 
 @end

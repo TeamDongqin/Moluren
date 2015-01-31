@@ -7,8 +7,8 @@
 //
 
 #import "CurrentHistoryPage.h"
-#import "PreviousHistoryPage.h"
-#import "NextHistoryPage.h"
+#import "PreviousHistoryViewController.h"
+#import "NextHistoryViewController.h"
 
 @interface CurrentHistoryPage ()
 
@@ -42,13 +42,13 @@
 }
 
 - (void)pushPreviousHistoryPage{
-    PreviousHistoryPage *prevPage = [[PreviousHistoryPage alloc] init];
+    PreviousHistoryViewController *prevPage = [[PreviousHistoryViewController alloc] init];
     [self.navigator pushViewController:prevPage];
     //[prevPage release];
 }
 
 - (void)pushNextHistoryPage{
-    NextHistoryPage *nextPage = [[NextHistoryPage alloc] init];
+    NextHistoryViewController *nextPage = [[NextHistoryViewController alloc] init];
     [self.navigator pushViewController:nextPage];
 //    [self.navigationController pushViewController:nextPage animated:YES];
     //[nextPage release];

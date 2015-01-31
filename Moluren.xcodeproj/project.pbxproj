@@ -107,6 +107,10 @@
 		9C065C701A3E66DB004FC9BB /* MolurenStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C065C6F1A3E66DB004FC9BB /* MolurenStoryboard.storyboard */; };
 		9C2D4F0C1A610BB6001C8E82 /* ZBMessageShareMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2D4F091A610BB6001C8E82 /* ZBMessageShareMenuItem.m */; };
 		9C2D4F0D1A610BB6001C8E82 /* ZBMessageShareMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2D4F0B1A610BB6001C8E82 /* ZBMessageShareMenuView.m */; };
+		9CB0690F1A7CFEDA005C84F6 /* CurrentHistoryPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB069081A7CFEDA005C84F6 /* CurrentHistoryPage.m */; };
+		9CB069101A7CFEDA005C84F6 /* NextHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB0690A1A7CFEDA005C84F6 /* NextHistoryViewController.m */; };
+		9CB069111A7CFEDA005C84F6 /* PreviousHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB0690C1A7CFEDA005C84F6 /* PreviousHistoryViewController.m */; };
+		9CB069121A7CFEDA005C84F6 /* MolurenHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB0690E1A7CFEDA005C84F6 /* MolurenHistoryViewController.m */; };
 		9CCAE8171A5D5E5600E3A33A /* LanuchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAE80A1A5D5E5600E3A33A /* LanuchViewController.m */; };
 		9CCAE8181A5D5E5600E3A33A /* MolurenChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAE80C1A5D5E5600E3A33A /* MolurenChatViewController.m */; };
 		9CCAE8191A5D5E5600E3A33A /* MolurenHistoryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAE80E1A5D5E5600E3A33A /* MolurenHistoryDetailViewController.m */; };
@@ -209,12 +213,8 @@
 		9CCAE9AA1A5D6DAE00E3A33A /* SenderVoiceNodePlaying003_ios7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CCAE94E1A5D6DAE00E3A33A /* SenderVoiceNodePlaying003_ios7@2x.png */; };
 		9CCAE9AB1A5D6DAE00E3A33A /* SenderVoiceNodePlaying_ios7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CCAE94F1A5D6DAE00E3A33A /* SenderVoiceNodePlaying_ios7@2x.png */; };
 		9CCAE9AE1A5D6DBB00E3A33A /* ZBMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAE9AD1A5D6DBB00E3A33A /* ZBMessage.m */; };
-		9CD6DBE91A65558F007AEC30 /* MolurenHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD6DBE81A65558F007AEC30 /* MolurenHistoryViewController.m */; };
-		9CD6DBEC1A65563C007AEC30 /* CurrentHistoryPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD6DBEB1A65563C007AEC30 /* CurrentHistoryPage.m */; };
-		9CD6DBEF1A655656007AEC30 /* PreviousHistoryPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD6DBEE1A655656007AEC30 /* PreviousHistoryPage.m */; };
-		9CD6DBF21A655665007AEC30 /* NextHistoryPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD6DBF11A655665007AEC30 /* NextHistoryPage.m */; };
 		9CD6DBF51A655686007AEC30 /* DYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD6DBF41A655686007AEC30 /* DYNavigationController.m */; };
-		9CDAC31F1A738CEE00FB7A2E /* CurrentHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CDAC31E1A738CEE00FB7A2E /* CurrentHistoryViewController.m */; };
+		9CDAC31F1A738CEE00FB7A2E /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CDAC31E1A738CEE00FB7A2E /* HistoryViewController.m */; };
 		KIYDQKWBMRKIEYEVRWSLKUDQ /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = HYXIFWTDXJPPRRMDCEPMDTJH /* QuartzCore.framework */; };
 		KNPONLATPTEBRUFEBXNXFHCQ /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = THBDITSPYVFDWQYYBDCIDIXG /* libz.dylib */; };
 /* End PBXBuildFile section */
@@ -374,6 +374,14 @@
 		9C2D4F091A610BB6001C8E82 /* ZBMessageShareMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBMessageShareMenuItem.m; sourceTree = "<group>"; };
 		9C2D4F0A1A610BB6001C8E82 /* ZBMessageShareMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBMessageShareMenuView.h; sourceTree = "<group>"; };
 		9C2D4F0B1A610BB6001C8E82 /* ZBMessageShareMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBMessageShareMenuView.m; sourceTree = "<group>"; };
+		9CB069071A7CFEDA005C84F6 /* CurrentHistoryPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CurrentHistoryPage.h; path = MolurenHistoryViewControllerGroup/CurrentHistoryPage.h; sourceTree = "<group>"; };
+		9CB069081A7CFEDA005C84F6 /* CurrentHistoryPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CurrentHistoryPage.m; path = MolurenHistoryViewControllerGroup/CurrentHistoryPage.m; sourceTree = "<group>"; };
+		9CB069091A7CFEDA005C84F6 /* NextHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NextHistoryViewController.h; path = MolurenHistoryViewControllerGroup/NextHistoryViewController.h; sourceTree = "<group>"; };
+		9CB0690A1A7CFEDA005C84F6 /* NextHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NextHistoryViewController.m; path = MolurenHistoryViewControllerGroup/NextHistoryViewController.m; sourceTree = "<group>"; };
+		9CB0690B1A7CFEDA005C84F6 /* PreviousHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PreviousHistoryViewController.h; path = MolurenHistoryViewControllerGroup/PreviousHistoryViewController.h; sourceTree = "<group>"; };
+		9CB0690C1A7CFEDA005C84F6 /* PreviousHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PreviousHistoryViewController.m; path = MolurenHistoryViewControllerGroup/PreviousHistoryViewController.m; sourceTree = "<group>"; };
+		9CB0690D1A7CFEDA005C84F6 /* MolurenHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MolurenHistoryViewController.h; path = MolurenHistoryViewControllerGroup/MolurenHistoryViewController.h; sourceTree = "<group>"; };
+		9CB0690E1A7CFEDA005C84F6 /* MolurenHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MolurenHistoryViewController.m; path = MolurenHistoryViewControllerGroup/MolurenHistoryViewController.m; sourceTree = "<group>"; };
 		9CCAE8091A5D5E5600E3A33A /* LanuchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanuchViewController.h; sourceTree = "<group>"; };
 		9CCAE80A1A5D5E5600E3A33A /* LanuchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanuchViewController.m; sourceTree = "<group>"; };
 		9CCAE80B1A5D5E5600E3A33A /* MolurenChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MolurenChatViewController.h; sourceTree = "<group>"; };
@@ -486,18 +494,10 @@
 		9CCAE94F1A5D6DAE00E3A33A /* SenderVoiceNodePlaying_ios7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SenderVoiceNodePlaying_ios7@2x.png"; sourceTree = "<group>"; };
 		9CCAE9AC1A5D6DBB00E3A33A /* ZBMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBMessage.h; sourceTree = "<group>"; };
 		9CCAE9AD1A5D6DBB00E3A33A /* ZBMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBMessage.m; sourceTree = "<group>"; };
-		9CD6DBE71A65558F007AEC30 /* MolurenHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MolurenHistoryViewController.h; sourceTree = "<group>"; };
-		9CD6DBE81A65558F007AEC30 /* MolurenHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MolurenHistoryViewController.m; sourceTree = "<group>"; };
-		9CD6DBEA1A65563C007AEC30 /* CurrentHistoryPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentHistoryPage.h; sourceTree = "<group>"; };
-		9CD6DBEB1A65563C007AEC30 /* CurrentHistoryPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentHistoryPage.m; sourceTree = "<group>"; };
-		9CD6DBED1A655656007AEC30 /* PreviousHistoryPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreviousHistoryPage.h; sourceTree = "<group>"; };
-		9CD6DBEE1A655656007AEC30 /* PreviousHistoryPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreviousHistoryPage.m; sourceTree = "<group>"; };
-		9CD6DBF01A655665007AEC30 /* NextHistoryPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NextHistoryPage.h; sourceTree = "<group>"; };
-		9CD6DBF11A655665007AEC30 /* NextHistoryPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NextHistoryPage.m; sourceTree = "<group>"; };
 		9CD6DBF31A655686007AEC30 /* DYNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYNavigationController.h; sourceTree = "<group>"; };
 		9CD6DBF41A655686007AEC30 /* DYNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYNavigationController.m; sourceTree = "<group>"; };
-		9CDAC31D1A738CEE00FB7A2E /* CurrentHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentHistoryViewController.h; sourceTree = "<group>"; };
-		9CDAC31E1A738CEE00FB7A2E /* CurrentHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentHistoryViewController.m; sourceTree = "<group>"; };
+		9CDAC31D1A738CEE00FB7A2E /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
+		9CDAC31E1A738CEE00FB7A2E /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
 		HYXIFWTDXJPPRRMDCEPMDTJH /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		THBDITSPYVFDWQYYBDCIDIXG /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -852,9 +852,25 @@
 			path = MessageShareView;
 			sourceTree = "<group>";
 		};
+		9CB069061A7CFEC8005C84F6 /* PendingForRemove */ = {
+			isa = PBXGroup;
+			children = (
+				9CB069071A7CFEDA005C84F6 /* CurrentHistoryPage.h */,
+				9CB069081A7CFEDA005C84F6 /* CurrentHistoryPage.m */,
+				9CB069091A7CFEDA005C84F6 /* NextHistoryViewController.h */,
+				9CB0690A1A7CFEDA005C84F6 /* NextHistoryViewController.m */,
+				9CB0690B1A7CFEDA005C84F6 /* PreviousHistoryViewController.h */,
+				9CB0690C1A7CFEDA005C84F6 /* PreviousHistoryViewController.m */,
+				9CB0690D1A7CFEDA005C84F6 /* MolurenHistoryViewController.h */,
+				9CB0690E1A7CFEDA005C84F6 /* MolurenHistoryViewController.m */,
+			);
+			name = PendingForRemove;
+			sourceTree = "<group>";
+		};
 		9CCAE8081A5D5E5600E3A33A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				9CB069061A7CFEC8005C84F6 /* PendingForRemove */,
 				9CD6DBE61A65558F007AEC30 /* MolurenHistoryViewControllerGroup */,
 				9CCAE8091A5D5E5600E3A33A /* LanuchViewController.h */,
 				9CCAE80A1A5D5E5600E3A33A /* LanuchViewController.m */,
@@ -1030,16 +1046,8 @@
 			children = (
 				9CD6DBF31A655686007AEC30 /* DYNavigationController.h */,
 				9CD6DBF41A655686007AEC30 /* DYNavigationController.m */,
-				9CD6DBE71A65558F007AEC30 /* MolurenHistoryViewController.h */,
-				9CD6DBE81A65558F007AEC30 /* MolurenHistoryViewController.m */,
-				9CD6DBEA1A65563C007AEC30 /* CurrentHistoryPage.h */,
-				9CD6DBEB1A65563C007AEC30 /* CurrentHistoryPage.m */,
-				9CDAC31D1A738CEE00FB7A2E /* CurrentHistoryViewController.h */,
-				9CDAC31E1A738CEE00FB7A2E /* CurrentHistoryViewController.m */,
-				9CD6DBED1A655656007AEC30 /* PreviousHistoryPage.h */,
-				9CD6DBEE1A655656007AEC30 /* PreviousHistoryPage.m */,
-				9CD6DBF01A655665007AEC30 /* NextHistoryPage.h */,
-				9CD6DBF11A655665007AEC30 /* NextHistoryPage.m */,
+				9CDAC31D1A738CEE00FB7A2E /* HistoryViewController.h */,
+				9CDAC31E1A738CEE00FB7A2E /* HistoryViewController.m */,
 			);
 			path = MolurenHistoryViewControllerGroup;
 			sourceTree = "<group>";
@@ -1288,32 +1296,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CD6DBF21A655665007AEC30 /* NextHistoryPage.m in Sources */,
 				18CE73F81A1E3992004769F4 /* ChatHistoryDB.m in Sources */,
 				9CCAE82B1A5D613100E3A33A /* ZBMessageInputView.m in Sources */,
 				1812ACA619F0A33500F027F3 /* Reachability.m in Sources */,
 				18287DEC19EAAE080074BDD9 /* JSMessagesViewController.m in Sources */,
-				9CD6DBE91A65558F007AEC30 /* MolurenHistoryViewController.m in Sources */,
+				9CB069121A7CFEDA005C84F6 /* MolurenHistoryViewController.m in Sources */,
 				18287CE519EAA9C40074BDD9 /* AppDelegate.m in Sources */,
 				18B8E5661A2BF38C00B54F7F /* SettingTableViewCell2.m in Sources */,
 				9CCAE8191A5D5E5600E3A33A /* MolurenHistoryDetailViewController.m in Sources */,
 				9C2D4F0D1A610BB6001C8E82 /* ZBMessageShareMenuView.m in Sources */,
 				9CCAE9AE1A5D6DBB00E3A33A /* ZBMessage.m in Sources */,
+				9CB0690F1A7CFEDA005C84F6 /* CurrentHistoryPage.m in Sources */,
 				182C1B3A19EFDDCE009B09AB /* PXAlertView.m in Sources */,
 				18287CE219EAA9C40074BDD9 /* main.m in Sources */,
 				18287DE919EAAE080074BDD9 /* JSDismissiveTextView.m in Sources */,
 				18294F9019EBE1BF00614906 /* JSONKit.m in Sources */,
 				1835755C1A1E3630005FF4C2 /* FMDatabase.m in Sources */,
 				18BF19081A1F84A90026951C /* EAIntroPage.m in Sources */,
-				9CD6DBEC1A65563C007AEC30 /* CurrentHistoryPage.m in Sources */,
 				18287DED19EAAE080074BDD9 /* JSMessageTextView.m in Sources */,
 				18287DEB19EAAE080074BDD9 /* JSMessageSoundEffect.m in Sources */,
-				9CDAC31F1A738CEE00FB7A2E /* CurrentHistoryViewController.m in Sources */,
+				9CDAC31F1A738CEE00FB7A2E /* HistoryViewController.m in Sources */,
 				18208EE31A0A4E0000E10D95 /* MolurenChatViewControllerTest.m in Sources */,
 				18287DEE19EAAE080074BDD9 /* NSString+JSMessagesView.m in Sources */,
 				1835755E1A1E3630005FF4C2 /* FMDatabasePool.m in Sources */,
 				18287E2019EAAE080074BDD9 /* UIView+AnimationOptionsForCurve.m in Sources */,
 				18287E1D19EAAE080074BDD9 /* UIButton+JSMessagesView.m in Sources */,
+				9CB069101A7CFEDA005C84F6 /* NextHistoryViewController.m in Sources */,
 				18B8E5611A2BF1B700B54F7F /* SettingTableViewCell1.m in Sources */,
 				184B9E8319EB4C650053F3E9 /* SharedSingleConfig.m in Sources */,
 				18294F9219EBE1BF00614906 /* NSObject+Json.m in Sources */,
@@ -1331,7 +1339,7 @@
 				1835755F1A1E3630005FF4C2 /* FMDatabaseQueue.m in Sources */,
 				180DAAF81A24815500C07AC2 /* SettingsTableViewCell.m in Sources */,
 				18287DE719EAAE080074BDD9 /* JSBubbleMessageCell.m in Sources */,
-				9CD6DBEF1A655656007AEC30 /* PreviousHistoryPage.m in Sources */,
+				9CB069111A7CFEDA005C84F6 /* PreviousHistoryViewController.m in Sources */,
 				18287E1F19EAAE080074BDD9 /* UIImage+JSMessagesView.m in Sources */,
 				18CE73FC1A1E3A19004769F4 /* ChatHistoryEntity.m in Sources */,
 				18287E1E19EAAE080074BDD9 /* UIColor+JSMessagesView.m in Sources */,
@@ -1469,7 +1477,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)"				
+					"$(PROJECT_DIR)",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Moluren/Moluren-Prefix.pch";
 				INFOPLIST_FILE = Moluren/Info.plist;
