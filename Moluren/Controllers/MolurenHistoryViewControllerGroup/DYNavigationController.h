@@ -30,8 +30,10 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 @interface DYNavigationController : UINavigationController
 
 @property(nonatomic, retain) NSMutableArray *viewControllerStack;
+@property (nonatomic, assign) int HistoryVCIndex;
 
-- (id)initWithRootViewController1:(UIViewController*)rootViewController;
+- (id)initWithRootViewController1:(UIViewController*)rootViewController IndexSid:(NSInteger)IndexSid;
+- (id)SetupHistoryViews;
 - (void)pushViewController:(UIViewController *)viewController;
 - (void)popViewController;
 

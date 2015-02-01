@@ -41,7 +41,7 @@
 #import "MolurenHistoryViewController.h"
 #import "CurrentHistoryPage.h"
 
-#import "CurrentHistoryViewController.h"
+#import "HistoryViewController.h"
 
 @interface JSMessagesViewController () <JSDismissiveTextViewDelegate>
 {
@@ -51,9 +51,6 @@
 
 
 - (void)setup;
-
--(void)pushNextHistoryPage;
--(void)pushPreviousHistoryPage;
 
 
 @end
@@ -434,11 +431,6 @@
 - (void)didSelecteShareMenuItem:(ZBMessageShareMenuItem *)shareMenuItem atIndex:(NSInteger)index{
     if(index == 0)
     {
-        // JUMP TO HISTORY CONTROLLER
-//        [self.tabBarController.tabBar setHidden:YES];
-//        MolurenHistoryViewController *molurenHistoryViewController = [[MolurenHistoryViewController alloc] init];
-//        [self.navigationController pushViewController:molurenHistoryViewController animated:YES];
-        
         [self.tabBarController.tabBar setHidden:YES];
         CurrentHistoryViewController *molurenHistoryViewController = [[CurrentHistoryViewController alloc] initWithSid:@"38"];
 
@@ -451,7 +443,9 @@
         /*DYNavigationController *navigationController = self.navigationController;
         navigationController.viewControllerStack = [[NSMutableArray alloc] initWithArray: self.navigationController.viewControllers];
         
-        [navigationController initWithRootViewController1:molurenHistoryViewController];
+        [navigationController SetupHistoryViews];
+        
+        //[navigationController initWithRootViewController1:molurenHistoryViewController];
         
         //[self.navigationController pushViewController:molurenHistoryViewController animated:YES];
         
@@ -460,8 +454,6 @@
         molurenHistoryViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
         [self presentModalViewController:molurenHistoryViewController animated:YES];
         
-//        NextHistoryPage *nextPage = [[NextHistoryPage alloc] init];
-//        [self.navigator pushViewController:nextPage];
     }
     else if(index == 1)
     {

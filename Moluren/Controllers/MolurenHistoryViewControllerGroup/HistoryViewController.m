@@ -6,9 +6,9 @@
 //  Copyright (c) 2015年 com.teamdongqin. All rights reserved.
 //
 
-#import "CurrentHistoryViewController.h"
-#import "PreviousHistoryPage.h"
-#import "NextHistoryPage.h"
+#import "HistoryViewController.h"
+#import "PreviousHistoryViewController.h"
+#import "NextHistoryViewController.h"
 #import "MolurenHistoryDetailViewController.h"
 #import "ChatHistoryEntity.h"
 #import "JSBubbleMessageCell.h"
@@ -16,18 +16,15 @@
 #define SummaryViewWidth  MainScreenWidth
 #define SummaryViewHeight 120
 
-@interface CurrentHistoryViewController ()
+@interface HistoryViewController ()
 
 @property (nonatomic,strong) SharedSingleConfig *sharedConfig;
 @property (nonatomic, strong) NSString *sid;
 @property (nonatomic, strong) UIView * summaryView;
 
--(void)pushNextHistoryPage;
--(void)pushPreviousHistoryPage;
-
 @end
 
-@implementation CurrentHistoryViewController
+@implementation HistoryViewController
 #pragma mark - View Life Cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -68,18 +65,19 @@
 {
     _hisData = [NSMutableArray arrayWithArray:[hisDB findWithSidForDetail:self.sid limit:10000]];
     [self.tableView reloadData];
-    [[self navigationController] setNavigationBarHidden:NO animated:YES];
     [self scrollToBottomAnimated:YES];
     
     [self.navigationController setNavigationBarHidden:YES animated:animated];
     [super viewWillAppear:animated];
     //[self.tabBarController.tabBar setHidden:NO];
+}
 
+-(void)viewWillDisappear:(BOOL)animated{
 }
 
 -(void)viewDidDisappear:(BOOL)animated
 {
-    [self.navigationController setNavigationBarHidden:NO animated:animated];
+    //[self.navigationController setNavigationBarHidden:NO animated:animated];
     [super viewWillDisappear:animated];
 }
 
@@ -138,23 +136,12 @@
 #pragma mark - DYNavigationControllerDelegate
 
 - (UIViewController *)viewControllerToPush {
-    UIViewController *anotherDetailViewController = [[UIViewController alloc] init];
-    anotherDetailViewController.view.backgroundColor = [UIColor lightGrayColor];
-    return anotherDetailViewController;
-}
-
-#pragma mark - Swipe Operations
-- (void)pushPreviousHistoryPage{
-    PreviousHistoryPage *prevPage = [[PreviousHistoryPage alloc] init];
-    [self.navigator pushViewController:prevPage];
-    //[prevPage release];
-}
-
-- (void)pushNextHistoryPage{
-    NextHistoryPage *nextPage = [[NextHistoryPage alloc] init];
-    [self.navigator pushViewController:nextPage];
-    //    [self.navigationController pushViewController:nextPage animated:YES];
-    //[nextPage release];
+//    UIViewController *anotherDetailViewController = [[UIViewController alloc] init];
+//    anotherDetailViewController.view.backgroundColor = [UIColor yellowColor];
+//    return anotherDetailViewController;
+    
+    NextHistoryViewController *nextHistoryPage = [[NextHistoryViewController alloc] init];
+    return nextHistoryPage;
 }
 
 #pragma mark - Chat Log Module : Setup
@@ -175,6 +162,7 @@
     self = [super init];
     if (self) {
         self.sid = sid;
+        self.HistoryDBIndex = [sid intValue];
     }
     return self;
 }
@@ -355,6 +343,7 @@
     [self.tableView reloadData];
     [self.tableView setNeedsLayout];
 }
+
 /*
 #pragma mark - Navigation
 

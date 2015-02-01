@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "DYNavigationController.h"
 
-@interface NextHistoryPage : UIViewController<DYNavigationControllerDelegate>
+@interface NextHistoryViewController : UIViewController<DYNavigationControllerDelegate>
+
+@property (nonatomic, assign) NSInteger *HistoryIndex;
 
 @end

@@ -11,12 +11,13 @@
 #import "JSMessagesViewController.h"
 #import "ChatHistoryDB.h"
 
-@interface CurrentHistoryViewController : JSMessagesViewController<DYNavigationControllerDelegate>{
+@interface HistoryViewController : JSMessagesViewController<DYNavigationControllerDelegate>{
     ChatHistoryDB * hisDB;
     NSMutableArray * _hisData;
 }
 
 - (id) initWithSid:(NSString *) sid;
 @property (strong, nonatomic) UITableView *tableView;
+@property (nonatomic, assign) int HistoryDBIndex;
 
 @end
