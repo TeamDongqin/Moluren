@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JSDismissiveTextView.h"
 
 typedef NS_ENUM(NSInteger, ZBTextViewInputViewType) {
     ZBTextViewNormalInputType = 0,
@@ -15,7 +16,7 @@ typedef NS_ENUM(NSInteger, ZBTextViewInputViewType) {
     ZBTextViewShareMenuInputType
 };
 
-@interface ZBMessageTextView : UITextView
+@interface ZBMessageTextView : JSDismissiveTextView
 
 /**
  *  提示用户输入的标语

@@ -264,6 +264,7 @@
 }
 
 - (void)keyboardChange:(NSNotification *)notification{
+    NSLog(@"-----%d---%d",[[notification.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].origin.y,CGRectGetHeight(self.view.frame));
     if ([[notification.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].origin.y<CGRectGetHeight(self.view.frame)) {
         [self messageViewAnimationWithMessageRect:[[notification.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue]
                          withMessageInputViewRect:self.messageToolView.frame
@@ -278,7 +279,8 @@
 - (void)messageViewAnimationWithMessageRect:(CGRect)rect  withMessageInputViewRect:(CGRect)inputViewRect andDuration:(double)duration andState:(ZBMessageViewState)state{
     
     [UIView animateWithDuration:duration animations:^{
-        self.messageToolView.frame = CGRectMake(0.0f,CGRectGetHeight(self.view.frame)-CGRectGetHeight(rect)-CGRectGetHeight(inputViewRect),CGRectGetWidth(self.view.frame),CGRectGetHeight(inputViewRect));
+       
+        self.messageToolView.frame = CGRectMake(0.0f,MainScreenHeight-CGRectGetHeight(rect)-CGRectGetHeight(inputViewRect),MainScreenWidth,CGRectGetHeight(inputViewRect));
         
         //add by liuyouzhang
         /*CGFloat horizontalPadding = 8;
@@ -438,7 +440,7 @@
 //        [self.navigationController pushViewController:molurenHistoryViewController animated:YES];
         
         [self.tabBarController.tabBar setHidden:YES];
-        CurrentHistoryViewController *molurenHistoryViewController = [[CurrentHistoryViewController alloc] initWithSid:@"37"];
+        CurrentHistoryViewController *molurenHistoryViewController = [[CurrentHistoryViewController alloc] initWithSid:@"38"];
 
         
 //        DYNavigationController *navigationController = [[DYNavigationController alloc]

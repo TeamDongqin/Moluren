@@ -106,34 +106,38 @@ static id<JSMessageInputViewDelegate> __delegate;
     // JeremyStone
     JSInputBarStyle style = [JSMessageInputView inputBarStyle];
     
+    UITextView *inputTextView;
+    
     if (style == JSInputBarStyleDefault)
     {
-        self.textView = [[JSMessageTextView  alloc] initWithFrame:CGRectMake(6.0f, 3.0f, width, height)];
-        self.textView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-        self.textView.backgroundColor = [UIColor redColor];
+        inputTextView = [[JSMessageTextView  alloc] initWithFrame:CGRectMake(6.0f, 3.0f, width, height)];
+        inputTextView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+        inputTextView.backgroundColor = [UIColor redColor];
     }
     else
     {
-        self.textView = [[JSMessageTextView  alloc] initWithFrame:CGRectMake(8.0f, 6.0f, width, height)];
-        self.textView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-        self.textView.backgroundColor = [UIColor clearColor];
+        inputTextView = [[JSMessageTextView  alloc] initWithFrame:CGRectMake(8.0f, 6.0f, width, height)];
+        inputTextView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+        inputTextView.backgroundColor = [UIColor clearColor];
 
-        self.textView.layer.borderColor = [[UIColor colorWithWhite:.8 alpha:1.0] CGColor];
-        self.textView.layer.borderWidth = 0.65f;
-        self.textView.layer.cornerRadius = 6.0f;
+        inputTextView.layer.borderColor = [[UIColor colorWithWhite:.8 alpha:1.0] CGColor];
+        inputTextView.layer.borderWidth = 0.65f;
+        inputTextView.layer.cornerRadius = 6.0f;
     }
     
-//    self.textView.contentInset = UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, 0.0f);
-//    self.textView.keyboardAppearance = UIKeyboardAppearanceDefault;
-//    self.textView.keyboardType = UIKeyboardTypeDefault;
-//    self.textView.returnKeyType = UIReturnKeyDefault;
-//    self.textView.scrollEnabled = YES;
-//    self.textView.scrollsToTop = NO;
-//    self.textView.userInteractionEnabled = YES;
-//    self.textView.textColor = [UIColor blackColor];
-//    self.textView.font = [JSBubbleView font];
-//    self.textView.scrollIndicatorInsets = UIEdgeInsetsMake(10.0f, 0.0f, 10.0f, 0.0f);
+    inputTextView.contentInset = UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, 0.0f);
+    inputTextView.keyboardAppearance = UIKeyboardAppearanceDefault;
+    inputTextView.keyboardType = UIKeyboardTypeDefault;
+    inputTextView.returnKeyType = UIReturnKeyDefault;
+    inputTextView.scrollEnabled = YES;
+    inputTextView.scrollsToTop = NO;
+    inputTextView.userInteractionEnabled = YES;
+    inputTextView.textColor = [UIColor blackColor];
+    inputTextView.font = [JSBubbleView font];
+    inputTextView.scrollIndicatorInsets = UIEdgeInsetsMake(10.0f, 0.0f, 10.0f, 0.0f);
 
+    
+    self.textView = inputTextView;
     [self addSubview:self.textView];
     
     if (style == JSInputBarStyleDefault)
