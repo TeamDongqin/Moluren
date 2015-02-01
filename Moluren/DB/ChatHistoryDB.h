@@ -52,6 +52,8 @@
 
 - (NSArray *) findWithSid:(int) limit;
 
+-(NSInteger)findPreSitWithCurrentSid:(NSString *)sid;
+
 -(NSInteger *)getNewSessionId;
 
 @end

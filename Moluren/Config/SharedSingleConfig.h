@@ -7,8 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ChatHistoryDB.h"
 
 @interface SharedSingleConfig : NSObject
+
+@property (nonatomic, strong) ChatHistoryDB * hisDB;
 
 @property (nonatomic, retain) NSString *token;
 @property (nonatomic) NSString *nowsessionid;

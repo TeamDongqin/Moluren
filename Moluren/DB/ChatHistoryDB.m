@@ -179,6 +179,20 @@
     return array;
 }
 
+-(NSInteger)findPreSitWithCurrentSid:(NSString *)sid{
+    NSInteger res= -1000;
+    NSString * query = [NSString stringWithFormat:@"SELECT MAX(cast(sid as INTEGER)) as sid FROM %@ WHERE cast(sid as INTEGER)<%@ ",kHistoryTableName,sid];
+    FMResultSet * rs = [_db executeQuery:query];
+    if([rs columnCount]!=1){
+        return res;
+    }
+    NSMutableArray * array = [NSMutableArray arrayWithCapacity:[rs columnCount]];
+    while ([rs next]) {
+        res = [rs intForColumn:@"sid"];
+    }
+    return res;
+}
+
 
 - (NSArray *) findWithSid:(int) limit {
     NSString * query = [NSString stringWithFormat:@"SELECT DISTINCT sid FROM %@ ORDER BY cast(sid as integer)",kHistoryTableName];

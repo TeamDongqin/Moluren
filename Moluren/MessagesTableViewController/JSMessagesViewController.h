@@ -78,6 +78,7 @@ typedef NS_ENUM(NSInteger,ZBMessageViewState) {
 @required
 - (void)sendPressed:(UIButton *)sender withText:(NSString *)text;
 - (void)sendDicePressed;
+- (void)gotoHistoryDetailView;
 - (void)sendZBPressed:(UIButton *)sender withText:(NSString *)text;
 - (void)cameraPressed:(id)sender;
 - (NSInteger)getTotalRowCount;

@@ -38,7 +38,7 @@
 #import "UIView+AnimationOptionsForCurve.h"
 #import "UIColor+JSMessagesView.h"
 #import "JSDismissiveTextView.h"
-#import "MolurenHistoryViewController.h"
+#import "MolurenHistoryDetailViewController.h"
 #import "CurrentHistoryPage.h"
 
 #import "HistoryViewController.h"
@@ -432,27 +432,7 @@
     if(index == 0)
     {
         [self.tabBarController.tabBar setHidden:YES];
-        CurrentHistoryViewController *molurenHistoryViewController = [[CurrentHistoryViewController alloc] initWithSid:@"38"];
-
-        
-//        DYNavigationController *navigationController = [[DYNavigationController alloc]
-//                                                         initWithRootViewController:molurenHistoryViewController];
-        
-        //self.window.rootViewController = navigationController;
-        
-        /*DYNavigationController *navigationController = self.navigationController;
-        navigationController.viewControllerStack = [[NSMutableArray alloc] initWithArray: self.navigationController.viewControllers];
-        
-        [navigationController SetupHistoryViews];
-        
-        //[navigationController initWithRootViewController1:molurenHistoryViewController];
-        
-        //[self.navigationController pushViewController:molurenHistoryViewController animated:YES];
-        
-        [navigationController pushViewController:molurenHistoryViewController];
-        [navigationController viewWillAppear:YES];*/
-        molurenHistoryViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-        [self presentModalViewController:molurenHistoryViewController animated:YES];
+        [self.delegate gotoHistoryDetailView];
         
     }
     else if(index == 1)

@@ -7,6 +7,7 @@
 //
 
 #import "MolurenChatViewController.h"
+#import "MolurenHistoryDetailViewController.h"
 //#import "SharedSingleConfig.h"
 //#import "PXAlertView+Customization.h"
 
@@ -736,6 +737,37 @@
     [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     NSString *dateString=[dateFormat stringFromDate:d];
     [self.sharedConfig insertMsgDataToTable:[NSString stringWithFormat:@"[ios][摇色子:%d]",i] msgtype:@"IN" date:dateString];
+}
+
+-(void)gotoHistoryDetailView{
+    NSArray *sidArray = [self.sharedConfig.hisDB findWithSid:10000];
+    if([sidArray count]<=0){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"陌路人" message:@"目前没有历史记录!" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
+        [alert show];
+    }else{
+        
+        MolurenHistoryDetailViewController *molurenHistoryViewController = [[MolurenHistoryDetailViewController alloc] initWithSid:[sidArray objectAtIndex:[sidArray count]-1]];
+        
+        
+        //        DYNavigationController *navigationController = [[DYNavigationController alloc]
+        //                                                         initWithRootViewController:molurenHistoryViewController];
+        
+        //self.window.rootViewController = navigationController;
+        
+        /*DYNavigationController *navigationController = self.navigationController;
+         navigationController.viewControllerStack = [[NSMutableArray alloc] initWithArray: self.navigationController.viewControllers];
+         
+         [navigationController SetupHistoryViews];
+         
+         //[navigationController initWithRootViewController1:molurenHistoryViewController];
+         
+         //[self.navigationController pushViewController:molurenHistoryViewController animated:YES];
+         
+         [navigationController pushViewController:molurenHistoryViewController];
+         [navigationController viewWillAppear:YES];*/
+        molurenHistoryViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+        [self presentModalViewController:molurenHistoryViewController animated:YES];
+    }
 }
 
 -(NSInteger)getTotalRowCount

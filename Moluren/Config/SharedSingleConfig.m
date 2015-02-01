@@ -7,10 +7,7 @@
 //
 
 #import "SharedSingleConfig.h"
-#import "ChatHistoryDB.h"
 @interface SharedSingleConfig()
-
-@property (nonatomic, strong) ChatHistoryDB * hisDB;
 
 @end
 @implementation SharedSingleConfig

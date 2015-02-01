@@ -61,6 +61,44 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self setup];
+    UISwipeGestureRecognizer *recognizerRight = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipeFrom:)];
+    [recognizerRight setDirection:(UISwipeGestureRecognizerDirectionRight)];
+    [[self view] addGestureRecognizer:recognizerRight];
+    
+    UISwipeGestureRecognizer *recognizerLeft = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipeFrom:)];
+    [recognizerLeft setDirection:(UISwipeGestureRecognizerDirectionLeft)];
+    [[self view] addGestureRecognizer:recognizerLeft];
+    }
+
+-(void)handleSwipeFrom:(UISwipeGestureRecognizer *)recognizer{
+    if(recognizer.direction==UISwipeGestureRecognizerDirectionDown) {
+        NSLog(@"swipe down");
+        //执行程序
+    }
+    if(recognizer.direction==UISwipeGestureRecognizerDirectionUp) {
+        NSLog(@"swipe up");
+        //执行程序
+    }
+    if(recognizer.direction==UISwipeGestureRecognizerDirectionLeft) {
+        NSLog(@"swipe left");
+        NSInteger *preSid =  [self->hisDB findPreSitWithCurrentSid:self.sid];
+        if(preSid==-1000){
+            NSLog(@"没有更多的历史记录了");
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"陌路人" message:@"没有更多的历史记录了!" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
+            [alert show];
+            return;
+        }
+        MolurenHistoryDetailViewController *molurenHistoryDetailViewController = [[MolurenHistoryDetailViewController alloc] initWithSid:[NSString stringWithFormat: @"%d",preSid]];
+        //如果需要自定义历史记录view的左右滑动切换效果,那么就在这里进行动画设置
+        molurenHistoryDetailViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+        [self presentModalViewController:molurenHistoryDetailViewController animated:YES];
+        //执行程序
+    }
+    if(recognizer.direction==UISwipeGestureRecognizerDirectionRight) {
+        NSLog(@"swipe right");
+        //执行程序
+        [self dismissModalViewControllerAnimated:YES];
+    }
 }
 
 - (void) viewWillAppear:(BOOL)animated {
