@@ -107,7 +107,7 @@
 //		[mediaButton addTarget:self action:@selector(cameraAction:) forControlEvents:UIControlEventTouchUpInside];
 //	}
 	
-    CGRect inputFrame = CGRectMake(0.0f, size.height - INPUT_HEIGHT, size.width, INPUT_HEIGHT);
+    /*CGRect inputFrame = CGRectMake(0.0f, size.height - INPUT_HEIGHT, size.width, INPUT_HEIGHT);
     self.inputToolBarView = [[JSMessageInputView alloc] initWithFrame:inputFrame delegate:self];
     
     // TODO: refactor
@@ -115,7 +115,7 @@
     self.inputToolBarView.textView.keyboardDelegate = self;
     
     self.inputToolBarView.textView.placeHolder = @"说点什么呢？";
-    self.inputToolBarView.hidden = YES;
+    self.inputToolBarView.hidden = YES;*/
     //[self.inputToolBarView.textView addTarget:self action:@selector(sendPressed:) forControlEvents:UIControlEventEditingDidEndOnExit];
     
 //    LS03
@@ -237,7 +237,7 @@
     self.delegate = nil;
     self.dataSource = nil;
     self.tableView = nil;
-    self.inputToolBarView = nil;
+    self.messageToolView = nil;
     
 //    self.faceView = nil;
 //    self.shareMenuView = nil;
@@ -253,6 +253,10 @@
     keyboardRect = [[notification.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
     animationDuration = [[notification.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
     
+    [self messageViewAnimationWithMessageRect:CGRectMake(0, 0, 0, 0)
+                     withMessageInputViewRect:self.messageToolView.frame
+                                  andDuration:animationDuration
+                                     andState:ZBMessageViewStateShowNone];
 }
 
 - (void)keyboardWillShow:(NSNotification *)notification{
@@ -278,6 +282,12 @@
     [UIView animateWithDuration:duration animations:^{
        
         self.messageToolView.frame = CGRectMake(0.0f,MainScreenHeight-CGRectGetHeight(rect)-CGRectGetHeight(inputViewRect),MainScreenWidth,CGRectGetHeight(inputViewRect));
+        
+        
+        self.tableView.frame = CGRectMake(self.tableView.frame.origin.x,self.tableView.frame.origin.y,self.tableView.frame.size.width,MainScreenHeight-CGRectGetHeight(rect)-CGRectGetHeight(inputViewRect));
+        
+        
+        NSLog(@"0,%f,%f,%f",MainScreenHeight-CGRectGetHeight(rect)-CGRectGetHeight(inputViewRect),MainScreenWidth,CGRectGetHeight(inputViewRect));
         
         //add by liuyouzhang
         /*CGFloat horizontalPadding = 8;
@@ -512,7 +522,7 @@
 - (void)sendPressed:(UIButton *)sender
 {
     [self.delegate sendPressed:sender
-                      withText:[self.inputToolBarView.textView.text trimWhitespace]];
+                      withText:[self.messageToolView.messageInputTextView.text trimWhitespace]];
 }
 
 
@@ -665,13 +675,14 @@
 
 -(void)tapToHideKeyboard:(UITapGestureRecognizer*)tap
 {
-    [self.inputToolBarView.textView resignFirstResponder];
+    //[self.inputToolBarView.textView resignFirstResponder];
+    [self.messageToolView.messageInputTextView resignFirstResponder];
 }
 
 - (void)finishSend
 {
-    [self.inputToolBarView.textView setText:nil];
-    [self textViewDidChange:self.inputToolBarView.textView];
+    [self.messageToolView.messageInputTextView setText:nil];
+    [self textViewDidChange:self.messageToolView.messageInputTextView];
     [self.tableView reloadData];
     [self scrollToBottomAnimated:YES];
 }
@@ -719,11 +730,11 @@
 {
     
     if ([text isEqualToString:@"\n"]) {
-        if(self.inputToolBarView.textView.text.length>0){
+        if(self.messageToolView.messageInputTextView.text.length>0){
         
         //[textView resignFirstResponder];
         [self.delegate sendPressed:nil
-                          withText:[self.inputToolBarView.textView.text trimWhitespace]];
+                          withText:[self.messageToolView.messageInputTextView.text trimWhitespace]];
         }
         return NO;
     }
@@ -781,17 +792,17 @@
                              
                              if(isShrinking) {
                                  // if shrinking the view, animate text view frame BEFORE input view frame
-                                 [self.inputToolBarView adjustTextViewHeightBy:changeInHeight];
+                                 [self.messageToolView adjustTextViewHeightBy:changeInHeight];
                              }
                              
-                             CGRect inputViewFrame = self.inputToolBarView.frame;
-                             self.inputToolBarView.frame = CGRectMake(0.0f,
+                             CGRect inputViewFrame = self.messageToolView.frame;
+                             self.messageToolView.frame = CGRectMake(0.0f,
                                                                       inputViewFrame.origin.y - changeInHeight,
                                                                       inputViewFrame.size.width,
                                                                       inputViewFrame.size.height + changeInHeight);
                              
                              if(!isShrinking) {
-                                 [self.inputToolBarView adjustTextViewHeightBy:changeInHeight];
+                                 [self.messageToolView adjustTextViewHeightBy:changeInHeight];
                              }
                          }
                          completion:^(BOOL finished) {
@@ -801,7 +812,7 @@
         self.previousTextViewContentHeight = MIN(textViewContentHeight, maxHeight);
     }
     
-    self.inputToolBarView.sendButton.enabled = ([textView.text trimWhitespace].length > 0);
+    //self.inputToolBarView.sendButton.enabled = ([textView.text trimWhitespace].length > 0);
 }
 
 #pragma mark - Keyboard notifications
@@ -827,7 +838,7 @@
                      animations:^{
                          CGFloat keyboardY = [self.view convertRect:keyboardRect fromView:nil].origin.y;
                          
-                         CGRect inputViewFrame = self.inputToolBarView.frame;
+                         CGRect inputViewFrame = self.messageToolView.frame;
                          CGFloat inputViewFrameY = keyboardY - inputViewFrame.size.height;
                          
                          // for ipad modal form presentations
@@ -835,13 +846,13 @@
                          if(inputViewFrameY > messageViewFrameBottom)
                              inputViewFrameY = messageViewFrameBottom;
                          
-                         self.inputToolBarView.frame = CGRectMake(inputViewFrame.origin.x,
+                         self.messageToolView.frame = CGRectMake(inputViewFrame.origin.x,
                                                                   inputViewFrameY,
                                                                   inputViewFrame.size.width,
                                                                   inputViewFrame.size.height);
                          
                          UIEdgeInsets insets = self.originalTableViewContentInset;
-                         insets.bottom = self.view.frame.size.height - self.inputToolBarView.frame.origin.y - inputViewFrame.size.height;
+                         insets.bottom = self.view.frame.size.height - self.messageToolView.frame.origin.y - inputViewFrame.size.height;
                          
                          self.tableView.contentInset = insets;
                          self.tableView.scrollIndicatorInsets = insets;
@@ -853,17 +864,17 @@
 #pragma mark - Dismissive text view delegate
 - (void)keyboardDidScrollToPoint:(CGPoint)pt
 {
-    CGRect inputViewFrame = self.inputToolBarView.frame;
+    CGRect inputViewFrame = self.messageToolView.frame;
     CGPoint keyboardOrigin = [self.view convertPoint:pt fromView:nil];
     inputViewFrame.origin.y = keyboardOrigin.y - inputViewFrame.size.height;
-    self.inputToolBarView.frame = inputViewFrame;
+    self.messageToolView.frame = inputViewFrame;
 }
 
 - (void)keyboardWillBeDismissed
 {
-    CGRect inputViewFrame = self.inputToolBarView.frame;
+    CGRect inputViewFrame = self.messageToolView.frame;
     inputViewFrame.origin.y = self.view.bounds.size.height - inputViewFrame.size.height;
-    self.inputToolBarView.frame = inputViewFrame;
+    self.messageToolView.frame = inputViewFrame;
 }
 
 #pragma mark - DYNavigationController Delegate

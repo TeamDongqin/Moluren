@@ -111,7 +111,7 @@
 
             [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
                 //self.holdDownButton.hidden = YES;
-                self.messageInputTextView.hidden = YES;
+                //self.messageInputTextView.hidden = YES;
             } completion:^(BOOL finished) {
                 
             }];

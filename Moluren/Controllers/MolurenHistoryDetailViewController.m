@@ -90,13 +90,23 @@
         }
         MolurenHistoryDetailViewController *molurenHistoryDetailViewController = [[MolurenHistoryDetailViewController alloc] initWithSid:[NSString stringWithFormat: @"%d",preSid]];
         //如果需要自定义历史记录view的左右滑动切换效果,那么就在这里进行动画设置
-        molurenHistoryDetailViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+        //molurenHistoryDetailViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+        CATransition *animation = [CATransition animation];
+        [animation setDuration:8.0f];
+        [animation setType:kCATransitionPush];
+        [animation setSubtype:kCATransitionFromRight];
+        [animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
+        [[molurenHistoryDetailViewController.view layer] addAnimation:animation forKey:@"SwitchToView"];
+        
+        
         [self presentModalViewController:molurenHistoryDetailViewController animated:YES];
+        //[self presentModalViewController:molurenHistoryDetailViewController animated:YES];
         //执行程序
     }
     if(recognizer.direction==UISwipeGestureRecognizerDirectionRight) {
         NSLog(@"swipe right");
         //执行程序
+        self.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
         [self dismissModalViewControllerAnimated:YES];
     }
 }

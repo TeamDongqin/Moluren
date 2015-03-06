@@ -114,7 +114,7 @@ typedef NS_ENUM(NSInteger,ZBMessageViewState) {
 @property (weak, nonatomic) id<JSMessagesViewDelegate> delegate;
 @property (weak, nonatomic) id<JSMessagesViewDataSource> dataSource;
 @property (strong, nonatomic) UITableView *tableView;
-@property (strong, nonatomic) JSMessageInputView *inputToolBarView;
+//@property (strong, nonatomic) JSMessageInputView *inputToolBarView;
 @property (assign, nonatomic) CGFloat previousTextViewContentHeight;
 @property (assign, nonatomic, readonly) UIEdgeInsets originalTableViewContentInset;
 @property (nonatomic,strong) SharedSingleConfig *sharedConfig;
