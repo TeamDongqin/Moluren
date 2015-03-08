@@ -262,6 +262,8 @@
 - (void)keyboardWillShow:(NSNotification *)notification{
     keyboardRect = [[notification.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
     animationDuration= [[notification.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    
+    [self scrollToBottomAnimated:YES];
 }
 
 - (void)keyboardChange:(NSNotification *)notification{
@@ -287,7 +289,7 @@
         self.tableView.frame = CGRectMake(self.tableView.frame.origin.x,self.tableView.frame.origin.y,self.tableView.frame.size.width,MainScreenHeight-CGRectGetHeight(rect)-CGRectGetHeight(inputViewRect));
         
         
-        NSLog(@"0,%f,%f,%f",MainScreenHeight-CGRectGetHeight(rect)-CGRectGetHeight(inputViewRect),MainScreenWidth,CGRectGetHeight(inputViewRect));
+        NSLog(@"%f,%f,%f,%f",self.tableView.frame.origin.x,self.tableView.frame.origin.y,self.tableView.frame.size.width,MainScreenHeight-CGRectGetHeight(rect)-CGRectGetHeight(inputViewRect));
         
         //add by liuyouzhang
         /*CGFloat horizontalPadding = 8;

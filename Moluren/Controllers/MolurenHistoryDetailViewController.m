@@ -47,7 +47,14 @@
     
     CGSize size = self.view.frame.size;
     
-    CGRect tableFrame = CGRectMake(0.0f, TITLE_BAR_HEIGHT, size.width, size.height - TITLE_BAR_HEIGHT);
+    self.titleView = [[UILabel alloc] initWithFrame:CGRectMake(0,0,size.width,120)];
+    self.titleView.text = [NSString stringWithFormat:@"历史记录-%d",self.sid];
+    self.titleView.textAlignment = NSTextAlignmentCenter;
+    self.titleView.backgroundColor = [UIColor blueColor];
+    
+    [self.view addSubview:self.titleView];
+    
+    CGRect tableFrame = CGRectMake(0.0f, /*TITLE_BAR_HEIGHT+*/120, size.width, size.height /*- TITLE_BAR_HEIGHT*/-120);
     self.tableView = [[UITableView alloc] initWithFrame:tableFrame style:UITableViewStylePlain];
     self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.tableView.dataSource = self;
@@ -91,23 +98,46 @@
         MolurenHistoryDetailViewController *molurenHistoryDetailViewController = [[MolurenHistoryDetailViewController alloc] initWithSid:[NSString stringWithFormat: @"%d",preSid]];
         //如果需要自定义历史记录view的左右滑动切换效果,那么就在这里进行动画设置
         //molurenHistoryDetailViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-        CATransition *animation = [CATransition animation];
+        /*CATransition *animation = [CATransition animation];
         [animation setDuration:8.0f];
-        [animation setType:kCATransitionPush];
-        [animation setSubtype:kCATransitionFromRight];
-        [animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
-        [[molurenHistoryDetailViewController.view layer] addAnimation:animation forKey:@"SwitchToView"];
+        [animation setType:@"cube"];
+        [animation setSubtype:@"fromRight"];
+        [animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn]];
+        [[molurenHistoryDetailViewController.view layer] addAnimation:animation forKey:@"kTransitionAnimation"];*/
         
         
-        [self presentModalViewController:molurenHistoryDetailViewController animated:YES];
+        CATransition *transition = [CATransition animation];
+        transition.duration = 0.5;
+        //1 立方体旋转效果
+        /*transition.type = @"cube";
+        transition.subtype = @"fromRight";*/
+        //2 翻页效果 不用设置subtype
+        transition.type = @"pageCurl";
+        transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
+        [self.view.window.layer addAnimation:transition forKey:@"kTransitionAnimation"];
+        
+        [self presentModalViewController:molurenHistoryDetailViewController animated:NO];
         //[self presentModalViewController:molurenHistoryDetailViewController animated:YES];
         //执行程序
     }
     if(recognizer.direction==UISwipeGestureRecognizerDirectionRight) {
         NSLog(@"swipe right");
         //执行程序
-        self.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-        [self dismissModalViewControllerAnimated:YES];
+        //self.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+        
+        CATransition *transition = [CATransition animation];
+        transition.duration = 0.5;
+        //1 立方体旋转效果
+        /*transition.type = @"cube";
+        transition.subtype = @"fromLeft";*/
+        //2 翻页效果 不用设置subtype
+        transition.type = @"pageUnCurl";
+        
+        
+        transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
+        [self.view.window.layer addAnimation:transition forKey:@"kTransitionAnimation"];
+        
+        [self dismissModalViewControllerAnimated:NO];
     }
 }
 

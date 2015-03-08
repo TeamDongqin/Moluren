@@ -19,5 +19,6 @@
 
 - (id) initWithSid:(NSString *) sid;
 @property (strong, nonatomic) UITableView *tableView;
+@property (strong, nonatomic) UILabel *titleView;
 
 @end
