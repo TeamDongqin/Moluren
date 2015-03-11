@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SkynightBG5" translatesAutoresizingMaskIntoConstraints="NO" id="LV1-fk-coL">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SkynightBG5s" translatesAutoresizingMaskIntoConstraints="NO" id="LV1-fk-coL">
                                 <rect key="frame" x="-7" y="0.0" width="327" height="573"/>
                             </imageView>
                             <button opaque="NO" tag="1006" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j40-Xs-rsK">
@@ -178,6 +178,6 @@
     <resources>
         <image name="HistoryDataBG" width="744" height="1392"/>
         <image name="LifeTopic" width="215" height="110"/>
-        <image name="SkynightBG5" width="640" height="1136"/>
+        <image name="SkynightBG5s" width="640" height="1136"/>
     </resources>
 </document>
