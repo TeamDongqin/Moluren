@@ -324,6 +324,8 @@
     //开启定时器
     [_getOnlineStatus setFireDate:[NSDate distantPast]];
     
+    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
+    
     //隐藏navigationController
     [self.navigationController setNavigationBarHidden:YES animated:animated];
     [super viewWillAppear:animated];
@@ -340,6 +342,13 @@
     //显示navigationController
     //[self.navigationController setNavigationBarHidden:NO animated:animated];
     //[super viewWillDisappear:animated];
+    
+    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
+}
+
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
 }
 
 -(void)connectToNewSession{
