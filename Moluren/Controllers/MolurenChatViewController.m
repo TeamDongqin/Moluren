@@ -224,6 +224,10 @@
     recognizer.direction = UISwipeGestureRecognizerDirectionRight;
     [[self view] addGestureRecognizer:recognizer];
     
+//    UIPanGestureRecognizer *recognizer = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipeFrom:)];
+//    recognizer.state = ;
+//    [[self view] addGestureRecognizer:recognizer];
+    
     //初始化摇色子动画ImageView
     self.gifImageView = [[UIImageView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width/2-50, [UIScreen mainScreen].bounds.size.height/2-50, 100, 100)];
     NSArray *gifArray = [NSArray arrayWithObjects:[UIImage imageNamed:@"dice_Action_0"],
