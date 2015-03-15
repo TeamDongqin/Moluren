@@ -849,7 +849,7 @@
      JSAvatarStyleSquare,
      JSAvatarStyleNone
      */
-    return JSAvatarStyleCircle;
+    return JSAvatarStyleSquare;
 }
 
 - (JSInputBarStyle)inputBarStyle
@@ -884,7 +884,7 @@
 
 - (UIImage *)avatarImageForIncomingMessage
 {
-    return [UIImage imageNamed:@"default-avatar-in"];
+    return [UIImage imageNamed:@"Portrait_TopicWork"];
 }
 
 - (UIImage *)avatarImageForOutgoingMessage
@@ -896,7 +896,7 @@
 {
     UIImage *avaterImg = nil;
     //if([self.sharedConfig.customerAvaterImg isEqualToString:@""] || self.sharedConfig.customerAvaterImg==nil){
-        avaterImg = [UIImage imageNamed:@"default-avatar-out"];
+        avaterImg = [UIImage imageNamed:@"Portrait_Self"];
     /*}else{
         NSString *aPath3=[NSString stringWithFormat:@"/Documents/%@",self.sharedConfig.customerAvaterImg];
         avaterImg = [[UIImage alloc]initWithContentsOfFile:aPath3];

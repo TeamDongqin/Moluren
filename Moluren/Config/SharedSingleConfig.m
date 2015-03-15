@@ -74,8 +74,8 @@
         customerAvaterImgData = UIImagePNGRepresentation(avaterImg);
         return [NSString stringWithFormat:@"%@.%@",defaultAvaterName,@"png"];
     }else{
+        customerAvaterImgData= UIImagePNGRepresentation([UIImage imageNamed:@"Portrait_Self"]);
         return @"";
-        customerAvaterImgData= UIImagePNGRepresentation([UIImage imageNamed:@"default-avatar-out"]);;
     }
 }
 

@@ -101,7 +101,7 @@
 //            self.portraitImageView.image = protraitImg;
 //        });
 //    });
-        self.portraitImageView.image = [UIImage imageNamed:@"default-avatar-out"];
+        self.portraitImageView.image = [UIImage imageNamed:@"Portrait_Self"];
     }else{
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^ {
             NSString *aPath3=[NSString stringWithFormat:@"%@/Documents/%@",NSHomeDirectory(),self.sharedConfig.customerAvaterImg];

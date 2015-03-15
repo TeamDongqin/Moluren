@@ -128,7 +128,7 @@
      JSAvatarStyleSquare,
      JSAvatarStyleNone
      */
-    return JSAvatarStyleCircle;
+    return JSAvatarStyleSquare;
 }
 
 - (JSInputBarStyle)inputBarStyle
@@ -163,12 +163,12 @@
 
 - (UIImage *)avatarImageForIncomingMessage
 {
-    return [UIImage imageNamed:@"default-avatar-in"];
+    return [UIImage imageNamed:@"Portrait_TopicWork"];
 }
 
 - (UIImage *)avatarImageForOutgoingMessage
 {
-    return [UIImage imageNamed:@"default-avatar-out"];
+    return [UIImage imageNamed:@"Portrait_Self"];
 }
 
 - (id)dataForRowAtIndexPath:(NSIndexPath *)indexPath{
