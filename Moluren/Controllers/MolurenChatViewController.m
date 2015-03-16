@@ -147,8 +147,8 @@
     titleLabel.text = @"学习";
     titleLabel.font = [UIFont systemFontOfSize:20];
     titleLabel.textAlignment = NSTextAlignmentCenter;
-    titleLabel.textColor = [UIColor blueColor];
-    titleLabel.frame = CGRectMake(0, 0, 200, 20);
+    titleLabel.textColor = UIColorFromRGB(0xed1941);
+    titleLabel.frame = CGRectMake(0, 0, 200, 30);
     
     [navTitle addSubview:titleLabel];
     
@@ -199,6 +199,8 @@
     [_chatBreakBtn addTarget:self action:@selector(onDisconectBtnClick) forControlEvents:UIControlEventTouchUpInside];
     
     [navTitle addSubview:_chatBreakBtn];
+    
+    //self.navigationItem.rightBarButtonItem = _chatBreakBtn;
     
     [self.view addSubview:navTitle];
     

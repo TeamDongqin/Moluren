@@ -436,6 +436,11 @@
 }
 
 - (IBAction)EnterTopic:(id)sender {
+    // Enter specific topic according to button id
+    
+    
+    
+    // Move to topic chat controller
     //已经有token
     if(![self.sharedConfig.token isEqualToString:@""] && self.sharedConfig.token.length>1){
         if(!self.sharedConfig.isConnected){
