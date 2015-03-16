@@ -38,8 +38,8 @@
 
 typedef enum {
     JSAvatarStyleCircle = 0,
-    JSAvatarStyleSquare,
-    JSAvatarStyleNone
+    JSAvatarStyleSquare = 1,
+    JSAvatarStyleNone = 2
 } JSAvatarStyle;
 
 

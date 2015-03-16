@@ -112,7 +112,7 @@
     
     
     // 设置背景图片
-    self.navigationController.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"SkynightBG5"]];
+    self.navigationController.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"SkynightBG5s"]];
     
     
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 16, 17)];
@@ -328,6 +328,8 @@
     //开启定时器
     [_getOnlineStatus setFireDate:[NSDate distantPast]];
     
+    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
+    
     //隐藏navigationController
     [self.navigationController setNavigationBarHidden:YES animated:animated];
     [super viewWillAppear:animated];
@@ -344,6 +346,13 @@
     //显示navigationController
     //[self.navigationController setNavigationBarHidden:NO animated:animated];
     //[super viewWillDisappear:animated];
+    
+    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
+}
+
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
 }
 
 -(void)connectToNewSession{
@@ -431,6 +440,11 @@
 }
 
 - (IBAction)EnterTopic:(id)sender {
+    // Enter specific topic according to button id
+    
+    
+    
+    // Move to topic chat controller
     //已经有token
     if(![self.sharedConfig.token isEqualToString:@""] && self.sharedConfig.token.length>1){
         if(!self.sharedConfig.isConnected){

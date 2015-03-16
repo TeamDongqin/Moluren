@@ -145,10 +145,10 @@
     //添加标题label
     UILabel *titleLabel = [[UILabel alloc] init];
     titleLabel.text = @"学习";
-    titleLabel.font = [UIFont systemFontOfSize:18];
+    titleLabel.font = [UIFont systemFontOfSize:20];
     titleLabel.textAlignment = NSTextAlignmentCenter;
-    titleLabel.textColor = [UIColor blueColor];
-    titleLabel.frame = CGRectMake(0, 0, 200, 20);
+    titleLabel.textColor = UIColorFromRGB(0xed1941);
+    titleLabel.frame = CGRectMake(0, 0, 200, 30);
     
     [navTitle addSubview:titleLabel];
     
@@ -165,38 +165,44 @@
     
     self.navigationItem.titleView = navTitle;
     
-    /*
+    
     //添加返回按钮
-    UIButton *chatBackBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    chatBackBtn.titleLabel.textColor = [UIColor whiteColor];
-    chatBackBtn.titleLabel.font = [UIFont fontWithName:@"Regular" size:20];
-    [chatBackBtn setTitle:@"返回" forState:UIControlStateNormal];
-    UIImage *chatBackBtnBackgroundImage = [[UIImage imageNamed:@"button_forward"]
-                                           resizableImageWithCapInsets:UIEdgeInsetsMake(0,24,0,24)];
-    [chatBackBtn setBackgroundImage:chatBackBtnBackgroundImage
-                           forState:UIControlStateNormal];
-    chatBackBtn.frame = CGRectMake(10, 24, 72, 30);
-    
-    [chatBackBtn addTarget:self action:@selector(backToMainView) forControlEvents:UIControlEventTouchUpInside];
-    
-    [navTitle addSubview:chatBackBtn];
+//    UIButton *chatBackBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+//    chatBackBtn.titleLabel.textColor = [UIColor whiteColor];
+//    chatBackBtn.titleLabel.font = [UIFont fontWithName:@"Regular" size:20];
+//    [chatBackBtn setTitle:@"返回" forState:UIControlStateNormal];
+//    UIImage *chatBackBtnBackgroundImage = [[UIImage imageNamed:@"button_forward"]
+//                                           resizableImageWithCapInsets:UIEdgeInsetsMake(0,24,0,24)];
+//    [chatBackBtn setBackgroundImage:chatBackBtnBackgroundImage
+//                           forState:UIControlStateNormal];
+//    chatBackBtn.frame = CGRectMake(10, 24, 72, 30);
+//    
+//    [chatBackBtn addTarget:self action:@selector(backToMainView) forControlEvents:UIControlEventTouchUpInside];
+//    
+//    [navTitle addSubview:chatBackBtn];
     
     //添加断开连接按钮
-    _chatBreakBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    _chatBreakBtn.titleLabel.textColor = [UIColor whiteColor];
-    _chatBreakBtn.titleLabel.font = [UIFont fontWithName:@"Regular" size:20];
-    [_chatBreakBtn setTitle:@"断开连接" forState:UIControlStateNormal];
-    UIImage *chatBreakBtnBackgroundImage = [[UIImage imageNamed:@"button_back"]
-                                            resizableImageWithCapInsets:UIEdgeInsetsMake(0,24,0,24)];
-    [_chatBreakBtn setBackgroundImage:chatBreakBtnBackgroundImage
-                             forState:UIControlStateNormal];
-    _chatBreakBtn.frame = CGRectMake(MainScreenWidth-110, 24, 100, 30);
+    //_chatBreakBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    //_chatBreakBtn.titleLabel.textColor = [UIColor whiteColor];
+    //_chatBreakBtn.titleLabel.font = [UIFont fontWithName:@"Regular" size:20];
+    //[_chatBreakBtn setTitle:@"断开" forState:UIControlStateNormal];
+    
+    UIButton *_chatBreakBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    _chatBreakBtn.frame = CGRectMake(MainScreenWidth-130, 0, 60, 30);
+    [_chatBreakBtn setImage:[UIImage imageNamed:@"ExitTopicWork"] forState:UIControlStateNormal];
+//    UIImage *chatBreakBtnBackgroundImage = [[UIImage imageNamed:@"ExitTopicWork"]
+//                                            resizableImageWithCapInsets:UIEdgeInsetsMake(0,24,0,24)];
+//    [_chatBreakBtn setBackgroundImage:chatBreakBtnBackgroundImage
+//                             forState:UIControlStateNormal];
+//    _chatBreakBtn.frame = CGRectMake(MainScreenWidth-150, 24, 100, 30);
     
     [_chatBreakBtn addTarget:self action:@selector(onDisconectBtnClick) forControlEvents:UIControlEventTouchUpInside];
     
     [navTitle addSubview:_chatBreakBtn];
-    */
-    //[self.view addSubview:navTitle];
+    
+    //self.navigationItem.rightBarButtonItem = _chatBreakBtn;
+    
+    [self.view addSubview:navTitle];
     
     self.delegate = self;
     self.dataSource = self;
@@ -217,6 +223,16 @@
         
         [self finishReceive];
     }*/
+    
+    
+    // Set up gesture recognizer
+    UISwipeGestureRecognizer *recognizer = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipeFrom:)];
+    recognizer.direction = UISwipeGestureRecognizerDirectionRight;
+    [[self view] addGestureRecognizer:recognizer];
+    
+//    UIPanGestureRecognizer *recognizer = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipeFrom:)];
+//    recognizer.state = ;
+//    [[self view] addGestureRecognizer:recognizer];
     
     //初始化摇色子动画ImageView
     self.gifImageView = [[UIImageView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width/2-50, [UIScreen mainScreen].bounds.size.height/2-50, 100, 100)];
@@ -839,7 +855,7 @@
      JSAvatarStyleSquare,
      JSAvatarStyleNone
      */
-    return JSAvatarStyleCircle;
+    return JSAvatarStyleSquare;
 }
 
 - (JSInputBarStyle)inputBarStyle
@@ -874,7 +890,7 @@
 
 - (UIImage *)avatarImageForIncomingMessage
 {
-    return [UIImage imageNamed:@"default-avatar-in"];
+    return [UIImage imageNamed:@"Portrait_TopicWork"];
 }
 
 - (UIImage *)avatarImageForOutgoingMessage
@@ -886,7 +902,7 @@
 {
     UIImage *avaterImg = nil;
     //if([self.sharedConfig.customerAvaterImg isEqualToString:@""] || self.sharedConfig.customerAvaterImg==nil){
-        avaterImg = [UIImage imageNamed:@"default-avatar-out"];
+        avaterImg = [UIImage imageNamed:@"Portrait_Self"];
     /*}else{
         NSString *aPath3=[NSString stringWithFormat:@"/Documents/%@",self.sharedConfig.customerAvaterImg];
         avaterImg = [[UIImage alloc]initWithContentsOfFile:aPath3];
@@ -1015,5 +1031,9 @@
     [_getTypingStatus setFireDate:[NSDate distantFuture]];
 }
 
- 
+#pragma Swipe handler
+-(void)handleSwipeFrom:(UISwipeGestureRecognizer *)recognizer{
+    [self backToMainView];
+}
+
 @end

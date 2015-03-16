@@ -13,10 +13,10 @@
                         <viewControllerLayoutGuide type="bottom" id="FhX-Jk-52l"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0aE-Qr-ZjN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SkynightBG5" translatesAutoresizingMaskIntoConstraints="NO" id="LV1-fk-coL">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SkynightBG5s" translatesAutoresizingMaskIntoConstraints="NO" id="LV1-fk-coL">
                                 <rect key="frame" x="-7" y="0.0" width="327" height="573"/>
                             </imageView>
                             <button opaque="NO" tag="1006" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j40-Xs-rsK">
@@ -76,6 +76,7 @@
                             </button>
                             <button opaque="NO" tag="1002" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="207" placeholderIntrinsicHeight="102" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dSL-JR-hPD">
                                 <rect key="frame" x="192" y="120" width="112" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="生  活" backgroundImage="LifeTopic">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -88,7 +89,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="OAJ-4c-fMm"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b64-eT-MHf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -178,6 +178,6 @@
     <resources>
         <image name="HistoryDataBG" width="744" height="1392"/>
         <image name="LifeTopic" width="215" height="110"/>
-        <image name="SkynightBG5" width="640" height="1136"/>
+        <image name="SkynightBG5s" width="640" height="1136"/>
     </resources>
 </document>

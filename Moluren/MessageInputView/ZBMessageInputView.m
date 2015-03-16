@@ -6,6 +6,9 @@
 //  Copyright (c) 2014年 Crius_ZB. All rights reserved.
 //
 
+#define kToolBarH 44
+#define kTextFieldH 30
+
 #import "ZBMessageInputView.h"
 #import "NSString+Message.h"
 
@@ -176,8 +179,10 @@
     */
     
     // 允许发送多媒体消息，为什么不是先放表情按钮呢？因为布局的需要！
-    UIButton *multiMediaSendBut = [self createButtonWithImage:[UIImage imageNamed:@"TypeSelectorBtn_Black_ios7@2x.png"]
-                                                    HLImage:nil];
+    UIButton *multiMediaSendBut = [UIButton buttonWithType:UIButtonTypeCustom];
+    multiMediaSendBut.frame = CGRectMake(self.frame.size.width - kToolBarH, 0, kToolBarH, kToolBarH);
+    [multiMediaSendBut setImage:[UIImage imageNamed:@"chat_bottom_up_nor"] forState:UIControlStateNormal];
+    [multiMediaSendBut setImage:[UIImage imageNamed:@"chat_bottom_up_press"] forState:UIControlStateHighlighted];
     
     multiMediaSendBut.tag = 0;
     [multiMediaSendBut addTarget:self

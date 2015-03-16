@@ -111,6 +111,7 @@
 		9CB069101A7CFEDA005C84F6 /* NextHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB0690A1A7CFEDA005C84F6 /* NextHistoryViewController.m */; };
 		9CB069111A7CFEDA005C84F6 /* PreviousHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB0690C1A7CFEDA005C84F6 /* PreviousHistoryViewController.m */; };
 		9CB069121A7CFEDA005C84F6 /* MolurenHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB0690E1A7CFEDA005C84F6 /* MolurenHistoryViewController.m */; };
+		9CC2B71D1AB65AC4008DFB79 /* Chat_Topic_Work.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CC2B71C1AB65AC4008DFB79 /* Chat_Topic_Work.m */; };
 		9CCAE8171A5D5E5600E3A33A /* LanuchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAE80A1A5D5E5600E3A33A /* LanuchViewController.m */; };
 		9CCAE8181A5D5E5600E3A33A /* MolurenChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAE80C1A5D5E5600E3A33A /* MolurenChatViewController.m */; };
 		9CCAE8191A5D5E5600E3A33A /* MolurenHistoryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAE80E1A5D5E5600E3A33A /* MolurenHistoryDetailViewController.m */; };
@@ -382,6 +383,8 @@
 		9CB0690C1A7CFEDA005C84F6 /* PreviousHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PreviousHistoryViewController.m; path = MolurenHistoryViewControllerGroup/PreviousHistoryViewController.m; sourceTree = "<group>"; };
 		9CB0690D1A7CFEDA005C84F6 /* MolurenHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MolurenHistoryViewController.h; path = MolurenHistoryViewControllerGroup/MolurenHistoryViewController.h; sourceTree = "<group>"; };
 		9CB0690E1A7CFEDA005C84F6 /* MolurenHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MolurenHistoryViewController.m; path = MolurenHistoryViewControllerGroup/MolurenHistoryViewController.m; sourceTree = "<group>"; };
+		9CC2B71B1AB65AC4008DFB79 /* Chat_Topic_Work.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chat_Topic_Work.h; sourceTree = "<group>"; };
+		9CC2B71C1AB65AC4008DFB79 /* Chat_Topic_Work.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Chat_Topic_Work.m; sourceTree = "<group>"; };
 		9CCAE8091A5D5E5600E3A33A /* LanuchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanuchViewController.h; sourceTree = "<group>"; };
 		9CCAE80A1A5D5E5600E3A33A /* LanuchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanuchViewController.m; sourceTree = "<group>"; };
 		9CCAE80B1A5D5E5600E3A33A /* MolurenChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MolurenChatViewController.h; sourceTree = "<group>"; };
@@ -494,6 +497,7 @@
 		9CCAE94F1A5D6DAE00E3A33A /* SenderVoiceNodePlaying_ios7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SenderVoiceNodePlaying_ios7@2x.png"; sourceTree = "<group>"; };
 		9CCAE9AC1A5D6DBB00E3A33A /* ZBMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBMessage.h; sourceTree = "<group>"; };
 		9CCAE9AD1A5D6DBB00E3A33A /* ZBMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBMessage.m; sourceTree = "<group>"; };
+		9CD455E61AB2638100C9B3C4 /* UsermsgSuffix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UsermsgSuffix.h; path = Common/UsermsgSuffix.h; sourceTree = "<group>"; };
 		9CD6DBF31A655686007AEC30 /* DYNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYNavigationController.h; sourceTree = "<group>"; };
 		9CD6DBF41A655686007AEC30 /* DYNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYNavigationController.m; sourceTree = "<group>"; };
 		9CDAC31D1A738CEE00FB7A2E /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
@@ -634,6 +638,7 @@
 				18287D1519EAAC140074BDD9 /* BaseViewController.h */,
 				18287D1619EAAC140074BDD9 /* BaseViewController.m */,
 				18287D1719EAAC140074BDD9 /* GlobalUI.h */,
+				9CD455E61AB2638100C9B3C4 /* UsermsgSuffix.h */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -884,6 +889,8 @@
 				9CCAE8141A5D5E5600E3A33A /* MolurenSettingViewController.m */,
 				9CCAE8151A5D5E5600E3A33A /* NewLanuchViewController.h */,
 				9CCAE8161A5D5E5600E3A33A /* NewLanuchViewController.m */,
+				9CC2B71B1AB65AC4008DFB79 /* Chat_Topic_Work.h */,
+				9CC2B71C1AB65AC4008DFB79 /* Chat_Topic_Work.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1333,6 +1340,7 @@
 				9C2D4F0C1A610BB6001C8E82 /* ZBMessageShareMenuItem.m in Sources */,
 				9CCAE8181A5D5E5600E3A33A /* MolurenChatViewController.m in Sources */,
 				18287DEA19EAAE080074BDD9 /* JSMessageInputView.m in Sources */,
+				9CC2B71D1AB65AC4008DFB79 /* Chat_Topic_Work.m in Sources */,
 				18287D1819EAAC140074BDD9 /* BaseViewController.m in Sources */,
 				9CCAE81B1A5D5E5600E3A33A /* MolurenMainViewController.m in Sources */,
 				9CCAE82C1A5D613100E3A33A /* ZBMessageTextView.m in Sources */,

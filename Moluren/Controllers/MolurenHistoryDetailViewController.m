@@ -198,7 +198,7 @@
         type = JSBubbleMessageTypeOutgoing;
     }
     JSBubbleMessageStyle bubbleStyle = JSBubbleMessageStyleFlat;
-    JSAvatarStyle avatarStyle = JSAvatarStyleCircle;
+    JSAvatarStyle avatarStyle = JSAvatarStyleSquare;
     JSBubbleMediaType mediaType = JSBubbleMediaTypeText;
     
     BOOL hasTimestamp = YES;
@@ -228,12 +228,12 @@
     if(hasAvatar) {
         switch (type) {
             case JSBubbleMessageTypeIncoming:
-                [cell setAvatarImage:[UIImage imageNamed:@"default-avatar-in"]];
+                [cell setAvatarImage:[UIImage imageNamed:@"Portrait_TopicWork"]];
                 break;
                 
             case JSBubbleMessageTypeOutgoing:
-                //[cell setAvatarImage:[UIImage imageNamed:@"default-avatar-out"]];
-                [cell setAvatarImage:[UIImage imageWithData: self.sharedConfig.customerAvaterImgData]];
+                [cell setAvatarImage:[UIImage imageNamed:@"Portrait_Self"]];
+                //[cell setAvatarImage:[UIImage imageWithData: self.sharedConfig.customerAvaterImgData]];
                 break;
         }
     }
