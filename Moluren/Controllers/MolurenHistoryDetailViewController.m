@@ -107,12 +107,13 @@
         
         
         CATransition *transition = [CATransition animation];
-        transition.duration = 0.5;
+        transition.duration = 0.8;
         //1 立方体旋转效果
         /*transition.type = @"cube";
         transition.subtype = @"fromRight";*/
         //2 翻页效果 不用设置subtype
-        transition.type = @"pageCurl";
+        transition.type = kCATransitionMoveIn;
+        transition.subtype = kCATransitionFromRight;
         transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
         [self.view.window.layer addAnimation:transition forKey:@"kTransitionAnimation"];
         
@@ -126,13 +127,14 @@
         //self.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
         
         CATransition *transition = [CATransition animation];
-        transition.duration = 0.5;
+        transition.duration = 0.8;
         //1 立方体旋转效果
         /*transition.type = @"cube";
         transition.subtype = @"fromLeft";*/
         //2 翻页效果 不用设置subtype
-        transition.type = @"pageUnCurl";
-        
+        //transition.type = @"pageUnCurl";
+        transition.type = kCATransitionMoveIn;
+        transition.subtype = kCATransitionFromLeft;
         
         transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
         [self.view.window.layer addAnimation:transition forKey:@"kTransitionAnimation"];

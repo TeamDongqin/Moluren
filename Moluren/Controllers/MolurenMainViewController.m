@@ -213,6 +213,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //隐藏状态栏
+    NSLog(@"MolurenMainViewController launched");
+    UIApplication *application = [UIApplication sharedApplication];
+    [application setStatusBarHidden:YES];
     [self setup];
     
     // Do any additional setup after loading the view, typically from a nib.
