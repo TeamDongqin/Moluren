@@ -10,7 +10,7 @@
 
 @interface Chat_Topic_Work ()
 
-UIImage* ChatterPortrait;
+@property (nonatomic, strong) UIImage* ChatterPortrait;
 
 @end
 
@@ -46,7 +46,7 @@ UIImage* ChatterPortrait;
     self.navigationItem.rightBarButtonItem = RightBarButtonItem;
     
     // Set up chatter's portrait
-    ChatterPortrait = [UIImage imageNamed:@"Portrait_TopicWork"];
+    self.ChatterPortrait = [UIImage imageNamed:@"Portrait_TopicWork"];
     
     // Set up multimedia menu Ui
     // ? JSMessageViewController inherit ?
@@ -55,7 +55,7 @@ UIImage* ChatterPortrait;
 
 - (UIImage *)avatarImageForIncomingMessage
 {
-    return ChatterPortrait;
+    return self.ChatterPortrait;
 }
 
 - (void)didReceiveMemoryWarning {
