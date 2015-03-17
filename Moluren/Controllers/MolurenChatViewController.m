@@ -181,26 +181,21 @@
 //    
 //    [navTitle addSubview:chatBackBtn];
     
-    //添加断开连接按钮
-    //_chatBreakBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    //_chatBreakBtn.titleLabel.textColor = [UIColor whiteColor];
-    //_chatBreakBtn.titleLabel.font = [UIFont fontWithName:@"Regular" size:20];
-    //[_chatBreakBtn setTitle:@"断开" forState:UIControlStateNormal];
+
+    // Disconnect button
+    UIImage *DisconnectButtonBgImage = [UIImage imageNamed:@"ExitTopicWork"];
     
-    UIButton *_chatBreakBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    _chatBreakBtn.frame = CGRectMake(MainScreenWidth-130, 0, 60, 30);
-    [_chatBreakBtn setImage:[UIImage imageNamed:@"ExitTopicWork"] forState:UIControlStateNormal];
-//    UIImage *chatBreakBtnBackgroundImage = [[UIImage imageNamed:@"ExitTopicWork"]
-//                                            resizableImageWithCapInsets:UIEdgeInsetsMake(0,24,0,24)];
-//    [_chatBreakBtn setBackgroundImage:chatBreakBtnBackgroundImage
-//                             forState:UIControlStateNormal];
-//    _chatBreakBtn.frame = CGRectMake(MainScreenWidth-150, 24, 100, 30);
+    UIButton *DisconnectButton = [[UIButton alloc] initWithFrame:CGRectMake(MainScreenWidth-150, 24, 30, 30)];
+    [DisconnectButton setBackgroundImage:DisconnectButtonBgImage forState:UIControlStateNormal];
+    [DisconnectButton addTarget:self action:@selector(onDisconectBtnClick) forControlEvents:UIControlEventTouchUpInside];
     
-    [_chatBreakBtn addTarget:self action:@selector(onDisconectBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *rightBarButtonItem =[[UIBarButtonItem alloc] initWithCustomView:DisconnectButton];
     
-    [navTitle addSubview:_chatBreakBtn];
+    self.navigationItem.rightBarButtonItem = rightBarButtonItem;
     
-    //self.navigationItem.rightBarButtonItem = _chatBreakBtn;
+    //[navTitle addSubview:_chatBreakBtn];
+    
+    self.navigationItem.leftBarButtonItem.title = @"陌路人";
     
     [self.view addSubview:navTitle];
     

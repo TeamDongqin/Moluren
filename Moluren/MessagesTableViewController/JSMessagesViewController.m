@@ -176,23 +176,17 @@
     {
         self.shareMenuView = [[ZBMessageShareMenuView alloc]initWithFrame:CGRectMake(0.0f,
                                                                                      CGRectGetHeight(self.view.frame),
-                                                                                     CGRectGetWidth(self.view.frame), 196) ];
+                                                                                     CGRectGetWidth(self.view.frame), 100) ];
         [self.view addSubview:self.shareMenuView];
         self.shareMenuView.delegate = self;
         
         
         
-        ZBMessageShareMenuItem *sharePicItem = [[ZBMessageShareMenuItem alloc]initWithNormalIconImage:[UIImage imageNamed:@"ChatHistoryMenuItem"]
-                                                                                                title:@"历史记录"];
-        ZBMessageShareMenuItem *shareVideoItem = [[ZBMessageShareMenuItem alloc]initWithNormalIconImage:[UIImage imageNamed:@"DiceMenuItem"]
-                                                                                                  title:@"骰子"];
-        ZBMessageShareMenuItem *shareLocItem = [[ZBMessageShareMenuItem alloc]initWithNormalIconImage:[UIImage imageNamed:@"UserProfileMenuItem"]
-                                                                                                title:@"名片"];
-//        ZBMessageShareMenuItem *shareVoipItem = [[ZBMessageShareMenuItem alloc]initWithNormalIconImage:[UIImage imageNamed:@"sharemore_videovoip"]
-//                                                                                                 title:@"视频聊天"];
-//        ZBMessageShareMenuItem *shareDiceItem = [[ZBMessageShareMenuItem alloc]initWithNormalIconImage:[UIImage imageNamed:@"sharemore_dice_ios7"]
-//                                                                                                 title:@"摇色子"];
-        self.shareMenuView.shareMenuItems = [NSArray arrayWithObjects:sharePicItem,shareVideoItem,shareLocItem, nil];
+        ZBMessageShareMenuItem *ChatHistoryMenuItem = [[ZBMessageShareMenuItem alloc]initWithNormalIconImage:[UIImage imageNamed:@"ChatHistoryMenuItem"] title:@"历史记录"];
+        ZBMessageShareMenuItem *DiceMenuItem = [[ZBMessageShareMenuItem alloc]initWithNormalIconImage:[UIImage imageNamed:@"DiceMenuItem"] title:@"骰子"];
+        ZBMessageShareMenuItem *UserProfileMenuItem = [[ZBMessageShareMenuItem alloc]initWithNormalIconImage:[UIImage imageNamed:@"UserProfileMenuItem"] title:@"名片"];
+
+        self.shareMenuView.shareMenuItems = [NSArray arrayWithObjects:DiceMenuItem,ChatHistoryMenuItem,UserProfileMenuItem, nil];
         [self.shareMenuView reloadData];
         
     }
