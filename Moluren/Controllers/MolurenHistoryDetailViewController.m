@@ -226,7 +226,7 @@
     if(hasAvatar) {
         switch (type) {
             case JSBubbleMessageTypeIncoming:
-                [cell setAvatarImage:[UIImage imageNamed:@"Portrait_TopicWork"]];
+                [cell setAvatarImage:[UIImage imageNamed:@"Portrait_TopicLife"]];
                 break;
                 
             case JSBubbleMessageTypeOutgoing:
