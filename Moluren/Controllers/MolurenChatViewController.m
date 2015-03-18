@@ -51,7 +51,7 @@
         [_backToMainViewAlert addButtonWithTitle:@"取消"];
         [_backToMainViewAlert show];
     }else{
-        self.getToken;
+        self.retrieveToken;
         [self.navigationController popViewControllerAnimated:NO];
         [self.tabBarController.tabBar setHidden:NO];
     }*/
@@ -69,7 +69,7 @@
         if(buttonIndex==0){
             NSLog(@"确定断开会话");
             self.disconnect;
-            self.getToken;
+            self.retrieveToken;
             
             [self.navigationController popViewControllerAnimated:NO];
         
@@ -453,7 +453,7 @@
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         [alertView dismissWithClickedButtonIndex:0 animated:NO];
     });*/
-    [self sendDisconectedMessage:@"对方已经无情的将会话断掉啦,赶紧请返回开始页面重新连接吧!"];
+    [self sendDisconectedMessage:@"对方已经断开连接，请重新连接"];
 }
 
 /*
@@ -963,7 +963,7 @@
     
 }
 
--(void)getToken{
+-(void)retrieveToken{
     self.sharedConfig.token=@"";
     NSURL *url = [NSURL URLWithString:[baseUrl stringByAppendingString:tokenUrl]];
     
