@@ -163,7 +163,7 @@
 
 - (UIImage *)avatarImageForIncomingMessage
 {
-    return [UIImage imageNamed:@"Portrait_TopicWork"];
+    return [UIImage imageNamed:@"Portrait_TopicLife"];
 }
 
 - (UIImage *)avatarImageForOutgoingMessage

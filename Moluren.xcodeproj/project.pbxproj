@@ -236,8 +236,8 @@
 		1812ACA419F0A33500F027F3 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = Reachability/Reachability.h; sourceTree = "<group>"; };
 		1812ACA519F0A33500F027F3 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = Reachability/Reachability.m; sourceTree = "<group>"; };
 		1812ACA719F0A37700F027F3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		18208EE11A0A4E0000E10D95 /* MolurenChatViewControllerTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MolurenChatViewControllerTest.h; sourceTree = "<group>"; };
-		18208EE21A0A4E0000E10D95 /* MolurenChatViewControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MolurenChatViewControllerTest.m; sourceTree = "<group>"; };
+		18208EE11A0A4E0000E10D95 /* MolurenChatViewControllerTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MolurenChatViewControllerTest.h; path = ../Moluren/MolurenChatViewControllerTest.h; sourceTree = "<group>"; };
+		18208EE21A0A4E0000E10D95 /* MolurenChatViewControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MolurenChatViewControllerTest.m; path = ../Moluren/MolurenChatViewControllerTest.m; sourceTree = "<group>"; };
 		1823ECA91A24BADD00D22B08 /* VPImageCropperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VPImageCropperViewController.h; path = VPImageCropper/VPImageCropperViewController.h; sourceTree = "<group>"; };
 		1823ECAA1A24BADD00D22B08 /* VPImageCropperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VPImageCropperViewController.m; path = VPImageCropper/VPImageCropperViewController.m; sourceTree = "<group>"; };
 		18287CDC19EAA9C40074BDD9 /* Moluren.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moluren.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -497,6 +497,8 @@
 		9CCAE94F1A5D6DAE00E3A33A /* SenderVoiceNodePlaying_ios7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SenderVoiceNodePlaying_ios7@2x.png"; sourceTree = "<group>"; };
 		9CCAE9AC1A5D6DBB00E3A33A /* ZBMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBMessage.h; sourceTree = "<group>"; };
 		9CCAE9AD1A5D6DBB00E3A33A /* ZBMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBMessage.m; sourceTree = "<group>"; };
+		9CCE82F71AB82FFB0070B638 /* TdColorSetting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TdColorSetting.h; path = Common/TdColorSetting.h; sourceTree = "<group>"; };
+		9CCE82F81AB831650070B638 /* Prefix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.h; sourceTree = "<group>"; };
 		9CD455E61AB2638100C9B3C4 /* UsermsgSuffix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UsermsgSuffix.h; path = Common/UsermsgSuffix.h; sourceTree = "<group>"; };
 		9CD6DBF31A655686007AEC30 /* DYNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYNavigationController.h; sourceTree = "<group>"; };
 		9CD6DBF41A655686007AEC30 /* DYNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYNavigationController.m; sourceTree = "<group>"; };
@@ -592,8 +594,7 @@
 				18287D1A19EAAD4E0074BDD9 /* MessagesTableViewController */,
 				18287D1419EAABBD0074BDD9 /* Common */,
 				18287CDF19EAA9C40074BDD9 /* Supporting Files */,
-				18208EE11A0A4E0000E10D95 /* MolurenChatViewControllerTest.h */,
-				18208EE21A0A4E0000E10D95 /* MolurenChatViewControllerTest.m */,
+				9CCE82F81AB831650070B638 /* Prefix.h */,
 				18287CE319EAA9C40074BDD9 /* AppDelegate.h */,
 				18287CE419EAA9C40074BDD9 /* AppDelegate.m */,
 				9C065C6F1A3E66DB004FC9BB /* MolurenStoryboard.storyboard */,
@@ -618,6 +619,8 @@
 		18287CF819EAA9C40074BDD9 /* MolurenTests */ = {
 			isa = PBXGroup;
 			children = (
+				18208EE11A0A4E0000E10D95 /* MolurenChatViewControllerTest.h */,
+				18208EE21A0A4E0000E10D95 /* MolurenChatViewControllerTest.m */,
 				18287CFB19EAA9C40074BDD9 /* MolurenTests.m */,
 				18287CF919EAA9C40074BDD9 /* Supporting Files */,
 			);
@@ -639,6 +642,7 @@
 				18287D1619EAAC140074BDD9 /* BaseViewController.m */,
 				18287D1719EAAC140074BDD9 /* GlobalUI.h */,
 				9CD455E61AB2638100C9B3C4 /* UsermsgSuffix.h */,
+				9CCE82F71AB82FFB0070B638 /* TdColorSetting.h */,
 			);
 			name = Common;
 			sourceTree = "<group>";

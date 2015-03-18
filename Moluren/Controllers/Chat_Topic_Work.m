@@ -10,6 +10,8 @@
 
 @interface Chat_Topic_Work ()
 
+@property (nonatomic, strong) UIImage* ChatterPortrait;
+
 @end
 
 @implementation Chat_Topic_Work
@@ -20,10 +22,40 @@
 }
 
 - (void)CustomizeTopicTheme {
-    UIButton *Btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    Btn.frame = CGRectMake(MainScreenWidth-130, 0, 60, 30);
-    [Btn setImage:[UIImage imageNamed:@"ExitTopicWork"] forState:UIControlStateNormal];
-    self.navigationItem.rightBarButtonItem = Btn;
+    // Set up view title
+    UIView *navTitle = [[UIView alloc] initWithFrame:CGRectMake(MainScreenWidth/2-100, 10, 200, 32)];
+
+    UILabel *titleLabel = [[UILabel alloc] init];
+    titleLabel.text = @"工作";
+    titleLabel.font = [UIFont systemFontOfSize:20];
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    titleLabel.textColor = UIColorFromRGB(0xed1941);
+    titleLabel.frame = CGRectMake(0, 0, 200, 30);
+    
+    [navTitle addSubview:titleLabel];
+    
+    // Set up right bar button
+    UIImage *RightBarButtonImage = [UIImage imageNamed:@"ExitTopicWork"];
+    
+    UIButton *RightBarButton = [[UIButton alloc] initWithFrame:CGRectMake(MainScreenWidth-150, 24, 30, 30)];
+    [RightBarButton setBackgroundImage:RightBarButtonImage forState:UIControlStateNormal];
+    [RightBarButton addTarget:self action:@selector(onDisconectBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem *RightBarButtonItem =[[UIBarButtonItem alloc] initWithCustomView:RightBarButton];
+    
+    self.navigationItem.rightBarButtonItem = RightBarButtonItem;
+    
+    // Set up chatter's portrait
+    self.ChatterPortrait = [UIImage imageNamed:@"Portrait_TopicWork"];
+    
+    // Set up multimedia menu Ui
+    // ? JSMessageViewController inherit ?
+}
+
+
+- (UIImage *)avatarImageForIncomingMessage
+{
+    return self.ChatterPortrait;
 }
 
 - (void)didReceiveMemoryWarning {

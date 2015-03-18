@@ -275,7 +275,7 @@
 //    self.messageInputTextView.hidden = !self.voiceChangeButton.selected;
     
     self.messageInputTextView.hidden = NO;
-    
+    self.backgroundColor = [UIColor redColor];
     
     
     /*
