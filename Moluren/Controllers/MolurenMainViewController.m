@@ -265,19 +265,14 @@
     [self.tabBarController.tabBar setHidden:YES];
     
     // Back to home button
-//    UIButton *BackHomeButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 24, 30, 30)];
-//    [BackHomeButton setTitle:@"陌路人" forState:UIControlStateNormal];
-//    [BackHomeButton setTitleColor:UIColorFromRGB(Color_TopicWork_Pattern) forState:UIControlStateNormal];
-//    //[BackHomeButton addTarget:self action:@selector(test) forControlEvents:UIControlEventTouchUpInside];
-//    
-//    UIBarButtonItem *BackBarButtonItem =[[UIBarButtonItem alloc] initWithCustomView:BackHomeButton];
+    UIBarButtonItem *BackBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"陌路人"
+                                           style:UIBarButtonItemStyleBordered
+                                           target:nil
+                                           action:nil];
     
-    UIBarButtonItem *BackBarButtonItem =
-    [[UIBarButtonItem alloc] initWithTitle:@"陌路人"
-                                     style:UIBarButtonItemStyleBordered
-                                    target:nil
-                                    action:nil];
     [[self navigationItem] setBackBarButtonItem:BackBarButtonItem];
+    
+    [self.navigationController.navigationBar setTintColor:UIColorFromRGB(Color_TopicWork_Pattern)];
     
     MolurenChatViewController *molurenChatViewController = [[MolurenChatViewController alloc] init];
     [self.navigationController pushViewController:molurenChatViewController animated:YES];
