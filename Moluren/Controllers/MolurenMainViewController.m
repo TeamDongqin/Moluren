@@ -148,6 +148,8 @@
 - (IBAction)EnterTopic:(id)sender {
     // Enter specific topic according to button id
     
+    // Updated logic: enter topic view, then connect to server
+    //[self gotoChatingView];
     
     
     // Move to topic chat controller
