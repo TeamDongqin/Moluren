@@ -1,38 +1,3 @@
-//
-//  JSMessagesViewController.m
-//
-//  Created by Jesse Squires on 2/12/13.
-//  Copyright (c) 2013 Hexed Bits. All rights reserved.
-//
-//  http://www.hexedbits.com
-//
-//
-//  Largely based on work by Sam Soffes
-//  https://github.com/soffes
-//
-//  SSMessagesViewController
-//  https://github.com/soffes/ssmessagesviewcontroller
-//
-//
-//  The MIT License
-//  Copyright (c) 2013 Jesse Squires
-//
-//  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
-//  associated documentation files (the "Software"), to deal in the Software without restriction, including
-//  without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-//  copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the
-//  following conditions:
-//
-//  The above copyright notice and this permission notice shall be included in
-//  all copies or substantial portions of the Software.
-//
-//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
-//  LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-//  IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
-//  IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
-//  OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-//
-
 #import "JSMessagesViewController.h"
 #import "NSString+JSMessagesView.h"
 #import "UIView+AnimationOptionsForCurve.h"
@@ -49,9 +14,7 @@
     CGRect keyboardRect;
 }
 
-
 - (void)setup;
-
 
 @end
 
@@ -87,7 +50,7 @@
     //将触摸事件添加到当前view
     //[self.view addGestureRecognizer:tapGestureRecognizer];
     [self.tableView addGestureRecognizer:tap];
-	[self.view addSubview:self.tableView]; 
+	[self.view addSubview:self.tableView];
     
     // LS03
     CGFloat inputViewHeight;
@@ -104,11 +67,6 @@
     [self.view addSubview:self.messageToolView];
     self.messageToolView.autoresizesSubviews = YES;
     
-    [self shareShareMeun];
-}
-
-- (void)shareShareMeun
-{
     if (!self.shareMenuView)
     {
         self.shareMenuView = [[ZBMessageShareMenuView alloc]initWithFrame:CGRectMake(0.0f,
@@ -122,7 +80,7 @@
         ZBMessageShareMenuItem *ChatHistoryMenuItem = [[ZBMessageShareMenuItem alloc]initWithNormalIconImage:[UIImage imageNamed:@"ChatHistoryMenuItem"] title:@"历史记录"];
         ZBMessageShareMenuItem *DiceMenuItem = [[ZBMessageShareMenuItem alloc]initWithNormalIconImage:[UIImage imageNamed:@"DiceMenuItem"] title:@"骰子"];
         ZBMessageShareMenuItem *UserProfileMenuItem = [[ZBMessageShareMenuItem alloc]initWithNormalIconImage:[UIImage imageNamed:@"UserProfileMenuItem"] title:@"名片"];
-
+        
         self.shareMenuView.shareMenuItems = [NSArray arrayWithObjects:DiceMenuItem,ChatHistoryMenuItem,UserProfileMenuItem, nil];
         [self.shareMenuView reloadData];
         
@@ -398,34 +356,6 @@
     }
 }
 #pragma end
-
-//- (void)viewWillAppear:(BOOL)animated
-//{
-//    [self scrollToBottomAnimated:NO];
-//    
-//    
-//    _originalTableViewContentInset = self.tableView.contentInset;
-//    
-//	[[NSNotificationCenter defaultCenter] addObserver:self
-//											 selector:@selector(handleWillShowKeyboard:)
-//												 name:UIKeyboardWillShowNotification
-//                                               object:nil];
-//    
-//	[[NSNotificationCenter defaultCenter] addObserver:self
-//											 selector:@selector(handleWillHideKeyboard:)
-//												 name:UIKeyboardWillHideNotification
-//                                               object:nil];
-//}
-//
-//- (void)viewWillDisappear:(BOOL)animated
-//{
-//    [super viewWillDisappear:animated];
-//    [self.inputToolBarView resignFirstResponder];
-//    [self setEditing:NO animated:YES];
-//    
-//    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
-//	[[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
-//}
 
 - (void)didReceiveMemoryWarning
 {
@@ -809,17 +739,5 @@
     inputViewFrame.origin.y = self.view.bounds.size.height - inputViewFrame.size.height;
     self.messageToolView.frame = inputViewFrame;
 }
-
-#pragma mark - DYNavigationController Delegate
-
-//- (void)keyboardWillSnapBackToPoint:(CGPoint)pt
-//{
-//    CGRect inputViewFrame = self.inputToolBarView.frame;
-//    CGPoint keyboardOrigin = [self.view convertPoint:pt fromView:nil];
-//    inputViewFrame.origin.y = keyboardOrigin.y - inputViewFrame.size.height;
-//    self.inputToolBarView.frame = inputViewFrame;
-//    
-//    
-//}
 
 @end
