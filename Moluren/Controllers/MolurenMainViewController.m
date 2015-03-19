@@ -1,18 +1,10 @@
-//
-//  ViewController.m
-//  Moluren
-//
-//  Created by tcl-macpro on 14-10-12.
-//  Copyright (c) 2014年 com.teamdongqin. All rights reserved.
-//
-
 #import "MolurenMainViewController.h"
 #import "MolurenChatViewController.h"
 #import "MolurenChatViewControllerTest.h"
 #import "BaseViewController.h"
-//#import "PXAlertView+Customization.h"
 
 @interface MolurenMainViewController ()
+
 @property (weak, nonatomic) IBOutlet UIButton * EnterTopic;
 
 @property (strong, nonatomic) UILabel *onlineCountLabel;
@@ -29,89 +21,52 @@
 
 @implementation MolurenMainViewController
 
-- (BOOL)shouldAutorotate
+#pragma mark - View life cycle
+
+- (void)loadView
 {
-    return YES;
+    [super loadView];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+-(void)viewWillAppear:(BOOL)animated
 {
-    return YES;
-}
-
--(void)setup{
+    //页面将要进入前台，开启定时器
     
+    //开启定时器
+    [_getOnlineStatus setFireDate:[NSDate distantPast]];
+    
+    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
+    
+    //隐藏navigationController
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+    [super viewWillAppear:animated];
+    
+    [self.tabBarController.tabBar setHidden:NO];
+}
+
+-(void)viewDidDisappear:(BOOL)animated
+{
+    //页面消失，进入后台不显示该页面，关闭定时器
+    
+    //关闭定时器
+    [_getOnlineStatus setFireDate:[NSDate distantFuture]];
+    
+    //显示navigationController
+    //[self.navigationController setNavigationBarHidden:NO animated:animated];
+    //[super viewWillDisappear:animated];
+    
+    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    // Initialize view
     if([self.view isKindOfClass:[UIScrollView class]]) {
         // fix for ipad modal form presentations
         ((UIScrollView *)self.view).scrollEnabled = NO;
     }
-    
-    
-    /*UIImageView *navTitle = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, MainScreenWidth, 60)];
-    UIImage *navTitleBackgroundImage = [[UIImage imageNamed:@"title_bar"]
-                                        resizableImageWithCapInsets:UIEdgeInsetsMake(22,30,22,30)];
-    navTitle.image = navTitleBackgroundImage;
-    navTitle.userInteractionEnabled = YES;
-    
-    //添加标题label
-    UILabel *titleLabel = [[UILabel alloc] init];
-    titleLabel.text = self.title;
-    titleLabel.font = [UIFont systemFontOfSize:18];
-    titleLabel.textAlignment = NSTextAlignmentCenter;
-    titleLabel.textColor = [UIColor whiteColor];
-    titleLabel.frame = CGRectMake(MainScreenWidth/2-100, 24, 200, 20);*/
-    
-    //[navTitle addSubview:titleLabel];
-    //[self.view addSubview:navTitle];
-    
-    //_onlineNumber = 0;
-    //_chattingNumber = 0;
-    //self.sharedConfig.synchronousServerStatus  = YES;
-    
-    /*
-    // 添加在线人数标题label
-    UILabel *onlineLabel = [[UILabel alloc] init];
-    onlineLabel.text = @"在线人数:";
-    onlineLabel.font = [UIFont systemFontOfSize:12];
-    onlineLabel.textAlignment = NSTextAlignmentCenter;
-    onlineLabel.textColor = [UIColor whiteColor];
-    onlineLabel.frame = CGRectMake(MainScreenWidth*3/7, 35, 52, 15);
-    
-    [self.view addSubview:onlineLabel];
-    
-    // 添加在线人数计数label
-    _onlineCountLabel = [[UILabel alloc] init];
-    _onlineCountLabel.text = [NSString stringWithFormat: @"%d", 0];
-    _onlineCountLabel.font = [UIFont systemFontOfSize:12];
-    _onlineCountLabel.textAlignment = NSTextAlignmentCenter;
-    _onlineCountLabel.textColor = [UIColor whiteColor];
-    _onlineCountLabel.frame = CGRectMake(MainScreenWidth*3/7+52, 35, 30, 15);
-    
-    [self.view addSubview:_onlineCountLabel];
-    
-    //添加聊天人数标题label
-    UILabel *chattingLabel = [[UILabel alloc] init];
-    chattingLabel.text = @"聊天人数:";
-    chattingLabel.font = [UIFont systemFontOfSize:12];
-    chattingLabel.textAlignment = NSTextAlignmentCenter;
-    chattingLabel.textColor = [UIColor whiteColor];
-    chattingLabel.frame = CGRectMake(MainScreenWidth*3/7+82, 35, 52, 15);
-    
-    [self.view addSubview:chattingLabel];
-    
-    //添加聊天人数计数label
-    _chattingCountLabel = [[UILabel alloc] init];
-    _chattingCountLabel.text = [NSString stringWithFormat: @"%d", 0];
-    _chattingCountLabel.font = [UIFont systemFontOfSize:12];
-    _chattingCountLabel.textAlignment = NSTextAlignmentCenter;
-    _chattingCountLabel.textColor = [UIColor whiteColor];
-    _chattingCountLabel.frame = CGRectMake(MainScreenWidth*3/7+134, 35, 30, 15);
-    
-    [self.view addSubview:_chattingCountLabel];
-    */
-    
-    
-    // 设置背景图片
+
     self.navigationController.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"SkynightBG4s"]];
     
     
@@ -128,39 +83,24 @@
     _onlineCountLabel.textColor = [UIColor whiteColor];
     _onlineCountLabel.frame = CGRectMake(16, 0, 30, 17);
     [view addSubview:_onlineCountLabel];
-
+    
     
     UIBarButtonItem *barbtn=[[UIBarButtonItem alloc] initWithCustomView:view];
     
-    //barbtn.image=searchimage;
-    
     self.navigationItem.rightBarButtonItem=barbtn;
     
-    
-    /*self.navigationController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:onlineImageView];*/
-    
-//    //添加开始连接Button
-//    UIButton *connectBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-//    connectBtn.titleLabel.textColor = [UIColor whiteColor];
-//    connectBtn.titleLabel.font = [UIFont fontWithName:@"Regular" size:20];
-//    //[connectBtn setTitle:@"开始聊天" forState:UIControlStateNormal];
-//    UIImage *connectBtnBackgroundImage = [[UIImage imageNamed:@"ChatButton + 开始连接"]
-//                                          resizableImageWithCapInsets:UIEdgeInsetsMake(0,24,0,24)];
-//    [connectBtn setBackgroundImage:connectBtnBackgroundImage
-//                          forState:UIControlStateNormal];
-//    connectBtn.frame = CGRectMake(30, MainScreenHeight/2-15, 92, 27);
-//    [connectBtn addTarget:self action:@selector(onConnectButtonClicked) forControlEvents:UIControlEventTouchUpInside];
-//    [self.view addSubview:connectBtn];
-//    
-//    //添加 正在为你寻找你的另一个"ta" Label
-//    UILabel *hintsLabel = [[UILabel alloc] init];
-//    hintsLabel.text = @"正在为你寻找你的另一个\"ta\"";
-//    hintsLabel.font = [UIFont systemFontOfSize:12];
-//    hintsLabel.textAlignment = NSTextAlignmentCenter;
-//    hintsLabel.textColor = [UIColor blackColor];
-//    hintsLabel.frame = CGRectMake(connectBtn.frame.origin.x+connectBtn.frame.size.width+3, MainScreenHeight/2-15, 160, 27);
-//    
-//    [self.view addSubview:hintsLabel];
+    //    //添加开始连接Button
+    //    UIButton *connectBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    //    connectBtn.titleLabel.textColor = [UIColor whiteColor];
+    //    connectBtn.titleLabel.font = [UIFont fontWithName:@"Regular" size:20];
+    //    //[connectBtn setTitle:@"开始聊天" forState:UIControlStateNormal];
+    //    UIImage *connectBtnBackgroundImage = [[UIImage imageNamed:@"ChatButton + 开始连接"]
+    //                                          resizableImageWithCapInsets:UIEdgeInsetsMake(0,24,0,24)];
+    //    [connectBtn setBackgroundImage:connectBtnBackgroundImage
+    //                          forState:UIControlStateNormal];
+    //    connectBtn.frame = CGRectMake(30, MainScreenHeight/2-15, 92, 27);
+    //    [connectBtn addTarget:self action:@selector(onConnectButtonClicked) forControlEvents:UIControlEventTouchUpInside];
+    //    [self.view addSubview:connectBtn];
     
     
     _activityIndicatorView = [ [ UIActivityIndicatorView  alloc ]
@@ -170,17 +110,49 @@
     //[self.activityIndicatorView stopAnimating ];//停止
     [self.view addSubview:_activityIndicatorView];
     
+    // Do any additional setup after loading the view, typically from a nib.
+    
+    //循环刷新在线人数和聊天人数
+    self.updateServerStatus;
+    //[NSThread detachNewThreadSelector:@selector(httpAsynchronousRequest) toTarget:self withObject:nil];
+    _getOnlineStatus = [NSTimer scheduledTimerWithTimeInterval:3.0f target:self selector:@selector(httpAsynchronousRequest) userInfo:nil repeats:YES];
+    //self.updateServerStatus;
+    //[NSThread detachNewThreadSelector:@selector(updateServerStatus) toTarget:self withObject:nil];
+    if([super.self.sharedConfig.token isEqualToString:@""]){
+        self.retrieveToken;
+    }
     
 }
 
-- (void)loadView
+- (BOOL)shouldAutorotate
 {
-    [super loadView];
-    
+    return YES;
 }
 
--(void)onConnectButtonClicked{
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return YES;
+}
+
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+}
+
+#pragma mark - Ui operation
+
+- (IBAction)EnterTopic:(id)sender {
+    // Enter specific topic according to button id
     
+    // Updated logic: enter topic view, then connect to server
+    //[self gotoChatingView];
+    
+    
+    // Move to topic chat controller
     //已经有token
     if(![self.sharedConfig.token isEqualToString:@""] && self.sharedConfig.token.length>1){
         if(!self.sharedConfig.isConnected){
@@ -197,15 +169,32 @@
     }
 }
 
-#pragma marks -- UIAlertViewDelegate --
-//根据被点击按钮的索引处理点击事件
+-(void)gotoChatingView{
+    [self.tabBarController.tabBar setHidden:YES];
+    
+    // Back to home button
+    UIBarButtonItem *BackBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"陌路人"
+                                                                          style:UIBarButtonItemStyleBordered
+                                                                         target:nil
+                                                                         action:nil];
+    
+    [[self navigationItem] setBackBarButtonItem:BackBarButtonItem];
+    
+    [self.navigationController.navigationBar setTintColor:UIColorFromRGB(Color_TopicWork_Pattern)];
+    
+    MolurenChatViewController *molurenChatViewController = [[MolurenChatViewController alloc] init];
+    [self.navigationController pushViewController:molurenChatViewController animated:YES];
+}
+
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
+    //根据被点击按钮的索引处理点击事件
+    
     NSLog(@"clickButtonAtIndex:%d",buttonIndex);
     if(buttonIndex==0){
         NSLog(@"重新获取token");
-        self.getToken;
-
+        self.retrieveToken;
+        
     }else{
         
     }
@@ -219,67 +208,47 @@
     [application setStatusBarHidden:YES];
     [self setup];
     
-    // Do any additional setup after loading the view, typically from a nib.
+    //NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     
-    //循环刷新在线人数和聊天人数
-    self.updateServerStatus;
-    //[NSThread detachNewThreadSelector:@selector(httpAsynchronousRequest) toTarget:self withObject:nil];
-    _getOnlineStatus = [NSTimer scheduledTimerWithTimeInterval:3.0f target:self selector:@selector(httpAsynchronousRequest) userInfo:nil repeats:YES];
-    //self.updateServerStatus;
-    //[NSThread detachNewThreadSelector:@selector(updateServerStatus) toTarget:self withObject:nil];
-    if([super.self.sharedConfig.token isEqualToString:@""]){
-        self.getToken;
-    }
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [request setHTTPMethod:@"POST"];
+    //[request setHTTPBody:postData];
+    [request setTimeoutInterval:10.0];
     
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    NSOperationQueue *queue = [[NSOperationQueue alloc]init];
+    [NSURLConnection sendAsynchronousRequest:request
+                                       queue:queue
+                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *error){
+                               if (error) {
+                                   NSLog(@"Httperror:%@%d", error.localizedDescription,error.code);
+                               }else{
+                                   
+                                   NSInteger responseCode = [(NSHTTPURLResponse *)response statusCode];
+                                   
+                                   NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+                                   
+                                   NSLog(@"HttpResponseCode:%d", responseCode);
+                                   NSLog(@"HttpResponseBody %@",responseString);
+                                   
+                                   //NSDictionary *resultDict = [data objectFromJSONData];
+                                   NSError *error;
+                                   NSDictionary *resultDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
+                                   NSString *restoken = [resultDict objectForKey:@"token"];
+                                   NSLog(@"token=%@",restoken);
+                                   self.sharedConfig.token = restoken;
+                               }
+                           }];
 }
 
 -(void)updateServerStatus{
     //if(self.sharedConfig.synchronousServerStatus){
-        [self.onlineCountLabel setText:[NSString stringWithFormat: @"%d", self.sharedConfig.onlineNumber]];
-        [self.chattingCountLabel setText:[NSString stringWithFormat: @"%d", self.sharedConfig.chattingNumber]];
+    [self.onlineCountLabel setText:[NSString stringWithFormat: @"%d", self.sharedConfig.onlineNumber]];
+    [self.chattingCountLabel setText:[NSString stringWithFormat: @"%d", self.sharedConfig.chattingNumber]];
     //}
     
     /*[NSTimer scheduledTimerWithTimeInterval:0.5f target:self selector:@selector(updateServerStatus) userInfo:nil repeats:YES];
-    [[NSRunLoop currentRunLoop] run];*/
+     [[NSRunLoop currentRunLoop] run];*/
     
-}
-
--(void)checkIfStopAnimating{
-    if(self.sharedConfig.isConnected = YES && self.activityIndicatorView.isAnimating){
-        [self.activityIndicatorView stopAnimating ];//停止
-        self.gotoChatingView;
-    }
-    /*[NSTimer scheduledTimerWithTimeInterval:1.0
-                                     target:self
-                                   selector:@selector(checkIfStopAnimating)
-                                   userInfo:nil
-                                    repeats:NO];*/
-
-}
-
--(void)test{
-}
-
--(void)gotoChatingView{
-    [self.tabBarController.tabBar setHidden:YES];
-    
-    // Back to home button
-    UIBarButtonItem *BackBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"陌路人"
-                                           style:UIBarButtonItemStyleBordered
-                                           target:nil
-                                           action:nil];
-    
-    [[self navigationItem] setBackBarButtonItem:BackBarButtonItem];
-    
-    [self.navigationController.navigationBar setTintColor:UIColorFromRGB(Color_TopicWork_Pattern)];
-    
-    MolurenChatViewController *molurenChatViewController = [[MolurenChatViewController alloc] init];
-    [self.navigationController pushViewController:molurenChatViewController animated:YES];
 }
 
 -(void)httpAsynchronousRequest{
@@ -336,39 +305,6 @@
     
 }
 
-//页面将要进入前台，开启定时器
--(void)viewWillAppear:(BOOL)animated
-{
-    //开启定时器
-    [_getOnlineStatus setFireDate:[NSDate distantPast]];
-    
-    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
-    
-    //隐藏navigationController
-    [self.navigationController setNavigationBarHidden:YES animated:animated];
-    [super viewWillAppear:animated];
-    
-    [self.tabBarController.tabBar setHidden:NO];
-}
-
-//页面消失，进入后台不显示该页面，关闭定时器
--(void)viewDidDisappear:(BOOL)animated
-{
-    //关闭定时器
-    [_getOnlineStatus setFireDate:[NSDate distantFuture]];
-    
-    //显示navigationController
-    //[self.navigationController setNavigationBarHidden:NO animated:animated];
-    //[super viewWillDisappear:animated];
-    
-    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
-}
-
-- (BOOL)prefersStatusBarHidden
-{
-    return YES;
-}
-
 -(void)connectToNewSession{
     NSURL *url = [NSURL URLWithString:[baseUrl stringByAppendingString:connectUrl]];
     
@@ -414,64 +350,16 @@
                            }];
 }
 
--(void)getToken{
-    self.sharedConfig.token=@"";
-    NSURL *url = [NSURL URLWithString:[baseUrl stringByAppendingString:tokenUrl]];
-    NSLog([baseUrl stringByAppendingString:tokenUrl]);
-    
-    //NSString *post=@"postData";
-    
-    //NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-    
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-    [request setHTTPMethod:@"POST"];
-    //[request setHTTPBody:postData];
-    [request setTimeoutInterval:10.0];
-    
-    NSOperationQueue *queue = [[NSOperationQueue alloc]init];
-    [NSURLConnection sendAsynchronousRequest:request
-                                       queue:queue
-                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *error){
-                               if (error) {
-                                   NSLog(@"Httperror:%@%d", error.localizedDescription,error.code);
-                               }else{
-                                   
-                                   NSInteger responseCode = [(NSHTTPURLResponse *)response statusCode];
-                                   
-                                   NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-                                   
-                                   NSLog(@"HttpResponseCode:%d", responseCode);
-                                   NSLog(@"HttpResponseBody %@",responseString);
-                                   
-                                   //NSDictionary *resultDict = [data objectFromJSONData];
-                                   NSError *error;
-                                   NSDictionary *resultDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
-                                   NSString *restoken = [resultDict objectForKey:@"token"];
-                                   NSLog(@"token=%@",restoken);
-                                   self.sharedConfig.token = restoken;
-                               }
-                           }];
-}
-
-- (IBAction)EnterTopic:(id)sender {
-    // Enter specific topic according to button id
-    
-    
-    
-    // Move to topic chat controller
-    //已经有token
-    if(![self.sharedConfig.token isEqualToString:@""] && self.sharedConfig.token.length>1){
-        if(!self.sharedConfig.isConnected){
-            [self.activityIndicatorView startAnimating ];//启动
-            self.connectToNewSession;
-        }else{
-            self.gotoChatingView;
-        }
-        //self.checkIfStopAnimating;
-    }else{
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"错误" message:@"连接错误,点击确认重新连接." delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil];
-        // optional - add more buttons:
-        [alert show];
+-(void)checkIfStopAnimating{
+    if(self.sharedConfig.isConnected = YES && self.activityIndicatorView.isAnimating){
+        [self.activityIndicatorView stopAnimating ];//停止
+        self.gotoChatingView;
     }
+    /*[NSTimer scheduledTimerWithTimeInterval:1.0
+     target:self
+     selector:@selector(checkIfStopAnimating)
+     userInfo:nil
+     repeats:NO];*/
+    
 }
 @end

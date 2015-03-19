@@ -58,7 +58,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.httpAsynchronousRequest;
-    self.getToken;
+    self.retrieveToken;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -109,7 +109,7 @@
     
 }
 
--(void)getToken{
+-(void)retrieveToken{
     self.sharedConfig.token=@"";
     NSURL *url = [NSURL URLWithString:[baseUrl stringByAppendingString:tokenUrl]];
     NSLog([baseUrl stringByAppendingString:tokenUrl]);

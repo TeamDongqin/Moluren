@@ -9,8 +9,8 @@
 #import "ZBMessageShareMenuView.h"
 
 // 每行有4个
-#define kZBMessageShareMenuPerRowItemCount 4
-#define kZBMessageShareMenuPerColum 2
+#define kZBMessageShareMenuPerRowItemCount 3
+#define kZBMessageShareMenuPerColum 1
 
 #define kZBShareMenuItemIconSize 60
 #define KZBShareMenuItemHeight 80
