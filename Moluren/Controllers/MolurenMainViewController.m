@@ -200,15 +200,9 @@
     }
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    //隐藏状态栏
-    NSLog(@"MolurenMainViewController launched");
-    UIApplication *application = [UIApplication sharedApplication];
-    [application setStatusBarHidden:YES];
-    [self setup];
+- (void)retrieveToken {
     
-    //NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+    NSURL *url = [NSURL URLWithString:[baseUrl stringByAppendingString:tokenUrl]];
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     [request setHTTPMethod:@"POST"];
