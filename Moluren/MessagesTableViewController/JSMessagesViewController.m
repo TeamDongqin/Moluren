@@ -74,7 +74,7 @@
     
     CGSize size = self.view.frame.size;
 	
-    CGRect tableFrame = CGRectMake(0.0f, TITLE_BAR_HEIGHT, size.width, size.height - TITLE_BAR_HEIGHT - INPUT_HEIGHT);
+    CGRect tableFrame = CGRectMake(0.0f, 0, size.width, size.height - 0 - INPUT_HEIGHT);
 	self.tableView = [[UITableView alloc] initWithFrame:tableFrame style:UITableViewStylePlain];
 	self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.tableView setBackgroundColor:[UIColor clearColor]];
@@ -88,69 +88,6 @@
     //[self.view addGestureRecognizer:tapGestureRecognizer];
     [self.tableView addGestureRecognizer:tap];
 	[self.view addSubview:self.tableView]; 
-
-//  LS03
-//	UIButton* mediaButton = nil;
-//	if (kAllowsMedia)
-//	{
-//		// set up the image and button frame
-//		UIImage* image = [UIImage imageNamed:@"PhotoIcon"];
-//		CGRect frame = CGRectMake(4, 0, image.size.width, image.size.height);
-//		CGFloat yHeight = (INPUT_HEIGHT - frame.size.height) / 2.0f;
-//		frame.origin.y = yHeight;
-//		
-//		// make the button
-//		mediaButton = [[UIButton alloc] initWithFrame:frame];
-//		[mediaButton setBackgroundImage:image forState:UIControlStateNormal];
-//		
-//		// button action
-//		[mediaButton addTarget:self action:@selector(cameraAction:) forControlEvents:UIControlEventTouchUpInside];
-//	}
-	
-    /*CGRect inputFrame = CGRectMake(0.0f, size.height - INPUT_HEIGHT, size.width, INPUT_HEIGHT);
-    self.inputToolBarView = [[JSMessageInputView alloc] initWithFrame:inputFrame delegate:self];
-    
-    // TODO: refactor
-    self.inputToolBarView.textView.dismissivePanGestureRecognizer = self.tableView.panGestureRecognizer;
-    self.inputToolBarView.textView.keyboardDelegate = self;
-    
-    self.inputToolBarView.textView.placeHolder = @"说点什么呢？";
-    self.inputToolBarView.hidden = YES;*/
-    //[self.inputToolBarView.textView addTarget:self action:@selector(sendPressed:) forControlEvents:UIControlEventEditingDidEndOnExit];
-    
-//    LS03
-//    UIButton *sendButton = [self sendButton];
-//    sendButton.enabled = NO;
-//    sendButton.frame = CGRectMake(self.inputToolBarView.frame.size.width - 65.0f, 8.0f, 59.0f, 26.0f);
-//    [sendButton addTarget:self
-//                   action:@selector(sendPressed:)
-//         forControlEvents:UIControlEventTouchUpInside];
-//    [self.inputToolBarView setSendButton:sendButton];
-//    [self.view addSubview:self.inputToolBarView];
-
-//  LS03
-//	if (kAllowsMedia)
-//	{
-//		// adjust the size of the send button to balance out more with the camera button on the other side.
-//		CGRect frame = self.inputToolBarView.sendButton.frame;
-//		frame.size.width -= 16;
-//		frame.origin.x += 16;
-//		self.inputToolBarView.sendButton.frame = frame;
-//		
-//		// add the camera button
-//		[self.inputToolBarView addSubview:mediaButton];
-//        
-//		// move the tet view over
-//		frame = self.inputToolBarView.textView.frame;
-//		frame.origin.x += mediaButton.frame.size.width + mediaButton.frame.origin.x;
-//		frame.size.width -= mediaButton.frame.size.width + mediaButton.frame.origin.x;
-//		frame.size.width += 16;		// from the send button adjustment above
-//		self.inputToolBarView.textView.frame = frame;
-//	}
-	
-    //[self setBackgroundColor:[UIColor messagesBackgroundColor]];
-    
-    
     
     // LS03
     CGFloat inputViewHeight;
