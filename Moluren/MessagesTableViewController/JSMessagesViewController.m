@@ -74,7 +74,7 @@
     
     CGSize size = self.view.frame.size;
 	
-    CGRect tableFrame = CGRectMake(0.0f, TITLE_BAR_HEIGHT, size.width, size.height - TITLE_BAR_HEIGHT - INPUT_HEIGHT);
+    CGRect tableFrame = CGRectMake(0.0f, 0, size.width, size.height - 0 - INPUT_HEIGHT);
 	self.tableView = [[UITableView alloc] initWithFrame:tableFrame style:UITableViewStylePlain];
 	self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.tableView setBackgroundColor:[UIColor clearColor]];
