@@ -671,8 +671,17 @@
 
 -(void)tapToHideKeyboard:(UITapGestureRecognizer*)tap
 {
-    //[self.inputToolBarView.textView resignFirstResponder];
-    [self.messageToolView.messageInputTextView resignFirstResponder];
+    if(self.messageToolView.multiMediaSendButton.selected){
+        // Multimedia menu is showing
+        [self messageViewAnimationWithMessageRect:CGRectMake(0, 0, 0, 0)
+                         withMessageInputViewRect:self.messageToolView.frame
+                                      andDuration:animationDuration
+                                         andState:ZBMessageViewStateShowNone];
+    }
+    else{
+        // Input text view is showing
+        [self.messageToolView.messageInputTextView resignFirstResponder];
+    }
 }
 
 - (void)finishSend
