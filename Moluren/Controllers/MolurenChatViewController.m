@@ -30,6 +30,9 @@
 @property (nonatomic,strong) UIImageView *gifImageView;//色子动画用
 @property (nonatomic) NSInteger x;
 
+@property (nonatomic) BOOL *bConnected;
+
+@property (strong, nonatomic) UIButton *PowerButton;
 @end
 
 
@@ -123,19 +126,19 @@
     //
     //    [navTitle addSubview:chatBackBtn];
     
+    // Set up power button state
+    self.bConnected = false;
     
-    // Disconnect button
-    UIImage *DisconnectButtonBgImage = [UIImage imageNamed:@"ExitTopicWork"];
+    // Power button
+    UIImage *PowerButtonBgImage = [UIImage imageNamed:@"Topic_PowerButton_Off"];
     
-    UIButton *DisconnectButton = [[UIButton alloc] initWithFrame:CGRectMake(MainScreenWidth-150, 24, 30, 30)];
-    [DisconnectButton setBackgroundImage:DisconnectButtonBgImage forState:UIControlStateNormal];
-    [DisconnectButton addTarget:self action:@selector(onDisconectBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    _PowerButton = [[UIButton alloc] initWithFrame:CGRectMake(MainScreenWidth-150, 24, 30, 30)];
+    [_PowerButton setBackgroundImage:PowerButtonBgImage forState:UIControlStateNormal];
+    [_PowerButton addTarget:self action:@selector(onPowerButtonClick) forControlEvents:UIControlEventTouchUpInside];
     
-    UIBarButtonItem *rightBarButtonItem =[[UIBarButtonItem alloc] initWithCustomView:DisconnectButton];
+    UIBarButtonItem *rightBarButtonItem =[[UIBarButtonItem alloc] initWithCustomView:_PowerButton];
     
     self.navigationItem.rightBarButtonItem = rightBarButtonItem;
-    
-    //[navTitle addSubview:_chatBreakBtn];
     
     self.navigationItem.leftBarButtonItem.title = @"陌路人";
     
@@ -190,7 +193,17 @@
     //[NSThread detachNewThreadSelector:@selector(getTypingStatusRequest) toTarget:self withObject:nil];
     _getTypingStatus = [NSTimer scheduledTimerWithTimeInterval:5.0f target:self selector:@selector(getTypingStatusRequest) userInfo:nil repeats:YES];
     
-    
+    // Connect to server
+    if(![self.sharedConfig.token isEqualToString:@""] && self.sharedConfig.token.length>1){
+        if(self.sharedConfig.isConnected == false){
+            self.connectToNewSession;
+        }
+    }else{
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"错误" message:@"连接错误,点击确认重新连接." delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil];
+        // optional - add more buttons:
+        [alert show];
+    }
+
     
 }
 
@@ -209,6 +222,26 @@
     }*/
     [self.navigationController popViewControllerAnimated:NO];
     [self.tabBarController.tabBar setHidden:NO];
+}
+
+-(void)onPowerButtonClick{
+    if(self.bConnected){
+        [self disconnect];
+        
+        self.bConnected = false;
+    }else{
+        if(![self.sharedConfig.token isEqualToString:@""] && self.sharedConfig.token.length>1){
+            if(!self.sharedConfig.isConnected){
+                [self connectToNewSession];
+            }
+        }else{
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"错误" message:@"连接错误,点击确认重新连接." delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil];
+            // optional - add more buttons:
+            [alert show];
+        }
+        
+        self.bConnected = true;
+    }
 }
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -331,11 +364,6 @@
                            }];
 }
 
--(void)onDisconectBtnClick{
-    self.disconnect;
-    [self sendDisconectedMessage:@"连接已断开,请返回开始页面重新开始新聊天"];
-}
-
 -(void)connectToNewSession{
     NSURL *url = [NSURL URLWithString:[baseUrl stringByAppendingString:connectUrl]];
     
@@ -373,9 +401,9 @@
                                    NSLog(@"connect=%@",connect?@"YES":@"NO");
                                    if(connect){
                                        self.sharedConfig.isConnected = YES;
-                                       [self performSelectorOnMainThread:@selector(showAutoConnectMsg) withObject:nil waitUntilDone:YES];
+                                       [self performSelectorOnMainThread:@selector(SessionConnectedCallback) withObject:nil waitUntilDone:YES];
                                    }else{
-                                       NSLog(@"连接异常");
+                                       [self performSelectorOnMainThread:@selector(SessionConnectionExceptionCallback) withObject:nil waitUntilDone:YES];
                                    }
                                }
                            }];
@@ -419,45 +447,10 @@
                                        self.sharedConfig.isConnected = NO;
                                        //self.sharedConfig.synchronousServerStatus  = YES;
                                        [self.sharedConfig updateSessionId];
+                                       [self performSelectorOnMainThread:@selector(SessionDisconnectedCallback) withObject:nil waitUntilDone:YES];
                                    }
                                }
                            }];
-}
-
-#pragma mark - Chatting with other user
-
--(void)sendDisconectedMessage:(NSString *)msg{
-    
-    [self.chatBreakBtn setEnabled:NO];
-    
-    [self.messageArray addObject:[NSDictionary dictionaryWithObject:msg forKey:@"Text"]];
-    [self.messageType addObject:@"IN"];
-    
-    [self.timestamps addObject:[NSDate date]];
-    
-    [JSMessageSoundEffect playMessageReceivedSound];
-    
-    [self finishReceive];
-}
-
--(void)receiveMessage{
-    NSLog(@"isConnected=%@,isReceivingMsg=%@",self.sharedConfig.isConnected?@"YES":@"NO",self.sharedConfig.isReceivingMsg?@"YES":@"NO");
-    if(self.sharedConfig.isConnected && !self.sharedConfig.isReceivingMsg){
-        if(self.sharedConfig.httpRequestTimeoutTimes>5 && self.sharedConfig.httpRequestTimeoutTimes%6==0){
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"陌路人" message:@"当前网络好像出问题了哦，请检查一下吧!" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
-            [alert show];
-        }
-        NSLog(@"开始进行http请求获取消息");
-        self.receiveMessageRequest;
-    }
-    /*[NSTimer scheduledTimerWithTimeInterval:1.0
-                                     target:self
-                                   selector:@selector(receiveMessage)
-                                   userInfo:nil
-                                    repeats:NO];*/
-    //_getMsgs = [NSTimer scheduledTimerWithTimeInterval:3.0f target:self selector:@selector(receiveMessage) userInfo:nil repeats:YES];
-    //[[NSRunLoop currentRunLoop]addTimer:_getMsgs forMode:NSDefaultRunLoopMode];
-    //[[NSRunLoop currentRunLoop] run];
 }
 
 -(void)receiveMessageRequest{
@@ -513,7 +506,7 @@
                                        if(self.sharedConfig.autoConnect){
                                            [self performSelectorOnMainThread:@selector(connectToNewSession) withObject:nil waitUntilDone:YES];
                                        }else{
-                                        [self performSelectorOnMainThread:@selector(showDisconnectedMessage) withObject:nil waitUntilDone:YES];
+                                           [self performSelectorOnMainThread:@selector(SessionDisconnectedCallback) withObject:nil waitUntilDone:YES];
                                        }
                                    }
                                    if(msgArray!=nil){
@@ -530,7 +523,7 @@
                                                if([self.sharedConfig.fromDeveceType isEqualToString:@"unknown"]){
                                                    self.sharedConfig.fromDeveceType = @"ios";
                                                }
-                                                receivedMsg = [receivedMsg stringByReplacingOccurrencesOfString:@"[ios]" withString:@""];
+                                               receivedMsg = [receivedMsg stringByReplacingOccurrencesOfString:@"[ios]" withString:@""];
                                            }
                                            if([receivedMsg hasPrefix:@"[ios][摇色子:"]){
                                                receivedMsg = [receivedMsg stringByReplacingOccurrencesOfString:@"[ios][摇色子:" withString:@""];
@@ -552,6 +545,79 @@
                                    self.sharedConfig.isReceivingMsg = NO;
                                }
                            }];
+}
+
+-(void)SessionConnectedCallback
+{
+    // Update power button state
+    self.bConnected = true;
+    
+    // Update power button image
+    UIImage *PowerButtonBgImage = [UIImage imageNamed:@"TopicWork_PowerButton_On"];
+    
+    [_PowerButton setBackgroundImage:PowerButtonBgImage forState:UIControlStateNormal];
+}
+
+-(void)SessionDisconnectedCallback{
+    // Update power button state
+    self.bConnected = false;
+    
+    // Update power button image
+    UIImage *PowerButtonBgImage = [UIImage imageNamed:@"Topic_PowerButton_Off"];
+    
+    [_PowerButton setBackgroundImage:PowerButtonBgImage forState:UIControlStateNormal];
+    
+    
+    //[self sendDisconectedMessage:@"对方已经断开连接，请重新连接 [ Beta ]"];
+}
+
+-(void) SessionConnectionExceptionCallback{
+    // Update power button state
+    self.bConnected = false;
+    
+    // Update power button image
+    UIImage *PowerButtonBgImage = [UIImage imageNamed:@"Topic_PowerButton_Off"];
+    
+    [_PowerButton setBackgroundImage:PowerButtonBgImage forState:UIControlStateNormal];
+    
+    
+    [self sendDisconectedMessage:@"抱歉，你已被服务器暂时屏蔽， 请稍后再试"];
+}
+
+#pragma mark - Chatting with other user
+
+-(void)sendDisconectedMessage:(NSString *)msg{
+    
+    [self.chatBreakBtn setEnabled:NO];
+    
+    [self.messageArray addObject:[NSDictionary dictionaryWithObject:msg forKey:@"Text"]];
+    [self.messageType addObject:@"IN"];
+    
+    [self.timestamps addObject:[NSDate date]];
+    
+    [JSMessageSoundEffect playMessageReceivedSound];
+    
+    [self finishReceive];
+}
+
+-(void)receiveMessage{
+    NSLog(@"isConnected=%@,isReceivingMsg=%@",self.sharedConfig.isConnected?@"YES":@"NO",self.sharedConfig.isReceivingMsg?@"YES":@"NO");
+    if(self.sharedConfig.isConnected && !self.sharedConfig.isReceivingMsg){
+        if(self.sharedConfig.httpRequestTimeoutTimes>5 && self.sharedConfig.httpRequestTimeoutTimes%6==0){
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"陌路人" message:@"当前网络好像出问题了哦，请检查一下吧!" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
+            [alert show];
+        }
+        NSLog(@"开始进行http请求获取消息");
+        self.receiveMessageRequest;
+    }
+    /*[NSTimer scheduledTimerWithTimeInterval:1.0
+                                     target:self
+                                   selector:@selector(receiveMessage)
+                                   userInfo:nil
+                                    repeats:NO];*/
+    //_getMsgs = [NSTimer scheduledTimerWithTimeInterval:3.0f target:self selector:@selector(receiveMessage) userInfo:nil repeats:YES];
+    //[[NSRunLoop currentRunLoop]addTimer:_getMsgs forMode:NSDefaultRunLoopMode];
+    //[[NSRunLoop currentRunLoop] run];
 }
 
 -(void)getTypingStatusRequest{
@@ -616,15 +682,6 @@
     [_typingLabel setHidden:YES];
 }
 
--(void)showDisconnectedMessage{
-    /*PXAlertView *alertView = [PXAlertView showAlertWithTitle:@"提示" message:@"当前会话已断开"];
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC));
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        [alertView dismissWithClickedButtonIndex:0 animated:NO];
-    });*/
-    [self sendDisconectedMessage:@"对方已经断开连接，请重新连接"];
-}
-
 -(void)addReceiveMessageToUI/*:(NSMutableDictionary *)dic*/{
 
     //NSLog(@"添加消息到UI msg=%@",[dic objectForKey:@"msg"]);
@@ -647,21 +704,6 @@
         
     }
 
-}
-
--(void)showAutoConnectMsg
-{
-    if(self.sharedConfig.isConnected){
-        [self.messageArray addObject:[NSDictionary dictionaryWithObject:@"对方已断掉会话,成功连接另一个他/她,赶紧发送消息吧!" forKey:@"Text"]];
-        [self.messageType addObject:@"IN"];
-        
-        [self.timestamps addObject:[NSDate date]];
-        
-        [JSMessageSoundEffect playMessageReceivedSound];
-        
-        [self finishReceive];
-        [self scrollToBottomAnimated:YES];
-    }
 }
 
 -(BOOL)isFirstSendMsg

@@ -149,24 +149,24 @@
     // Enter specific topic according to button id
     
     // Updated logic: enter topic view, then connect to server
-    //[self gotoChatingView];
+    [self gotoChatingView];
     
     
     // Move to topic chat controller
     //已经有token
-    if(![self.sharedConfig.token isEqualToString:@""] && self.sharedConfig.token.length>1){
-        if(!self.sharedConfig.isConnected){
-            [self.activityIndicatorView startAnimating ];//启动
-            self.connectToNewSession;
-        }else{
-            self.gotoChatingView;
-        }
-        //self.checkIfStopAnimating;
-    }else{
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"错误" message:@"连接错误,点击确认重新连接." delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil];
-        // optional - add more buttons:
-        [alert show];
-    }
+//    if(![self.sharedConfig.token isEqualToString:@""] && self.sharedConfig.token.length>1){
+//        if(!self.sharedConfig.isConnected){
+//            [self.activityIndicatorView startAnimating ];//启动
+//            self.connectToNewSession;
+//        }else{
+//            self.gotoChatingView;
+//        }
+//        //self.checkIfStopAnimating;
+//    }else{
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"错误" message:@"连接错误,点击确认重新连接." delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil];
+//        // optional - add more buttons:
+//        [alert show];
+//    }
 }
 
 -(void)gotoChatingView{

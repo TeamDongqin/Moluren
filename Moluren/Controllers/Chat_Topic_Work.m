@@ -35,7 +35,7 @@
     [navTitle addSubview:titleLabel];
     
     // Set up right bar button
-    UIImage *RightBarButtonImage = [UIImage imageNamed:@"ExitTopicWork"];
+    UIImage *RightBarButtonImage = [UIImage imageNamed:@"TopicWork_PowerButton_On"];
     
     UIButton *RightBarButton = [[UIButton alloc] initWithFrame:CGRectMake(MainScreenWidth-150, 24, 30, 30)];
     [RightBarButton setBackgroundImage:RightBarButtonImage forState:UIControlStateNormal];
