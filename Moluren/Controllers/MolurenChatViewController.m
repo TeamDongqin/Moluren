@@ -33,6 +33,8 @@
 @property (nonatomic) BOOL *bConnected;
 
 @property (strong, nonatomic) UIButton *PowerButton;
+
+@property (nonatomic) BOOL *bSendIphoneUserMsgPrefix;
 @end
 
 
@@ -556,6 +558,9 @@
     UIImage *PowerButtonBgImage = [UIImage imageNamed:@"TopicWork_PowerButton_On"];
     
     [_PowerButton setBackgroundImage:PowerButtonBgImage forState:UIControlStateNormal];
+    
+    // Set iphone user message prefix
+    [self SetIphoneUserMessagePrefix];
 }
 
 -(void)SessionDisconnectedCallback{
@@ -725,8 +730,10 @@
     NSURL *url = [NSURL URLWithString:[baseUrl stringByAppendingString:sendUrl]];
     
     //如果此次聊天会话是第一次发送消息，增添加设备标识
-    if([self isFirstSendMsg]){
-        message = [NSString stringWithFormat:@"%@%@",@"[ios]",message];
+    if(!self.bSendIphoneUserMsgPrefix){
+        if([self isFirstSendMsg]){
+            message = [NSString stringWithFormat:@"%@%@",@"[ios]",message];
+        }
     }
     
     
@@ -764,6 +771,14 @@
                                    NSLog(@"hb=%@",hb);*/
                                }
                            }];
+}
+
+-(void)SetIphoneUserMessagePrefix{
+    self.bSendIphoneUserMsgPrefix = true;
+    
+    [self sendMessageRequest:iPhone5s_Prefix];
+    
+    self.bSendIphoneUserMsgPrefix = false;
 }
 
 - (void)sendZBPressed:(UIButton *)sender withText:(NSString *)text
@@ -830,7 +845,7 @@
         NSDateFormatter*dateFormat =[[NSDateFormatter alloc] init];
         [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
         NSString *dateString=[dateFormat stringFromDate:d];
-        [self.sharedConfig insertMsgDataToTable:text msgtype:@"OUT" date:dateString];
+        //[self.sharedConfig insertMsgDataToTable:text msgtype:@"OUT" date:dateString];
     }
     [self scrollToBottomAnimated:YES];
 }
