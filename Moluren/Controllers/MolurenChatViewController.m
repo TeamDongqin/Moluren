@@ -282,23 +282,23 @@
         
         MolurenHistoryDetailViewController *molurenHistoryViewController = [[MolurenHistoryDetailViewController alloc] initWithSid:[sidArray objectAtIndex:[sidArray count]-1]];
         
+//        MolurenHistoryDetailViewController *molurenHistoryViewController = [[MolurenHistoryDetailViewController alloc] init];
+//        [self.navigationController pushViewController:molurenHistoryViewController animated:YES];
         
-        //        DYNavigationController *navigationController = [[DYNavigationController alloc]
-        //                                                         initWithRootViewController:molurenHistoryViewController];
         
-        //self.window.rootViewController = navigationController;
+//        DYNavigationController *navigationController = self.navigationController;
+//         navigationController.viewControllerStack = [[NSMutableArray alloc] initWithArray: self.navigationController.viewControllers];
+//         
+//         [navigationController SetupHistoryViews];
+//         
+//         //[navigationController initWithRootViewController1:molurenHistoryViewController];
+//         
+//         //[self.navigationController pushViewController:molurenHistoryViewController animated:YES];
+//         
+//         [navigationController pushViewController:molurenHistoryViewController];
+//         [navigationController viewWillAppear:YES];
         
-        /*DYNavigationController *navigationController = self.navigationController;
-         navigationController.viewControllerStack = [[NSMutableArray alloc] initWithArray: self.navigationController.viewControllers];
-         
-         [navigationController SetupHistoryViews];
-         
-         //[navigationController initWithRootViewController1:molurenHistoryViewController];
-         
-         //[self.navigationController pushViewController:molurenHistoryViewController animated:YES];
-         
-         [navigationController pushViewController:molurenHistoryViewController];
-         [navigationController viewWillAppear:YES];*/
+        // Model view
         molurenHistoryViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
         [self presentModalViewController:molurenHistoryViewController animated:YES];
     }

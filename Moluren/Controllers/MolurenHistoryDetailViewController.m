@@ -14,6 +14,9 @@
 
 @property (nonatomic, strong) NSString *sid;
 
+@property (strong, nonatomic) UIButton *ReturnButton;
+@property (strong, nonatomic) UIButton *DeleteButton;
+
 @end
 
 @implementation MolurenHistoryDetailViewController
@@ -47,21 +50,33 @@
     
     CGSize size = self.view.frame.size;
     
-    self.titleView = [[UILabel alloc] initWithFrame:CGRectMake(0,0,size.width,120)];
+    self.titleView = [[UILabel alloc] initWithFrame:CGRectMake(0,0,size.width,Page_History_Header)];
     self.titleView.text = [NSString stringWithFormat:@"历史记录-%d",self.sid];
     self.titleView.textAlignment = NSTextAlignmentCenter;
-    self.titleView.backgroundColor = [UIColor blueColor];
+    self.titleView.backgroundColor = UIColorFromRGB(0xD87A7A);
     
     [self.view addSubview:self.titleView];
     
-    CGRect tableFrame = CGRectMake(0.0f, /*TITLE_BAR_HEIGHT+*/120, size.width, size.height /*- TITLE_BAR_HEIGHT*/-120);
+    CGRect tableFrame = CGRectMake(0.0f, Page_History_Header, size.width, size.height - Page_History_Header);
     self.tableView = [[UITableView alloc] initWithFrame:tableFrame style:UITableViewStylePlain];
     self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     self.tableView.separatorStyle = NO;
     
-    [self.view addSubview:self.tableView]; 
+    [self.view addSubview:self.tableView];
+    
+    UIImage *ReturnButtonImage = [UIImage imageNamed:@"Button_Return"];
+    
+    _ReturnButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 24, 60, 20)];
+    [_ReturnButton setBackgroundImage:ReturnButtonImage forState:UIControlStateNormal];
+    [_ReturnButton addTarget:self action:@selector(onReturnButtonClick) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:self.ReturnButton];
+}
+
+-(void)onReturnButtonClick{
+    [self.view.window.rootViewController dismissViewControllerAnimated:NO completion:nil];
 }
 
 - (void)viewDidLoad {

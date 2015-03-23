@@ -499,7 +499,8 @@
 		9CCAE9AD1A5D6DBB00E3A33A /* ZBMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBMessage.m; sourceTree = "<group>"; };
 		9CCE82F71AB82FFB0070B638 /* TdColorSetting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TdColorSetting.h; path = Common/TdColorSetting.h; sourceTree = "<group>"; };
 		9CCE82F81AB831650070B638 /* Prefix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.h; sourceTree = "<group>"; };
-		9CD455E61AB2638100C9B3C4 /* UsermsgSuffix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UsermsgSuffix.h; path = Common/UsermsgSuffix.h; sourceTree = "<group>"; };
+		9CD25B321AC0375E00166375 /* UiElementSetting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UiElementSetting.h; path = Common/UiElementSetting.h; sourceTree = "<group>"; };
+		9CD455E61AB2638100C9B3C4 /* UsermsgPrefix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UsermsgPrefix.h; path = Common/UsermsgPrefix.h; sourceTree = "<group>"; };
 		9CD6DBF31A655686007AEC30 /* DYNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYNavigationController.h; sourceTree = "<group>"; };
 		9CD6DBF41A655686007AEC30 /* DYNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYNavigationController.m; sourceTree = "<group>"; };
 		9CDAC31D1A738CEE00FB7A2E /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
@@ -641,8 +642,9 @@
 				18287D1519EAAC140074BDD9 /* BaseViewController.h */,
 				18287D1619EAAC140074BDD9 /* BaseViewController.m */,
 				18287D1719EAAC140074BDD9 /* GlobalUI.h */,
-				9CD455E61AB2638100C9B3C4 /* UsermsgSuffix.h */,
+				9CD455E61AB2638100C9B3C4 /* UsermsgPrefix.h */,
 				9CCE82F71AB82FFB0070B638 /* TdColorSetting.h */,
+				9CD25B321AC0375E00166375 /* UiElementSetting.h */,
 			);
 			name = Common;
 			sourceTree = "<group>";

@@ -1,13 +1,13 @@
 //
-//  UsermsgSuffix.h
+//  UsermsgPrefix.h
 //  Moluren
 //
 //  Created by zheng lingshan on 15/3/13.
 //  Copyright (c) 2015年 com.teamdongqin. All rights reserved.
 //
 
-#ifndef Moluren_UsermsgSuffix_h
-#define Moluren_UsermsgSuffix_h
+#ifndef Moluren_UsermsgPrefix_h
+#define Moluren_UsermsgPrefix_h
 
 #define iPhone4 @" - iPhone 4 "
 #define iPhone4s @" - iPhone 4s "

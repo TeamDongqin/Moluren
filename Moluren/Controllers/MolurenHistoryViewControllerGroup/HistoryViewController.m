@@ -21,6 +21,8 @@
 @property (nonatomic,strong) SharedSingleConfig *sharedConfig;
 @property (nonatomic, strong) NSString *sid;
 @property (nonatomic, strong) UIView * summaryView;
+@property (strong, nonatomic) UIButton *ReturnButton;
+@property (strong, nonatomic) UIButton *DeleteButton;
 
 @end
 
@@ -81,6 +83,12 @@
     [super viewWillDisappear:animated];
 }
 
+-(void)onReturnButtonClick{
+    //[self dismissModalViewControllerAnimated:NO];
+    
+    [self.navigationController popViewControllerAnimated:NO];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -126,9 +134,17 @@
     
     [self tableViewSetup];
     
-    self.view.backgroundColor = UIColorFromRGB(0x5EBEE7);
+    self.view.backgroundColor = UIColorFromRGB(0xD87A7A);
     [self.view addSubview:self.summaryView];
     [self.view addSubview:self.tableView];
+    
+    UIImage *ReturnButtonImage = [UIImage imageNamed:@"Button_Return"];
+    
+    _ReturnButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 24, 60, 20)];
+    [_ReturnButton setBackgroundImage:ReturnButtonImage forState:UIControlStateNormal];
+    [_ReturnButton addTarget:self action:@selector(onReturnButtonClick) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:self.ReturnButton];
     
     //[self ShowChatLog];
 }
