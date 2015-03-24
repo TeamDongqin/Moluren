@@ -16,6 +16,7 @@
 #define iPhone6 @" - iPhone 6"
 #define iPhone6Plus @" - iPhone 6 Plus"
 
+#define IosDevice_Prefix @" -- From iPhone"
 #define iPhone4_Prefix @" - iPhone 4 "
 #define iPhone4s_Prefix @" - iPhone 4s "
 #define iPhone5_Prefix  @" - iPhone 5 "

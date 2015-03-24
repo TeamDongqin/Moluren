@@ -35,6 +35,9 @@
 @property (strong, nonatomic) UIButton *PowerButton;
 
 @property (nonatomic) BOOL *bSendIphoneUserMsgPrefix;
+
+@property (nonatomic) BOOL *bFirstReceiveMsg;
+
 @end
 
 
@@ -521,12 +524,23 @@
                                            //NSMutableDictionary *dictMutable = [[NSMutableDictionary alloc]initWithObjectsAndKeys:receivedMsg,@"msg",[NSDate date],@"date", nil];
                                            NSLog(@"readMsgCount=%d",self.sharedConfig.readMsgCount);
                                            
-                                           if([receivedMsg hasPrefix:@"[ios]"]){
+//                                           if([receivedMsg hasPrefix:@"[ios]"]){
+//                                               if([self.sharedConfig.fromDeveceType isEqualToString:@"unknown"]){
+//                                                   self.sharedConfig.fromDeveceType = @"ios";
+//                                               }
+//                                               receivedMsg = [receivedMsg stringByReplacingOccurrencesOfString:@"[ios]" withString:@""];
+//                                           }
+                                           
+                                           // Logic on judging whether ios device
+                                           if((_bFirstReceiveMsg == YES) && [receivedMsg containsString: IosDevice_Prefix]){
                                                if([self.sharedConfig.fromDeveceType isEqualToString:@"unknown"]){
                                                    self.sharedConfig.fromDeveceType = @"ios";
                                                }
-                                               receivedMsg = [receivedMsg stringByReplacingOccurrencesOfString:@"[ios]" withString:@""];
+                                               
+                                               _bFirstReceiveMsg = NO;
                                            }
+                                           
+                                           
                                            if([receivedMsg hasPrefix:@"[ios][摇色子:"]){
                                                receivedMsg = [receivedMsg stringByReplacingOccurrencesOfString:@"[ios][摇色子:" withString:@""];
                                                receivedMsg = [receivedMsg stringByReplacingOccurrencesOfString:@"]" withString:@""];
@@ -553,6 +567,7 @@
 {
     // Update power button state
     self.bConnected = true;
+    self.bFirstReceiveMsg = YES;
     
     // Update power button image
     UIImage *PowerButtonBgImage = [UIImage imageNamed:@"TopicWork_PowerButton_On"];
@@ -728,14 +743,6 @@
 
 -(void) sendMessageRequest:(NSString *)message{
     NSURL *url = [NSURL URLWithString:[baseUrl stringByAppendingString:sendUrl]];
-    
-    //如果此次聊天会话是第一次发送消息，增添加设备标识
-    if(!self.bSendIphoneUserMsgPrefix){
-        if([self isFirstSendMsg]){
-            message = [NSString stringWithFormat:@"%@%@",@"[ios]",message];
-        }
-    }
-    
     
     NSString *postString=[[[@"_message_=" stringByAppendingString:message] stringByAppendingString:@"&_h_=1&_token_id_=" ] stringByAppendingString:self.sharedConfig.token];
     
