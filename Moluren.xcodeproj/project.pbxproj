@@ -111,7 +111,6 @@
 		9CB069101A7CFEDA005C84F6 /* NextHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB0690A1A7CFEDA005C84F6 /* NextHistoryViewController.m */; };
 		9CB069111A7CFEDA005C84F6 /* PreviousHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB0690C1A7CFEDA005C84F6 /* PreviousHistoryViewController.m */; };
 		9CB069121A7CFEDA005C84F6 /* MolurenHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB0690E1A7CFEDA005C84F6 /* MolurenHistoryViewController.m */; };
-		9CC2B71D1AB65AC4008DFB79 /* Chat_Topic_Work.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CC2B71C1AB65AC4008DFB79 /* Chat_Topic_Work.m */; };
 		9CCAE8171A5D5E5600E3A33A /* LanuchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAE80A1A5D5E5600E3A33A /* LanuchViewController.m */; };
 		9CCAE8181A5D5E5600E3A33A /* MolurenChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAE80C1A5D5E5600E3A33A /* MolurenChatViewController.m */; };
 		9CCAE8191A5D5E5600E3A33A /* MolurenHistoryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAE80E1A5D5E5600E3A33A /* MolurenHistoryDetailViewController.m */; };
@@ -214,6 +213,12 @@
 		9CCAE9AA1A5D6DAE00E3A33A /* SenderVoiceNodePlaying003_ios7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CCAE94E1A5D6DAE00E3A33A /* SenderVoiceNodePlaying003_ios7@2x.png */; };
 		9CCAE9AB1A5D6DAE00E3A33A /* SenderVoiceNodePlaying_ios7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CCAE94F1A5D6DAE00E3A33A /* SenderVoiceNodePlaying_ios7@2x.png */; };
 		9CCAE9AE1A5D6DBB00E3A33A /* ZBMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAE9AD1A5D6DBB00E3A33A /* ZBMessage.m */; };
+		9CCE1A7B1AC196420037935B /* Chat_Topic_Life.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCE1A701AC196420037935B /* Chat_Topic_Life.m */; };
+		9CCE1A7C1AC196420037935B /* Chat_Topic_Motion.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCE1A721AC196420037935B /* Chat_Topic_Motion.m */; };
+		9CCE1A7D1AC196420037935B /* Chat_Topic_Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCE1A741AC196420037935B /* Chat_Topic_Movie.m */; };
+		9CCE1A7E1AC196420037935B /* Chat_Topic_Music.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCE1A761AC196420037935B /* Chat_Topic_Music.m */; };
+		9CCE1A7F1AC196420037935B /* Chat_Topic_Study.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCE1A781AC196420037935B /* Chat_Topic_Study.m */; };
+		9CCE1A801AC196420037935B /* Chat_Topic_Work.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCE1A7A1AC196420037935B /* Chat_Topic_Work.m */; };
 		9CD6DBF51A655686007AEC30 /* DYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD6DBF41A655686007AEC30 /* DYNavigationController.m */; };
 		9CDAC31F1A738CEE00FB7A2E /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CDAC31E1A738CEE00FB7A2E /* HistoryViewController.m */; };
 		KIYDQKWBMRKIEYEVRWSLKUDQ /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = HYXIFWTDXJPPRRMDCEPMDTJH /* QuartzCore.framework */; };
@@ -383,8 +388,6 @@
 		9CB0690C1A7CFEDA005C84F6 /* PreviousHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PreviousHistoryViewController.m; path = MolurenHistoryViewControllerGroup/PreviousHistoryViewController.m; sourceTree = "<group>"; };
 		9CB0690D1A7CFEDA005C84F6 /* MolurenHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MolurenHistoryViewController.h; path = MolurenHistoryViewControllerGroup/MolurenHistoryViewController.h; sourceTree = "<group>"; };
 		9CB0690E1A7CFEDA005C84F6 /* MolurenHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MolurenHistoryViewController.m; path = MolurenHistoryViewControllerGroup/MolurenHistoryViewController.m; sourceTree = "<group>"; };
-		9CC2B71B1AB65AC4008DFB79 /* Chat_Topic_Work.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chat_Topic_Work.h; sourceTree = "<group>"; };
-		9CC2B71C1AB65AC4008DFB79 /* Chat_Topic_Work.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Chat_Topic_Work.m; sourceTree = "<group>"; };
 		9CCAE8091A5D5E5600E3A33A /* LanuchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanuchViewController.h; sourceTree = "<group>"; };
 		9CCAE80A1A5D5E5600E3A33A /* LanuchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanuchViewController.m; sourceTree = "<group>"; };
 		9CCAE80B1A5D5E5600E3A33A /* MolurenChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MolurenChatViewController.h; sourceTree = "<group>"; };
@@ -497,6 +500,18 @@
 		9CCAE94F1A5D6DAE00E3A33A /* SenderVoiceNodePlaying_ios7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SenderVoiceNodePlaying_ios7@2x.png"; sourceTree = "<group>"; };
 		9CCAE9AC1A5D6DBB00E3A33A /* ZBMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBMessage.h; sourceTree = "<group>"; };
 		9CCAE9AD1A5D6DBB00E3A33A /* ZBMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBMessage.m; sourceTree = "<group>"; };
+		9CCE1A6F1AC196420037935B /* Chat_Topic_Life.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Chat_Topic_Life.h; path = Chat_Topics/Chat_Topic_Life.h; sourceTree = "<group>"; };
+		9CCE1A701AC196420037935B /* Chat_Topic_Life.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Chat_Topic_Life.m; path = Chat_Topics/Chat_Topic_Life.m; sourceTree = "<group>"; };
+		9CCE1A711AC196420037935B /* Chat_Topic_Motion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Chat_Topic_Motion.h; path = Chat_Topics/Chat_Topic_Motion.h; sourceTree = "<group>"; };
+		9CCE1A721AC196420037935B /* Chat_Topic_Motion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Chat_Topic_Motion.m; path = Chat_Topics/Chat_Topic_Motion.m; sourceTree = "<group>"; };
+		9CCE1A731AC196420037935B /* Chat_Topic_Movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Chat_Topic_Movie.h; path = Chat_Topics/Chat_Topic_Movie.h; sourceTree = "<group>"; };
+		9CCE1A741AC196420037935B /* Chat_Topic_Movie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Chat_Topic_Movie.m; path = Chat_Topics/Chat_Topic_Movie.m; sourceTree = "<group>"; };
+		9CCE1A751AC196420037935B /* Chat_Topic_Music.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Chat_Topic_Music.h; path = Chat_Topics/Chat_Topic_Music.h; sourceTree = "<group>"; };
+		9CCE1A761AC196420037935B /* Chat_Topic_Music.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Chat_Topic_Music.m; path = Chat_Topics/Chat_Topic_Music.m; sourceTree = "<group>"; };
+		9CCE1A771AC196420037935B /* Chat_Topic_Study.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Chat_Topic_Study.h; path = Chat_Topics/Chat_Topic_Study.h; sourceTree = "<group>"; };
+		9CCE1A781AC196420037935B /* Chat_Topic_Study.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Chat_Topic_Study.m; path = Chat_Topics/Chat_Topic_Study.m; sourceTree = "<group>"; };
+		9CCE1A791AC196420037935B /* Chat_Topic_Work.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Chat_Topic_Work.h; path = Chat_Topics/Chat_Topic_Work.h; sourceTree = "<group>"; };
+		9CCE1A7A1AC196420037935B /* Chat_Topic_Work.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Chat_Topic_Work.m; path = Chat_Topics/Chat_Topic_Work.m; sourceTree = "<group>"; };
 		9CCE82F71AB82FFB0070B638 /* TdColorSetting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TdColorSetting.h; path = Common/TdColorSetting.h; sourceTree = "<group>"; };
 		9CCE82F81AB831650070B638 /* Prefix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.h; sourceTree = "<group>"; };
 		9CD25B321AC0375E00166375 /* UiElementSetting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UiElementSetting.h; path = Common/UiElementSetting.h; sourceTree = "<group>"; };
@@ -895,8 +910,7 @@
 				9CCAE8141A5D5E5600E3A33A /* MolurenSettingViewController.m */,
 				9CCAE8151A5D5E5600E3A33A /* NewLanuchViewController.h */,
 				9CCAE8161A5D5E5600E3A33A /* NewLanuchViewController.m */,
-				9CC2B71B1AB65AC4008DFB79 /* Chat_Topic_Work.h */,
-				9CC2B71C1AB65AC4008DFB79 /* Chat_Topic_Work.m */,
+				9CCE1A6E1AC196260037935B /* Chat_Topics */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1052,6 +1066,25 @@
 				9CCAE94F1A5D6DAE00E3A33A /* SenderVoiceNodePlaying_ios7@2x.png */,
 			);
 			path = voiceResource;
+			sourceTree = "<group>";
+		};
+		9CCE1A6E1AC196260037935B /* Chat_Topics */ = {
+			isa = PBXGroup;
+			children = (
+				9CCE1A6F1AC196420037935B /* Chat_Topic_Life.h */,
+				9CCE1A701AC196420037935B /* Chat_Topic_Life.m */,
+				9CCE1A711AC196420037935B /* Chat_Topic_Motion.h */,
+				9CCE1A721AC196420037935B /* Chat_Topic_Motion.m */,
+				9CCE1A731AC196420037935B /* Chat_Topic_Movie.h */,
+				9CCE1A741AC196420037935B /* Chat_Topic_Movie.m */,
+				9CCE1A751AC196420037935B /* Chat_Topic_Music.h */,
+				9CCE1A761AC196420037935B /* Chat_Topic_Music.m */,
+				9CCE1A771AC196420037935B /* Chat_Topic_Study.h */,
+				9CCE1A781AC196420037935B /* Chat_Topic_Study.m */,
+				9CCE1A791AC196420037935B /* Chat_Topic_Work.h */,
+				9CCE1A7A1AC196420037935B /* Chat_Topic_Work.m */,
+			);
+			name = Chat_Topics;
 			sourceTree = "<group>";
 		};
 		9CD6DBE61A65558F007AEC30 /* MolurenHistoryViewControllerGroup */ = {
@@ -1312,6 +1345,7 @@
 			files = (
 				18CE73F81A1E3992004769F4 /* ChatHistoryDB.m in Sources */,
 				9CCAE82B1A5D613100E3A33A /* ZBMessageInputView.m in Sources */,
+				9CCE1A801AC196420037935B /* Chat_Topic_Work.m in Sources */,
 				1812ACA619F0A33500F027F3 /* Reachability.m in Sources */,
 				18287DEC19EAAE080074BDD9 /* JSMessagesViewController.m in Sources */,
 				9CB069121A7CFEDA005C84F6 /* MolurenHistoryViewController.m in Sources */,
@@ -1323,6 +1357,8 @@
 				9CB0690F1A7CFEDA005C84F6 /* CurrentHistoryPage.m in Sources */,
 				182C1B3A19EFDDCE009B09AB /* PXAlertView.m in Sources */,
 				18287CE219EAA9C40074BDD9 /* main.m in Sources */,
+				9CCE1A7C1AC196420037935B /* Chat_Topic_Motion.m in Sources */,
+				9CCE1A7E1AC196420037935B /* Chat_Topic_Music.m in Sources */,
 				18287DE919EAAE080074BDD9 /* JSDismissiveTextView.m in Sources */,
 				18294F9019EBE1BF00614906 /* JSONKit.m in Sources */,
 				1835755C1A1E3630005FF4C2 /* FMDatabase.m in Sources */,
@@ -1331,10 +1367,12 @@
 				18287DEB19EAAE080074BDD9 /* JSMessageSoundEffect.m in Sources */,
 				9CDAC31F1A738CEE00FB7A2E /* HistoryViewController.m in Sources */,
 				18208EE31A0A4E0000E10D95 /* MolurenChatViewControllerTest.m in Sources */,
+				9CCE1A7F1AC196420037935B /* Chat_Topic_Study.m in Sources */,
 				18287DEE19EAAE080074BDD9 /* NSString+JSMessagesView.m in Sources */,
 				1835755E1A1E3630005FF4C2 /* FMDatabasePool.m in Sources */,
 				18287E2019EAAE080074BDD9 /* UIView+AnimationOptionsForCurve.m in Sources */,
 				18287E1D19EAAE080074BDD9 /* UIButton+JSMessagesView.m in Sources */,
+				9CCE1A7B1AC196420037935B /* Chat_Topic_Life.m in Sources */,
 				9CB069101A7CFEDA005C84F6 /* NextHistoryViewController.m in Sources */,
 				18B8E5611A2BF1B700B54F7F /* SettingTableViewCell1.m in Sources */,
 				184B9E8319EB4C650053F3E9 /* SharedSingleConfig.m in Sources */,
@@ -1342,11 +1380,11 @@
 				9CCAE81C1A5D5E5600E3A33A /* MolurenSettingViewController.m in Sources */,
 				182C1B3B19EFDDCE009B09AB /* PXAlertView+Customization.m in Sources */,
 				9CCAE82F1A5D626100E3A33A /* NSString+Message.m in Sources */,
+				9CCE1A7D1AC196420037935B /* Chat_Topic_Movie.m in Sources */,
 				18287DE819EAAE080074BDD9 /* JSBubbleView.m in Sources */,
 				9C2D4F0C1A610BB6001C8E82 /* ZBMessageShareMenuItem.m in Sources */,
 				9CCAE8181A5D5E5600E3A33A /* MolurenChatViewController.m in Sources */,
 				18287DEA19EAAE080074BDD9 /* JSMessageInputView.m in Sources */,
-				9CC2B71D1AB65AC4008DFB79 /* Chat_Topic_Work.m in Sources */,
 				18287D1819EAAC140074BDD9 /* BaseViewController.m in Sources */,
 				9CCAE81B1A5D5E5600E3A33A /* MolurenMainViewController.m in Sources */,
 				9CCAE82C1A5D613100E3A33A /* ZBMessageTextView.m in Sources */,

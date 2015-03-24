@@ -12,5 +12,6 @@
 @interface MolurenChatViewController : JSMessagesViewController
 
 -(void)addReceivedMessage:(NSString *)receivedMsg;
+-(void)backToMainView;
 
 @end

@@ -1,16 +1,18 @@
 //
-//  MolurenChatViewController.m
+//  Chat_Topic_Motion.m
 //  Moluren
 //
-//  Created by tcl-macpro on 14-10-12.
-//  Copyright (c) 2014年 com.teamdongqin. All rights reserved.
+//  Created by zheng lingshan on 15/3/24.
+//  Copyright (c) 2015年 com.teamdongqin. All rights reserved.
 //
 
-#import "MolurenChatViewController.h"
+#import "Chat_Topic_Motion.h"
+#import "JSMessagesViewController.h"
 #import "MolurenHistoryDetailViewController.h"
 
+@interface Chat_Topic_Motion () <JSMessagesViewDelegate, JSMessagesViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
-@interface MolurenChatViewController () <JSMessagesViewDelegate, JSMessagesViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@property (nonatomic, strong) UIImage* ChatterPortrait;
 
 @property (strong, nonatomic) NSMutableArray *messageArray;
 @property (strong, nonatomic) NSMutableArray *messageType;//Incoming:YES;Outgoing:NO;
@@ -38,11 +40,7 @@
 
 @end
 
-
-@implementation MolurenChatViewController
-    
-//@synthesize messageArray;
-//@synthesize messageType;
+@implementation Chat_Topic_Motion
 
 #pragma mark - View life cycle
 
@@ -78,61 +76,28 @@
 {
     [super viewDidLoad];
     
-    //self.title = @"陌路人";
+    // Set up power button state
+    self.bConnected = false;
     
     self.messageArray = [NSMutableArray array];
     self.messageType = [NSMutableArray array];
     self.timestamps = [NSMutableArray array];
     
-    //UIImageView *navTitle = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, MainScreenWidth, 60)];
-    /*UIImage *navTitleBackgroundImage = [[UIImage imageNamed:@"title_bar"]
-     resizableImageWithCapInsets:UIEdgeInsetsMake(22,30,22,30)];*/
-    //navTitle.image = navTitleBackgroundImage;
-    //navTitle.userInteractionEnabled = YES;
-    UIView *navTitle = [[UIView alloc] initWithFrame:CGRectMake(MainScreenWidth/2-100, 10, 200, 32)];
-    //添加标题label
+    // Set up view title
+    UIView *navTitle = [[UIView alloc] initWithFrame:CGRectMake(MainScreenWidth/2-90, 10, 180, 30)];
+    
     UILabel *titleLabel = [[UILabel alloc] init];
-    titleLabel.text = @"学习";
-    titleLabel.font = [UIFont systemFontOfSize:20];
+    titleLabel.text = @"心情";
+    titleLabel.font = [UIFont systemFontOfSize:19];
     titleLabel.textAlignment = NSTextAlignmentCenter;
-    titleLabel.textColor = UIColorFromRGB(0xed1941);
-    titleLabel.frame = CGRectMake(0, 0, 200, 30);
+    titleLabel.textColor = UIColorFromRGB(Color_TopicMotion_Pattern);
+    titleLabel.frame = CGRectMake(0, 0, 180, 30);
     
     [navTitle addSubview:titleLabel];
     
-    //添加typing
-    self.typingLabel = [[UILabel alloc] init];
-    self.typingLabel.text = @"对方正在输入...";
-    self.typingLabel.font = [UIFont systemFontOfSize:9];
-    self.typingLabel.textAlignment = NSTextAlignmentCenter;
-    self.typingLabel.textColor = [UIColor whiteColor];
-    self.typingLabel.frame = CGRectMake(navTitle.frame.size.width/2-50, 20, 100, 12);
-    [self.typingLabel setHidden:YES];
-    
-    [navTitle addSubview:self.typingLabel];
-    
     self.navigationItem.titleView = navTitle;
     
-    
-    //添加返回按钮
-    //    UIButton *chatBackBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    //    chatBackBtn.titleLabel.textColor = [UIColor whiteColor];
-    //    chatBackBtn.titleLabel.font = [UIFont fontWithName:@"Regular" size:20];
-    //    [chatBackBtn setTitle:@"返回" forState:UIControlStateNormal];
-    //    UIImage *chatBackBtnBackgroundImage = [[UIImage imageNamed:@"button_forward"]
-    //                                           resizableImageWithCapInsets:UIEdgeInsetsMake(0,24,0,24)];
-    //    [chatBackBtn setBackgroundImage:chatBackBtnBackgroundImage
-    //                           forState:UIControlStateNormal];
-    //    chatBackBtn.frame = CGRectMake(10, 24, 72, 30);
-    //
-    //    [chatBackBtn addTarget:self action:@selector(backToMainView) forControlEvents:UIControlEventTouchUpInside];
-    //
-    //    [navTitle addSubview:chatBackBtn];
-    
-    // Set up power button state
-    self.bConnected = false;
-    
-    // Power button
+    // Set up right bar button
     UIImage *PowerButtonBgImage = [UIImage imageNamed:@"Topic_PowerButton_Off"];
     
     _PowerButton = [[UIButton alloc] initWithFrame:CGRectMake(MainScreenWidth-150, 24, 30, 30)];
@@ -206,23 +171,28 @@
         // optional - add more buttons:
         [alert show];
     }
-
     
+    
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Ui operation
 
 -(void)backToMainView{
     /*if(self.sharedConfig.isConnected){
-        _backToMainViewAlert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"当前会话没有断开，返回将会丢失当前会话，确定要返回并断开会话吗?" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
-        // optional - add more buttons:
-        [_backToMainViewAlert addButtonWithTitle:@"取消"];
-        [_backToMainViewAlert show];
-    }else{
-        self.retrieveToken;
-        [self.navigationController popViewControllerAnimated:NO];
-        [self.tabBarController.tabBar setHidden:NO];
-    }*/
+     _backToMainViewAlert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"当前会话没有断开，返回将会丢失当前会话，确定要返回并断开会话吗?" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
+     // optional - add more buttons:
+     [_backToMainViewAlert addButtonWithTitle:@"取消"];
+     [_backToMainViewAlert show];
+     }else{
+     self.retrieveToken;
+     [self.navigationController popViewControllerAnimated:NO];
+     [self.tabBarController.tabBar setHidden:NO];
+     }*/
     [self.navigationController popViewControllerAnimated:NO];
     [self.tabBarController.tabBar setHidden:NO];
 }
@@ -260,7 +230,7 @@
             self.retrieveToken;
             
             [self.navigationController popViewControllerAnimated:NO];
-        
+            
         }
     }
 }
@@ -283,21 +253,21 @@
         
         MolurenHistoryDetailViewController *molurenHistoryViewController = [[MolurenHistoryDetailViewController alloc] initWithSid:[sidArray objectAtIndex:[sidArray count]-1]];
         
-//        MolurenHistoryDetailViewController *molurenHistoryViewController = [[MolurenHistoryDetailViewController alloc] init];
-//        [self.navigationController pushViewController:molurenHistoryViewController animated:YES];
+        //        MolurenHistoryDetailViewController *molurenHistoryViewController = [[MolurenHistoryDetailViewController alloc] init];
+        //        [self.navigationController pushViewController:molurenHistoryViewController animated:YES];
         
         
-//        DYNavigationController *navigationController = self.navigationController;
-//         navigationController.viewControllerStack = [[NSMutableArray alloc] initWithArray: self.navigationController.viewControllers];
-//         
-//         [navigationController SetupHistoryViews];
-//         
-//         //[navigationController initWithRootViewController1:molurenHistoryViewController];
-//         
-//         //[self.navigationController pushViewController:molurenHistoryViewController animated:YES];
-//         
-//         [navigationController pushViewController:molurenHistoryViewController];
-//         [navigationController viewWillAppear:YES];
+        //        DYNavigationController *navigationController = self.navigationController;
+        //         navigationController.viewControllerStack = [[NSMutableArray alloc] initWithArray: self.navigationController.viewControllers];
+        //
+        //         [navigationController SetupHistoryViews];
+        //
+        //         //[navigationController initWithRootViewController1:molurenHistoryViewController];
+        //
+        //         //[self.navigationController pushViewController:molurenHistoryViewController animated:YES];
+        //
+        //         [navigationController pushViewController:molurenHistoryViewController];
+        //         [navigationController viewWillAppear:YES];
         
         // Model view
         molurenHistoryViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
@@ -522,12 +492,12 @@
                                            //NSMutableDictionary *dictMutable = [[NSMutableDictionary alloc]initWithObjectsAndKeys:receivedMsg,@"msg",[NSDate date],@"date", nil];
                                            NSLog(@"readMsgCount=%d",self.sharedConfig.readMsgCount);
                                            
-//                                           if([receivedMsg hasPrefix:@"[ios]"]){
-//                                               if([self.sharedConfig.fromDeveceType isEqualToString:@"unknown"]){
-//                                                   self.sharedConfig.fromDeveceType = @"ios";
-//                                               }
-//                                               receivedMsg = [receivedMsg stringByReplacingOccurrencesOfString:@"[ios]" withString:@""];
-//                                           }
+                                           //                                           if([receivedMsg hasPrefix:@"[ios]"]){
+                                           //                                               if([self.sharedConfig.fromDeveceType isEqualToString:@"unknown"]){
+                                           //                                                   self.sharedConfig.fromDeveceType = @"ios";
+                                           //                                               }
+                                           //                                               receivedMsg = [receivedMsg stringByReplacingOccurrencesOfString:@"[ios]" withString:@""];
+                                           //                                           }
                                            
                                            // Logic on judging whether ios device
                                            if((_bFirstReceiveMsg == YES) && [receivedMsg containsString: IosDevice_Prefix]){
@@ -629,10 +599,10 @@
         self.receiveMessageRequest;
     }
     /*[NSTimer scheduledTimerWithTimeInterval:1.0
-                                     target:self
-                                   selector:@selector(receiveMessage)
-                                   userInfo:nil
-                                    repeats:NO];*/
+     target:self
+     selector:@selector(receiveMessage)
+     userInfo:nil
+     repeats:NO];*/
     //_getMsgs = [NSTimer scheduledTimerWithTimeInterval:3.0f target:self selector:@selector(receiveMessage) userInfo:nil repeats:YES];
     //[[NSRunLoop currentRunLoop]addTimer:_getMsgs forMode:NSDefaultRunLoopMode];
     //[[NSRunLoop currentRunLoop] run];
@@ -641,59 +611,59 @@
 -(void)getTypingStatusRequest{
     
     if(self.sharedConfig.isConnected){
-    
-    //self.sharedConfig.isReceivingMsg = YES;
-    
-    NSURL *url = [NSURL URLWithString:[baseUrl stringByAppendingString:typingUrl]];
-    
-    NSString *post=[@"_token_id_=" stringByAppendingString:self.sharedConfig.token];
-    
-    NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-    
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-    [request setHTTPMethod:@"POST"];
-    [request setHTTPBody:postData];
-    [request setTimeoutInterval:10.0];
-    
-    NSOperationQueue *queue = [[NSOperationQueue alloc]init];
-    [NSURLConnection sendAsynchronousRequest:request
-                                       queue:queue
-                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *error){
-                               if (error) {
-                                   NSLog(@"Httperror:%@%d", error.localizedDescription,error.code);
-                                   NSLog(@"接收消息http请求异常");
-                                   //self.sharedConfig.isReceivingMsg = NO;
-                               }else{
-                                   
-                                   NSInteger responseCode = [(NSHTTPURLResponse *)response statusCode];
-                                   
-                                   NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-                                   
-                                   NSLog(@"HttpResponseCode:%d", responseCode);
-                                   NSLog(@"HttpResponseBody %@",responseString);
-                                   
-                                   //NSDictionary *resultDict = [data objectFromJSONData];
-                                   NSError *error;
-                                   NSDictionary *resultDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
-                                   BOOL typing = [resultDict objectForKey:@"typing"];
-                                   
-                                   if(typing){
-                                       NSLog(@"对方正在输入");
-                                       [self performSelectorOnMainThread:@selector(showTypingStatus) withObject:nil waitUntilDone:YES];
+        
+        //self.sharedConfig.isReceivingMsg = YES;
+        
+        NSURL *url = [NSURL URLWithString:[baseUrl stringByAppendingString:typingUrl]];
+        
+        NSString *post=[@"_token_id_=" stringByAppendingString:self.sharedConfig.token];
+        
+        NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+        
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+        [request setHTTPMethod:@"POST"];
+        [request setHTTPBody:postData];
+        [request setTimeoutInterval:10.0];
+        
+        NSOperationQueue *queue = [[NSOperationQueue alloc]init];
+        [NSURLConnection sendAsynchronousRequest:request
+                                           queue:queue
+                               completionHandler:^(NSURLResponse *response, NSData *data, NSError *error){
+                                   if (error) {
+                                       NSLog(@"Httperror:%@%d", error.localizedDescription,error.code);
+                                       NSLog(@"接收消息http请求异常");
+                                       //self.sharedConfig.isReceivingMsg = NO;
+                                   }else{
+                                       
+                                       NSInteger responseCode = [(NSHTTPURLResponse *)response statusCode];
+                                       
+                                       NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+                                       
+                                       NSLog(@"HttpResponseCode:%d", responseCode);
+                                       NSLog(@"HttpResponseBody %@",responseString);
+                                       
+                                       //NSDictionary *resultDict = [data objectFromJSONData];
+                                       NSError *error;
+                                       NSDictionary *resultDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
+                                       BOOL typing = [resultDict objectForKey:@"typing"];
+                                       
+                                       if(typing){
+                                           NSLog(@"对方正在输入");
+                                           [self performSelectorOnMainThread:@selector(showTypingStatus) withObject:nil waitUntilDone:YES];
+                                       }
                                    }
-                               }
-                           }];
+                               }];
     }
     /*_getTypingStatus = [NSTimer timerWithTimeInterval:5.0f target:self selector:@selector(getTypingStatusRequest:) userInfo:nil repeats:NO];
-    [NSTimer scheduledTimerWithTimeInterval:5.0f target:self selector:@selector(getTypingStatusRequest) userInfo:nil repeats:YES];
-    //[[NSRunLoop currentRunLoop]addTimer:_getTypingStatus forMode:NSDefaultRunLoopMode];
-    [[NSRunLoop currentRunLoop] run];*/
+     [NSTimer scheduledTimerWithTimeInterval:5.0f target:self selector:@selector(getTypingStatusRequest) userInfo:nil repeats:YES];
+     //[[NSRunLoop currentRunLoop]addTimer:_getTypingStatus forMode:NSDefaultRunLoopMode];
+     [[NSRunLoop currentRunLoop] run];*/
 }
 
 -(void)showTypingStatus{
     [_typingLabel setHidden:NO];
-        [NSTimer scheduledTimerWithTimeInterval:1.5f target:self selector: @selector(dismissTypingStatus)
-                                       userInfo:nil repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:1.5f target:self selector: @selector(dismissTypingStatus)
+                                   userInfo:nil repeats:NO];
 }
 
 -(void)dismissTypingStatus{
@@ -701,27 +671,27 @@
 }
 
 -(void)addReceiveMessageToUI/*:(NSMutableDictionary *)dic*/{
-
+    
     //NSLog(@"添加消息到UI msg=%@",[dic objectForKey:@"msg"]);
     NSString *msg = self.sharedConfig.receivedMsg ;//[self.sharedConfig.readMsgArray objectAtIndex:self.sharedConfig.readMsgCount-1];//[dic objectForKey:@"msg"];
     NSDate *d = [NSDate date];//[self.sharedConfig.readMsgTimestamps objectAtIndex:self.sharedConfig.readMsgCount-1];//[dic objectForKey:@"date"];
     if(msg!=@""){
-    [self.messageArray addObject:[NSDictionary dictionaryWithObject:msg forKey:@"Text"]];
-    [self.messageType addObject:@"IN"];
-    [self.timestamps addObject:d];
-    
-    NSDateFormatter*dateFormat =[[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    NSString *dateString=[dateFormat stringFromDate:d];
+        [self.messageArray addObject:[NSDictionary dictionaryWithObject:msg forKey:@"Text"]];
+        [self.messageType addObject:@"IN"];
+        [self.timestamps addObject:d];
+        
+        NSDateFormatter*dateFormat =[[NSDateFormatter alloc] init];
+        [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+        NSString *dateString=[dateFormat stringFromDate:d];
         [self.sharedConfig insertMsgDataToTable:msg msgtype:@"IN" date:dateString];
-    
-    [JSMessageSoundEffect playMessageReceivedSound];
-    
-    [self finishReceive];
-    [self scrollToBottomAnimated:YES];
+        
+        [JSMessageSoundEffect playMessageReceivedSound];
+        
+        [self finishReceive];
+        [self scrollToBottomAnimated:YES];
         
     }
-
+    
 }
 
 -(BOOL)isFirstSendMsg
@@ -771,9 +741,9 @@
                                    
                                    //NSDictionary *resultDict = [data objectFromJSONData];
                                    /*NSError *error;
-                                   NSDictionary *resultDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
-                                   NSString *hb = [resultDict objectForKey:@"hb"];
-                                   NSLog(@"hb=%@",hb);*/
+                                    NSDictionary *resultDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
+                                    NSString *hb = [resultDict objectForKey:@"hb"];
+                                    NSLog(@"hb=%@",hb);*/
                                }
                            }];
 }
@@ -832,11 +802,11 @@
     
     
     /*
-    if((self.messageArray.count - 1) % 2)
-        [JSMessageSoundEffect playMessageSentSound];
-    else
-        [JSMessageSoundEffect playMessageReceivedSound];
-    */
+     if((self.messageArray.count - 1) % 2)
+     [JSMessageSoundEffect playMessageSentSound];
+     else
+     [JSMessageSoundEffect playMessageReceivedSound];
+     */
     
     [JSMessageSoundEffect playMessageSentSound];
     
@@ -845,7 +815,7 @@
     if(!self.sharedConfig.isConnected){
         [self sendDisconectedMessage:@"已经断掉啦,赶紧请返回开始页面重新连接吧!"];
     }else{
-    
+        
         [self sendMessageRequest:text];
         NSDateFormatter*dateFormat =[[NSDateFormatter alloc] init];
         [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
@@ -861,7 +831,7 @@
         
         //隐藏软键盘
         [self.messageToolView.messageInputTextView becomeFirstResponder];
-    
+        
         self.x = arc4random() ;
         self.x = abs(self.x)%6;
         NSLog(@"%d",self.x+1);
@@ -988,7 +958,19 @@
 
 - (UIImage *)avatarImageForIncomingMessage
 {
-    return [UIImage imageNamed:@"Portrait_TopicWork"];
+    return [UIImage imageNamed:@"Portrait_TopicMotion"];
+}
+
+- (UIImage *)TopicWork_UserProfileMenuItem{
+    return [UIImage imageNamed:@"TopicLife_UserProfileMenuItem"];
+}
+
+- (UIImage *)DiceMenuItem{
+    return [UIImage imageNamed:@"TopicLife_UserProfileMenuItem"];
+}
+
+- (UIImage *)ChatHistoryMenuItem{
+    return [UIImage imageNamed:@"TopicLife_UserProfileMenuItem"];
 }
 
 - (UIImage *)avatarImageForOutgoingMessage
@@ -1000,11 +982,11 @@
 {
     UIImage *avaterImg = nil;
     //if([self.sharedConfig.customerAvaterImg isEqualToString:@""] || self.sharedConfig.customerAvaterImg==nil){
-        avaterImg = [UIImage imageNamed:@"Portrait_Self"];
+    avaterImg = [UIImage imageNamed:@"Portrait_Self"];
     /*}else{
-        NSString *aPath3=[NSString stringWithFormat:@"/Documents/%@",self.sharedConfig.customerAvaterImg];
-        avaterImg = [[UIImage alloc]initWithContentsOfFile:aPath3];
-    }*/
+     NSString *aPath3=[NSString stringWithFormat:@"/Documents/%@",self.sharedConfig.customerAvaterImg];
+     avaterImg = [[UIImage alloc]initWithContentsOfFile:aPath3];
+     }*/
     return avaterImg;
 }
 
@@ -1012,5 +994,6 @@
 {
     [NSThread detachNewThreadSelector:@selector(startImageread:) toTarget:self withObject:indexPath];
 }
+
 
 @end

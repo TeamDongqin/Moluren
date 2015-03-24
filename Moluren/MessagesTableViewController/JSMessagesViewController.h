@@ -102,6 +102,9 @@ typedef NS_ENUM(NSInteger,ZBMessageViewState) {
 - (NSDate *)timestampForRowAtIndexPath:(NSIndexPath *)indexPath;
 - (UIImage *)avatarImageForIncomingMessage;
 - (UIImage *)avatarImageForOutgoingMessage;
+- (UIImage *)TopicWork_UserProfileMenuItem;
+- (UIImage *)DiceMenuItem;
+- (UIImage *)ChatHistoryMenuItem;
 - (void)loadAvatarImageForOutgoingMessage:(NSIndexPath *)indexPath;
 @optional
 - (id)dataForRowAtIndexPath:(NSIndexPath *)indexPath;

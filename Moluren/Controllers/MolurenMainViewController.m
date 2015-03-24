@@ -2,6 +2,12 @@
 #import "MolurenChatViewController.h"
 #import "MolurenChatViewControllerTest.h"
 #import "BaseViewController.h"
+#import "Chat_Topic_Life.h"
+#import "Chat_Topic_Motion.h"
+#import "Chat_Topic_Movie.h"
+#import "Chat_Topic_Music.h"
+#import "Chat_Topic_Study.h"
+#import "Chat_Topic_Work.h"
 
 @interface MolurenMainViewController ()
 
@@ -146,27 +152,125 @@
 #pragma mark - Ui operation
 
 - (IBAction)EnterTopic:(id)sender {
+    UIButton* button = (UIButton*)sender;
     // Enter specific topic according to button id
-    
-    // Updated logic: enter topic view, then connect to server
-    [self gotoChatingView];
-    
-    
-    // Move to topic chat controller
-    //已经有token
-//    if(![self.sharedConfig.token isEqualToString:@""] && self.sharedConfig.token.length>1){
-//        if(!self.sharedConfig.isConnected){
-//            [self.activityIndicatorView startAnimating ];//启动
-//            self.connectToNewSession;
-//        }else{
-//            self.gotoChatingView;
-//        }
-//        //self.checkIfStopAnimating;
-//    }else{
-//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"错误" message:@"连接错误,点击确认重新连接." delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil];
-//        // optional - add more buttons:
-//        [alert show];
-//    }
+    switch (button.tag) {
+        case 1001:
+            {
+                [self.tabBarController.tabBar setHidden:YES];
+                
+                // Back to home button
+                UIBarButtonItem *BackBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"陌路人"
+                                                                                      style:UIBarButtonItemStyleBordered
+                                                                                     target:self
+                                                                                     action:@selector(OnBackButtonClicked:)];
+                
+                [[self navigationItem] setBackBarButtonItem:BackBarButtonItem];
+                
+                [self.navigationController.navigationBar setTintColor:UIColorFromRGB(Color_TopicStudy_Pattern)];
+                
+                Chat_Topic_Study *chatViewController = [[Chat_Topic_Study alloc] init];
+                [self.navigationController pushViewController:chatViewController animated:YES];
+            }
+            break;
+        case 1002:
+            {
+                [self.tabBarController.tabBar setHidden:YES];
+                
+                // Back to home button
+                UIBarButtonItem *BackBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"陌路人"
+                                                                                      style:UIBarButtonItemStyleBordered
+                                                                                     target:nil
+                                                                                     action:nil];
+                
+                [[self navigationItem] setBackBarButtonItem:BackBarButtonItem];
+                
+                [self.navigationController.navigationBar setTintColor:UIColorFromRGB(Color_TopicLife_Pattern)];
+                
+                Chat_Topic_Life *chatViewController = [[Chat_Topic_Life alloc] init];
+                [self.navigationController pushViewController:chatViewController animated:YES];
+            }
+            break;
+        case 1003:
+            {
+                [self.tabBarController.tabBar setHidden:YES];
+                
+                // Back to home button
+                UIBarButtonItem *BackBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"陌路人"
+                                                                                      style:UIBarButtonItemStyleBordered
+                                                                                     target:nil
+                                                                                     action:nil];
+                
+                [[self navigationItem] setBackBarButtonItem:BackBarButtonItem];
+                
+                [self.navigationController.navigationBar setTintColor:UIColorFromRGB(Color_TopicWork_Pattern)];
+                
+                Chat_Topic_Work *chatViewController = [[Chat_Topic_Work alloc] init];
+                [self.navigationController pushViewController:chatViewController animated:YES];
+            }
+            break;
+        case 1004:
+            {
+                [self.tabBarController.tabBar setHidden:YES];
+                
+                // Back to home button
+                UIBarButtonItem *BackBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"陌路人"
+                                                                                      style:UIBarButtonItemStyleBordered
+                                                                                     target:nil
+                                                                                     action:nil];
+                
+                [[self navigationItem] setBackBarButtonItem:BackBarButtonItem];
+                
+                [self.navigationController.navigationBar setTintColor:UIColorFromRGB(Color_TopicMusic_Pattern)];
+                
+                Chat_Topic_Music *chatViewController = [[Chat_Topic_Music alloc] init];
+                [self.navigationController pushViewController:chatViewController animated:YES];
+            }
+            break;
+        case 1005:
+            {
+                [self.tabBarController.tabBar setHidden:YES];
+                
+                // Back to home button
+                UIBarButtonItem *BackBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"陌路人"
+                                                                                      style:UIBarButtonItemStyleBordered
+                                                                                     target:nil
+                                                                                     action:nil];
+                
+                [[self navigationItem] setBackBarButtonItem:BackBarButtonItem];
+                
+                [self.navigationController.navigationBar setTintColor:UIColorFromRGB(Color_TopicMotion_Pattern)];
+                
+                Chat_Topic_Motion *chatViewController = [[Chat_Topic_Motion alloc] init];
+                [self.navigationController pushViewController:chatViewController animated:YES];
+            }
+            break;
+        case 1006:
+            {
+                [self.tabBarController.tabBar setHidden:YES];
+                
+                // Back to home button
+                UIBarButtonItem *BackBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"陌路人"
+                                                                                      style:UIBarButtonItemStyleBordered
+                                                                                     target:nil
+                                                                                     action:nil];
+                
+                [[self navigationItem] setBackBarButtonItem:BackBarButtonItem];
+                
+                [self.navigationController.navigationBar setTintColor:UIColorFromRGB(Color_TopicMovie_Pattern)];
+                
+                Chat_Topic_Movie *chatViewController = [[Chat_Topic_Movie alloc] init];
+                [self.navigationController pushViewController:chatViewController animated:YES];
+            }
+            break;
+            
+        default:
+            break;
+    }
+}
+
+-(void)OnBackButtonClicked{
+    NSLog(@"clickButtonAtIndex:%d",1);
 }
 
 -(void)gotoChatingView{
