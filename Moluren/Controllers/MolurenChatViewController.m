@@ -991,6 +991,18 @@
     return [UIImage imageNamed:@"Portrait_TopicWork"];
 }
 
+- (UIImage *)UserProfileMenuItem{
+    return [UIImage imageNamed:@"TopicLife_UserProfileMenuItem"];
+}
+
+- (UIImage *)DiceMenuItem{
+    return [UIImage imageNamed:@"TopicLife_DiceMenuItem"];
+}
+
+- (UIImage *)ChatHistoryMenuItem{
+    return [UIImage imageNamed:@"TopicLife_ChatHistoryMenuItem"];
+}
+
 - (UIImage *)avatarImageForOutgoingMessage
 {
     return self.readLocalAvaterImg;

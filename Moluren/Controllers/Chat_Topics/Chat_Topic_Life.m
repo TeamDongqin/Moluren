@@ -963,16 +963,16 @@
     return [UIImage imageNamed:@"Portrait_TopicLife"];
 }
 
-- (UIImage *)TopicWork_UserProfileMenuItem{
+- (UIImage *)UserProfileMenuItem{
     return [UIImage imageNamed:@"TopicLife_UserProfileMenuItem"];
 }
 
 - (UIImage *)DiceMenuItem{
-    return [UIImage imageNamed:@"TopicLife_UserProfileMenuItem"];
+    return [UIImage imageNamed:@"TopicLife_DiceMenuItem"];
 }
 
 - (UIImage *)ChatHistoryMenuItem{
-    return [UIImage imageNamed:@"TopicLife_UserProfileMenuItem"];
+    return [UIImage imageNamed:@"TopicLife_ChatHistoryMenuItem"];
 }
 
 - (UIImage *)avatarImageForOutgoingMessage

@@ -961,16 +961,16 @@
     return [UIImage imageNamed:@"Portrait_TopicMovie"];
 }
 
-- (UIImage *)TopicWork_UserProfileMenuItem{
-    return [UIImage imageNamed:@"TopicLife_UserProfileMenuItem"];
+- (UIImage *)UserProfileMenuItem{
+    return [UIImage imageNamed:@"TopicMovie_UserProfileMenuItem"];
 }
 
 - (UIImage *)DiceMenuItem{
-    return [UIImage imageNamed:@"TopicLife_UserProfileMenuItem"];
+    return [UIImage imageNamed:@"TopicMovie_DiceMenuItem"];
 }
 
 - (UIImage *)ChatHistoryMenuItem{
-    return [UIImage imageNamed:@"TopicLife_UserProfileMenuItem"];
+    return [UIImage imageNamed:@"TopicMovie_ChatHistoryMenuItem"];
 }
 
 - (UIImage *)avatarImageForOutgoingMessage

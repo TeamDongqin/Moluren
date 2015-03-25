@@ -182,11 +182,11 @@
         
         
         
-        ZBMessageShareMenuItem *ChatHistoryMenuItem = [[ZBMessageShareMenuItem alloc]initWithNormalIconImage:[UIImage imageNamed:@"ChatHistoryMenuItem"] title:@"历史记录"];
-        ZBMessageShareMenuItem *DiceMenuItem = [[ZBMessageShareMenuItem alloc]initWithNormalIconImage:[UIImage imageNamed:@"DiceMenuItem"] title:@"骰子"];
-        ZBMessageShareMenuItem *TopicWork_UserProfileMenuItem = [[ZBMessageShareMenuItem alloc]initWithNormalIconImage:[UIImage imageNamed:@"TopicWork_UserProfileMenuItem"] title:@"名片"];
+        ZBMessageShareMenuItem *TopicWork_ChatHistoryMenuItem = [[ZBMessageShareMenuItem alloc]initWithNormalIconImage:[self.dataSource ChatHistoryMenuItem] title:@"历史记录"];
+        ZBMessageShareMenuItem *TopicWork_DiceMenuItem = [[ZBMessageShareMenuItem alloc]initWithNormalIconImage:[self.dataSource DiceMenuItem] title:@"骰子"];
+        ZBMessageShareMenuItem *TopicWork_UserProfileMenuItem = [[ZBMessageShareMenuItem alloc]initWithNormalIconImage:[self.dataSource UserProfileMenuItem] title:@"名片"];
 
-        self.shareMenuView.shareMenuItems = [NSArray arrayWithObjects:DiceMenuItem,ChatHistoryMenuItem,TopicWork_UserProfileMenuItem, nil];
+        self.shareMenuView.shareMenuItems = [NSArray arrayWithObjects:TopicWork_DiceMenuItem,TopicWork_ChatHistoryMenuItem,TopicWork_UserProfileMenuItem, nil];
         [self.shareMenuView reloadData];
         
     }
