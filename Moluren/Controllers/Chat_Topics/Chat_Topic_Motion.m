@@ -132,16 +132,6 @@
      [self finishReceive];
      }*/
     
-    
-    // Set up gesture recognizer
-    UISwipeGestureRecognizer *recognizer = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipeFrom:)];
-    recognizer.direction = UISwipeGestureRecognizerDirectionRight;
-    [[self view] addGestureRecognizer:recognizer];
-    
-    //    UIPanGestureRecognizer *recognizer = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipeFrom:)];
-    //    recognizer.state = ;
-    //    [[self view] addGestureRecognizer:recognizer];
-    
     //初始化摇色子动画ImageView
     self.gifImageView = [[UIImageView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width/2-50, [UIScreen mainScreen].bounds.size.height/2-50, 100, 100)];
     NSArray *gifArray = [NSArray arrayWithObjects:[UIImage imageNamed:@"dice_Action_0"],
@@ -233,10 +223,6 @@
             
         }
     }
-}
-
--(void)handleSwipeFrom:(UISwipeGestureRecognizer *)recognizer{
-    [self backToMainView];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -850,7 +836,7 @@
         NSString *dateString=[dateFormat stringFromDate:d];
         [self.sharedConfig insertMsgDataToTable:[NSString stringWithFormat:@"[ios][摇色子:%d]",self.x+1] msgtype:@"OUT" date:dateString];
     }else{
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"陌路人" message:@"对方设备类型未知，不支持摇色子!" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"陌路人" message:@"对方需要IOS版本才能支持哦~" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
         [alert show];
     }
 }

@@ -48,6 +48,11 @@
     [super viewWillAppear:animated];
     
     [self.tabBarController.tabBar setHidden:NO];
+    
+    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+        self.navigationController.interactivePopGestureRecognizer.delegate = nil;
+    }
 }
 
 -(void)viewDidDisappear:(BOOL)animated

@@ -437,20 +437,21 @@
 - (void)didSelecteShareMenuItem:(ZBMessageShareMenuItem *)shareMenuItem atIndex:(NSInteger)index{
     if(index == 0)
     {
-        [self.tabBarController.tabBar setHidden:YES];
-        [self.delegate gotoHistoryDetailView];
-        
+        [self.delegate sendDicePressed];
     }
     else if(index == 1)
     {
-        
+        [self.tabBarController.tabBar setHidden:YES];
+        [self.delegate gotoHistoryDetailView];
     }
-    else if(index == 4)
+    else if(index == 2)
     {
         //ZBMessage *message = [[ZBMessage alloc]initWithText:@"摇色子" sender:nil timestamp:[NSDate date]];
         //[self sendMessage:message];
         
-        [self.delegate sendDicePressed];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"陌路人" message:@"对方需要IOS版本才能支持哦~" delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil];
+        // optional - add more buttons:
+        [alert show];
         
         //[messageInputTextView setText:nil];
         //[self inputTextViewDidChange:messageInputTextView];

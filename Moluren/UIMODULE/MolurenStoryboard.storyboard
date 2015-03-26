@@ -159,7 +159,7 @@
         <!--Navigation Controller-->
         <scene sceneID="w8d-dz-OKx">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2Ol-A5-3cT" customClass="DYNavigationController" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2Ol-A5-3cT" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="lL4-SK-R18">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
