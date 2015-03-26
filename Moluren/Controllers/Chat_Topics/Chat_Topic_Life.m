@@ -47,6 +47,9 @@
 - (void)loadView
 {
     [super loadView];
+    
+    self.delegate = self;
+    self.dataSource = self;
 }
 
 //页面将要进入前台，开启定时器
@@ -111,9 +114,6 @@
 
     
     [self.view addSubview:navTitle];
-    
-    self.delegate = self;
-    self.dataSource = self;
     
     [self.tableView setBackgroundColor:[UIColor clearColor]];
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
@@ -540,7 +540,7 @@
     self.bFirstReceiveMsg = YES;
     
     // Update power button image
-    UIImage *PowerButtonBgImage = [UIImage imageNamed:@"TopicWork_PowerButton_On"];
+    UIImage *PowerButtonBgImage = [UIImage imageNamed:@"TopicLife_PowerButton_On"];
     
     [_PowerButton setBackgroundImage:PowerButtonBgImage forState:UIControlStateNormal];
     
@@ -571,7 +571,7 @@
     [_PowerButton setBackgroundImage:PowerButtonBgImage forState:UIControlStateNormal];
     
     
-    [self sendDisconectedMessage:@"抱歉，你已被服务器暂时屏蔽， 请稍后再试"];
+    [self sendDisconectedMessage:@"抱歉，您已被服务器暂时屏蔽， 请稍后再试"];
 }
 
 #pragma mark - Chatting with other user

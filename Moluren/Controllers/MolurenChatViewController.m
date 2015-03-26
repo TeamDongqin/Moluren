@@ -49,6 +49,9 @@
 - (void)loadView
 {
     [super loadView];
+    
+    self.delegate = self;
+    self.dataSource = self;
 }
 
 //页面将要进入前台，开启定时器
@@ -146,9 +149,6 @@
     self.navigationItem.leftBarButtonItem.title = @"陌路人";
     
     [self.view addSubview:navTitle];
-    
-    self.delegate = self;
-    self.dataSource = self;
     
     [self.tableView setBackgroundColor:[UIColor clearColor]];
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
@@ -599,7 +599,7 @@
     [_PowerButton setBackgroundImage:PowerButtonBgImage forState:UIControlStateNormal];
     
     
-    [self sendDisconectedMessage:@"抱歉，你已被服务器暂时屏蔽， 请稍后再试"];
+    [self sendDisconectedMessage:@"抱歉，您已被服务器暂时屏蔽， 请稍后再试"];
 }
 
 #pragma mark - Chatting with other user
