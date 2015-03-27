@@ -45,13 +45,17 @@
 @property (strong, nonatomic) UIImageView *avatarImageView;
 @property (assign, nonatomic) JSAvatarStyle avatarImageStyle;
 
+@property (strong, nonatomic) UILabel *NotificationLabel;
+
 - (void)setup;
 - (void)configureTimestampLabel;
+-(void) configureNotification;
 
 - (void)configureWithType:(JSBubbleMessageType)type
               bubbleStyle:(JSBubbleMessageStyle)bubbleStyle
               avatarStyle:(JSAvatarStyle)avatarStyle
                 mediaType:(JSBubbleMediaType)mediaType
+              messageType:(MessageType)messageType
                 timestamp:(BOOL)hasTimestamp;
 
 - (void)handleLongPress:(UILongPressGestureRecognizer *)longPress;
@@ -103,14 +107,36 @@
     [self.contentView bringSubviewToFront:self.timestampLabel];
 }
 
+-(void)configureNotification{
+    self.NotificationLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0f,
+                                                                    4.0f,
+                                                                    self.bounds.size.width,
+                                                                    MessageCellNotification_Height)];
+    self.NotificationLabel.autoresizingMask =  UIViewAutoresizingFlexibleWidth;
+    self.NotificationLabel.backgroundColor = [UIColor clearColor];
+    self.NotificationLabel.textAlignment = NSTextAlignmentCenter;
+    self.NotificationLabel.textColor = [UIColor messagesTimestampColor];
+    self.NotificationLabel.shadowColor = [UIColor whiteColor];
+    self.NotificationLabel.shadowOffset = CGSizeMake(0.0f, 1.0f);
+    self.NotificationLabel.font = [UIFont boldSystemFontOfSize:11.5f];
+    
+    [self.contentView addSubview:self.NotificationLabel];
+    [self.contentView bringSubviewToFront:self.NotificationLabel];
+}
+
 - (void)configureWithType:(JSBubbleMessageType)type
               bubbleStyle:(JSBubbleMessageStyle)bubbleStyle
               avatarStyle:(JSAvatarStyle)avatarStyle
                 mediaType:(JSBubbleMediaType)mediaType
+              messageType:(MessageType)messageType
                 timestamp:(BOOL)hasTimestamp
 {
     CGFloat bubbleY = 0.0f;
     CGFloat bubbleX = 0.0f;
+    
+    if(messageType == 1){
+        
+    }
     
     if(hasTimestamp) {
         [self configureTimestampLabel];
@@ -159,6 +185,7 @@
              avatarStyle:(JSAvatarStyle)avatarStyle
                mediaType:(JSBubbleMediaType)mediaType
             hasTimestamp:(BOOL)hasTimestamp
+            messageType:(MessageType)messageType
          reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
@@ -169,6 +196,7 @@
                     bubbleStyle:bubbleStyle
                     avatarStyle:avatarStyle
                       mediaType:mediaType
+                    messageType:1
                       timestamp:hasTimestamp];
     }
     return self;
@@ -218,6 +246,10 @@
     self.timestampLabel.text = [NSDateFormatter localizedStringFromDate:date
                                                               dateStyle:kCFDateFormatterMediumStyle
                                                               timeStyle:NSDateFormatterShortStyle];
+}
+
+-(void)setNotification:(NSString*)notification{
+    self.NotificationLabel.text = notification;
 }
 
 - (void)setAvatarImage:(UIImage *)image

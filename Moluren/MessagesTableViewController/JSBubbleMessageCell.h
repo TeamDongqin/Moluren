@@ -42,6 +42,11 @@ typedef enum {
     JSAvatarStyleNone = 2
 } JSAvatarStyle;
 
+typedef enum{
+    Chat = 0,
+    Notification = 1
+} MessageType;
+
 
 @interface JSBubbleMessageCell : UITableViewCell
 
@@ -53,6 +58,7 @@ typedef enum {
              avatarStyle:(JSAvatarStyle)avatarStyle
                mediaType:(JSBubbleMediaType)mediaType
             hasTimestamp:(BOOL)hasTimestamp
+             messageType:(MessageType)messageType
          reuseIdentifier:(NSString *)reuseIdentifier;
 
 #pragma mark - Message cell

@@ -547,6 +547,7 @@
     JSBubbleMessageStyle bubbleStyle = [self.delegate messageStyleForRowAtIndexPath:indexPath];
     JSBubbleMediaType mediaType = [self.delegate messageMediaTypeForRowAtIndexPath:indexPath];
     JSAvatarStyle avatarStyle = [self.delegate avatarStyle];
+    MessageType messagetype = 1;
     
     BOOL hasTimestamp = [self shouldHaveTimestampForRowAtIndexPath:indexPath];
     BOOL hasAvatar = [self shouldHaveAvatarForRowAtIndexPath:indexPath];
@@ -560,6 +561,7 @@
                                                    avatarStyle:(hasAvatar) ? avatarStyle : JSAvatarStyleNone
                                                      mediaType:mediaType
                                                   hasTimestamp:hasTimestamp
+                                                   messageType:messagetype
                                                reuseIdentifier:CellID];
     
     if(cell && mediaType==JSBubbleMediaTypeImage && indexPath.row==[self getTotalRowCount]-1){

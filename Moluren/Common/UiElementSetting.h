@@ -12,6 +12,6 @@
 //主窗口的宽、高
 #define Page_History_Header  150
 
-
+#define MessageCellNotification_Height 14.5f
 
 #endif

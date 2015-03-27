@@ -90,7 +90,7 @@
     UIView *navTitle = [[UIView alloc] initWithFrame:CGRectMake(MainScreenWidth/2-90, 10, 180, 30)];
     
     UILabel *titleLabel = [[UILabel alloc] init];
-    titleLabel.text = @"心情";
+    titleLabel.text = @"旅游";
     titleLabel.font = [UIFont systemFontOfSize:19];
     titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.textColor = UIColorFromRGB(Color_TopicMotion_Pattern);

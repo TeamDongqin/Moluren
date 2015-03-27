@@ -295,7 +295,7 @@
         
         // Model view
         molurenHistoryViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-        [self presentModalViewController:molurenHistoryViewController animated:YES];
+        [self presentModalViewController:molurenHistoryViewController animated:NO];
     }
 }
 

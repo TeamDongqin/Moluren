@@ -206,6 +206,7 @@
                                                    bubbleStyle:bubbleStyle
                                                    avatarStyle:(hasAvatar) ? avatarStyle : JSAvatarStyleNone mediaType:mediaType
                                                   hasTimestamp:hasTimestamp
+                                                   messageType:0
                                                reuseIdentifier:CellID];
     
     if(hasTimestamp){
