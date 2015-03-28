@@ -33,7 +33,7 @@
 @property (nonatomic, retain) NSString *fromDeveceType;//unknown、web、android、ios
 
 
-+ (SharedSingleConfig *)getSharedSingleConfig;
++ (SharedSingleConfig *)Instance;
 
 -(BOOL)insertMsgDataToTable:(NSString *)msg msgtype:(NSString *)msgtype date:(NSString *)date;
 -(NSMutableArray *)queryData;

@@ -9,6 +9,7 @@
 #import "Chat_Topic_Movie.h"
 #import "JSMessagesViewController.h"
 #import "MolurenHistoryDetailViewController.h"
+#import "MolurenHistoryNavigController.h"
 
 @interface Chat_Topic_Movie () <JSMessagesViewDelegate, JSMessagesViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -79,6 +80,8 @@
 {
     [super viewDidLoad];
     
+    [[TdTopic Instance] SetCurrentTopic:Topic_Movie];
+    
     // Set up power button state
     self.bConnected = false;
     
@@ -90,7 +93,7 @@
     UIView *navTitle = [[UIView alloc] initWithFrame:CGRectMake(MainScreenWidth/2-90, 10, 180, 30)];
     
     UILabel *titleLabel = [[UILabel alloc] init];
-    titleLabel.text = @"影片";
+    titleLabel.text = @"电影";
     titleLabel.font = [UIFont systemFontOfSize:19];
     titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.textColor = UIColorFromRGB(Color_TopicMovie_Pattern);
@@ -239,6 +242,8 @@
         
         MolurenHistoryDetailViewController *molurenHistoryViewController = [[MolurenHistoryDetailViewController alloc] initWithSid:[sidArray objectAtIndex:[sidArray count]-1]];
         
+        MolurenHistoryNavigController *HistoryNavigController = [[MolurenHistoryNavigController alloc] initWithRootViewController:molurenHistoryViewController];
+        
         //        MolurenHistoryDetailViewController *molurenHistoryViewController = [[MolurenHistoryDetailViewController alloc] init];
         //        [self.navigationController pushViewController:molurenHistoryViewController animated:YES];
         
@@ -256,8 +261,8 @@
         //         [navigationController viewWillAppear:YES];
         
         // Model view
-        molurenHistoryViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-        [self presentModalViewController:molurenHistoryViewController animated:YES];
+        molurenHistoryViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+        [self presentModalViewController:HistoryNavigController animated:YES];
     }
 }
 

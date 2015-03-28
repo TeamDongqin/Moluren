@@ -18,7 +18,7 @@
 - (void)loadView
 {
     [super loadView];
-    _sharedConfig = [SharedSingleConfig getSharedSingleConfig];
+    _sharedConfig = [SharedSingleConfig Instance];
 }
 
 - (void)viewDidLoad {

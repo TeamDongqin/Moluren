@@ -9,6 +9,7 @@
 #import "Chat_Topic_Music.h"
 #import "JSMessagesViewController.h"
 #import "MolurenHistoryDetailViewController.h"
+#import "MolurenHistoryNavigController.h"
 
 @interface Chat_Topic_Music () <JSMessagesViewDelegate, JSMessagesViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -77,6 +78,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [[TdTopic Instance] SetCurrentTopic:Topic_Music];
     
     // Set up power button state
     self.bConnected = false;
@@ -238,6 +241,8 @@
         
         MolurenHistoryDetailViewController *molurenHistoryViewController = [[MolurenHistoryDetailViewController alloc] initWithSid:[sidArray objectAtIndex:[sidArray count]-1]];
         
+        MolurenHistoryNavigController *HistoryNavigController = [[MolurenHistoryNavigController alloc] initWithRootViewController:molurenHistoryViewController];
+        
         //        MolurenHistoryDetailViewController *molurenHistoryViewController = [[MolurenHistoryDetailViewController alloc] init];
         //        [self.navigationController pushViewController:molurenHistoryViewController animated:YES];
         
@@ -255,8 +260,8 @@
         //         [navigationController viewWillAppear:YES];
         
         // Model view
-        molurenHistoryViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-        [self presentModalViewController:molurenHistoryViewController animated:YES];
+        molurenHistoryViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+        [self presentModalViewController:HistoryNavigController animated:YES];
     }
 }
 

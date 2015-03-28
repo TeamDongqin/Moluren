@@ -182,7 +182,7 @@
         
         
         
-        ZBMessageShareMenuItem *TopicWork_ChatHistoryMenuItem = [[ZBMessageShareMenuItem alloc]initWithNormalIconImage:[self.dataSource ChatHistoryMenuItem] title:@"历史记录"];
+        ZBMessageShareMenuItem *TopicWork_ChatHistoryMenuItem = [[ZBMessageShareMenuItem alloc]initWithNormalIconImage:[self.dataSource ChatHistoryMenuItem] title:@"聊天记录"];
         ZBMessageShareMenuItem *TopicWork_DiceMenuItem = [[ZBMessageShareMenuItem alloc]initWithNormalIconImage:[self.dataSource DiceMenuItem] title:@"骰子"];
         ZBMessageShareMenuItem *TopicWork_UserProfileMenuItem = [[ZBMessageShareMenuItem alloc]initWithNormalIconImage:[self.dataSource UserProfileMenuItem] title:@"交换名片"];
 
@@ -201,7 +201,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _sharedConfig = [SharedSingleConfig getSharedSingleConfig];
+    _sharedConfig = [SharedSingleConfig Instance];
     [self setup];
     
     animationDuration = 0.25;

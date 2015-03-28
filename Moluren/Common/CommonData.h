@@ -19,6 +19,15 @@ typedef enum {
     Device_iPhone6Plus
 } DeviceType;
 
+typedef enum {
+    Topic_Life,
+    Topic_Motion,
+    Topic_Music,
+    Topic_Movie,
+    Topic_Study,
+    Topic_Work
+} Topic;
+
 @interface CommonData : NSObject
 
 @end

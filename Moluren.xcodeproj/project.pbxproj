@@ -222,6 +222,9 @@
 		9CD3674E1AC656C2008E68DC /* TdUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD3674D1AC656C2008E68DC /* TdUtilities.m */; };
 		9CD367511AC65CDC008E68DC /* CommonData.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD367501AC65CDC008E68DC /* CommonData.m */; };
 		9CD367541AC65D1F008E68DC /* CommonSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD367531AC65D1F008E68DC /* CommonSetting.m */; };
+		9CD3675A1AC6C643008E68DC /* MolurenHistoryNavigController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD367591AC6C643008E68DC /* MolurenHistoryNavigController.m */; };
+		9CD3675D1AC6E1D3008E68DC /* TdSwipeTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD3675C1AC6E1D3008E68DC /* TdSwipeTransition.m */; };
+		9CD367601AC6F288008E68DC /* TdTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD3675F1AC6F288008E68DC /* TdTopic.m */; };
 		9CD6DBF51A655686007AEC30 /* DYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD6DBF41A655686007AEC30 /* DYNavigationController.m */; };
 		9CDAC31F1A738CEE00FB7A2E /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CDAC31E1A738CEE00FB7A2E /* HistoryViewController.m */; };
 		KIYDQKWBMRKIEYEVRWSLKUDQ /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = HYXIFWTDXJPPRRMDCEPMDTJH /* QuartzCore.framework */; };
@@ -522,6 +525,12 @@
 		9CD367501AC65CDC008E68DC /* CommonData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommonData.m; path = Common/CommonData.m; sourceTree = "<group>"; };
 		9CD367521AC65D1F008E68DC /* CommonSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonSetting.h; path = Common/CommonSetting.h; sourceTree = "<group>"; };
 		9CD367531AC65D1F008E68DC /* CommonSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommonSetting.m; path = Common/CommonSetting.m; sourceTree = "<group>"; };
+		9CD367581AC6C643008E68DC /* MolurenHistoryNavigController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MolurenHistoryNavigController.h; sourceTree = "<group>"; };
+		9CD367591AC6C643008E68DC /* MolurenHistoryNavigController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MolurenHistoryNavigController.m; sourceTree = "<group>"; };
+		9CD3675B1AC6E1D3008E68DC /* TdSwipeTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TdSwipeTransition.h; path = Utilities/TdSwipeTransition.h; sourceTree = "<group>"; };
+		9CD3675C1AC6E1D3008E68DC /* TdSwipeTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TdSwipeTransition.m; path = Utilities/TdSwipeTransition.m; sourceTree = "<group>"; };
+		9CD3675E1AC6F288008E68DC /* TdTopic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TdTopic.h; path = Utilities/TdTopic.h; sourceTree = "<group>"; };
+		9CD3675F1AC6F288008E68DC /* TdTopic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TdTopic.m; path = Utilities/TdTopic.m; sourceTree = "<group>"; };
 		9CD6DBF31A655686007AEC30 /* DYNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYNavigationController.h; sourceTree = "<group>"; };
 		9CD6DBF41A655686007AEC30 /* DYNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYNavigationController.m; sourceTree = "<group>"; };
 		9CDAC31D1A738CEE00FB7A2E /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
@@ -910,8 +919,10 @@
 				9CCAE80A1A5D5E5600E3A33A /* LanuchViewController.m */,
 				9CCAE80B1A5D5E5600E3A33A /* MolurenChatViewController.h */,
 				9CCAE80C1A5D5E5600E3A33A /* MolurenChatViewController.m */,
-				9CCAE80E1A5D5E5600E3A33A /* MolurenHistoryDetailViewController.m */,
 				9CCAE80D1A5D5E5600E3A33A /* MolurenHistoryDetailViewController.h */,
+				9CCAE80E1A5D5E5600E3A33A /* MolurenHistoryDetailViewController.m */,
+				9CD367581AC6C643008E68DC /* MolurenHistoryNavigController.h */,
+				9CD367591AC6C643008E68DC /* MolurenHistoryNavigController.m */,
 				9CCAE8111A5D5E5600E3A33A /* MolurenMainViewController.h */,
 				9CCAE8121A5D5E5600E3A33A /* MolurenMainViewController.m */,
 				9CCAE8131A5D5E5600E3A33A /* MolurenSettingViewController.h */,
@@ -1100,6 +1111,10 @@
 			children = (
 				9CD3674C1AC6559B008E68DC /* TdUtilities.h */,
 				9CD3674D1AC656C2008E68DC /* TdUtilities.m */,
+				9CD3675B1AC6E1D3008E68DC /* TdSwipeTransition.h */,
+				9CD3675C1AC6E1D3008E68DC /* TdSwipeTransition.m */,
+				9CD3675E1AC6F288008E68DC /* TdTopic.h */,
+				9CD3675F1AC6F288008E68DC /* TdTopic.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -1367,6 +1382,7 @@
 				18287DEC19EAAE080074BDD9 /* JSMessagesViewController.m in Sources */,
 				9CB069121A7CFEDA005C84F6 /* MolurenHistoryViewController.m in Sources */,
 				18287CE519EAA9C40074BDD9 /* AppDelegate.m in Sources */,
+				9CD3675D1AC6E1D3008E68DC /* TdSwipeTransition.m in Sources */,
 				18B8E5661A2BF38C00B54F7F /* SettingTableViewCell2.m in Sources */,
 				9CCAE8191A5D5E5600E3A33A /* MolurenHistoryDetailViewController.m in Sources */,
 				9C2D4F0D1A610BB6001C8E82 /* ZBMessageShareMenuView.m in Sources */,
@@ -1399,6 +1415,7 @@
 				182C1B3B19EFDDCE009B09AB /* PXAlertView+Customization.m in Sources */,
 				9CCAE82F1A5D626100E3A33A /* NSString+Message.m in Sources */,
 				9CCE1A7D1AC196420037935B /* Chat_Topic_Movie.m in Sources */,
+				9CD3675A1AC6C643008E68DC /* MolurenHistoryNavigController.m in Sources */,
 				18287DE819EAAE080074BDD9 /* JSBubbleView.m in Sources */,
 				9C2D4F0C1A610BB6001C8E82 /* ZBMessageShareMenuItem.m in Sources */,
 				9CCAE8181A5D5E5600E3A33A /* MolurenChatViewController.m in Sources */,
@@ -1414,6 +1431,7 @@
 				9CB069111A7CFEDA005C84F6 /* PreviousHistoryViewController.m in Sources */,
 				18287E1F19EAAE080074BDD9 /* UIImage+JSMessagesView.m in Sources */,
 				18CE73FC1A1E3A19004769F4 /* ChatHistoryEntity.m in Sources */,
+				9CD367601AC6F288008E68DC /* TdTopic.m in Sources */,
 				18287E1E19EAAE080074BDD9 /* UIColor+JSMessagesView.m in Sources */,
 				9CCAE81D1A5D5E5600E3A33A /* NewLanuchViewController.m in Sources */,
 				18BF19091A1F84A90026951C /* EAIntroView.m in Sources */,

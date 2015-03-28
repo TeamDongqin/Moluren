@@ -289,7 +289,7 @@
     
     [[self navigationItem] setBackBarButtonItem:BackBarButtonItem];
     
-    [self.navigationController.navigationBar setTintColor:UIColorFromRGB(Color_TopicWork_Pattern)];
+    //[self.navigationController.navigationBar setTintColor:UIColorFromRGB(Color_TopicWork_Pattern)];
     
     MolurenChatViewController *molurenChatViewController = [[MolurenChatViewController alloc] init];
     [self.navigationController pushViewController:molurenChatViewController animated:YES];

@@ -20,7 +20,9 @@
 #define MulMenuBgColorHex 0xF7F7F7      // Multimedia menu background color hex
 
 // Ui element
-#define Page_History_Header  150
+#define Page_History_Header_Height  150
+#define Color_History_NavigBar 0xD87A7A
+#define Page_History_Navigation_Height 64.0
 
 #define MessageCellNotification_Height 14.5f
 

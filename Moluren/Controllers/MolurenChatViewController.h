@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "JSMessagesViewController.h"
+#import "ChatHistoryDB.h"
+#import "BaseViewController.h"
 
 @interface MolurenChatViewController : JSMessagesViewController
 

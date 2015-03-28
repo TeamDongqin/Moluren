@@ -101,16 +101,14 @@
     }
 }
 
-+ (SharedSingleConfig *)getSharedSingleConfig
++ (SharedSingleConfig *)Instance
 {
-    static SharedSingleConfig *sharedSingleConfig = nil;
-    
-    @synchronized(self)
-    {
-        if (!sharedSingleConfig)
-            sharedSingleConfig = [[SharedSingleConfig alloc] init];
-        return sharedSingleConfig;
-    }
+    static dispatch_once_t predicate = 0;
+    __strong static id sharedObject = nil;
+    dispatch_once(&predicate, ^{
+        sharedObject = [[self alloc] init];
+    });
+    return sharedObject;
 }
 
 -(BOOL)insertMsgDataToTable:(NSString *)msg msgtype:(NSString *)msgtype date:(NSString *)date

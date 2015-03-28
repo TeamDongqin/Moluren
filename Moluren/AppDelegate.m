@@ -38,7 +38,7 @@
     NetworkStatus status = [curReach currentReachabilityStatus];
     
     if (status == NotReachable) {
-        [SharedSingleConfig getSharedSingleConfig].networkIsOk = NO;
+        [SharedSingleConfig Instance].networkIsOk = NO;
         /*UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:@"AppName"
          message:@"NotReachable"
          delegate:nil
@@ -46,7 +46,7 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"陌路人" message:@"没有网络" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
         [alert show];
     }else{
-        [SharedSingleConfig getSharedSingleConfig].networkIsOk = YES;
+        [SharedSingleConfig Instance].networkIsOk = YES;
     }
 }
 
