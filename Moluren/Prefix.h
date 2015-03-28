@@ -8,8 +8,9 @@
 
 #import "TdColorSetting.h"
 #import "GlobalUI.h"
-#import "UsermsgPrefix.h"
-#import "UiElementSetting.h"
+#import "CommonData.h"
+#import "CommonSetting.h"
+#import "TdUtilities.h"
 
 #ifndef Moluren_Prefix_h
 #define Moluren_Prefix_h

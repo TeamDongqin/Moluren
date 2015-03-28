@@ -219,6 +219,9 @@
 		9CCE1A7E1AC196420037935B /* Chat_Topic_Music.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCE1A761AC196420037935B /* Chat_Topic_Music.m */; };
 		9CCE1A7F1AC196420037935B /* Chat_Topic_Study.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCE1A781AC196420037935B /* Chat_Topic_Study.m */; };
 		9CCE1A801AC196420037935B /* Chat_Topic_Work.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCE1A7A1AC196420037935B /* Chat_Topic_Work.m */; };
+		9CD3674E1AC656C2008E68DC /* TdUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD3674D1AC656C2008E68DC /* TdUtilities.m */; };
+		9CD367511AC65CDC008E68DC /* CommonData.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD367501AC65CDC008E68DC /* CommonData.m */; };
+		9CD367541AC65D1F008E68DC /* CommonSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD367531AC65D1F008E68DC /* CommonSetting.m */; };
 		9CD6DBF51A655686007AEC30 /* DYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD6DBF41A655686007AEC30 /* DYNavigationController.m */; };
 		9CDAC31F1A738CEE00FB7A2E /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CDAC31E1A738CEE00FB7A2E /* HistoryViewController.m */; };
 		KIYDQKWBMRKIEYEVRWSLKUDQ /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = HYXIFWTDXJPPRRMDCEPMDTJH /* QuartzCore.framework */; };
@@ -512,10 +515,13 @@
 		9CCE1A781AC196420037935B /* Chat_Topic_Study.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Chat_Topic_Study.m; path = Chat_Topics/Chat_Topic_Study.m; sourceTree = "<group>"; };
 		9CCE1A791AC196420037935B /* Chat_Topic_Work.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Chat_Topic_Work.h; path = Chat_Topics/Chat_Topic_Work.h; sourceTree = "<group>"; };
 		9CCE1A7A1AC196420037935B /* Chat_Topic_Work.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Chat_Topic_Work.m; path = Chat_Topics/Chat_Topic_Work.m; sourceTree = "<group>"; };
-		9CCE82F71AB82FFB0070B638 /* TdColorSetting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TdColorSetting.h; path = Common/TdColorSetting.h; sourceTree = "<group>"; };
 		9CCE82F81AB831650070B638 /* Prefix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.h; sourceTree = "<group>"; };
-		9CD25B321AC0375E00166375 /* UiElementSetting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UiElementSetting.h; path = Common/UiElementSetting.h; sourceTree = "<group>"; };
-		9CD455E61AB2638100C9B3C4 /* UsermsgPrefix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UsermsgPrefix.h; path = Common/UsermsgPrefix.h; sourceTree = "<group>"; };
+		9CD3674C1AC6559B008E68DC /* TdUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TdUtilities.h; path = Utilities/TdUtilities.h; sourceTree = "<group>"; };
+		9CD3674D1AC656C2008E68DC /* TdUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TdUtilities.m; path = Utilities/TdUtilities.m; sourceTree = "<group>"; };
+		9CD3674F1AC65CDC008E68DC /* CommonData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonData.h; path = Common/CommonData.h; sourceTree = "<group>"; };
+		9CD367501AC65CDC008E68DC /* CommonData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommonData.m; path = Common/CommonData.m; sourceTree = "<group>"; };
+		9CD367521AC65D1F008E68DC /* CommonSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonSetting.h; path = Common/CommonSetting.h; sourceTree = "<group>"; };
+		9CD367531AC65D1F008E68DC /* CommonSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommonSetting.m; path = Common/CommonSetting.m; sourceTree = "<group>"; };
 		9CD6DBF31A655686007AEC30 /* DYNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYNavigationController.h; sourceTree = "<group>"; };
 		9CD6DBF41A655686007AEC30 /* DYNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYNavigationController.m; sourceTree = "<group>"; };
 		9CDAC31D1A738CEE00FB7A2E /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
@@ -609,6 +615,7 @@
 				184B9E8019EB4C090053F3E9 /* Config */,
 				18287D1A19EAAD4E0074BDD9 /* MessagesTableViewController */,
 				18287D1419EAABBD0074BDD9 /* Common */,
+				9CD3674B1AC654E9008E68DC /* Utilities */,
 				18287CDF19EAA9C40074BDD9 /* Supporting Files */,
 				9CCE82F81AB831650070B638 /* Prefix.h */,
 				18287CE319EAA9C40074BDD9 /* AppDelegate.h */,
@@ -657,9 +664,10 @@
 				18287D1519EAAC140074BDD9 /* BaseViewController.h */,
 				18287D1619EAAC140074BDD9 /* BaseViewController.m */,
 				18287D1719EAAC140074BDD9 /* GlobalUI.h */,
-				9CD455E61AB2638100C9B3C4 /* UsermsgPrefix.h */,
-				9CCE82F71AB82FFB0070B638 /* TdColorSetting.h */,
-				9CD25B321AC0375E00166375 /* UiElementSetting.h */,
+				9CD3674F1AC65CDC008E68DC /* CommonData.h */,
+				9CD367501AC65CDC008E68DC /* CommonData.m */,
+				9CD367521AC65D1F008E68DC /* CommonSetting.h */,
+				9CD367531AC65D1F008E68DC /* CommonSetting.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -1087,6 +1095,15 @@
 			name = Chat_Topics;
 			sourceTree = "<group>";
 		};
+		9CD3674B1AC654E9008E68DC /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				9CD3674C1AC6559B008E68DC /* TdUtilities.h */,
+				9CD3674D1AC656C2008E68DC /* TdUtilities.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
 		9CD6DBE61A65558F007AEC30 /* MolurenHistoryViewControllerGroup */ = {
 			isa = PBXGroup;
 			children = (
@@ -1378,6 +1395,7 @@
 				184B9E8319EB4C650053F3E9 /* SharedSingleConfig.m in Sources */,
 				18294F9219EBE1BF00614906 /* NSObject+Json.m in Sources */,
 				9CCAE81C1A5D5E5600E3A33A /* MolurenSettingViewController.m in Sources */,
+				9CD367511AC65CDC008E68DC /* CommonData.m in Sources */,
 				182C1B3B19EFDDCE009B09AB /* PXAlertView+Customization.m in Sources */,
 				9CCAE82F1A5D626100E3A33A /* NSString+Message.m in Sources */,
 				9CCE1A7D1AC196420037935B /* Chat_Topic_Movie.m in Sources */,
@@ -1391,6 +1409,7 @@
 				9CD6DBF51A655686007AEC30 /* DYNavigationController.m in Sources */,
 				1835755F1A1E3630005FF4C2 /* FMDatabaseQueue.m in Sources */,
 				180DAAF81A24815500C07AC2 /* SettingsTableViewCell.m in Sources */,
+				9CD367541AC65D1F008E68DC /* CommonSetting.m in Sources */,
 				18287DE719EAAE080074BDD9 /* JSBubbleMessageCell.m in Sources */,
 				9CB069111A7CFEDA005C84F6 /* PreviousHistoryViewController.m in Sources */,
 				18287E1F19EAAE080074BDD9 /* UIImage+JSMessagesView.m in Sources */,
@@ -1399,6 +1418,7 @@
 				9CCAE81D1A5D5E5600E3A33A /* NewLanuchViewController.m in Sources */,
 				18BF19091A1F84A90026951C /* EAIntroView.m in Sources */,
 				18CE73F41A1E3743004769F4 /* ChatHistoryDBManager.m in Sources */,
+				9CD3674E1AC656C2008E68DC /* TdUtilities.m in Sources */,
 				183575621A1E3650005FF4C2 /* FMResultSet.m in Sources */,
 				1823ECAB1A24BADD00D22B08 /* VPImageCropperViewController.m in Sources */,
 				18294F9119EBE1BF00614906 /* NSMutableDictionary+Json.m in Sources */,

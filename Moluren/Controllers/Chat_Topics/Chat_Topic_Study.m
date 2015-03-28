@@ -743,7 +743,7 @@
 -(void)SetIphoneUserMessagePrefix{
     self.bSendIphoneUserMsgPrefix = true;
     
-    [self sendMessageRequest:iPhone5s_Prefix];
+    [self sendMessageRequest:iPhone5s_Suffix_Template];
     
     self.bSendIphoneUserMsgPrefix = false;
 }

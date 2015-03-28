@@ -35,7 +35,7 @@
     }
     
     if (!_shareMenuItemTitleLabel) {
-        UILabel *shareMenuItemTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.shareMenuItemButton.frame), kZBShareMenuItemIconSize, KZBShareMenuItemHeight - kZBShareMenuItemIconSize)];
+        UILabel *shareMenuItemTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, kZBShareMenuItemIconSize, kZBShareMenuItemIconSize, KZBShareMenuItemHeight - kZBShareMenuItemIconSize)];
         shareMenuItemTitleLabel.backgroundColor = [UIColor clearColor];
         shareMenuItemTitleLabel.textColor = [UIColor blackColor];
         shareMenuItemTitleLabel.font = [UIFont systemFontOfSize:12];
@@ -138,6 +138,7 @@
         [shareMenuItemView.shareMenuItemButton addTarget:self action:@selector(shareMenuItemButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
         [shareMenuItemView.shareMenuItemButton setImage:shareMenuItem.normalIconImage forState:UIControlStateNormal];
         shareMenuItemView.shareMenuItemTitleLabel.text = shareMenuItem.title;
+        [shareMenuItemView.shareMenuItemTitleLabel setTextColor:[UIColor redColor]];
         
         [self.shareMenuScrollView addSubview:shareMenuItemView];
     }
