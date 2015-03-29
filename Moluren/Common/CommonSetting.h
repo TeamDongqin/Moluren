@@ -9,12 +9,12 @@
 #import <Foundation/Foundation.h>
 
 // Topic color pattern
-#define Color_TopicWork_Pattern     0xED1941
-#define Color_TopicLife_Pattern     0xffd400
-#define Color_TopicMotion_Pattern   0x45b97c
-#define Color_TopicMusic_Pattern    0x2a5caa
-#define Color_TopicMovie_Pattern    0x6950a1
-#define Color_TopicStudy_Pattern    0xf47920
+#define Color_TopicWork_Pattern     0xED1941     // Note: Update to CoffeeRoom
+#define Color_TopicLife_Pattern     0xffd400     // Note: Update to Park
+#define Color_TopicMotion_Pattern   0x45b97c     // Note: Update to Hotel
+#define Color_TopicMusic_Pattern    0x2a5caa     // Note: Update to Street
+#define Color_TopicMovie_Pattern    0x6950a1     // Note: Update to Cinema
+#define Color_TopicStudy_Pattern    0xf47920     // Note: Update to Campus
 
 // Multimedia menu
 #define MulMenuBgColorHex 0xF7F7F7      // Multimedia menu background color hex

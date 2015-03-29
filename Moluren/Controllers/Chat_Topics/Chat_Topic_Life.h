@@ -11,4 +11,6 @@
 
 @interface Chat_Topic_Life : MolurenChatViewController
 
+- (void)OnReturnButtonClick;
+
 @end

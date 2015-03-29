@@ -146,15 +146,18 @@
     CGFloat offsetX = 0.0f;
     
     if(avatarStyle != JSAvatarStyleNone) {
-        offsetX = 4.0f;
+        offsetX = -2.0f;
         bubbleX = kJSAvatarSize;
-        CGFloat avatarX = 0.5f;
+        CGFloat avatarX = 5.0f;
         
         if(type == JSBubbleMessageTypeOutgoing) {
-            avatarX = (self.contentView.frame.size.width - kJSAvatarSize);
-            offsetX = kJSAvatarSize - 4.0f;
+            avatarX = (self.contentView.frame.size.width - kJSAvatarSize)- 5.0f;
+            offsetX = kJSAvatarSize + 2.0f ;
         }
-        self.avatarImageView = [[UIImageView alloc] initWithFrame:CGRectMake(avatarX,
+        
+        CGFloat PortraitHorizontalMargin = avatarX;
+        
+        self.avatarImageView = [[UIImageView alloc] initWithFrame:CGRectMake(PortraitHorizontalMargin,
                                                                              self.contentView.frame.size.height - kJSAvatarSize,
                                                                              kJSAvatarSize,
                                                                              kJSAvatarSize)];
@@ -165,7 +168,9 @@
         [self.contentView addSubview:self.avatarImageView];
     }
     
-    CGRect frame = CGRectMake(bubbleX - offsetX,
+    CGFloat BubbleHorizontalMargin = bubbleX - offsetX;
+    
+    CGRect frame = CGRectMake(BubbleHorizontalMargin,
                               bubbleY,
                               self.contentView.frame.size.width - bubbleX,
                               self.contentView.frame.size.height - self.timestampLabel.frame.size.height);

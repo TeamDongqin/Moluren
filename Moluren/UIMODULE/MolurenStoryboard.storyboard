@@ -16,13 +16,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" tag="2001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SkynightBG5s" translatesAutoresizingMaskIntoConstraints="NO" id="LV1-fk-coL">
-                                <rect key="frame" x="0.0" y="0.0" width="327" height="573"/>
-                            </imageView>
                             <button opaque="NO" tag="1006" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j40-Xs-rsK">
-                                <rect key="frame" x="192" y="318" width="112" height="50"/>
+                                <rect key="frame" x="192" y="216" width="112" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="电  影" backgroundImage="LifeTopic">
+                                <state key="normal" title="影  院" backgroundImage="LifeTopic">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -30,21 +27,10 @@
                                     <action selector="EnterTopic:" destination="9m1-OQ-Q1G" eventType="touchUpInside" id="f2C-zN-UWT"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="1005" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OsP-fo-JT8">
-                                <rect key="frame" x="37" y="318" width="112" height="50"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="旅 游" backgroundImage="LifeTopic">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="EnterTopic:" destination="9m1-OQ-Q1G" eventType="touchUpInside" id="oDZ-ga-fVd"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" tag="1004" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QBE-TB-3Aa">
-                                <rect key="frame" x="192" y="216" width="112" height="50"/>
+                                <rect key="frame" x="192" y="318" width="112" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="音 乐" backgroundImage="LifeTopic">
+                                <state key="normal" title="步行街" backgroundImage="LifeTopic">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -55,7 +41,7 @@
                             <button opaque="NO" tag="1001" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qRM-mD-LkF">
                                 <rect key="frame" x="37" y="120" width="112" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="学  习" backgroundImage="LifeTopic">
+                                <state key="normal" title="校  园" backgroundImage="LifeTopic">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -64,9 +50,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1003" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yso-DL-a30">
-                                <rect key="frame" x="37" y="216" width="112" height="50"/>
+                                <rect key="frame" x="37" y="318" width="112" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="工  作" backgroundImage="LifeTopic">
+                                <state key="normal" title="咖啡厅" backgroundImage="LifeTopic">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -77,12 +63,23 @@
                             <button opaque="NO" tag="1002" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="207" placeholderIntrinsicHeight="102" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dSL-JR-hPD">
                                 <rect key="frame" x="192" y="120" width="112" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="情 感" backgroundImage="LifeTopic">
+                                <state key="normal" title="公  园" backgroundImage="LifeTopic">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="EnterTopic:" destination="9m1-OQ-Q1G" eventType="touchUpInside" id="GTF-MO-USt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1005" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OsP-fo-JT8">
+                                <rect key="frame" x="37" y="216" width="112" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="旅  社" backgroundImage="LifeTopic">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="EnterTopic:" destination="9m1-OQ-Q1G" eventType="touchUpInside" id="oDZ-ga-fVd"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -178,6 +175,5 @@
     <resources>
         <image name="HistoryDataBG" width="744" height="1392"/>
         <image name="LifeTopic" width="215" height="110"/>
-        <image name="SkynightBG5s" width="640" height="1136"/>
     </resources>
 </document>

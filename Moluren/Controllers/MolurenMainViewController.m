@@ -83,7 +83,7 @@
 //    UIImageView* HomeBgImageView = (UIImageView*)[self.view viewWithTag:2001];
 //    [HomeBgImageView setImage:[[HomeBgImage Instance] GetHomeBgImage]];
     
-    //self.view.backgroundColor = [UIColor colorWithPatternImage:[[HomeBgImage Instance] GetHomeBgImage]];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[[HomeBgImage Instance] GetHomeBgImage]];
     
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 16, 17)];
     UIImage *searchimage=[UIImage imageNamed:@"shape_white"];
@@ -186,17 +186,18 @@
             {
                 [self.tabBarController.tabBar setHidden:YES];
                 
+                Chat_Topic_Life *chatViewController = [[Chat_Topic_Life alloc] init];
+                
                 // Back to home button
                 UIBarButtonItem *BackBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"陌路人"
                                                                                       style:UIBarButtonItemStyleBordered
-                                                                                     target:nil
-                                                                                     action:nil];
+                                                                                     target:chatViewController
+                                                                                     action:@selector(OnReturnButtonClick)];
                 
                 [[self navigationItem] setBackBarButtonItem:BackBarButtonItem];
                 
                 [self.navigationController.navigationBar setTintColor:UIColorFromRGB(Color_TopicLife_Pattern)];
                 
-                Chat_Topic_Life *chatViewController = [[Chat_Topic_Life alloc] init];
                 [self.navigationController pushViewController:chatViewController animated:YES];
             }
             break;

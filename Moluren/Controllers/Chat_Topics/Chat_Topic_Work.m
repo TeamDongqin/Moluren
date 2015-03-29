@@ -10,6 +10,7 @@
 #import "JSMessagesViewController.h"
 #import "MolurenHistoryDetailViewController.h"
 #import "MolurenHistoryNavigController.h"
+#import "SGActionView.h"
 
 @interface Chat_Topic_Work () <JSMessagesViewDelegate, JSMessagesViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -38,6 +39,8 @@
 @property (nonatomic) BOOL *bSendIphoneUserMsgPrefix;
 
 @property (nonatomic) BOOL *bFirstReceiveMsg;
+
+@property (nonatomic, strong) SGMenuActionHandler actionHandle;
 
 @end
 
@@ -93,7 +96,7 @@
     UIView *navTitle = [[UIView alloc] initWithFrame:CGRectMake(MainScreenWidth/2-90, 10, 180, 30)];
     
     UILabel *titleLabel = [[UILabel alloc] init];
-    titleLabel.text = @"工作";
+    titleLabel.text = @"咖啡厅";
     titleLabel.font = [UIFont systemFontOfSize:19];
     titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.textColor = UIColorFromRGB(Color_TopicWork_Pattern);
@@ -114,7 +117,14 @@
     
     self.navigationItem.rightBarButtonItem = rightBarButtonItem;
     
-    self.navigationItem.leftBarButtonItem.title = @"陌路人";
+    //self.navigationItem.leftBarButtonItem.title = @"陌路人";
+    
+    // Set up left bar button
+    UIImage *LeftBarButtonImage = [UIImage imageNamed:@"Button_Home_CoffeeRoom"];
+    
+    UIBarButtonItem *LeftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:LeftBarButtonImage style:UIBarButtonItemStylePlain target:self action:@selector(onReturnButtonClick:)];
+    
+    self.navigationItem.leftBarButtonItem = LeftBarButtonItem;
     
     [self.view addSubview:navTitle];
     
@@ -210,21 +220,24 @@
     }
 }
 
+-(void)onReturnButtonClick:(id)sender{
+//    [SGActionView showAlertWithTitle:@"咖啡厅"
+//                             message:@"确定离开 '咖啡厅' 吗"
+//                     leftButtonTitle:@"取消"
+//                    rightButtonTitle:@"确定"
+//                      selectedHandle:self.actionHandle];
+    
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"咖啡厅" message:@"确定离开'咖啡厅'吗." delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    [alert show];
+}
+
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    //根据被点击按钮的索引处理点击事件
-    
-    NSLog(@"clickButtonAtIndex:%d",buttonIndex);
-    if(alertView==_backToMainViewAlert){
-        //确定断开会话并返回
-        if(buttonIndex==0){
-            NSLog(@"确定断开会话");
-            self.disconnect;
-            self.retrieveToken;
-            
-            [self.navigationController popViewControllerAnimated:NO];
-            
-        }
+    if(buttonIndex == 0){
+        
+    }
+    else if (buttonIndex == 1){
+        [self.navigationController popViewControllerAnimated:YES];
     }
 }
 

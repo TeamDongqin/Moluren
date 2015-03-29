@@ -66,6 +66,16 @@
     [super viewWillDisappear:animated];
 }
 
+-(void)viewWillDisappear:(BOOL)animated{
+    if ([self.navigationController.viewControllers indexOfObject:self]==NSNotFound) {
+        
+        //[self OnReturnButtonClick];
+        
+        [self.navigationController popViewControllerAnimated:NO];
+    }
+    [super viewWillDisappear:animated];
+}
+
 //页面消失，进入后台不显示该页面，关闭定时器
 -(void)viewDidDisappear:(BOOL)animated
 {
@@ -93,7 +103,7 @@
     UIView *navTitle = [[UIView alloc] initWithFrame:CGRectMake(MainScreenWidth/2-90, 10, 180, 30)];
     
     UILabel *titleLabel = [[UILabel alloc] init];
-    titleLabel.text = @"情感";
+    titleLabel.text = @"公园";
     titleLabel.font = [UIFont systemFontOfSize:19];
     titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.textColor = UIColorFromRGB(Color_TopicLife_Pattern);
@@ -113,6 +123,43 @@
     UIBarButtonItem *rightBarButtonItem =[[UIBarButtonItem alloc] initWithCustomView:_PowerButton];
     
     self.navigationItem.rightBarButtonItem = rightBarButtonItem;
+    
+    // Set up left bar button
+//    UIImage *LeftBarButtonImage = [UIImage imageNamed:@"LeftBarButtonItem_Moluren"];
+//    
+//    UIButton* ReturnButton = [[UIButton alloc] initWithFrame:CGRectMake(9, 32, 73, 20)];
+//    [ReturnButton setBackgroundImage:LeftBarButtonImage forState:UIControlStateNormal];
+//    [ReturnButton addTarget:self action:@selector(OnReturnButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+//    
+//    UIBarButtonItem *LeftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:ReturnButton];
+//    
+//    self.navigationItem.leftBarButtonItem = LeftBarButtonItem;
+    
+//    UIBarButtonItem *LeftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:LeftBarButtonImage style:UIBarButtonItemStylePlain target:self action:@selector(OnReturnButtonClick:)];
+//    
+//    //    UIBarButtonItem *BackBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"陌路人"
+//    //                                                                          style:UIBarButtonItemStyleBordered
+//    //                                                                         target:nil
+//    //                                                                         action:nil];
+//    //
+//    //    [[self navigationItem] setBackBarButtonItem:BackBarButtonItem];
+//    
+//    [self.navigationController.navigationBar setTintColor:UIColorFromRGB(Color_TopicLife_Pattern)];
+//    
+//    [self.navigationController.navigationItem setLeftBarButtonItem:LeftBarButtonItem];
+    
+    // Set up left bar button
+//    UIImage *PowerButtonBgImage = [UIImage imageNamed:@"Topic_PowerButton_Off"];
+//    
+//    _PowerButton = [[UIButton alloc] initWithFrame:CGRectMake(MainScreenWidth-150, 24, 30, 30)];
+//    [_PowerButton setBackgroundImage:PowerButtonBgImage forState:UIControlStateNormal];
+//    [_PowerButton addTarget:self action:@selector(onPowerButtonClick) forControlEvents:UIControlEventTouchUpInside];
+//    
+//    UIBarButtonItem *leftBarButtonItem =[[UIBarButtonItem alloc] initWithCustomView:_PowerButton];
+//    
+//    self.navigationItem.leftBarButtonItem = leftBarButtonItem;
+
+//    UIBarButtonItem* backBarButtonItem = [UIBarButtonItem alloc] initWithBarButtonSystemItem:<#(UIBarButtonSystemItem)#> target:<#(id)#> action:<#(SEL)#>
     
 
     
@@ -210,6 +257,10 @@
         
         self.bConnected = true;
     }
+}
+
+- (void)OnReturnButtonClick{
+    //[self.view.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex

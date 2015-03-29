@@ -60,7 +60,7 @@
     
     self.CustomNavigItem.titleView = label;
     
-    UIImage *backButtonImage = [UIImage imageNamed:@"Button_Return"];
+    UIImage *backButtonImage = [UIImage imageNamed:@"Button_Return_Default"];
     
     UIBarButtonItem *backBarButtonItem = [[UIBarButtonItem alloc] initWithImage:backButtonImage style:UIBarButtonItemStylePlain target:self action:@selector(backTapped:)];
     

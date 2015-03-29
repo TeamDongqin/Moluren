@@ -93,7 +93,7 @@
     UIView *navTitle = [[UIView alloc] initWithFrame:CGRectMake(MainScreenWidth/2-90, 10, 180, 30)];
     
     UILabel *titleLabel = [[UILabel alloc] init];
-    titleLabel.text = @"电影";
+    titleLabel.text = @"影院";
     titleLabel.font = [UIFont systemFontOfSize:19];
     titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.textColor = UIColorFromRGB(Color_TopicMovie_Pattern);

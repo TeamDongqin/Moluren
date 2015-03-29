@@ -19,6 +19,7 @@
 @property (strong, nonatomic) UIButton *DeleteButton;
 
 @property (strong, nonatomic) UIImage *ChatterPortrait;
+@property (strong, nonatomic) UIImage *DeleteImage;
 
 @end
 
@@ -70,10 +71,11 @@
     [self.view addSubview:self.tableView];
     
     // Set up right bar button
-    UIImage *PowerButtonBgImage = [UIImage imageNamed:@"Topic_PowerButton_Off"];
+    self.DeleteImage = [[TdTopic Instance] GetCurrentHistoryDetailDeleteImage];
+    UIImage *DeleteButtonBgImage = self.DeleteImage;
     
-    UIButton *DeleteButton = [[UIButton alloc] initWithFrame:CGRectMake(MainScreenWidth-150, 24, 30, 30)];
-    [DeleteButton setBackgroundImage:PowerButtonBgImage forState:UIControlStateNormal];
+    UIButton *DeleteButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 19, 25)];
+    [DeleteButton setBackgroundImage:DeleteButtonBgImage forState:UIControlStateNormal];
     [DeleteButton addTarget:self action:@selector(onDeleteButtonClick) forControlEvents:UIControlEventTouchUpInside];
     
     UIBarButtonItem *rightBarButtonItem =[[UIBarButtonItem alloc] initWithCustomView:DeleteButton];
@@ -88,7 +90,25 @@
 
 -(void)onDeleteButtonClick{
     [hisDB deleteMsgWithSId:self.sid];
-    [self.navigationController popViewControllerAnimated:YES];
+    
+    if(self == [self.navigationController.viewControllers firstObject]){
+        [self.navigationController popViewControllerAnimated:YES];
+        
+        NSInteger *preSid =  [self->hisDB findPreSitWithCurrentSid:self.sid];
+        if(preSid==-1000){
+            NSLog(@"没有更多的历史记录了");
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"陌路人" message:@"没有更多的历史记录了!" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
+            [alert show];
+            return;
+        }
+        
+        MolurenHistoryDetailViewController *molurenHistoryDetailViewController = [[MolurenHistoryDetailViewController alloc] initWithSid:[NSString stringWithFormat: @"%d",preSid]];
+        
+        [self.navigationController pushViewController:molurenHistoryDetailViewController animated:YES];
+    }
+    else{
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 - (void)viewDidLoad {

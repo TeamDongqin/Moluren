@@ -225,6 +225,9 @@
 		9CD3675A1AC6C643008E68DC /* MolurenHistoryNavigController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD367591AC6C643008E68DC /* MolurenHistoryNavigController.m */; };
 		9CD3675D1AC6E1D3008E68DC /* TdSwipeTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD3675C1AC6E1D3008E68DC /* TdSwipeTransition.m */; };
 		9CD367601AC6F288008E68DC /* TdTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD3675F1AC6F288008E68DC /* TdTopic.m */; };
+		9CD657221AC8398F0019499A /* SGAlertMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD657211AC8398F0019499A /* SGAlertMenu.m */; };
+		9CD657251AC839AC0019499A /* SGBaseMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD657241AC839AC0019499A /* SGBaseMenu.m */; };
+		9CD657281AC839D30019499A /* SGActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD657271AC839D30019499A /* SGActionView.m */; };
 		9CD6DBF51A655686007AEC30 /* DYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD6DBF41A655686007AEC30 /* DYNavigationController.m */; };
 		9CDAC31F1A738CEE00FB7A2E /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CDAC31E1A738CEE00FB7A2E /* HistoryViewController.m */; };
 		9CE1C2271AC7BE5E00A02C0E /* HomeBgImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1C2261AC7BE5E00A02C0E /* HomeBgImage.m */; };
@@ -532,6 +535,12 @@
 		9CD3675C1AC6E1D3008E68DC /* TdSwipeTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TdSwipeTransition.m; path = Utilities/TdSwipeTransition.m; sourceTree = "<group>"; };
 		9CD3675E1AC6F288008E68DC /* TdTopic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TdTopic.h; path = Utilities/TdTopic.h; sourceTree = "<group>"; };
 		9CD3675F1AC6F288008E68DC /* TdTopic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TdTopic.m; path = Utilities/TdTopic.m; sourceTree = "<group>"; };
+		9CD657201AC8398F0019499A /* SGAlertMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGAlertMenu.h; sourceTree = "<group>"; };
+		9CD657211AC8398F0019499A /* SGAlertMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGAlertMenu.m; sourceTree = "<group>"; };
+		9CD657231AC839AC0019499A /* SGBaseMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGBaseMenu.h; sourceTree = "<group>"; };
+		9CD657241AC839AC0019499A /* SGBaseMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGBaseMenu.m; sourceTree = "<group>"; };
+		9CD657261AC839D30019499A /* SGActionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGActionView.h; sourceTree = "<group>"; };
+		9CD657271AC839D30019499A /* SGActionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGActionView.m; sourceTree = "<group>"; };
 		9CD6DBF31A655686007AEC30 /* DYNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYNavigationController.h; sourceTree = "<group>"; };
 		9CD6DBF41A655686007AEC30 /* DYNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYNavigationController.m; sourceTree = "<group>"; };
 		9CDAC31D1A738CEE00FB7A2E /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
@@ -1091,6 +1100,19 @@
 			name = Utilities;
 			sourceTree = "<group>";
 		};
+		9CD6571F1AC8398F0019499A /* ExitTopicAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				9CD657261AC839D30019499A /* SGActionView.h */,
+				9CD657271AC839D30019499A /* SGActionView.m */,
+				9CD657231AC839AC0019499A /* SGBaseMenu.h */,
+				9CD657241AC839AC0019499A /* SGBaseMenu.m */,
+				9CD657201AC8398F0019499A /* SGAlertMenu.h */,
+				9CD657211AC8398F0019499A /* SGAlertMenu.m */,
+			);
+			path = ExitTopicAlertView;
+			sourceTree = "<group>";
+		};
 		9CD6DBE61A65558F007AEC30 /* MolurenHistoryViewControllerGroup */ = {
 			isa = PBXGroup;
 			children = (
@@ -1105,6 +1127,7 @@
 		9CE1C2231AC7BBF500A02C0E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9CD6571F1AC8398F0019499A /* ExitTopicAlertView */,
 				182C1B3519EFDDC1009B09AB /* PXAlertView */,
 				18BF19031A1F83920026951C /* EAIntroView */,
 				18B8E55D1A2BF19100B54F7F /* TableView */,
@@ -1421,8 +1444,10 @@
 				18287DE819EAAE080074BDD9 /* JSBubbleView.m in Sources */,
 				9C2D4F0C1A610BB6001C8E82 /* ZBMessageShareMenuItem.m in Sources */,
 				9CCAE8181A5D5E5600E3A33A /* MolurenChatViewController.m in Sources */,
+				9CD657251AC839AC0019499A /* SGBaseMenu.m in Sources */,
 				18287DEA19EAAE080074BDD9 /* JSMessageInputView.m in Sources */,
 				18287D1819EAAC140074BDD9 /* BaseViewController.m in Sources */,
+				9CD657221AC8398F0019499A /* SGAlertMenu.m in Sources */,
 				9CCAE81B1A5D5E5600E3A33A /* MolurenMainViewController.m in Sources */,
 				9CCAE82C1A5D613100E3A33A /* ZBMessageTextView.m in Sources */,
 				9CD6DBF51A655686007AEC30 /* DYNavigationController.m in Sources */,
@@ -1442,6 +1467,7 @@
 				183575621A1E3650005FF4C2 /* FMResultSet.m in Sources */,
 				1823ECAB1A24BADD00D22B08 /* VPImageCropperViewController.m in Sources */,
 				18294F9119EBE1BF00614906 /* NSMutableDictionary+Json.m in Sources */,
+				9CD657281AC839D30019499A /* SGActionView.m in Sources */,
 				1835755D1A1E3630005FF4C2 /* FMDatabaseAdditions.m in Sources */,
 				9CCAE8171A5D5E5600E3A33A /* LanuchViewController.m in Sources */,
 			);

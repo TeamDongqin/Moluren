@@ -113,4 +113,45 @@
     return image;
 }
 
+-(UIImage*)GetCurrentHistoryDetailDeleteImage{
+    UIImage* image = [[UIImage alloc] init];
+    
+    switch (self.CurrentTopic) {
+        case Topic_Life:
+        {
+            image = [UIImage imageNamed:@"Button_Delete_Park"];
+        }
+            break;
+        case Topic_Motion:
+        {
+            image = [UIImage imageNamed:@"Button_Delete_Hotel"];
+        }
+            break;
+        case Topic_Movie:
+        {
+            image = [UIImage imageNamed:@"Button_Delete_Cinema"];
+        }
+            break;
+        case Topic_Music:
+        {
+            image = [UIImage imageNamed:@"Button_Delete_Street"];
+        }
+            break;
+        case Topic_Study:
+        {
+            image = [UIImage imageNamed:@"Button_Delete_Campus"];
+        }
+            break;
+        case Topic_Work:
+        {
+            image = [UIImage imageNamed:@"Button_Delete_CoffeeRoom"];
+        }
+            break;
+        default:
+            break;
+    }
+    
+    return image;
+}
+
 @end
