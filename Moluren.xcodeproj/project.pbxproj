@@ -227,6 +227,7 @@
 		9CD367601AC6F288008E68DC /* TdTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD3675F1AC6F288008E68DC /* TdTopic.m */; };
 		9CD6DBF51A655686007AEC30 /* DYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD6DBF41A655686007AEC30 /* DYNavigationController.m */; };
 		9CDAC31F1A738CEE00FB7A2E /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CDAC31E1A738CEE00FB7A2E /* HistoryViewController.m */; };
+		9CE1C2271AC7BE5E00A02C0E /* HomeBgImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1C2261AC7BE5E00A02C0E /* HomeBgImage.m */; };
 		KIYDQKWBMRKIEYEVRWSLKUDQ /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = HYXIFWTDXJPPRRMDCEPMDTJH /* QuartzCore.framework */; };
 		KNPONLATPTEBRUFEBXNXFHCQ /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = THBDITSPYVFDWQYYBDCIDIXG /* libz.dylib */; };
 /* End PBXBuildFile section */
@@ -535,6 +536,8 @@
 		9CD6DBF41A655686007AEC30 /* DYNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYNavigationController.m; sourceTree = "<group>"; };
 		9CDAC31D1A738CEE00FB7A2E /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
 		9CDAC31E1A738CEE00FB7A2E /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
+		9CE1C2251AC7BE5E00A02C0E /* HomeBgImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeBgImage.h; path = View/HomeBgImage.h; sourceTree = "<group>"; };
+		9CE1C2261AC7BE5E00A02C0E /* HomeBgImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeBgImage.m; path = View/HomeBgImage.m; sourceTree = "<group>"; };
 		HYXIFWTDXJPPRRMDCEPMDTJH /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		THBDITSPYVFDWQYYBDCIDIXG /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -564,15 +567,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1812ACA319F0A2F200F027F3 /* Reachability */ = {
-			isa = PBXGroup;
-			children = (
-				1812ACA419F0A33500F027F3 /* Reachability.h */,
-				1812ACA519F0A33500F027F3 /* Reachability.m */,
-			);
-			name = Reachability;
-			sourceTree = "<group>";
-		};
 		1823ECA81A24BACC00D22B08 /* VPImageCropper */ = {
 			isa = PBXGroup;
 			children = (
@@ -580,6 +574,7 @@
 				1823ECAA1A24BADD00D22B08 /* VPImageCropperViewController.m */,
 			);
 			name = VPImageCropper;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		18287CD319EAA9C40074BDD9 = {
@@ -608,21 +603,9 @@
 		18287CDE19EAA9C40074BDD9 /* Moluren */ = {
 			isa = PBXGroup;
 			children = (
-				9C2D4F071A610BB6001C8E82 /* MessageShareView */,
-				9CCAE8EE1A5D6DAE00E3A33A /* MessageDisplayResource */,
-				9CCAE8261A5D613100E3A33A /* MessageInputView */,
-				9CCAE8081A5D5E5600E3A33A /* Controllers */,
-				18B8E55D1A2BF19100B54F7F /* TableView */,
-				1823ECA81A24BACC00D22B08 /* VPImageCropper */,
-				18BF19031A1F83920026951C /* EAIntroView */,
-				18CE73F91A1E39EE004769F4 /* Entity */,
-				18CE73F51A1E395D004769F4 /* DB */,
-				1812ACA319F0A2F200F027F3 /* Reachability */,
-				183575441A1E350B005FF4C2 /* FMDB */,
-				182C1B3519EFDDC1009B09AB /* PXAlertView */,
-				184B9E8419EB52B10053F3E9 /* JSONKit */,
-				184B9E8019EB4C090053F3E9 /* Config */,
-				18287D1A19EAAD4E0074BDD9 /* MessagesTableViewController */,
+				9CE1C2241AC7BC3E00A02C0E /* Model */,
+				9CE1C2231AC7BBF500A02C0E /* View */,
+				9CCAE8081A5D5E5600E3A33A /* Controller */,
 				18287D1419EAABBD0074BDD9 /* Common */,
 				9CD3674B1AC654E9008E68DC /* Utilities */,
 				18287CDF19EAA9C40074BDD9 /* Supporting Files */,
@@ -713,6 +696,7 @@
 				18287DE619EAAE080074BDD9 /* UIView+AnimationOptionsForCurve.m */,
 			);
 			name = MessagesTableViewController;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		18287DAE19EAAE080074BDD9 /* Resources */ = {
@@ -818,10 +802,9 @@
 			children = (
 				184B9E8119EB4C650053F3E9 /* SharedSingleConfig.h */,
 				184B9E8219EB4C650053F3E9 /* SharedSingleConfig.m */,
-				18CE73F21A1E3743004769F4 /* ChatHistoryDBManager.h */,
-				18CE73F31A1E3743004769F4 /* ChatHistoryDBManager.m */,
 			);
 			name = Config;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		184B9E8419EB52B10053F3E9 /* JSONKit */ = {
@@ -866,24 +849,6 @@
 			name = EAIntroView;
 			sourceTree = "<group>";
 		};
-		18CE73F51A1E395D004769F4 /* DB */ = {
-			isa = PBXGroup;
-			children = (
-				18CE73F61A1E3992004769F4 /* ChatHistoryDB.h */,
-				18CE73F71A1E3992004769F4 /* ChatHistoryDB.m */,
-			);
-			name = DB;
-			sourceTree = "<group>";
-		};
-		18CE73F91A1E39EE004769F4 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-				18CE73FA1A1E3A19004769F4 /* ChatHistoryEntity.h */,
-				18CE73FB1A1E3A19004769F4 /* ChatHistoryEntity.m */,
-			);
-			name = Entity;
-			sourceTree = "<group>";
-		};
 		9C2D4F071A610BB6001C8E82 /* MessageShareView */ = {
 			isa = PBXGroup;
 			children = (
@@ -910,9 +875,12 @@
 			name = PendingForRemove;
 			sourceTree = "<group>";
 		};
-		9CCAE8081A5D5E5600E3A33A /* Controllers */ = {
+		9CCAE8081A5D5E5600E3A33A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				18287D1A19EAAD4E0074BDD9 /* MessagesTableViewController */,
+				184B9E8019EB4C090053F3E9 /* Config */,
+				1823ECA81A24BACC00D22B08 /* VPImageCropper */,
 				9CB069061A7CFEC8005C84F6 /* PendingForRemove */,
 				9CD6DBE61A65558F007AEC30 /* MolurenHistoryViewControllerGroup */,
 				9CCAE8091A5D5E5600E3A33A /* LanuchViewController.h */,
@@ -931,6 +899,7 @@
 				9CCAE8161A5D5E5600E3A33A /* NewLanuchViewController.m */,
 				9CCE1A6E1AC196260037935B /* Chat_Topics */,
 			);
+			name = Controller;
 			path = Controllers;
 			sourceTree = "<group>";
 		};
@@ -1109,6 +1078,9 @@
 		9CD3674B1AC654E9008E68DC /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				184B9E8419EB52B10053F3E9 /* JSONKit */,
+				1812ACA419F0A33500F027F3 /* Reachability.h */,
+				1812ACA519F0A33500F027F3 /* Reachability.m */,
 				9CD3674C1AC6559B008E68DC /* TdUtilities.h */,
 				9CD3674D1AC656C2008E68DC /* TdUtilities.m */,
 				9CD3675B1AC6E1D3008E68DC /* TdSwipeTransition.h */,
@@ -1128,6 +1100,35 @@
 				9CDAC31E1A738CEE00FB7A2E /* HistoryViewController.m */,
 			);
 			path = MolurenHistoryViewControllerGroup;
+			sourceTree = "<group>";
+		};
+		9CE1C2231AC7BBF500A02C0E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				182C1B3519EFDDC1009B09AB /* PXAlertView */,
+				18BF19031A1F83920026951C /* EAIntroView */,
+				18B8E55D1A2BF19100B54F7F /* TableView */,
+				9CCAE8261A5D613100E3A33A /* MessageInputView */,
+				9CCAE8EE1A5D6DAE00E3A33A /* MessageDisplayResource */,
+				9C2D4F071A610BB6001C8E82 /* MessageShareView */,
+				9CE1C2251AC7BE5E00A02C0E /* HomeBgImage.h */,
+				9CE1C2261AC7BE5E00A02C0E /* HomeBgImage.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		9CE1C2241AC7BC3E00A02C0E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				183575441A1E350B005FF4C2 /* FMDB */,
+				18CE73F21A1E3743004769F4 /* ChatHistoryDBManager.h */,
+				18CE73F31A1E3743004769F4 /* ChatHistoryDBManager.m */,
+				18CE73F61A1E3992004769F4 /* ChatHistoryDB.h */,
+				18CE73F71A1E3992004769F4 /* ChatHistoryDB.m */,
+				18CE73FA1A1E3A19004769F4 /* ChatHistoryEntity.h */,
+				18CE73FB1A1E3A19004769F4 /* ChatHistoryEntity.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1384,6 +1385,7 @@
 				18287CE519EAA9C40074BDD9 /* AppDelegate.m in Sources */,
 				9CD3675D1AC6E1D3008E68DC /* TdSwipeTransition.m in Sources */,
 				18B8E5661A2BF38C00B54F7F /* SettingTableViewCell2.m in Sources */,
+				9CE1C2271AC7BE5E00A02C0E /* HomeBgImage.m in Sources */,
 				9CCAE8191A5D5E5600E3A33A /* MolurenHistoryDetailViewController.m in Sources */,
 				9C2D4F0D1A610BB6001C8E82 /* ZBMessageShareMenuView.m in Sources */,
 				9CCAE9AE1A5D6DBB00E3A33A /* ZBMessage.m in Sources */,

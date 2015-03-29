@@ -54,7 +54,7 @@
     CurrentDeviceType = [[deviceNamesByCode objectForKey:code] integerValue];
     
     if (CurrentDeviceType == Device_Default) {
-        CurrentDeviceType = Device_iPhone5s;  // Default
+        CurrentDeviceType = Device_iPhone4s;  // Default
     }
     
     return CurrentDeviceType;

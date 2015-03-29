@@ -8,6 +8,7 @@
 #import "Chat_Topic_Music.h"
 #import "Chat_Topic_Study.h"
 #import "Chat_Topic_Work.h"
+#import "HomeBgImage.h"
 
 @interface MolurenMainViewController ()
 
@@ -77,9 +78,12 @@
         // fix for ipad modal form presentations
         ((UIScrollView *)self.view).scrollEnabled = NO;
     }
-
-    self.navigationController.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"SkynightBG4s"]];
     
+    // Set home background image
+//    UIImageView* HomeBgImageView = (UIImageView*)[self.view viewWithTag:2001];
+//    [HomeBgImageView setImage:[[HomeBgImage Instance] GetHomeBgImage]];
+    
+    //self.view.backgroundColor = [UIColor colorWithPatternImage:[[HomeBgImage Instance] GetHomeBgImage]];
     
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 16, 17)];
     UIImage *searchimage=[UIImage imageNamed:@"shape_white"];

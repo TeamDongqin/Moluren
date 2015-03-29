@@ -16,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SkynightBG5s" translatesAutoresizingMaskIntoConstraints="NO" id="LV1-fk-coL">
-                                <rect key="frame" x="-7" y="0.0" width="327" height="573"/>
+                            <imageView userInteractionEnabled="NO" tag="2001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SkynightBG5s" translatesAutoresizingMaskIntoConstraints="NO" id="LV1-fk-coL">
+                                <rect key="frame" x="0.0" y="0.0" width="327" height="573"/>
                             </imageView>
                             <button opaque="NO" tag="1006" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j40-Xs-rsK">
                                 <rect key="frame" x="192" y="318" width="112" height="50"/>
