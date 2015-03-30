@@ -231,6 +231,14 @@
     [alert show];
 }
 
+-(void)ShowNotification{
+    UIView* View = [[UIView alloc]initWithFrame:CGRectMake(0, Page_History_Navigation_Height, MainScreenWidth, 40)];
+    
+    View.backgroundColor = [[TdTopic Instance] GetCurrentColorPattern];
+    
+    [self.view addSubview:View];
+}
+
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if(buttonIndex == 0){
@@ -558,6 +566,8 @@
     UIImage *PowerButtonBgImage = [UIImage imageNamed:@"Topic_PowerButton_Off"];
     
     [_PowerButton setBackgroundImage:PowerButtonBgImage forState:UIControlStateNormal];
+    
+    [self ShowNotification];
     
     
     //[self sendDisconectedMessage:@"对方已经断开连接，请重新连接 [ Beta ]"];
