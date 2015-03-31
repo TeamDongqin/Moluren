@@ -17,5 +17,6 @@
 -(UIColor*)GetCurrentColorPattern;
 -(UIImage*)GetCurrentTopicPortrait;
 -(UIImage*)GetCurrentHistoryDetailDeleteImage;
+-(UIImage*)GetCurrentNotificationImage;
 
 @end

@@ -120,7 +120,12 @@
     
     self.navigationItem.rightBarButtonItem = rightBarButtonItem;
     
-    self.navigationItem.leftBarButtonItem.title = @"陌路人";
+    // Set up left bar button
+    UIImage *LeftBarButtonImage = [UIImage imageNamed:@"Button_Home_CoffeeRoom"];
+    
+    UIBarButtonItem *LeftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:LeftBarButtonImage style:UIBarButtonItemStylePlain target:self action:@selector(onReturnButtonClick:)];
+    
+    self.navigationItem.leftBarButtonItem = LeftBarButtonItem;
     
     [self.view addSubview:navTitle];
     
@@ -216,21 +221,41 @@
     }
 }
 
+-(void)onReturnButtonClick:(id)sender{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"校园" message:@"确定离开 '校园' 吗?" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    [alert show];
+}
+
+-(void)ShowNotification{
+    UIImageView* View = [[UIImageView alloc]initWithFrame:CGRectMake(0, Page_History_Navigation_Height, MainScreenWidth, Notification_Disconnect_Height)];
+    
+    [View setImage:[[TdTopic Instance] GetCurrentNotificationImage]];
+    
+    [self.view addSubview:View];
+    
+    [UIView animateWithDuration:0.5
+                          delay:1
+                        options:UIViewAnimationOptionTransitionCrossDissolve
+                     animations:^{
+                         View.backgroundColor=[UIColor clearColor];
+                     } completion:^(BOOL finish){
+                         [View removeFromSuperview];
+                     }];
+}
+
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    //根据被点击按钮的索引处理点击事件
-    
-    NSLog(@"clickButtonAtIndex:%d",buttonIndex);
-    if(alertView==_backToMainViewAlert){
-        //确定断开会话并返回
-        if(buttonIndex==0){
-            NSLog(@"确定断开会话");
-            self.disconnect;
-            self.retrieveToken;
+    if(buttonIndex == 0){
+        
+    }
+    else if (buttonIndex == 1){
+        if(self.bConnected){
+            [self disconnect];
             
-            [self.navigationController popViewControllerAnimated:NO];
-            
+            self.bConnected = false;
         }
+        
+        [self.navigationController popViewControllerAnimated:YES];
     }
 }
 
@@ -552,6 +577,7 @@
     
     [_PowerButton setBackgroundImage:PowerButtonBgImage forState:UIControlStateNormal];
     
+    [self ShowNotification];
     
     //[self sendDisconectedMessage:@"对方已经断开连接，请重新连接 [ Beta ]"];
 }
@@ -589,7 +615,7 @@
     NSLog(@"isConnected=%@,isReceivingMsg=%@",self.sharedConfig.isConnected?@"YES":@"NO",self.sharedConfig.isReceivingMsg?@"YES":@"NO");
     if(self.sharedConfig.isConnected && !self.sharedConfig.isReceivingMsg){
         if(self.sharedConfig.httpRequestTimeoutTimes>5 && self.sharedConfig.httpRequestTimeoutTimes%6==0){
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"陌路人" message:@"当前网络好像出问题了哦，请检查一下吧!" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"陌路人" message:@"抱歉，亲，'校园'的服务器好像出问题了哦，请重新连接" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
             [alert show];
         }
         NSLog(@"开始进行http请求获取消息");

@@ -154,4 +154,45 @@
     return image;
 }
 
+-(UIImage*)GetCurrentNotificationImage{
+    UIImage* image = [[UIImage alloc] init];
+    
+    switch (self.CurrentTopic) {
+        case Topic_Life:
+        {
+            image = [UIImage imageNamed:@"Notification_Park"];
+        }
+            break;
+        case Topic_Motion:
+        {
+            image = [UIImage imageNamed:@"Notification_Hotel"];
+        }
+            break;
+        case Topic_Movie:
+        {
+            image = [UIImage imageNamed:@"Notification_Cinema"];
+        }
+            break;
+        case Topic_Music:
+        {
+            image = [UIImage imageNamed:@"Notification_Street"];
+        }
+            break;
+        case Topic_Study:
+        {
+            image = [UIImage imageNamed:@"Notification_Campus"];
+        }
+            break;
+        case Topic_Work:
+        {
+            image = [UIImage imageNamed:@"Notification_CoffeeRoom"];
+        }
+            break;
+        default:
+            break;
+    }
+    
+    return image;
+}
+
 @end

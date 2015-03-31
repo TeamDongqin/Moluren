@@ -20,12 +20,12 @@ typedef enum {
 } DeviceType;
 
 typedef enum {
-    Topic_Life,
-    Topic_Motion,
-    Topic_Music,
-    Topic_Movie,
-    Topic_Study,
-    Topic_Work
+    Topic_Life,             // Note: Update to Park
+    Topic_Motion,           // Note: Update to Hotel
+    Topic_Music,            // Note: Update to Street
+    Topic_Movie,            // Note: Update to Cinema
+    Topic_Study,            // Note: Update to Campus
+    Topic_Work              // Note: Update to CoffeeRoom
 } Topic;
 
 @interface CommonData : NSObject
