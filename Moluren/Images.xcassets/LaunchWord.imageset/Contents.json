@@ -3,17 +3,17 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "TopicStudy_PowerButton_On@1x.png"
+      "filename" : "LaunchWord.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "TopicStudy_PowerButton_On-1.png"
+      "filename" : "LaunchWord-1.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "TopicStudy_PowerButton_On@3x.png"
+      "filename" : "LaunchWord-2.png"
     }
   ],
   "info" : {

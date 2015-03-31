@@ -593,6 +593,8 @@
     
     
     [self sendDisconectedMessage:@"抱歉，您已被服务器暂时屏蔽， 请稍后再试"];
+    
+        [self ShowNotification];
 }
 
 #pragma mark - Chatting with other user
@@ -802,7 +804,7 @@
     [self finishSend];
     
     if(!self.sharedConfig.isConnected){
-        [self sendDisconectedMessage:@"已经断掉啦,赶紧请返回开始页面重新连接吧!"];
+        [self sendDisconectedMessage:@"亲， 您已经不在'校园'啦，'校园'随时欢迎您回来！"];
     }else{
         
         [self sendMessageRequest:text];
@@ -836,7 +838,7 @@
     [self finishSend];
     
     if(!self.sharedConfig.isConnected){
-        [self sendDisconectedMessage:@"已经断掉啦,赶紧请返回开始页面重新连接吧!"];
+        [self sendDisconectedMessage:@"亲， 您已经不在'校园'啦，'校园'随时欢迎您回来！"];
     }else{
         
         [self sendMessageRequest:text];

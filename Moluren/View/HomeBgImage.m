@@ -55,12 +55,12 @@
             break;
         case Device_iPhone6:
             {
-                ImageFileName = @"SkynightBG5s";
+                ImageFileName = @"SkynightBG6";
             }
             break;
         case Device_iPhone6Plus:
             {
-                ImageFileName = @"SkynightBG5s";
+                ImageFileName = @"SkynightBG6p";
             }
             break;
         case Device_Default:

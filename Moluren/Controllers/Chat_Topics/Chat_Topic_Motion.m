@@ -796,7 +796,7 @@
     [self finishSend];
     
     if(!self.sharedConfig.isConnected){
-        [self sendDisconectedMessage:@"已经断掉啦,赶紧请返回开始页面重新连接吧!"];
+        [self sendDisconectedMessage:@"亲， 您已经不在'旅社'啦，'旅社'随时欢迎您回来！"];
     }else{
         
         [self sendMessageRequest:text];
@@ -830,7 +830,7 @@
     [self finishSend];
     
     if(!self.sharedConfig.isConnected){
-        [self sendDisconectedMessage:@"已经断掉啦,赶紧请返回开始页面重新连接吧!"];
+        [self sendDisconectedMessage:@"亲， 您已经不在'旅社'啦，'旅社'随时欢迎您回来！"];
     }else{
         
         [self sendMessageRequest:text];

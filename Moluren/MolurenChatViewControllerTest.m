@@ -57,13 +57,6 @@
     [JSMessageSoundEffect playMessageSentSound];
     
     [self finishSend];
-    
-    /*if(!_sharedConfig.isConnected){
-        [self sendDisconectedMessage:@"已经断掉啦,赶紧请返回开始页面重新连接吧!"];
-    }else{
-        
-        [self sendMessageRequest:text];
-    }*/
 }
 
 - (void)cameraPressed:(id)sender{

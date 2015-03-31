@@ -3,7 +3,7 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "Notification_Campus.png"
+      "filename" : "Notification_Campus@1x.png"
     },
     {
       "idiom" : "universal",
@@ -13,7 +13,7 @@
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "Notification_Campus-2.png"
+      "filename" : "Notification_Campus@3x.png"
     }
   ],
   "info" : {

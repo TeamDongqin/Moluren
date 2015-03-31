@@ -16,6 +16,8 @@
 #define Color_TopicMovie_Pattern    0x6950a1     // Note: Update to Cinema
 #define Color_TopicStudy_Pattern    0xf47920     // Note: Update to Campus
 
+#define Color_AppTheme              0x213441
+
 // Multimedia menu
 #define MulMenuBgColorHex 0xF7F7F7      // Multimedia menu background color hex
 

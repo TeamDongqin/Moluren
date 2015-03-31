@@ -18,6 +18,7 @@
 
 @property (strong, nonatomic) NSMutableArray *messageArray;
 @property (strong, nonatomic) NSMutableArray *messageType;//Incoming:YES;Outgoing:NO;
+
 @property (nonatomic,strong) UIImage *willSendImage;
 @property (strong, nonatomic) NSMutableArray *timestamps;
 
@@ -494,7 +495,6 @@
                                        NSLog(@"当前连接已断开");
                                        self.sharedConfig.isConnected = NO;
                                        [self.sharedConfig updateSessionId];
-                                       /*[self performSelectorOnMainThread:@selector(sendDisconectedMessage) withObject:nil waitUntilDone:YES];*/
                                        if(self.sharedConfig.autoConnect){
                                            [self performSelectorOnMainThread:@selector(connectToNewSession) withObject:nil waitUntilDone:YES];
                                        }else{
@@ -578,8 +578,6 @@
     [_PowerButton setBackgroundImage:PowerButtonBgImage forState:UIControlStateNormal];
     
     [self ShowNotification];
-    
-    //[self sendDisconectedMessage:@"对方已经断开连接，请重新连接 [ Beta ]"];
 }
 
 -(void) SessionConnectionExceptionCallback{
@@ -802,7 +800,7 @@
     [self finishSend];
     
     if(!self.sharedConfig.isConnected){
-        [self sendDisconectedMessage:@"已经断掉啦,赶紧请返回开始页面重新连接吧!"];
+        [self sendDisconectedMessage:@"亲， 您已经不在'咖啡厅'啦，'咖啡厅'随时欢迎您回来！"];
     }else{
         
         [self sendMessageRequest:text];
@@ -836,7 +834,7 @@
     [self finishSend];
     
     if(!self.sharedConfig.isConnected){
-        [self sendDisconectedMessage:@"已经断掉啦,赶紧请返回开始页面重新连接吧!"];
+        [self sendDisconectedMessage:@"亲， 您已经不在'咖啡厅'啦，'咖啡厅'随时欢迎您回来！"];
     }else{
         
         [self sendMessageRequest:text];
@@ -901,6 +899,7 @@
 }
 
 -(void)ClearTableView{
+    [self.messageType removeAllObjects];
     [self.messageArray removeAllObjects];
     [self.tableView reloadData];
 }

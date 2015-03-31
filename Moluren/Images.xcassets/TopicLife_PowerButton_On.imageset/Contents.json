@@ -3,17 +3,17 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "TopicLife_PowerButton_On.png"
+      "filename" : "TopicLife_PowerButton_On@1x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "TopicLife_PowerButton_On-1.png"
+      "filename" : "TopicLife_PowerButton_On.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "TopicLife_PowerButton_On-2.png"
+      "filename" : "TopicLife_PowerButton_On@3x.png"
     }
   ],
   "info" : {

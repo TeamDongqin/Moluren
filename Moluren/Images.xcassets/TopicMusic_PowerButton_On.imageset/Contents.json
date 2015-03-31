@@ -3,7 +3,7 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "TopicMusic_PowerButton_On.png"
+      "filename" : "TopicMusic_PowerButton_On@1x.png"
     },
     {
       "idiom" : "universal",
@@ -13,7 +13,7 @@
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "TopicMusic_PowerButton_On-2.png"
+      "filename" : "TopicMusic_PowerButton_On@3x.png"
     }
   ],
   "info" : {

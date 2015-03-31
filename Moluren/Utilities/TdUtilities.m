@@ -45,6 +45,8 @@
                           @"iPhone5,4" :[NSNumber numberWithInt:Device_iPhone5c],       // (model A1507, A1516, A1526 (China), A1529 | Global)
                           @"iPhone6,1" :[NSNumber numberWithInt:Device_iPhone5s],       // (model A1433, A1533 | GSM)
                           @"iPhone6,2" :[NSNumber numberWithInt:Device_iPhone5s],       // (model A1457, A1518, A1528 (China), A1530 | Global)
+                          @"iPhone7,1" :[NSNumber numberWithInt:Device_iPhone6Plus],
+                          @"iPhone7,2" :[NSNumber numberWithInt:Device_iPhone6]
                           };
     
     struct utsname systemInfo;
@@ -54,7 +56,7 @@
     CurrentDeviceType = [[deviceNamesByCode objectForKey:code] integerValue];
     
     if (CurrentDeviceType == Device_Default) {
-        CurrentDeviceType = Device_iPhone4s;  // Default
+        CurrentDeviceType = Device_iPhone5s;  // Default
     }
     
     return CurrentDeviceType;
