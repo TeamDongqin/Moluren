@@ -608,7 +608,7 @@
     NSLog(@"isConnected=%@,isReceivingMsg=%@",self.sharedConfig.isConnected?@"YES":@"NO",self.sharedConfig.isReceivingMsg?@"YES":@"NO");
     if(self.sharedConfig.isConnected && !self.sharedConfig.isReceivingMsg){
         if(self.sharedConfig.httpRequestTimeoutTimes>5 && self.sharedConfig.httpRequestTimeoutTimes%6==0){
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"陌路人" message:@"抱歉，亲，'影院'的服务器好像出问题了哦，请重新连接" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"陌路人" message:@"抱歉，亲，'影院'内暂时没有联系其他人，请回到大厅前往其他场景" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
             [alert show];
         }
         NSLog(@"开始进行http请求获取消息");
