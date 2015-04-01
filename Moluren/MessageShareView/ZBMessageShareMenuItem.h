@@ -16,4 +16,6 @@
 - (instancetype)initWithNormalIconImage:(UIImage *)normalIconImage
                                   title:(NSString *)title;
 
+- (instancetype)initWithNormalIconImage:(UIImage *)normalIconImage;
+
 @end

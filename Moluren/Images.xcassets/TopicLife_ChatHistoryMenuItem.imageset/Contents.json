@@ -3,17 +3,17 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "Topic_Life_ChatHistoryMenuItem.png"
+      "filename" : "Topic_Life_ChatHistoryMenuItem@1x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "Topic_Life_ChatHistoryMenuItem-1.png"
+      "filename" : "Topic_Life_ChatHistoryMenuItem.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "Topic_Life_ChatHistoryMenuItem-2.png"
+      "filename" : "Topic_Life_ChatHistoryMenuItem@3x.png"
     }
   ],
   "info" : {

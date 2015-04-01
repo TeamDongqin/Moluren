@@ -3,7 +3,7 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "Button_Return_Default.png"
+      "filename" : "Button_Return_Default@1x.png"
     },
     {
       "idiom" : "universal",
@@ -13,7 +13,7 @@
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "Button_Return_Default-2.png"
+      "filename" : "Button_Return_Default@3x.png"
     }
   ],
   "info" : {

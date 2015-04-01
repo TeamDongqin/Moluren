@@ -3,17 +3,17 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "Button_Return_CoffeeRoom.png"
+      "filename" : "Button_Return_Default-1.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "Button_Return_CoffeeRoom-1.png"
+      "filename" : "Button_Return_Default.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "Button_Return_CoffeeRoom-2.png"
+      "filename" : "Button_Return_Default-2.png"
     }
   ],
   "info" : {

@@ -3,7 +3,7 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "Button_Home_CoffeeRoom.png"
+      "filename" : "Button_Home_CoffeeRoom@1x.png"
     },
     {
       "idiom" : "universal",
@@ -13,7 +13,7 @@
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "Button_Home_CoffeeRoom-2.png"
+      "filename" : "Button_Home_CoffeeRoom@3x.png"
     }
   ],
   "info" : {

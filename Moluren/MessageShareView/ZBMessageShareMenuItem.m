@@ -20,6 +20,13 @@
     return self;
 }
 
+- (instancetype)initWithNormalIconImage:(UIImage *)normalIconImage{
+    if (self) {
+        self.normalIconImage = normalIconImage;
+    }
+    return self;
+}
+
 - (void)dealloc{
     self.normalIconImage = nil;
     self.title = nil;

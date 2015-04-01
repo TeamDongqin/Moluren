@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2Ol-A5-3cT">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--TopicsViewController-->
@@ -16,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" tag="1006" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j40-Xs-rsK">
-                                <rect key="frame" x="192" y="216" width="112" height="50"/>
+                            <button opaque="NO" tag="1006" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j40-Xs-rsK">
+                                <rect key="frame" x="352" y="206" width="112" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="影  院" backgroundImage="LifeTopic">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -27,19 +28,8 @@
                                     <action selector="EnterTopic:" destination="9m1-OQ-Q1G" eventType="touchUpInside" id="f2C-zN-UWT"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="1004" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QBE-TB-3Aa">
-                                <rect key="frame" x="192" y="318" width="112" height="50"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="步行街" backgroundImage="LifeTopic">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="EnterTopic:" destination="9m1-OQ-Q1G" eventType="touchUpInside" id="37i-aB-Sz7"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="1001" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qRM-mD-LkF">
-                                <rect key="frame" x="37" y="120" width="112" height="50"/>
+                            <button opaque="NO" tag="1001" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qRM-mD-LkF">
+                                <rect key="frame" x="86" y="111" width="112" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="校  园" backgroundImage="LifeTopic">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -49,8 +39,8 @@
                                     <action selector="EnterTopic:" destination="9m1-OQ-Q1G" eventType="touchUpInside" id="f5P-KE-Rd3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="1003" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yso-DL-a30">
-                                <rect key="frame" x="37" y="318" width="112" height="50"/>
+                            <button opaque="NO" tag="1003" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yso-DL-a30">
+                                <rect key="frame" x="86" y="306" width="112" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="咖啡厅" backgroundImage="LifeTopic">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -60,8 +50,8 @@
                                     <action selector="EnterTopic:" destination="9m1-OQ-Q1G" eventType="touchUpInside" id="eqz-jZ-Y2Y"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="1002" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="207" placeholderIntrinsicHeight="102" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dSL-JR-hPD">
-                                <rect key="frame" x="192" y="120" width="112" height="50"/>
+                            <button opaque="NO" tag="1002" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" placeholderIntrinsicWidth="207" placeholderIntrinsicHeight="102" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dSL-JR-hPD">
+                                <rect key="frame" x="352" y="111" width="112" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="公  园" backgroundImage="LifeTopic">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -71,8 +61,8 @@
                                     <action selector="EnterTopic:" destination="9m1-OQ-Q1G" eventType="touchUpInside" id="GTF-MO-USt"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="1005" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OsP-fo-JT8">
-                                <rect key="frame" x="37" y="216" width="112" height="50"/>
+                            <button opaque="NO" tag="1005" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OsP-fo-JT8">
+                                <rect key="frame" x="86" y="206" width="112" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="旅  社" backgroundImage="LifeTopic">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -82,14 +72,36 @@
                                     <action selector="EnterTopic:" destination="9m1-OQ-Q1G" eventType="touchUpInside" id="oDZ-ga-fVd"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" tag="1004" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QBE-TB-3Aa">
+                                <rect key="frame" x="352" y="306" width="112" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="步行街" backgroundImage="LifeTopic">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="EnterTopic:" destination="9m1-OQ-Q1G" eventType="touchUpInside" id="37i-aB-Sz7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="j40-Xs-rsK" firstAttribute="leading" secondItem="dSL-JR-hPD" secondAttribute="leading" id="1po-Ib-eCH"/>
+                            <constraint firstItem="j40-Xs-rsK" firstAttribute="top" secondItem="OsP-fo-JT8" secondAttribute="top" id="2y7-Py-v0l"/>
+                            <constraint firstItem="QBE-TB-3Aa" firstAttribute="top" secondItem="yso-DL-a30" secondAttribute="top" id="P3w-ml-sED"/>
+                            <constraint firstItem="qRM-mD-LkF" firstAttribute="centerX" secondItem="0aE-Qr-ZjN" secondAttribute="centerX" multiplier="1/2" id="Vws-Yw-V8W"/>
+                            <constraint firstItem="yso-DL-a30" firstAttribute="leading" secondItem="OsP-fo-JT8" secondAttribute="leading" id="foZ-Fi-Jvn"/>
+                            <constraint firstItem="yso-DL-a30" firstAttribute="leading" secondItem="qRM-mD-LkF" secondAttribute="leading" id="h3H-pC-FCH"/>
+                            <constraint firstItem="dSL-JR-hPD" firstAttribute="top" secondItem="qRM-mD-LkF" secondAttribute="top" id="hCV-s7-fnV"/>
+                            <constraint firstItem="dSL-JR-hPD" firstAttribute="centerX" secondItem="0aE-Qr-ZjN" secondAttribute="centerX" multiplier="3/2" id="lo6-Eb-nRe" userLabel="Center X Alignment - View - 公  园"/>
+                            <constraint firstItem="j40-Xs-rsK" firstAttribute="leading" secondItem="QBE-TB-3Aa" secondAttribute="leading" id="nGs-i5-6fb"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="OAJ-4c-fMm"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b64-eT-MHf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1850" y="102"/>
+            <point key="canvasLocation" x="1507" y="-153"/>
         </scene>
         <!--sfdasjd-->
         <scene sceneID="tFK-Ec-r90">
@@ -169,7 +181,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dbb-1m-Azz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1281" y="-130"/>
+            <point key="canvasLocation" x="766" y="-106"/>
         </scene>
     </scenes>
     <resources>
