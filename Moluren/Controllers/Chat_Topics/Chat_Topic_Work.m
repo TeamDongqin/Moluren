@@ -10,7 +10,7 @@
 #import "JSMessagesViewController.h"
 #import "MolurenHistoryDetailViewController.h"
 #import "MolurenHistoryNavigController.h"
-#import "SGActionView.h"
+#import "ConfirmView.h"
 
 @interface Chat_Topic_Work () <JSMessagesViewDelegate, JSMessagesViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -40,8 +40,6 @@
 @property (nonatomic) BOOL *bSendIphoneUserMsgPrefix;
 
 @property (nonatomic) BOOL *bFirstReceiveMsg;
-
-@property (nonatomic, strong) SGMenuActionHandler actionHandle;
 
 @end
 
@@ -166,7 +164,7 @@
     // Connect to server
     if(![self.sharedConfig.token isEqualToString:@""] && self.sharedConfig.token.length>1){
         if(self.sharedConfig.isConnected == false){
-            self.connectToNewSession;
+            //self.connectToNewSession;
         }
     }else{
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"错误" message:@"连接错误,点击确认重新连接." delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil];
@@ -220,8 +218,28 @@
 }
 
 -(void)onReturnButtonClick:(id)sender{
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"咖啡厅" message:@"确定离开 '咖啡厅' 吗?" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-    [alert show];
+//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"咖啡厅" message:@"确定离开 '咖啡厅' 吗?" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+//    [alert show];
+    
+//    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MolurenStoryboard" bundle:nil];
+//    UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"Confirm"];
+    
+//    UIView *view = [[[NSBundle mainBundle] loadNibNamed:@"ConfirmView" owner:self options:nil] firstObject];
+//    int a = Device_Width;
+//    view.frame = CGRectMake(0, 300, Device_Width, 168);
+    
+    ConfirmView* view = [[ConfirmView alloc] initWithFrame:CGRectMake(0, Device_Height, Device_Width, 168)];
+
+    [UIView animateWithDuration:0.3
+                          delay:0
+                        options: UIViewAnimationCurveEaseIn
+                     animations:^{
+                         view.frame = CGRectMake(0, Device_Height - 168, Device_Width, 168);
+                     }
+                     completion:^(BOOL finished){
+                         //[view removeFromSuperview];
+                     }];
+    [self.view addSubview:view];
 }
 
 -(void)ShowNotification{

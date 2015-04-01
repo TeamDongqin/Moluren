@@ -10,6 +10,7 @@
 #import "JSMessagesViewController.h"
 #import "MolurenHistoryDetailViewController.h"
 #import "MolurenHistoryNavigController.h"
+#import "ConfirmView.h"
 
 @interface Chat_Topic_Study () <JSMessagesViewDelegate, JSMessagesViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -222,8 +223,21 @@
 }
 
 -(void)onReturnButtonClick:(id)sender{
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"校园" message:@"确定离开 '校园' 吗?" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-    [alert show];
+//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"校园" message:@"确定离开 '校园' 吗?" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+//    [alert show];
+    
+    ConfirmView* view = [[ConfirmView alloc] initWithFrame:CGRectMake(0, Device_Height, Device_Width, 168)];
+    
+    [UIView animateWithDuration:0.3
+                          delay:0
+                        options: UIViewAnimationCurveEaseIn
+                     animations:^{
+                         view.frame = CGRectMake(0, Device_Height - 168, Device_Width, 168);
+                     }
+                     completion:^(BOOL finished){
+                         //[view removeFromSuperview];
+                     }];
+    [self.view addSubview:view];
 }
 
 -(void)ShowNotification{

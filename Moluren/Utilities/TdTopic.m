@@ -195,4 +195,45 @@
     return image;
 }
 
+-(NSString*)GetCurrentConfirmText{
+    NSString* string = [[NSString alloc] init];
+    
+    switch (self.CurrentTopic) {
+        case Topic_Life:
+        {
+            string = @"确定离开'公园'吗?";
+        }
+            break;
+        case Topic_Motion:
+        {
+            string = @"确定离开'旅社'吗?";
+        }
+            break;
+        case Topic_Movie:
+        {
+            string = @"确定离开'影院'吗?";
+        }
+            break;
+        case Topic_Music:
+        {
+            string = @"确定离开'步行街'吗?";
+        }
+            break;
+        case Topic_Study:
+        {
+            string = @"确定离开'校园'吗?";
+        }
+            break;
+        case Topic_Work:
+        {
+            string = @"确定离开'咖啡厅'吗?";
+        }
+            break;
+        default:
+            break;
+    }
+    
+    return string;
+}
+
 @end

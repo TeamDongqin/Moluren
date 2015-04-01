@@ -18,5 +18,6 @@
 -(UIImage*)GetCurrentTopicPortrait;
 -(UIImage*)GetCurrentHistoryDetailDeleteImage;
 -(UIImage*)GetCurrentNotificationImage;
+-(NSString*)GetCurrentConfirmText;
 
 @end

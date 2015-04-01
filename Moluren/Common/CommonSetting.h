@@ -30,6 +30,9 @@
 
 #define Notification_Disconnect_Height 44
 
+#define Device_Width [[UIScreen mainScreen] bounds].size.width
+#define Device_Height [[UIScreen mainScreen] bounds].size.height
+
 // User message suffix
 #define iPhone4 @" - iPhone 4 "
 #define iPhone4s @" - iPhone 4s "

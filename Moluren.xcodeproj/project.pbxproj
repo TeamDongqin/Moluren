@@ -225,6 +225,9 @@
 		9CD3675A1AC6C643008E68DC /* MolurenHistoryNavigController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD367591AC6C643008E68DC /* MolurenHistoryNavigController.m */; };
 		9CD3675D1AC6E1D3008E68DC /* TdSwipeTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD3675C1AC6E1D3008E68DC /* TdSwipeTransition.m */; };
 		9CD367601AC6F288008E68DC /* TdTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD3675F1AC6F288008E68DC /* TdTopic.m */; };
+		9CD575D51ACC2C75003916E1 /* ConfirmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD575D41ACC2C75003916E1 /* ConfirmViewController.m */; };
+		9CD575D71ACC3211003916E1 /* ConfirmView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CD575D61ACC3211003916E1 /* ConfirmView.xib */; };
+		9CD575DA1ACC327D003916E1 /* ConfirmView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD575D91ACC327D003916E1 /* ConfirmView.m */; };
 		9CD657221AC8398F0019499A /* SGAlertMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD657211AC8398F0019499A /* SGAlertMenu.m */; };
 		9CD657251AC839AC0019499A /* SGBaseMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD657241AC839AC0019499A /* SGBaseMenu.m */; };
 		9CD657281AC839D30019499A /* SGActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD657271AC839D30019499A /* SGActionView.m */; };
@@ -535,6 +538,11 @@
 		9CD3675C1AC6E1D3008E68DC /* TdSwipeTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TdSwipeTransition.m; path = Utilities/TdSwipeTransition.m; sourceTree = "<group>"; };
 		9CD3675E1AC6F288008E68DC /* TdTopic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TdTopic.h; path = Utilities/TdTopic.h; sourceTree = "<group>"; };
 		9CD3675F1AC6F288008E68DC /* TdTopic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TdTopic.m; path = Utilities/TdTopic.m; sourceTree = "<group>"; };
+		9CD575D31ACC2C75003916E1 /* ConfirmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmViewController.h; sourceTree = "<group>"; };
+		9CD575D41ACC2C75003916E1 /* ConfirmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmViewController.m; sourceTree = "<group>"; };
+		9CD575D61ACC3211003916E1 /* ConfirmView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ConfirmView.xib; path = View/ConfirmView.xib; sourceTree = "<group>"; };
+		9CD575D81ACC327D003916E1 /* ConfirmView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConfirmView.h; path = View/ConfirmView.h; sourceTree = "<group>"; };
+		9CD575D91ACC327D003916E1 /* ConfirmView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConfirmView.m; path = View/ConfirmView.m; sourceTree = "<group>"; };
 		9CD657201AC8398F0019499A /* SGAlertMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGAlertMenu.h; sourceTree = "<group>"; };
 		9CD657211AC8398F0019499A /* SGAlertMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGAlertMenu.m; sourceTree = "<group>"; };
 		9CD657231AC839AC0019499A /* SGBaseMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGBaseMenu.h; sourceTree = "<group>"; };
@@ -906,6 +914,8 @@
 				9CCAE8141A5D5E5600E3A33A /* MolurenSettingViewController.m */,
 				9CCAE8151A5D5E5600E3A33A /* NewLanuchViewController.h */,
 				9CCAE8161A5D5E5600E3A33A /* NewLanuchViewController.m */,
+				9CD575D31ACC2C75003916E1 /* ConfirmViewController.h */,
+				9CD575D41ACC2C75003916E1 /* ConfirmViewController.m */,
 				9CCE1A6E1AC196260037935B /* Chat_Topics */,
 			);
 			name = Controller;
@@ -1136,6 +1146,9 @@
 				9C2D4F071A610BB6001C8E82 /* MessageShareView */,
 				9CE1C2251AC7BE5E00A02C0E /* HomeBgImage.h */,
 				9CE1C2261AC7BE5E00A02C0E /* HomeBgImage.m */,
+				9CD575D61ACC3211003916E1 /* ConfirmView.xib */,
+				9CD575D81ACC327D003916E1 /* ConfirmView.h */,
+				9CD575D91ACC327D003916E1 /* ConfirmView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1316,6 +1329,7 @@
 				9CCAE9A41A5D6DAE00E3A33A /* ReceiverVoiceNodePlaying002_ios7@2x.png in Resources */,
 				18287DF019EAAE080074BDD9 /* bubble-default-incoming-green@2x.png in Resources */,
 				9CCAE9A31A5D6DAE00E3A33A /* ReceiverVoiceNodePlaying001_ios7@2x.png in Resources */,
+				9CD575D71ACC3211003916E1 /* ConfirmView.xib in Resources */,
 				9CCAE9781A5D6DAE00E3A33A /* Expression_43@2x.png in Resources */,
 				18287E0C19EAAE080074BDD9 /* bubble-square-outgoing@2x.png in Resources */,
 				9CCAE97B1A5D6DAE00E3A33A /* Expression_46@2x.png in Resources */,
@@ -1414,6 +1428,7 @@
 				9CCAE9AE1A5D6DBB00E3A33A /* ZBMessage.m in Sources */,
 				9CB0690F1A7CFEDA005C84F6 /* CurrentHistoryPage.m in Sources */,
 				182C1B3A19EFDDCE009B09AB /* PXAlertView.m in Sources */,
+				9CD575D51ACC2C75003916E1 /* ConfirmViewController.m in Sources */,
 				18287CE219EAA9C40074BDD9 /* main.m in Sources */,
 				9CCE1A7C1AC196420037935B /* Chat_Topic_Motion.m in Sources */,
 				9CCE1A7E1AC196420037935B /* Chat_Topic_Music.m in Sources */,
@@ -1435,6 +1450,7 @@
 				18B8E5611A2BF1B700B54F7F /* SettingTableViewCell1.m in Sources */,
 				184B9E8319EB4C650053F3E9 /* SharedSingleConfig.m in Sources */,
 				18294F9219EBE1BF00614906 /* NSObject+Json.m in Sources */,
+				9CD575DA1ACC327D003916E1 /* ConfirmView.m in Sources */,
 				9CCAE81C1A5D5E5600E3A33A /* MolurenSettingViewController.m in Sources */,
 				9CD367511AC65CDC008E68DC /* CommonData.m in Sources */,
 				182C1B3B19EFDDCE009B09AB /* PXAlertView+Customization.m in Sources */,

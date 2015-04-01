@@ -10,6 +10,8 @@
 #import "JSMessagesViewController.h"
 #import "MolurenHistoryDetailViewController.h"
 #import "MolurenHistoryNavigController.h"
+#import "ConfirmView.h"
+#import "ConfirmViewController.h"
 
 @interface Chat_Topic_Life () <JSMessagesViewDelegate, JSMessagesViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -228,8 +230,31 @@
 }
 
 -(void)onReturnButtonClick:(id)sender{
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"公园" message:@"确定离开 '公园' 吗?" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-    [alert show];
+//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"公园" message:@"确定离开 '公园' 吗?" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+//    [alert show];
+    
+    ConfirmView* view = [[ConfirmView alloc] initWithFrame:CGRectMake(0, Device_Height, Device_Width, 168)];
+    
+    [UIView animateWithDuration:0.3
+                          delay:0
+                        options: UIViewAnimationCurveEaseIn
+                     animations:^{
+                         view.frame = CGRectMake(0, Device_Height - 168, Device_Width, 168);
+                     }
+                     completion:^(BOOL finished){
+                         //[view removeFromSuperview];
+                     }];
+    [self.view addSubview:view];
+    
+//    ConfirmViewController* vc = [[ConfirmViewController alloc]init];
+//    vc.view.frame = CGRectMake(0, Device_Height, Device_Width, 168);
+//    vc.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+//    
+//    [self presentViewController:vc
+//                       animated:YES
+//                     completion:^(void){
+//                         vc.view.frame = CGRectMake(0, Device_Height - 168, Device_Width, 168);
+//                     }];
 }
 
 -(void)ShowNotification{

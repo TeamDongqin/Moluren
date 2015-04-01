@@ -101,7 +101,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b64-eT-MHf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1507" y="-153"/>
+            <point key="canvasLocation" x="1273" y="-169"/>
         </scene>
         <!--sfdasjd-->
         <scene sceneID="tFK-Ec-r90">
@@ -127,6 +127,64 @@
                 <swipeGestureRecognizer direction="right" id="akv-hE-VPh"/>
             </objects>
             <point key="canvasLocation" x="2505" y="733"/>
+        </scene>
+        <!--ConfirmView-->
+        <scene sceneID="gr3-bX-HiD">
+            <objects>
+                <viewController storyboardIdentifier="Confirm" id="vLx-QO-edG" userLabel="ConfirmView" customClass="ConfirmViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BJ6-xl-2km"/>
+                        <viewControllerLayoutGuide type="bottom" id="pxF-UD-WkE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IT9-yY-KY6">
+                        <rect key="frame" x="0.0" y="0.0" width="640" height="336"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wWF-aN-fKr">
+                                <rect key="frame" x="0.0" y="0.0" width="640" height="130"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="确定离开'咖啡厅'吗？" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxX-rk-qv0">
+                                        <rect key="frame" x="170" y="54" width="300" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                        <color key="textColor" red="0.54509803921568623" green="0.54509803921568623" blue="0.54509803921568623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.91764705882352937" green="0.91764705882352937" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPf-yX-UPl">
+                                <rect key="frame" x="0.0" y="131" width="640" height="95"/>
+                                <color key="backgroundColor" red="0.91764705882352937" green="0.91764705882352937" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="离开'咖啡厅'">
+                                    <color key="titleColor" red="0.90196078431372551" green="0.2627450980392157" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jlg-3w-Ucp">
+                                <rect key="frame" x="0.0" y="226" width="640" height="15"/>
+                                <color key="backgroundColor" red="0.80784313725490198" green="0.80784313725490198" blue="0.83529411764705885" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Rh-kx-4H3">
+                                <rect key="frame" x="0.0" y="130" width="640" height="1"/>
+                                <color key="backgroundColor" red="0.87450980392156863" green="0.87450980392156863" blue="0.87450980392156863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Uy-ea-XbZ">
+                                <rect key="frame" x="0.0" y="241" width="640" height="95"/>
+                                <color key="backgroundColor" red="0.91764705879999997" green="0.91764705879999997" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="取消">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="640" height="336"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oEK-bX-ssQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2190" y="-746"/>
         </scene>
         <!--HistoryDataVC-->
         <scene sceneID="waN-An-PAg">
@@ -163,7 +221,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x3i-xp-8o9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2465" y="68"/>
+            <point key="canvasLocation" x="2125" y="192"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="w8d-dz-OKx">
@@ -182,6 +240,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dbb-1m-Azz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="766" y="-106"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="MUN-0W-UIz">
+            <objects>
+                <viewController id="q63-rk-fvS" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LX6-Wf-e2H"/>
+                        <viewControllerLayoutGuide type="bottom" id="8XY-4m-CMp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="x7E-b1-9Vc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ecq-xQ-PTh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>
