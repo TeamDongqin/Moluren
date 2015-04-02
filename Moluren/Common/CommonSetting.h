@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-// Topic color pattern
+// Common color setting
+
+// 1: Topic color pattern
 #define Color_TopicWork_Pattern     0xED1941     // Note: Update to CoffeeRoom
 #define Color_TopicLife_Pattern     0xae6642    // Note: Update to Park
 #define Color_TopicMotion_Pattern   0x45b97c     // Note: Update to Hotel
@@ -18,11 +20,13 @@
 
 #define Color_AppTheme              0x213441
 
-// Multimedia menu
-#define MulMenuBgColorHex 0xF7F7F7      // Multimedia menu background color hex
+// 2: View background color
+#define Color_SettingView_Background 0xEFEFF4
+#define Color_MulMenuView_Background 0xF7F7F7      // Note: Multimedia menu background color hex
 
 // Ui element
 #define Page_History_Header_Height  150
+
 #define Color_History_NavigBar 0xD87A7A
 #define Page_History_Navigation_Height 64.0
 

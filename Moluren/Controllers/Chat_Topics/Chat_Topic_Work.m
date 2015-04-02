@@ -599,6 +599,9 @@
 }
 
 -(void) SessionConnectionExceptionCallback{
+    // Clear current chat contents
+    [self ClearTableView];
+    
     // Update power button state
     self.bConnected = false;
     

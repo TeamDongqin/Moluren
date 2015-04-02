@@ -91,7 +91,7 @@
 
 - (void)setup{
     //self.backgroundColor = [UIColor colorWithRed:248.0f/255 green:248.0f/255 blue:255.0f/255 alpha:1.0];
-    self.backgroundColor = UIColorFromRGB(MulMenuBgColorHex);
+    self.backgroundColor = UIColorFromRGB(Color_MulMenuView_Background);
     
     if (!_shareMenuScrollView) {
         UIScrollView *shareMenuScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds) - kZBMessageShareMenuPageControlHeight)];
@@ -121,6 +121,32 @@
 }
 
 - (void)reloadData {
+    if (!_shareMenuItems.count)
+        return;
+    
+    [self.shareMenuScrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    
+    CGFloat paddingX = 16;
+    CGFloat paddingY = 0;
+    for (ZBMessageShareMenuItem *shareMenuItem in self.shareMenuItems) {
+        NSInteger index = [self.shareMenuItems indexOfObject:shareMenuItem];
+        CGRect shareMenuItemViewFrame = CGRectMake(index  * (kZBShareMenuItemIconSize + paddingX) + paddingX, paddingY, kZBShareMenuItemIconSize, KZBShareMenuItemHeight);
+        ZBMessageShareMenuItemView *shareMenuItemView = [[ZBMessageShareMenuItemView alloc] initWithFrame:shareMenuItemViewFrame];
+        
+        shareMenuItemView.shareMenuItemButton.tag = index;
+        [shareMenuItemView.shareMenuItemButton addTarget:self action:@selector(shareMenuItemButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+        [shareMenuItemView.shareMenuItemButton setImage:shareMenuItem.normalIconImage forState:UIControlStateNormal];
+        shareMenuItemView.shareMenuItemTitleLabel.text = shareMenuItem.title;
+        [shareMenuItemView.shareMenuItemTitleLabel setTextColor:[[TdTopic Instance] GetCurrentColorPattern]];
+        
+        [self.shareMenuScrollView addSubview:shareMenuItemView];
+    }
+    
+    self.shareMenuPageControl.numberOfPages = (self.shareMenuItems.count / (kZBMessageShareMenuPerRowItemCount * 2) + (self.shareMenuItems.count % (kZBMessageShareMenuPerRowItemCount * 2) ? 1 : 0));
+    [self.shareMenuScrollView setContentSize:CGSizeMake(((self.shareMenuItems.count / (kZBMessageShareMenuPerRowItemCount * 2) + (self.shareMenuItems.count % (kZBMessageShareMenuPerRowItemCount * 2) ? 1 : 0)) * CGRectGetWidth(self.bounds)), CGRectGetHeight(self.shareMenuScrollView.bounds))];
+}
+
+- (void)reloadData_ {
     if (!_shareMenuItems.count)
         return;
     

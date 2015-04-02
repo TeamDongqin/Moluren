@@ -14,6 +14,8 @@
 
 @implementation ConfirmViewController
 
+#pragma View life cycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -52,12 +54,14 @@
     ConfirmButton.backgroundColor = UIColorFromRGB(0xF7F7F7);
     [ConfirmButton setTitle:@"离 开" forState:UIControlStateNormal];
     [ConfirmButton setTitleColor:[[TdTopic Instance] GetCurrentColorPattern] forState:UIControlStateNormal];
+    [ConfirmButton addTarget:self action:@selector(OnConfirmButtonClick) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:ConfirmButton];
     
     UIButton* CancelButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 121, Device_Width, 48)];
     CancelButton.backgroundColor = UIColorFromRGB(0xEFEFEF);
     [CancelButton setTitle:@"取 消" forState:UIControlStateNormal];
     [CancelButton setTitleColor:UIColorFromRGB(0x000000) forState:UIControlStateNormal];
+    [CancelButton addTarget:self action:@selector(OnCancelButtonClick) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:CancelButton];
 }
 
@@ -66,14 +70,14 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
+#pragma Ui operation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)OnConfirmButtonClick{
+    
 }
-*/
+
+-(void)OnCancelButtonClick{
+    
+}
 
 @end

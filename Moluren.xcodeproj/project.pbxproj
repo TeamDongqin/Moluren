@@ -225,6 +225,7 @@
 		9CD3675A1AC6C643008E68DC /* MolurenHistoryNavigController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD367591AC6C643008E68DC /* MolurenHistoryNavigController.m */; };
 		9CD3675D1AC6E1D3008E68DC /* TdSwipeTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD3675C1AC6E1D3008E68DC /* TdSwipeTransition.m */; };
 		9CD367601AC6F288008E68DC /* TdTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD3675F1AC6F288008E68DC /* TdTopic.m */; };
+		9CD4CCF21ACD6A27000D4455 /* PersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD4CCF11ACD6A27000D4455 /* PersonViewController.m */; };
 		9CD575D51ACC2C75003916E1 /* ConfirmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD575D41ACC2C75003916E1 /* ConfirmViewController.m */; };
 		9CD575D71ACC3211003916E1 /* ConfirmView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CD575D61ACC3211003916E1 /* ConfirmView.xib */; };
 		9CD575DA1ACC327D003916E1 /* ConfirmView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD575D91ACC327D003916E1 /* ConfirmView.m */; };
@@ -538,6 +539,8 @@
 		9CD3675C1AC6E1D3008E68DC /* TdSwipeTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TdSwipeTransition.m; path = Utilities/TdSwipeTransition.m; sourceTree = "<group>"; };
 		9CD3675E1AC6F288008E68DC /* TdTopic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TdTopic.h; path = Utilities/TdTopic.h; sourceTree = "<group>"; };
 		9CD3675F1AC6F288008E68DC /* TdTopic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TdTopic.m; path = Utilities/TdTopic.m; sourceTree = "<group>"; };
+		9CD4CCF01ACD6A27000D4455 /* PersonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonViewController.h; sourceTree = "<group>"; };
+		9CD4CCF11ACD6A27000D4455 /* PersonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonViewController.m; sourceTree = "<group>"; };
 		9CD575D31ACC2C75003916E1 /* ConfirmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmViewController.h; sourceTree = "<group>"; };
 		9CD575D41ACC2C75003916E1 /* ConfirmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmViewController.m; sourceTree = "<group>"; };
 		9CD575D61ACC3211003916E1 /* ConfirmView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ConfirmView.xib; path = View/ConfirmView.xib; sourceTree = "<group>"; };
@@ -916,6 +919,8 @@
 				9CCAE8161A5D5E5600E3A33A /* NewLanuchViewController.m */,
 				9CD575D31ACC2C75003916E1 /* ConfirmViewController.h */,
 				9CD575D41ACC2C75003916E1 /* ConfirmViewController.m */,
+				9CD4CCF01ACD6A27000D4455 /* PersonViewController.h */,
+				9CD4CCF11ACD6A27000D4455 /* PersonViewController.m */,
 				9CCE1A6E1AC196260037935B /* Chat_Topics */,
 			);
 			name = Controller;
@@ -1428,6 +1433,7 @@
 				9CCAE9AE1A5D6DBB00E3A33A /* ZBMessage.m in Sources */,
 				9CB0690F1A7CFEDA005C84F6 /* CurrentHistoryPage.m in Sources */,
 				182C1B3A19EFDDCE009B09AB /* PXAlertView.m in Sources */,
+				9CD4CCF21ACD6A27000D4455 /* PersonViewController.m in Sources */,
 				9CD575D51ACC2C75003916E1 /* ConfirmViewController.m in Sources */,
 				18287CE219EAA9C40074BDD9 /* main.m in Sources */,
 				9CCE1A7C1AC196420037935B /* Chat_Topic_Motion.m in Sources */,

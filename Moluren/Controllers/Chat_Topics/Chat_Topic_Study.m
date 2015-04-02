@@ -583,6 +583,9 @@
 }
 
 -(void)SessionDisconnectedCallback{
+    // Clear current chat contents
+    [self ClearTableView];
+    
     // Update power button state
     self.bConnected = false;
     
@@ -597,6 +600,9 @@
 }
 
 -(void) SessionConnectionExceptionCallback{
+    // Clear current chat contents
+    [self ClearTableView];
+    
     // Update power button state
     self.bConnected = false;
     
@@ -914,6 +920,12 @@
 -(NSInteger)getTotalRowCount
 {
     return [self.messageArray count];
+}
+
+-(void)ClearTableView{
+    [self.messageType removeAllObjects];
+    [self.messageArray removeAllObjects];
+    [self.tableView reloadData];
 }
 
 - (void)cameraPressed:(id)sender{
