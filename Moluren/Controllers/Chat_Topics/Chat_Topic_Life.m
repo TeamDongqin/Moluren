@@ -62,7 +62,7 @@
     [super viewWillAppear:animated];
     //开启定时器
     [_getMsgs setFireDate:[NSDate distantPast]];
-    [_getTypingStatus setFireDate:[NSDate distantPast]];
+    //[_getTypingStatus setFireDate:[NSDate distantPast]];
     
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     [super viewWillDisappear:animated];
@@ -85,7 +85,7 @@
     [super viewDidDisappear:animated];
     //关闭定时器
     [_getMsgs setFireDate:[NSDate distantFuture]];
-    [_getTypingStatus setFireDate:[NSDate distantFuture]];
+    //[_getTypingStatus setFireDate:[NSDate distantFuture]];
 }
 
 - (void)viewDidLoad
@@ -169,7 +169,7 @@
     //[NSThread detachNewThreadSelector:@selector(receiveMessage) toTarget:self withObject:nil];
     _getMsgs = [NSTimer scheduledTimerWithTimeInterval:3.0f target:self selector:@selector(receiveMessage) userInfo:nil repeats:YES];
     //[NSThread detachNewThreadSelector:@selector(getTypingStatusRequest) toTarget:self withObject:nil];
-    _getTypingStatus = [NSTimer scheduledTimerWithTimeInterval:5.0f target:self selector:@selector(getTypingStatusRequest) userInfo:nil repeats:YES];
+    //_getTypingStatus = [NSTimer scheduledTimerWithTimeInterval:5.0f target:self selector:@selector(getTypingStatusRequest) userInfo:nil repeats:YES];
     
     // Connect to server
     if(![self.sharedConfig.token isEqualToString:@""] && self.sharedConfig.token.length>1){
@@ -242,7 +242,7 @@
                          view.frame = CGRectMake(0, Device_Height - 168, Device_Width, 168);
                      }
                      completion:^(BOOL finished){
-                         //[view removeFromSuperview];
+                         [self.view addSubview:view];
                      }];
     [self.view addSubview:view];
     
@@ -646,7 +646,7 @@
     NSLog(@"isConnected=%@,isReceivingMsg=%@",self.sharedConfig.isConnected?@"YES":@"NO",self.sharedConfig.isReceivingMsg?@"YES":@"NO");
     if(self.sharedConfig.isConnected && !self.sharedConfig.isReceivingMsg){
         if(self.sharedConfig.httpRequestTimeoutTimes>5 && self.sharedConfig.httpRequestTimeoutTimes%6==0){
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"陌路人" message:@"抱歉，亲，'公园'内暂时没有联系其他人，请回到大厅前往其他场景" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"陌路人" message:@"抱歉，亲，'公园'内暂时没有遇到其他人，请回到大厅前往其他场景" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
             [alert show];
         }
         NSLog(@"开始进行http请求获取消息");
@@ -699,12 +699,12 @@
                                        //NSDictionary *resultDict = [data objectFromJSONData];
                                        NSError *error;
                                        NSDictionary *resultDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
-                                       BOOL typing = [resultDict objectForKey:@"typing"];
-                                       
-                                       if(typing){
-                                           NSLog(@"对方正在输入");
-                                           [self performSelectorOnMainThread:@selector(showTypingStatus) withObject:nil waitUntilDone:YES];
-                                       }
+//                                       BOOL typing = [resultDict objectForKey:@"typing"];
+//                                       
+//                                       if(typing){
+//                                           NSLog(@"对方正在输入");
+//                                           [self performSelectorOnMainThread:@selector(showTypingStatus) withObject:nil waitUntilDone:YES];
+//                                       }
                                    }
                                }];
     }
@@ -805,7 +805,7 @@
 -(void)SetIphoneUserMessagePrefix{
     self.bSendIphoneUserMsgPrefix = true;
     
-    [self sendMessageRequest:iPhone5s_Suffix_Template];
+    [self sendMessageRequest:[[TdUtilities Instance] GetUserSignature:@" 我就是我， 不一样的烟火~  "]];
     
     self.bSendIphoneUserMsgPrefix = false;
 }

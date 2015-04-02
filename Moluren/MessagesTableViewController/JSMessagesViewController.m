@@ -184,7 +184,7 @@
         
         ZBMessageShareMenuItem *TopicWork_ChatHistoryMenuItem = [[ZBMessageShareMenuItem alloc]initWithNormalIconImage:[self.dataSource ChatHistoryMenuItem] title:@"聊天记录"];
         ZBMessageShareMenuItem *TopicWork_DiceMenuItem = [[ZBMessageShareMenuItem alloc]initWithNormalIconImage:[self.dataSource DiceMenuItem] title:@"骰子"];
-        ZBMessageShareMenuItem *TopicWork_UserProfileMenuItem = [[ZBMessageShareMenuItem alloc]initWithNormalIconImage:[self.dataSource UserProfileMenuItem]];
+        ZBMessageShareMenuItem *TopicWork_UserProfileMenuItem = [[ZBMessageShareMenuItem alloc]initWithNormalIconImage:[self.dataSource UserProfileMenuItem] title:@"交换名片"];
 
         self.shareMenuView.shareMenuItems = [NSArray arrayWithObjects:TopicWork_DiceMenuItem,TopicWork_ChatHistoryMenuItem,TopicWork_UserProfileMenuItem, nil];
         [self.shareMenuView reloadData];

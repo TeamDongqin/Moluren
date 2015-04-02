@@ -3,17 +3,17 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "Portrait_Self.png"
+      "filename" : "Portrait_TopicLife@1x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "Portrait_Self-1.png"
+      "filename" : "Portrait_TopicLife.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "Portrait_Self-2.png"
+      "filename" : "Portrait_TopicLife@3x.png"
     }
   ],
   "info" : {

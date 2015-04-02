@@ -138,7 +138,7 @@
         [shareMenuItemView.shareMenuItemButton addTarget:self action:@selector(shareMenuItemButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
         [shareMenuItemView.shareMenuItemButton setImage:shareMenuItem.normalIconImage forState:UIControlStateNormal];
         shareMenuItemView.shareMenuItemTitleLabel.text = shareMenuItem.title;
-        [shareMenuItemView.shareMenuItemTitleLabel setTextColor:[UIColor redColor]];
+        [shareMenuItemView.shareMenuItemTitleLabel setTextColor:[[TdTopic Instance] GetCurrentColorPattern]];
         
         [self.shareMenuScrollView addSubview:shareMenuItemView];
     }
