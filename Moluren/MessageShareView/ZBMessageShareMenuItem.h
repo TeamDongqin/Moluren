@@ -12,10 +12,13 @@
 
 @property (nonatomic, strong) UIImage *normalIconImage;
 @property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) UIColor* titlecolor;
 
 - (instancetype)initWithNormalIconImage:(UIImage *)normalIconImage
                                   title:(NSString *)title;
 
-- (instancetype)initWithNormalIconImage:(UIImage *)normalIconImage;
+- (instancetype)initWithNormalIconImage:(UIImage *)normalIconImage
+                                  title:(NSString *)title
+                             titleColor:(UIColor*)color;
 
 @end

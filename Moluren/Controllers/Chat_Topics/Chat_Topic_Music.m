@@ -51,6 +51,9 @@
     [super loadView];
     self.delegate = self;
     self.dataSource = self;
+    
+    // Set color pattern here ?
+    [[TdTopic Instance] SetCurrentTopic:Topic_Music];
 }
 
 //页面将要进入前台，开启定时器
@@ -63,7 +66,6 @@
     //[_getTypingStatus setFireDate:[NSDate distantPast]];
     
     [self.navigationController setNavigationBarHidden:NO animated:animated];
-    [super viewWillDisappear:animated];
 }
 
 //页面消失，进入后台不显示该页面，关闭定时器
@@ -79,8 +81,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    [[TdTopic Instance] SetCurrentTopic:Topic_Music];
     
     // Set up power button state
     self.bConnected = false;

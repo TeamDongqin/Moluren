@@ -94,7 +94,7 @@
     self.backgroundColor = UIColorFromRGB(Color_MulMenuView_Background);
     
     if (!_shareMenuScrollView) {
-        UIScrollView *shareMenuScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds) - kZBMessageShareMenuPageControlHeight)];
+        UIScrollView *shareMenuScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds) - ShareMenuView_PageControl_Height)];
         shareMenuScrollView.delegate = self;
         shareMenuScrollView.canCancelContentTouches = NO;
         shareMenuScrollView.delaysContentTouches = YES;
@@ -109,8 +109,8 @@
     }
     
     if (!_shareMenuPageControl) {
-        UIPageControl *shareMenuPageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.bounds), kZBMessageShareMenuPageControlHeight)];
-        shareMenuPageControl.backgroundColor = self.backgroundColor;
+        UIPageControl *shareMenuPageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.bounds), ShareMenuView_PageControl_Height)];
+        shareMenuPageControl.backgroundColor = self.backgroundColor;;
         shareMenuPageControl.hidesForSinglePage = YES;
         shareMenuPageControl.defersCurrentPageDisplay = YES;
         [self addSubview:shareMenuPageControl];
@@ -127,7 +127,7 @@
     [self.shareMenuScrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     
     CGFloat paddingX = 16;
-    CGFloat paddingY = 0;
+    CGFloat paddingY = 10;
     for (ZBMessageShareMenuItem *shareMenuItem in self.shareMenuItems) {
         NSInteger index = [self.shareMenuItems indexOfObject:shareMenuItem];
         CGRect shareMenuItemViewFrame = CGRectMake(index  * (kZBShareMenuItemIconSize + paddingX) + paddingX, paddingY, kZBShareMenuItemIconSize, KZBShareMenuItemHeight);
@@ -137,7 +137,7 @@
         [shareMenuItemView.shareMenuItemButton addTarget:self action:@selector(shareMenuItemButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
         [shareMenuItemView.shareMenuItemButton setImage:shareMenuItem.normalIconImage forState:UIControlStateNormal];
         shareMenuItemView.shareMenuItemTitleLabel.text = shareMenuItem.title;
-        [shareMenuItemView.shareMenuItemTitleLabel setTextColor:[[TdTopic Instance] GetCurrentColorPattern]];
+        shareMenuItemView.shareMenuItemTitleLabel.textColor = shareMenuItem.titlecolor;
         
         [self.shareMenuScrollView addSubview:shareMenuItemView];
     }

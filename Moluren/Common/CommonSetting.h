@@ -34,6 +34,8 @@
 
 #define Notification_Disconnect_Height 44
 
+#define ShareMenuView_PageControl_Height 0
+
 #define Device_Width [[UIScreen mainScreen] bounds].size.width
 #define Device_Height [[UIScreen mainScreen] bounds].size.height
 

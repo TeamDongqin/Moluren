@@ -9,8 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "ZBMessageShareMenuItem.h"
 
-#define kZBMessageShareMenuPageControlHeight 30
-
 @protocol ZBMessageShareMenuViewDelegate <NSObject>
 
 @optional

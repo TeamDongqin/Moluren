@@ -53,6 +53,9 @@
     
     self.delegate = self;
     self.dataSource = self;
+    
+    // Set color pattern here ?
+    [[TdTopic Instance] SetCurrentTopic:Topic_Life];
 }
 
 //页面将要进入前台，开启定时器
@@ -65,7 +68,6 @@
     //[_getTypingStatus setFireDate:[NSDate distantPast]];
     
     [self.navigationController setNavigationBarHidden:NO animated:animated];
-    [super viewWillDisappear:animated];
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
@@ -91,8 +93,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    [[TdTopic Instance] SetCurrentTopic:Topic_Life];
     
     // Set up power button state
     self.bConnected = false;

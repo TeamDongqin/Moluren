@@ -53,6 +53,9 @@
     
     self.delegate = self;
     self.dataSource = self;
+    
+    // Set color pattern here ?
+    [[TdTopic Instance] SetCurrentTopic:Topic_Work];
 }
 
 //页面将要进入前台，开启定时器
@@ -81,8 +84,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    [[TdTopic Instance] SetCurrentTopic:Topic_Work];
     
     // Set up power button state
     self.bConnected = false;

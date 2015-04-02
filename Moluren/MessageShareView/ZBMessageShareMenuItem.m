@@ -12,17 +12,12 @@
 @implementation ZBMessageShareMenuItem
 
 - (instancetype)initWithNormalIconImage:(UIImage *)normalIconImage
-                                  title:(NSString *)title{
+                                  title:(NSString *)title
+                             titleColor:(UIColor*)color{
     if (self) {
         self.normalIconImage = normalIconImage;
         self.title = title;
-    }
-    return self;
-}
-
-- (instancetype)initWithNormalIconImage:(UIImage *)normalIconImage{
-    if (self) {
-        self.normalIconImage = normalIconImage;
+        self.titlecolor = color;
     }
     return self;
 }
