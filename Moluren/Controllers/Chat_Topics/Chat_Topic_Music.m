@@ -855,7 +855,7 @@
         NSDateFormatter*dateFormat =[[NSDateFormatter alloc] init];
         [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
         NSString *dateString=[dateFormat stringFromDate:d];
-        //[self.sharedConfig insertMsgDataToTable:text msgtype:@"OUT" date:dateString];
+        [self.sharedConfig insertMsgDataToTable:text msgtype:@"OUT" date:dateString];
     }
     [self scrollToBottomAnimated:YES];
 }

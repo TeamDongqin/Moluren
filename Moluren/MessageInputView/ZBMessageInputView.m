@@ -238,7 +238,7 @@
     ZBMessageTextView *textView = [[ZBMessageTextView alloc] initWithFrame:CGRectZero];
     textView.returnKeyType = UIReturnKeySend;
     textView.enablesReturnKeyAutomatically = YES; // UITextView内部判断send按钮是否可以用
-    textView.placeHolder = @"说点儿什么呢?";
+    textView.placeHolder = @"开始邂逅之旅吧！";
     textView.delegate = self;
     switch (style)
     {
