@@ -57,6 +57,14 @@
 #define iPhone6_Suffix @" -- From iPhone 6"
 #define iPhone6Plus_Suffix @" -- From iPhone 6 Plus"
 
+// Common ui position
+#define ratio_firstline 4.68
+#define ratio_secondline 2.61
+#define ratio_thirdline 1.78
+
+#define ratio_firstcollum 8.2
+#define ration_secondcollum 1.65
+
 @interface CommonSetting : NSObject
 
 @end

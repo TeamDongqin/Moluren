@@ -146,7 +146,7 @@
     [self.shareMenuScrollView setContentSize:CGSizeMake(((self.shareMenuItems.count / (kZBMessageShareMenuPerRowItemCount * 2) + (self.shareMenuItems.count % (kZBMessageShareMenuPerRowItemCount * 2) ? 1 : 0)) * CGRectGetWidth(self.bounds)), CGRectGetHeight(self.shareMenuScrollView.bounds))];
 }
 
-- (void)reloadData_ {
+- (void)reloadDataEx {
     if (!_shareMenuItems.count)
         return;
     
