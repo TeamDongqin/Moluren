@@ -50,6 +50,11 @@
     
     self.delegate = self;
     self.dataSource = self;
+    
+    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+        self.navigationController.interactivePopGestureRecognizer.delegate = nil;
+    }
 }
 
 //页面将要进入前台，开启定时器

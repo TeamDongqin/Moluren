@@ -33,12 +33,9 @@
     [super viewWillAppear:animated];
     [self styleNavBar];
     
-//    __weak id weakSelf = self;
-//    self.navigationController.interactivePopGestureRecognizer.delegate = weakSelf;
-    
-    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
-        self.navigationController.interactivePopGestureRecognizer.enabled = NO;
-        self.navigationController.interactivePopGestureRecognizer.delegate = nil;
+    if ([self respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.interactivePopGestureRecognizer.enabled = NO;
+        self.interactivePopGestureRecognizer.delegate = nil;
     }
 }
 
