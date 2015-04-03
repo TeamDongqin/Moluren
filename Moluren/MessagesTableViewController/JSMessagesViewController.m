@@ -381,19 +381,7 @@
     }
     else if(index == 2)
     {
-        //ZBMessage *message = [[ZBMessage alloc]initWithText:@"摇色子" sender:nil timestamp:[NSDate date]];
-        //[self sendMessage:message];
-        
-//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"陌路人" message:@"对方需要IOS版本才能支持哦~" delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil];
-//        // optional - add more buttons:
-//        [alert show];
-
-        PersonViewController* vc = [[PersonViewController alloc] init];
-        vc.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-        [self presentModalViewController:vc animated:YES];
-        
-        //[messageInputTextView setText:nil];
-        //[self inputTextViewDidChange:messageInputTextView];
+        [self.delegate presentPersonNavigController];
     }
     else
     {
@@ -401,34 +389,6 @@
     }
 }
 #pragma end
-
-//- (void)viewWillAppear:(BOOL)animated
-//{
-//    [self scrollToBottomAnimated:NO];
-//    
-//    
-//    _originalTableViewContentInset = self.tableView.contentInset;
-//    
-//	[[NSNotificationCenter defaultCenter] addObserver:self
-//											 selector:@selector(handleWillShowKeyboard:)
-//												 name:UIKeyboardWillShowNotification
-//                                               object:nil];
-//    
-//	[[NSNotificationCenter defaultCenter] addObserver:self
-//											 selector:@selector(handleWillHideKeyboard:)
-//												 name:UIKeyboardWillHideNotification
-//                                               object:nil];
-//}
-//
-//- (void)viewWillDisappear:(BOOL)animated
-//{
-//    [super viewWillDisappear:animated];
-//    [self.inputToolBarView resignFirstResponder];
-//    [self setEditing:NO animated:YES];
-//    
-//    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
-//	[[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
-//}
 
 - (void)didReceiveMemoryWarning
 {

@@ -66,7 +66,6 @@
     //[_getTypingStatus setFireDate:[NSDate distantPast]];
     
     [self.navigationController setNavigationBarHidden:NO animated:animated];
-    [super viewWillDisappear:animated];
 }
 
 //页面消失，进入后台不显示该页面，关闭定时器

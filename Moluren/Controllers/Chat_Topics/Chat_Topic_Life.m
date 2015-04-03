@@ -69,16 +69,6 @@
     [self.navigationController setNavigationBarHidden:NO animated:animated];
 }
 
--(void)viewWillDisappear:(BOOL)animated{
-    if ([self.navigationController.viewControllers indexOfObject:self]==NSNotFound) {
-        
-        //[self OnReturnButtonClick];
-        
-        [self.navigationController popViewControllerAnimated:NO];
-    }
-    [super viewWillDisappear:animated];
-}
-
 //页面消失，进入后台不显示该页面，关闭定时器
 -(void)viewDidDisappear:(BOOL)animated
 {

@@ -235,6 +235,8 @@
 		9CD6DBF51A655686007AEC30 /* DYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD6DBF41A655686007AEC30 /* DYNavigationController.m */; };
 		9CDAC31F1A738CEE00FB7A2E /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CDAC31E1A738CEE00FB7A2E /* HistoryViewController.m */; };
 		9CDF117A1ACEAC0500E655FA /* MolurenServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CDF11791ACEAC0500E655FA /* MolurenServer.m */; };
+		9CDF117D1ACEC7CC00E655FA /* PersonNavigController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CDF117C1ACEC7CC00E655FA /* PersonNavigController.m */; };
+		9CDF11801ACEDA9200E655FA /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CDF117F1ACEDA9200E655FA /* UserInfo.m */; };
 		9CE1C2271AC7BE5E00A02C0E /* HomeBgImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1C2261AC7BE5E00A02C0E /* HomeBgImage.m */; };
 		KIYDQKWBMRKIEYEVRWSLKUDQ /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = HYXIFWTDXJPPRRMDCEPMDTJH /* QuartzCore.framework */; };
 		KNPONLATPTEBRUFEBXNXFHCQ /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = THBDITSPYVFDWQYYBDCIDIXG /* libz.dylib */; };
@@ -559,6 +561,10 @@
 		9CDAC31E1A738CEE00FB7A2E /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
 		9CDF11781ACEAC0500E655FA /* MolurenServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MolurenServer.h; path = Model/MolurenServer.h; sourceTree = "<group>"; };
 		9CDF11791ACEAC0500E655FA /* MolurenServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MolurenServer.m; path = Model/MolurenServer.m; sourceTree = "<group>"; };
+		9CDF117B1ACEC7CC00E655FA /* PersonNavigController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonNavigController.h; sourceTree = "<group>"; };
+		9CDF117C1ACEC7CC00E655FA /* PersonNavigController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonNavigController.m; sourceTree = "<group>"; };
+		9CDF117E1ACEDA9200E655FA /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserInfo.h; path = Model/UserInfo.h; sourceTree = "<group>"; };
+		9CDF117F1ACEDA9200E655FA /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserInfo.m; path = Model/UserInfo.m; sourceTree = "<group>"; };
 		9CE1C2251AC7BE5E00A02C0E /* HomeBgImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeBgImage.h; path = View/HomeBgImage.h; sourceTree = "<group>"; };
 		9CE1C2261AC7BE5E00A02C0E /* HomeBgImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeBgImage.m; path = View/HomeBgImage.m; sourceTree = "<group>"; };
 		HYXIFWTDXJPPRRMDCEPMDTJH /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -922,6 +928,8 @@
 				9CCAE8161A5D5E5600E3A33A /* NewLanuchViewController.m */,
 				9CD575D31ACC2C75003916E1 /* ConfirmViewController.h */,
 				9CD575D41ACC2C75003916E1 /* ConfirmViewController.m */,
+				9CDF117B1ACEC7CC00E655FA /* PersonNavigController.h */,
+				9CDF117C1ACEC7CC00E655FA /* PersonNavigController.m */,
 				9CD4CCF01ACD6A27000D4455 /* PersonViewController.h */,
 				9CD4CCF11ACD6A27000D4455 /* PersonViewController.m */,
 				9CCE1A6E1AC196260037935B /* Chat_Topics */,
@@ -1173,6 +1181,8 @@
 				18CE73FB1A1E3A19004769F4 /* ChatHistoryEntity.m */,
 				9CDF11781ACEAC0500E655FA /* MolurenServer.h */,
 				9CDF11791ACEAC0500E655FA /* MolurenServer.m */,
+				9CDF117E1ACEDA9200E655FA /* UserInfo.h */,
+				9CDF117F1ACEDA9200E655FA /* UserInfo.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -1464,6 +1474,7 @@
 				9CD575DA1ACC327D003916E1 /* ConfirmView.m in Sources */,
 				9CCAE81C1A5D5E5600E3A33A /* MolurenSettingViewController.m in Sources */,
 				9CD367511AC65CDC008E68DC /* CommonData.m in Sources */,
+				9CDF11801ACEDA9200E655FA /* UserInfo.m in Sources */,
 				182C1B3B19EFDDCE009B09AB /* PXAlertView+Customization.m in Sources */,
 				9CCAE82F1A5D626100E3A33A /* NSString+Message.m in Sources */,
 				9CCE1A7D1AC196420037935B /* Chat_Topic_Movie.m in Sources */,
@@ -1485,6 +1496,7 @@
 				18287DE719EAAE080074BDD9 /* JSBubbleMessageCell.m in Sources */,
 				9CB069111A7CFEDA005C84F6 /* PreviousHistoryViewController.m in Sources */,
 				18287E1F19EAAE080074BDD9 /* UIImage+JSMessagesView.m in Sources */,
+				9CDF117D1ACEC7CC00E655FA /* PersonNavigController.m in Sources */,
 				18CE73FC1A1E3A19004769F4 /* ChatHistoryEntity.m in Sources */,
 				9CD367601AC6F288008E68DC /* TdTopic.m in Sources */,
 				18287E1E19EAAE080074BDD9 /* UIColor+JSMessagesView.m in Sources */,

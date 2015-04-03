@@ -53,9 +53,12 @@
 #define iPhone5_Suffix  @" -- From iPhone 5 "
 #define iPhone5c_Suffix  @" -- From iPhone 5c "
 #define iPhone5s_Suffix  @" -- From iPhone 5s "
-#define iPhone5s_Suffix_Template @" 我就是我， 不一样的烟火~   -- From iphone 5s"
+#define iPhone5s_Suffix_Template @" 我就是我， 不一样的烟火！  -- From iphone 5s"
 #define iPhone6_Suffix @" -- From iPhone 6"
 #define iPhone6Plus_Suffix @" -- From iPhone 6 Plus"
+
+// User personal signature
+#define UserPerSignature_Defaul @"我就是我， 不一样的烟火！"
 
 // Common ui position
 #define ratio_firstline 4.68
@@ -64,6 +67,9 @@
 
 #define ratio_firstcollum 8.2
 #define ration_secondcollum 1.65
+
+// User personal signature NSUserDefaults key
+#define Key_UserPersonalSignature @"KUserPerSignature"
 
 @interface CommonSetting : NSObject
 

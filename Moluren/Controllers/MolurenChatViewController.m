@@ -8,6 +8,8 @@
 
 #import "MolurenChatViewController.h"
 #import "MolurenHistoryDetailViewController.h"
+#import "PersonNavigController.h"
+#import "PersonViewController.h"
 
 
 @interface MolurenChatViewController () <JSMessagesViewDelegate, JSMessagesViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
@@ -256,14 +258,16 @@
     
     self.confirmView.ConfirmViewDelegate = self;
     
-    [UIView animateWithDuration:1
+    [self.view addSubview:self.confirmView];
+    
+    [UIView animateWithDuration:0.3
                           delay:0
                         options: UIViewAnimationCurveEaseIn
                      animations:^{
                          self.confirmView.frame = CGRectMake(0, Device_Height - 168, Device_Width, 168);
                      }
                      completion:^(BOOL finished){
-                         [self.view addSubview:self.confirmView];
+
                      }];
 }
 
@@ -322,26 +326,18 @@
         
         MolurenHistoryDetailViewController *molurenHistoryViewController = [[MolurenHistoryDetailViewController alloc] initWithSid:[sidArray objectAtIndex:[sidArray count]-1]];
         
-//        MolurenHistoryDetailViewController *molurenHistoryViewController = [[MolurenHistoryDetailViewController alloc] init];
-//        [self.navigationController pushViewController:molurenHistoryViewController animated:YES];
-        
-        
-//        DYNavigationController *navigationController = self.navigationController;
-//         navigationController.viewControllerStack = [[NSMutableArray alloc] initWithArray: self.navigationController.viewControllers];
-//         
-//         [navigationController SetupHistoryViews];
-//         
-//         //[navigationController initWithRootViewController1:molurenHistoryViewController];
-//         
-//         //[self.navigationController pushViewController:molurenHistoryViewController animated:YES];
-//         
-//         [navigationController pushViewController:molurenHistoryViewController];
-//         [navigationController viewWillAppear:YES];
-        
         // Model view
         molurenHistoryViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
         [self presentModalViewController:molurenHistoryViewController animated:NO];
     }
+}
+
+- (void)presentPersonNavigController{
+    PersonViewController* vc = [[PersonViewController alloc] init];
+    PersonNavigController* navigController = [[PersonNavigController alloc] initWithRootViewController:vc];
+    
+    vc.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    [self presentModalViewController:navigController animated:YES];
 }
 
 - (id)dataForRowAtIndexPath:(NSIndexPath *)indexPath{
