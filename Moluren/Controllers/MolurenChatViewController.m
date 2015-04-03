@@ -28,8 +28,6 @@
 @property (nonatomic,strong) UIImageView *gifImageView;//色子动画用
 @property (nonatomic) NSInteger x;
 
-@property (nonatomic) BOOL *bConnected;
-
 @property (strong, nonatomic) UIButton *PowerButton;
 
 @property (nonatomic) BOOL *bSendIphoneUserMsgPrefix;
@@ -243,6 +241,48 @@
         
         self.bConnected = true;
     }
+}
+
+-(void)onReturnButtonClick:(id)sender{
+    //    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"公园" message:@"确定离开 '公园' 吗?" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    //    [alert show];
+    
+    self.confirmView = [[ConfirmView alloc] initWithFrame:CGRectMake(0, Device_Height, Device_Width, 168)];
+    
+    self.confirmView.ConfirmViewDelegate = self;
+    
+    [UIView animateWithDuration:1
+                          delay:0
+                        options: UIViewAnimationCurveEaseIn
+                     animations:^{
+                         self.confirmView.frame = CGRectMake(0, Device_Height - 168, Device_Width, 168);
+                     }
+                     completion:^(BOOL finished){
+                         [self.view addSubview:self.confirmView];
+                     }];
+}
+
+-(void)SendConfirmButtonClickEvent{
+    if(self.bConnected){
+        [self disconnect];
+        
+        self.bConnected = false;
+    }
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+-(void)SendCancelButtonClickEvent{
+    [UIView animateWithDuration:0.3
+                          delay:0
+                        options: UIViewAnimationCurveEaseOut
+                     animations:^{
+                         self.confirmView.frame = CGRectMake(0, Device_Height, Device_Width, 168);
+                     }
+                     completion:^(BOOL finished){
+                         [self.confirmView removeFromSuperview];
+                         self.confirmView = nil;
+                     }];
 }
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex

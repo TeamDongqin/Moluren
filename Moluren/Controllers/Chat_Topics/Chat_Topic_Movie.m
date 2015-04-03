@@ -32,8 +32,6 @@
 @property (nonatomic,strong) UIImageView *gifImageView;//色子动画用
 @property (nonatomic) NSInteger x;
 
-@property (nonatomic) BOOL *bConnected;
-
 @property (strong, nonatomic) UIButton *PowerButton;
 
 @property (nonatomic) BOOL *bSendIphoneUserMsgPrefix;
@@ -214,24 +212,6 @@
         
         self.bConnected = true;
     }
-}
-
--(void)onReturnButtonClick:(id)sender{
-//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"影院" message:@"确定离开 '影院' 吗?" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-//    [alert show];
-    
-    ConfirmView* view = [[ConfirmView alloc] initWithFrame:CGRectMake(0, Device_Height, Device_Width, 168)];
-    
-    [UIView animateWithDuration:0.3
-                          delay:0
-                        options: UIViewAnimationCurveEaseIn
-                     animations:^{
-                         view.frame = CGRectMake(0, Device_Height - 168, Device_Width, 168);
-                     }
-                     completion:^(BOOL finished){
-                         //[view removeFromSuperview];
-                     }];
-    [self.view addSubview:view];
 }
 
 -(void)ShowNotification{

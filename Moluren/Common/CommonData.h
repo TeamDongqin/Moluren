@@ -28,6 +28,11 @@ typedef enum {
     Topic_Work              // Note: Update to CoffeeRoom
 } Topic;
 
+typedef enum {
+    Session_Start,
+    Session_End
+} Session;
+
 @interface CommonData : NSObject
 
 @end

@@ -234,6 +234,7 @@
 		9CD657281AC839D30019499A /* SGActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD657271AC839D30019499A /* SGActionView.m */; };
 		9CD6DBF51A655686007AEC30 /* DYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD6DBF41A655686007AEC30 /* DYNavigationController.m */; };
 		9CDAC31F1A738CEE00FB7A2E /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CDAC31E1A738CEE00FB7A2E /* HistoryViewController.m */; };
+		9CDF117A1ACEAC0500E655FA /* MolurenServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CDF11791ACEAC0500E655FA /* MolurenServer.m */; };
 		9CE1C2271AC7BE5E00A02C0E /* HomeBgImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE1C2261AC7BE5E00A02C0E /* HomeBgImage.m */; };
 		KIYDQKWBMRKIEYEVRWSLKUDQ /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = HYXIFWTDXJPPRRMDCEPMDTJH /* QuartzCore.framework */; };
 		KNPONLATPTEBRUFEBXNXFHCQ /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = THBDITSPYVFDWQYYBDCIDIXG /* libz.dylib */; };
@@ -556,6 +557,8 @@
 		9CD6DBF41A655686007AEC30 /* DYNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYNavigationController.m; sourceTree = "<group>"; };
 		9CDAC31D1A738CEE00FB7A2E /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
 		9CDAC31E1A738CEE00FB7A2E /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
+		9CDF11781ACEAC0500E655FA /* MolurenServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MolurenServer.h; path = Model/MolurenServer.h; sourceTree = "<group>"; };
+		9CDF11791ACEAC0500E655FA /* MolurenServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MolurenServer.m; path = Model/MolurenServer.m; sourceTree = "<group>"; };
 		9CE1C2251AC7BE5E00A02C0E /* HomeBgImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeBgImage.h; path = View/HomeBgImage.h; sourceTree = "<group>"; };
 		9CE1C2261AC7BE5E00A02C0E /* HomeBgImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeBgImage.m; path = View/HomeBgImage.m; sourceTree = "<group>"; };
 		HYXIFWTDXJPPRRMDCEPMDTJH /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -1168,6 +1171,8 @@
 				18CE73F71A1E3992004769F4 /* ChatHistoryDB.m */,
 				18CE73FA1A1E3A19004769F4 /* ChatHistoryEntity.h */,
 				18CE73FB1A1E3A19004769F4 /* ChatHistoryEntity.m */,
+				9CDF11781ACEAC0500E655FA /* MolurenServer.h */,
+				9CDF11791ACEAC0500E655FA /* MolurenServer.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -1464,6 +1469,7 @@
 				9CCE1A7D1AC196420037935B /* Chat_Topic_Movie.m in Sources */,
 				9CD3675A1AC6C643008E68DC /* MolurenHistoryNavigController.m in Sources */,
 				18287DE819EAAE080074BDD9 /* JSBubbleView.m in Sources */,
+				9CDF117A1ACEAC0500E655FA /* MolurenServer.m in Sources */,
 				9C2D4F0C1A610BB6001C8E82 /* ZBMessageShareMenuItem.m in Sources */,
 				9CCAE8181A5D5E5600E3A33A /* MolurenChatViewController.m in Sources */,
 				9CD657251AC839AC0019499A /* SGBaseMenu.m in Sources */,

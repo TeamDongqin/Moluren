@@ -11,7 +11,7 @@
 @interface TdTopic()
 
 @property (strong,nonatomic) UIColor *CurrentColorPattern;
-@property Topic CurrentTopic;
+@property (atomic) Topic CurrentTopic;
 
 @end
 

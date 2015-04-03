@@ -20,14 +20,10 @@ typedef void(^SGMenuActionHandler)(NSInteger index);
 
 @interface SGActionView : UIView
 
-/**
- *  弹出框样式
- */
+ //弹出框样式
 @property (nonatomic, assign) SGActionViewStyle style;
 
-/**
- *  获取单例
- */
+//  获取单例
 + (SGActionView *)sharedActionView;
 
 /**

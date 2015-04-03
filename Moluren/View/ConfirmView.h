@@ -8,6 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol ConfirmViewDelegate <NSObject>
+
+@required
+
+-(void)SendConfirmButtonClickEvent;
+-(void)SendCancelButtonClickEvent;
+
+@end
+
 @interface ConfirmView : UIView
+
+@property (nonatomic,weak) id<ConfirmViewDelegate> ConfirmViewDelegate;
 
 @end

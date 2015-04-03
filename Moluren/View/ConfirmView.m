@@ -50,13 +50,27 @@
     ConfirmButton.backgroundColor = UIColorFromRGB(0xF7F7F7);
     [ConfirmButton setTitle:@"离 开" forState:UIControlStateNormal];
     [ConfirmButton setTitleColor:[[TdTopic Instance] GetCurrentColorPattern] forState:UIControlStateNormal];
+    [ConfirmButton addTarget:self action:@selector(OnConfirmButtonClick) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:ConfirmButton];
     
     UIButton* CancelButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 121, Device_Width, 48)];
     CancelButton.backgroundColor = UIColorFromRGB(0xF7F7F7);
     [CancelButton setTitle:@"取 消" forState:UIControlStateNormal];
     [CancelButton setTitleColor:UIColorFromRGB(0x919191) forState:UIControlStateNormal];
+    [CancelButton addTarget:self action:@selector(OnCancelButtonClick) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:CancelButton];
+}
+
+-(void)OnConfirmButtonClick{
+    if ([self.ConfirmViewDelegate respondsToSelector:@selector(SendConfirmButtonClickEvent)]){
+        [self.ConfirmViewDelegate SendConfirmButtonClickEvent];
+    }
+}
+
+-(void)OnCancelButtonClick{
+    if([self.ConfirmViewDelegate respondsToSelector:@selector(SendCancelButtonClickEvent)]){
+        [self.ConfirmViewDelegate SendCancelButtonClickEvent];
+    }
 }
 
 

@@ -10,8 +10,13 @@
 #import "JSMessagesViewController.h"
 #import "ChatHistoryDB.h"
 #import "BaseViewController.h"
+#import "ConfirmView.h"
+#import "MolurenServer.h"
 
-@interface MolurenChatViewController : JSMessagesViewController
+@interface MolurenChatViewController : JSMessagesViewController<ConfirmViewDelegate>
+
+@property (nonatomic, strong) ConfirmView* confirmView;
+@property (nonatomic) BOOL *bConnected;
 
 -(void)addReceivedMessage:(NSString *)receivedMsg;
 -(void)backToMainView;
