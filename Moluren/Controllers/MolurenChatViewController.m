@@ -10,6 +10,7 @@
 #import "MolurenHistoryDetailViewController.h"
 #import "PersonNavigController.h"
 #import "PersonViewController.h"
+#import "TdAlertView.h"
 
 
 @interface MolurenChatViewController () <JSMessagesViewDelegate, JSMessagesViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
@@ -254,21 +255,25 @@
     //    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"公园" message:@"确定离开 '公园' 吗?" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
     //    [alert show];
     
-    self.confirmView = [[ConfirmView alloc] initWithFrame:CGRectMake(0, Device_Height, Device_Width, 168)];
+//    self.confirmView = [[ConfirmView alloc] initWithFrame:CGRectMake(0, Device_Height, Device_Width, 168)];
+//    
+//    self.confirmView.ConfirmViewDelegate = self;
+//    
+//    [self.view addSubview:self.confirmView];
+//    
+//    [UIView animateWithDuration:0.3
+//                          delay:0
+//                        options: UIViewAnimationCurveEaseIn
+//                     animations:^{
+//                         self.confirmView.frame = CGRectMake(0, Device_Height - 168, Device_Width, 168);
+//                     }
+//                     completion:^(BOOL finished){
+//
+//                     }];
     
-    self.confirmView.ConfirmViewDelegate = self;
+    self.tdAlertView = [[TdAlertView alloc] initWithFrame:CGRectMake(0, Page_History_Navigation_Height, Device_Width, 44)];
     
-    [self.view addSubview:self.confirmView];
-    
-    [UIView animateWithDuration:0.3
-                          delay:0
-                        options: UIViewAnimationCurveEaseIn
-                     animations:^{
-                         self.confirmView.frame = CGRectMake(0, Device_Height - 168, Device_Width, 168);
-                     }
-                     completion:^(BOOL finished){
-
-                     }];
+    [self.view addSubview:self.tdAlertView];
 }
 
 -(void)SendConfirmButtonClickEvent{

@@ -33,6 +33,7 @@
 #define MessageCellNotification_Height 14.5f
 
 #define Notification_Disconnect_Height 44
+#define Notification_TdAlertView_Height 44
 
 #define ShareMenuView_PageControl_Height 0
 

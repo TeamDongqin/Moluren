@@ -24,7 +24,7 @@
                                     <constraint firstAttribute="height" constant="50" id="BUM-Hx-Ibt"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="影  院" backgroundImage="LifeTopic">
+                                <state key="normal" title="影  院" backgroundImage="Button_Topic">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -39,7 +39,7 @@
                                     <constraint firstAttribute="height" constant="50" id="VpC-vJ-wLQ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="咖啡厅" backgroundImage="LifeTopic">
+                                <state key="normal" title="咖啡厅" backgroundImage="Button_Topic">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -54,7 +54,7 @@
                                     <constraint firstAttribute="width" constant="112" id="fvk-nz-TeF"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="公  园" backgroundImage="LifeTopic">
+                                <state key="normal" title="公  园" backgroundImage="Button_Topic">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -69,7 +69,7 @@
                                     <constraint firstAttribute="height" constant="50" id="tb8-oK-yWN"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="旅  社" backgroundImage="LifeTopic">
+                                <state key="normal" title="旅  社" backgroundImage="Button_Topic">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -84,7 +84,7 @@
                                     <constraint firstAttribute="height" constant="50" id="bee-Bz-pQL"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="步行街" backgroundImage="LifeTopic">
+                                <state key="normal" title="步行街" backgroundImage="Button_Topic">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -99,7 +99,7 @@
                                     <constraint firstAttribute="height" constant="50" id="iEX-ip-Dso"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="校  园" backgroundImage="LifeTopic">
+                                <state key="normal" title="校  园" backgroundImage="Button_Topic">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -288,7 +288,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Button_Topic" width="104" height="51"/>
         <image name="HistoryDataBG" width="744" height="1392"/>
-        <image name="LifeTopic" width="215" height="110"/>
     </resources>
 </document>

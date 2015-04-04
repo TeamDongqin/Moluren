@@ -19,5 +19,6 @@
 -(UIImage*)GetCurrentHistoryDetailDeleteImage;
 -(UIImage*)GetCurrentNotificationImage;
 -(NSString*)GetCurrentConfirmText;
+-(NSString*)GetCurrentTdAlertViewText;
 
 @end

@@ -236,4 +236,45 @@
     return string;
 }
 
+-(NSString*)GetCurrentTdAlertViewText{
+    NSString* string = [[NSString alloc] init];
+    
+    switch (self.CurrentTopic) {
+        case Topic_Life:
+        {
+            string = @"亲，'公园'还没准备好您的到来，先喝杯咖啡去吧：）";
+        }
+            break;
+        case Topic_Motion:
+        {
+            string = @"亲，'旅社'还没准备好您的到来，先喝杯咖啡去吧：）";
+        }
+            break;
+        case Topic_Movie:
+        {
+            string = @"亲，'影院'还没准备好您的到来，先喝杯咖啡去吧：）";
+        }
+            break;
+        case Topic_Music:
+        {
+            string = @"亲，'步行街'还没准备好您的到来，先喝杯咖啡去吧：）";
+        }
+            break;
+        case Topic_Study:
+        {
+            string = @"亲，'校园'还没准备好您的到来，先喝杯咖啡去吧：）";
+        }
+            break;
+        case Topic_Work:
+        {
+            string = @"亲，'咖啡厅'还没准备好您的到来，先喝杯咖啡去吧：）";
+        }
+            break;
+        default:
+            break;
+    }
+    
+    return string;
+}
+
 @end

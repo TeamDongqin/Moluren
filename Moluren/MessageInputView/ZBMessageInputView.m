@@ -181,8 +181,7 @@
     // 允许发送多媒体消息，为什么不是先放表情按钮呢？因为布局的需要！
     UIButton *multiMediaSendBut = [UIButton buttonWithType:UIButtonTypeCustom];
     multiMediaSendBut.frame = CGRectMake(self.frame.size.width - kToolBarH, 0, kToolBarH, kToolBarH);
-    [multiMediaSendBut setImage:[UIImage imageNamed:@"chat_bottom_up_nor"] forState:UIControlStateNormal];
-    [multiMediaSendBut setImage:[UIImage imageNamed:@"chat_bottom_up_press"] forState:UIControlStateHighlighted];
+    [multiMediaSendBut setImage:[UIImage imageNamed:@"Button_Plus"] forState:UIControlStateNormal];
     
     multiMediaSendBut.tag = 0;
     [multiMediaSendBut addTarget:self

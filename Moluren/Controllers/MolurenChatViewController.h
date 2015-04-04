@@ -16,6 +16,7 @@
 @interface MolurenChatViewController : JSMessagesViewController<ConfirmViewDelegate>
 
 @property (nonatomic, strong) ConfirmView* confirmView;
+@property (nonatomic, strong) UIAlertView* tdAlertView;
 @property (nonatomic) BOOL *bConnected;
 
 -(void)addReceivedMessage:(NSString *)receivedMsg;

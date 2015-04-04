@@ -219,6 +219,7 @@
 		9CCE1A7E1AC196420037935B /* Chat_Topic_Music.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCE1A761AC196420037935B /* Chat_Topic_Music.m */; };
 		9CCE1A7F1AC196420037935B /* Chat_Topic_Study.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCE1A781AC196420037935B /* Chat_Topic_Study.m */; };
 		9CCE1A801AC196420037935B /* Chat_Topic_Work.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCE1A7A1AC196420037935B /* Chat_Topic_Work.m */; };
+		9CD051151ACF077400E886BA /* TdAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD051141ACF077400E886BA /* TdAlertView.m */; };
 		9CD3674E1AC656C2008E68DC /* TdUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD3674D1AC656C2008E68DC /* TdUtilities.m */; };
 		9CD367511AC65CDC008E68DC /* CommonData.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD367501AC65CDC008E68DC /* CommonData.m */; };
 		9CD367541AC65D1F008E68DC /* CommonSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD367531AC65D1F008E68DC /* CommonSetting.m */; };
@@ -530,6 +531,8 @@
 		9CCE1A791AC196420037935B /* Chat_Topic_Work.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Chat_Topic_Work.h; path = Chat_Topics/Chat_Topic_Work.h; sourceTree = "<group>"; };
 		9CCE1A7A1AC196420037935B /* Chat_Topic_Work.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Chat_Topic_Work.m; path = Chat_Topics/Chat_Topic_Work.m; sourceTree = "<group>"; };
 		9CCE82F81AB831650070B638 /* Prefix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.h; sourceTree = "<group>"; };
+		9CD051131ACF077400E886BA /* TdAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TdAlertView.h; path = View/TdAlertView.h; sourceTree = "<group>"; };
+		9CD051141ACF077400E886BA /* TdAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TdAlertView.m; path = View/TdAlertView.m; sourceTree = "<group>"; };
 		9CD3674C1AC6559B008E68DC /* TdUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TdUtilities.h; path = Utilities/TdUtilities.h; sourceTree = "<group>"; };
 		9CD3674D1AC656C2008E68DC /* TdUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TdUtilities.m; path = Utilities/TdUtilities.m; sourceTree = "<group>"; };
 		9CD3674F1AC65CDC008E68DC /* CommonData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonData.h; path = Common/CommonData.h; sourceTree = "<group>"; };
@@ -1165,6 +1168,8 @@
 				9CD575D61ACC3211003916E1 /* ConfirmView.xib */,
 				9CD575D81ACC327D003916E1 /* ConfirmView.h */,
 				9CD575D91ACC327D003916E1 /* ConfirmView.m */,
+				9CD051131ACF077400E886BA /* TdAlertView.h */,
+				9CD051141ACF077400E886BA /* TdAlertView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1508,6 +1513,7 @@
 				1823ECAB1A24BADD00D22B08 /* VPImageCropperViewController.m in Sources */,
 				18294F9119EBE1BF00614906 /* NSMutableDictionary+Json.m in Sources */,
 				9CD657281AC839D30019499A /* SGActionView.m in Sources */,
+				9CD051151ACF077400E886BA /* TdAlertView.m in Sources */,
 				1835755D1A1E3630005FF4C2 /* FMDatabaseAdditions.m in Sources */,
 				9CCAE8171A5D5E5600E3A33A /* LanuchViewController.m in Sources */,
 			);
@@ -1640,9 +1646,11 @@
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Moluren/Moluren-Prefix.pch";
 				INFOPLIST_FILE = Moluren/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1659,8 +1667,10 @@
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Moluren/Moluren-Prefix.pch";
 				INFOPLIST_FILE = Moluren/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
