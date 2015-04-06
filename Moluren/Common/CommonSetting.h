@@ -18,6 +18,13 @@
 #define Color_TopicMovie_Pattern    0x6950a1     // Note: Update to Cinema
 #define Color_TopicStudy_Pattern    0xf47920     // Note: Update to Campus
 
+#define Color_TopicWork_withOpacity 0xF4758D    // Opacity : 0.6
+#define Color_TopicLife_withOpacity 0xE2C8BB    // Opacity : 0.6
+#define Color_TopicMotion_withOpacity 0xBCE6D0  // Opacity : 0.6
+#define Color_TopicMusic_withOpacity 0xB2C4E1   // Opacity : 0.6
+#define Color_TopicMovie_withOpacity 0xC9C0DE   // Opacity : 0.6
+#define Color_TopicStudy_withOpacity 0xFBCFAF   // Opacity : 0.6
+
 #define Color_AppTheme              0x213441
 
 // 2: View background color
@@ -34,6 +41,7 @@
 
 #define Notification_Disconnect_Height 44
 #define Notification_TdAlertView_Height 44
+#define Notification_DisconnectView_Height 44
 
 #define ShareMenuView_PageControl_Height 0
 

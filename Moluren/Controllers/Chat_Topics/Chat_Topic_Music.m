@@ -80,13 +80,6 @@
 {
     [super viewDidLoad];
     
-    // Set up power button state
-    self.bConnected = false;
-    
-    self.messageArray = [NSMutableArray array];
-    self.messageType = [NSMutableArray array];
-    self.timestamps = [NSMutableArray array];
-    
     // Set up view title
     UIView *navTitle = [[UIView alloc] initWithFrame:CGRectMake(MainScreenWidth/2-90, 10, 180, 30)];
     
@@ -100,6 +93,8 @@
     [navTitle addSubview:titleLabel];
     
     self.navigationItem.titleView = navTitle;
+    
+    [self.view addSubview:navTitle];
     
     // Set up right bar button
     UIImage *PowerButtonBgImage = [UIImage imageNamed:@"Topic_PowerButton_Off"];
@@ -118,57 +113,6 @@
     UIBarButtonItem *LeftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:LeftBarButtonImage style:UIBarButtonItemStylePlain target:self action:@selector(onReturnButtonClick:)];
     
     self.navigationItem.leftBarButtonItem = LeftBarButtonItem;
-    
-    [self.view addSubview:navTitle];
-    
-    [self.tableView setBackgroundColor:[UIColor clearColor]];
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
-    imageView.contentMode = UIViewContentModeScaleToFill;
-    [imageView setImage:[UIImage imageNamed:@"fwl"]];
-    //[self.tableView setBackgroundColor:[UIColor colorWithPatternImage:imageView.image]];
-    
-    /*if(self.sharedConfig.isConnected){
-     [self.messageArray addObject:[NSDictionary dictionaryWithObject:@"成功连接另一个他/她,赶紧发送消息吧!" forKey:@"Text"]];
-     [self.messageType addObject:@"IN"];
-     
-     [self.timestamps addObject:[NSDate date]];
-     
-     [JSMessageSoundEffect playMessageReceivedSound];
-     
-     [self finishReceive];
-     }*/
-    
-    //初始化摇色子动画ImageView
-    self.gifImageView = [[UIImageView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width/2-50, [UIScreen mainScreen].bounds.size.height/2-50, 100, 100)];
-    NSArray *gifArray = [NSArray arrayWithObjects:[UIImage imageNamed:@"dice_Action_0"],
-                         [UIImage imageNamed:@"dice_Action_1"],
-                         [UIImage imageNamed:@"dice_Action_2"],
-                         [UIImage imageNamed:@"dice_Action_3"],
-                         nil];
-    self.gifImageView.animationImages = gifArray; //动画图片数组
-    self.gifImageView.animationDuration = 0.5; //执行一次完整动画所需的时长
-    self.gifImageView.animationRepeatCount = 0;  //动画重复次数
-    
-    [self.view addSubview:self.gifImageView];
-    
-    
-    //[NSThread detachNewThreadSelector:@selector(receiveMessage) toTarget:self withObject:nil];
-    _getMsgs = [NSTimer scheduledTimerWithTimeInterval:3.0f target:self selector:@selector(receiveMessage) userInfo:nil repeats:YES];
-    //[NSThread detachNewThreadSelector:@selector(getTypingStatusRequest) toTarget:self withObject:nil];
-    //_getTypingStatus = [NSTimer scheduledTimerWithTimeInterval:5.0f target:self selector:@selector(getTypingStatusRequest) userInfo:nil repeats:YES];
-    
-    // Connect to server
-    if(![self.sharedConfig.token isEqualToString:@""] && self.sharedConfig.token.length>1){
-        if(self.sharedConfig.isConnected == false){
-            self.connectToNewSession;
-        }
-    }else{
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"错误" message:@"连接错误,点击确认重新连接." delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil];
-        // optional - add more buttons:
-        [alert show];
-    }
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -191,43 +135,6 @@
      }*/
     [self.navigationController popViewControllerAnimated:NO];
     [self.tabBarController.tabBar setHidden:NO];
-}
-
--(void)onPowerButtonClick{
-    if(self.bConnected){
-        [self disconnect];
-        
-        self.bConnected = false;
-    }else{
-        if(![self.sharedConfig.token isEqualToString:@""] && self.sharedConfig.token.length>1){
-            if(!self.sharedConfig.isConnected){
-                [self connectToNewSession];
-            }
-        }else{
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"错误" message:@"连接错误,点击确认重新连接." delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil];
-            // optional - add more buttons:
-            [alert show];
-        }
-        
-        self.bConnected = true;
-    }
-}
-
--(void)ShowNotification{
-    UIImageView* View = [[UIImageView alloc]initWithFrame:CGRectMake(0, Page_History_Navigation_Height, MainScreenWidth, Notification_Disconnect_Height)];
-    
-    [View setImage:[[TdTopic Instance] GetCurrentNotificationImage]];
-    
-    [self.view addSubview:View];
-    
-    [UIView animateWithDuration:0.5
-                          delay:1
-                        options:UIViewAnimationOptionTransitionCrossDissolve
-                     animations:^{
-                         View.backgroundColor=[UIColor clearColor];
-                     } completion:^(BOOL finish){
-                         [View removeFromSuperview];
-                     }];
 }
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -607,8 +514,25 @@
     NSLog(@"isConnected=%@,isReceivingMsg=%@",self.sharedConfig.isConnected?@"YES":@"NO",self.sharedConfig.isReceivingMsg?@"YES":@"NO");
     if(self.sharedConfig.isConnected && !self.sharedConfig.isReceivingMsg){
         if(self.sharedConfig.httpRequestTimeoutTimes>5 && self.sharedConfig.httpRequestTimeoutTimes%6==0){
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"陌路人" message:@"抱歉，亲，'步行街'内暂时没有遇到其他人，请回到大厅前往其他场景" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
-            [alert show];
+            self.tdAlertView = [[TdAlertView alloc] initWithFrame:CGRectMake(0, 0, Device_Width, Notification_TdAlertView_Height)];
+            
+            [self.view addSubview:self.tdAlertView];
+            
+            [UIView animateWithDuration:0.5
+                                  delay:0
+                                options:UIViewAnimationOptionTransitionCrossDissolve
+                             animations:^{
+                                 self.tdAlertView.frame = CGRectMake(0, Page_History_Navigation_Height, Device_Width, Notification_TdAlertView_Height);
+                             } completion:^(BOOL finish){
+                                 [UIView animateWithDuration:0.5
+                                                       delay:1
+                                                     options:UIViewAnimationOptionTransitionCrossDissolve
+                                                  animations:^{
+                                                      self.tdAlertView.frame = CGRectMake(0, 0, Device_Width, Notification_TdAlertView_Height);
+                                                  } completion:^(BOOL finish){
+                                                      [self.tdAlertView removeFromSuperview];
+                                                  }];
+                             }];
         }
         NSLog(@"开始进行http请求获取消息");
         self.receiveMessageRequest;

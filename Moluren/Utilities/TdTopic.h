@@ -15,10 +15,15 @@
 -(void)SetCurrentTopic:(Topic)Topic;
 
 -(UIColor*)GetCurrentColorPattern;
+-(UIColor*)GetCurrentTopicOpacityColor;
 -(UIImage*)GetCurrentTopicPortrait;
 -(UIImage*)GetCurrentHistoryDetailDeleteImage;
 -(UIImage*)GetCurrentNotificationImage;
+-(UIImage*)GetCurrentDisconnectImage;
+-(UIImage*)GetCurrentSPowerImage;
 -(NSString*)GetCurrentConfirmText;
 -(NSString*)GetCurrentTdAlertViewText;
+-(NSString*)GetCurrentTdDisconnectViewText;
+-(NSString*)GetCurrentTdTransferViewText;
 
 @end

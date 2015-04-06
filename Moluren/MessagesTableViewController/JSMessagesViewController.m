@@ -180,6 +180,9 @@
 #pragma mark - Keyboard Notifications
 - (void)keyboardWillHide:(NSNotification *)notification{
     
+//    self.tableView.contentInset = UIEdgeInsetsZero;
+//    self.tableView.scrollIndicatorInsets = UIEdgeInsetsZero;
+    
     keyboardRect = [[notification.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
     animationDuration = [[notification.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
     
@@ -193,7 +196,23 @@
     keyboardRect = [[notification.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
     animationDuration= [[notification.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
     
+//    self.tableView.frame= CGRectMake(0, Page_History_Navigation_Height, self.tableView.frame.size.width, self.tableView.frame.size.height - keyboardRect.size.height - Page_History_Navigation_Height);
+    
     [self scrollToBottomAnimated:NO];
+    
+//    //CGSize keyboardSize = [[[notification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+//    
+//    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0, 0, 0, 0);
+//    
+//    self.tableView.contentInset = contentInsets;
+//    self.tableView.scrollIndicatorInsets = contentInsets;
+//    //[self scrollToBottomAnimated:YES];
+//    
+//    NSInteger rows = [self.tableView numberOfRowsInSection:0];
+//    
+//    if(rows > 0) {
+//        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:rows - 1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+//    }
 }
 
 - (void)keyboardChange:(NSNotification *)notification{
@@ -201,7 +220,7 @@
     if ([[notification.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].origin.y<CGRectGetHeight(self.view.frame)) {
         [self messageViewAnimationWithMessageRect:[[notification.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue]
                          withMessageInputViewRect:self.messageToolView.frame
-                                      andDuration:0.25
+                                      andDuration:animationDuration
                                          andState:ZBMessageViewStateShowNone];
     }
 }

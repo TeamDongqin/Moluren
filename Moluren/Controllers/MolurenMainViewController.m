@@ -166,8 +166,8 @@
                 // Back to home button
                 UIBarButtonItem *BackBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"陌路人"
                                                                                       style:UIBarButtonItemStyleBordered
-                                                                                     target:self
-                                                                                     action:@selector(OnBackButtonClicked:)];
+                                                                                     target:nil
+                                                                                     action:nil];
                 
                 [[self navigationItem] setBackBarButtonItem:BackBarButtonItem];
                 
@@ -186,8 +186,8 @@
                 // Back to home button
                 UIBarButtonItem *BackBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"陌路人"
                                                                                       style:UIBarButtonItemStyleBordered
-                                                                                     target:chatViewController
-                                                                                     action:@selector(OnReturnButtonClick)];
+                                                                                     target:nil
+                                                                                     action:nil];
                 
                 [[self navigationItem] setBackBarButtonItem:BackBarButtonItem];
                 

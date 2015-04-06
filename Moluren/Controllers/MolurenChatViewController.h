@@ -12,14 +12,19 @@
 #import "BaseViewController.h"
 #import "ConfirmView.h"
 #import "MolurenServer.h"
+#import "TdAlertView.h"
+#import "TdDisconnectView.h"
 
 @interface MolurenChatViewController : JSMessagesViewController<ConfirmViewDelegate>
 
 @property (nonatomic, strong) ConfirmView* confirmView;
 @property (nonatomic, strong) UIAlertView* tdAlertView;
+@property (nonatomic, strong) TdDisconnectView* tdDisconnectView;
+
 @property (nonatomic) BOOL *bConnected;
 
 -(void)addReceivedMessage:(NSString *)receivedMsg;
 -(void)backToMainView;
+-(void)ShowNotification;
 
 @end

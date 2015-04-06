@@ -72,6 +72,50 @@
     return color;
 }
 
+-(UIColor*)GetCurrentTopicOpacityColor{
+    UIColor* color = [[UIColor alloc] init];
+    
+    switch (self.CurrentTopic) {
+        case Topic_Life:
+        {
+            color = UIColorFromRGB(Color_TopicLife_withOpacity);
+        }
+            break;
+        case Topic_Motion:
+        {
+            color = UIColorFromRGB(Color_TopicMotion_withOpacity);
+        }
+            break;
+        case Topic_Movie:
+        {
+            color = UIColorFromRGB(Color_TopicMovie_withOpacity);
+        }
+            break;
+        case Topic_Music:
+        {
+            color = UIColorFromRGB(Color_TopicMusic_withOpacity);
+        }
+            break;
+        case Topic_Study:
+        {
+            color = UIColorFromRGB(Color_TopicStudy_withOpacity);
+        }
+            break;
+        case Topic_Work:
+        {
+            color = UIColorFromRGB(Color_TopicWork_withOpacity);
+        }
+            break;
+        default:
+        {
+            color = UIColorFromRGB(Color_TopicWork_withOpacity);
+        }
+            break;
+    }
+    
+    return color;
+}
+
 -(UIImage*)GetCurrentTopicPortrait{
     UIImage* image = [[UIImage alloc] init];
     
@@ -195,6 +239,91 @@
     return image;
 }
 
+-(UIImage*)GetCurrentDisconnectImage{
+    UIImage* image = [[UIImage alloc] init];
+    
+    switch (self.CurrentTopic) {
+        case Topic_Life:
+        {
+            image = [UIImage imageNamed:@"TopicLife_SessionDisconnected"];
+        }
+            break;
+        case Topic_Motion:
+        {
+            image = [UIImage imageNamed:@"TopicMotion_SessionDisconnected"];
+        }
+            break;
+        case Topic_Movie:
+        {
+            image = [UIImage imageNamed:@"TopicMovie_SessionDisconnected"];
+        }
+            break;
+        case Topic_Music:
+        {
+            image = [UIImage imageNamed:@"TopicMusic_SessionDisconnected"];
+        }
+            break;
+        case Topic_Study:
+        {
+            image = [UIImage imageNamed:@"TopicStudy_SessionDisconnected"];
+        }
+            break;
+        case Topic_Work:
+        {
+            image = [UIImage imageNamed:@"TopicWork_SessionDisconnected"];
+        }
+            break;
+        default:
+        {
+            image = [UIImage imageNamed:@"TopicWork_SessionDisconnected"];
+        }
+            break;
+    }
+    
+    return image;
+}
+
+-(UIImage*)GetCurrentSPowerImage{
+    UIImage* image = [[UIImage alloc] init];
+    
+    switch (self.CurrentTopic) {
+        case Topic_Life:
+        {
+            image = [UIImage imageNamed:@"TopicLife_SPowerButton"];
+        }
+            break;
+        case Topic_Motion:
+        {
+            image = [UIImage imageNamed:@"TopicMotion_SPowerButton"];
+        }
+            break;
+        case Topic_Movie:
+        {
+            image = [UIImage imageNamed:@"TopicMovie_SPowerButton"];
+        }
+            break;
+        case Topic_Music:
+        {
+            image = [UIImage imageNamed:@"TopicMusic_SPowerButton"];
+        }
+            break;
+        case Topic_Study:
+        {
+            image = [UIImage imageNamed:@"TopicStudy_SPowerButton"];
+        }
+            break;
+        case Topic_Work:
+        {
+            image = [UIImage imageNamed:@"TopicWork_SPowerButton"];
+        }
+            break;
+        default:
+            break;
+    }
+    
+    return image;
+}
+
 -(NSString*)GetCurrentConfirmText{
     NSString* string = [[NSString alloc] init];
     
@@ -242,32 +371,114 @@
     switch (self.CurrentTopic) {
         case Topic_Life:
         {
-            string = @"亲，'公园'还没准备好您的到来，先喝杯咖啡去吧：）";
+            string = @"'公园'内暂时没有单着的人哦， 请稍等:)";
         }
             break;
         case Topic_Motion:
         {
-            string = @"亲，'旅社'还没准备好您的到来，先喝杯咖啡去吧：）";
+            string = @"'旅社'内暂时没有单着的人哦， 请稍等:)";
         }
             break;
         case Topic_Movie:
         {
-            string = @"亲，'影院'还没准备好您的到来，先喝杯咖啡去吧：）";
+            string = @"'影院'内暂时没有单着的人哦， 请稍等:)";
         }
             break;
         case Topic_Music:
         {
-            string = @"亲，'步行街'还没准备好您的到来，先喝杯咖啡去吧：）";
+            string = @"'步行街'内暂时没有单着的人哦， 请稍等:)";
         }
             break;
         case Topic_Study:
         {
-            string = @"亲，'校园'还没准备好您的到来，先喝杯咖啡去吧：）";
+            string = @"'校园'内暂时没有单着的人哦， 请稍等:)";
         }
             break;
         case Topic_Work:
         {
-            string = @"亲，'咖啡厅'还没准备好您的到来，先喝杯咖啡去吧：）";
+            string = @"'咖啡厅'内暂时没有单着的人哦， 请稍等:)";
+        }
+            break;
+        default:
+            break;
+    }
+    
+    return string;
+}
+
+-(NSString*)GetCurrentTdDisconnectViewText{
+    NSString* string = [[NSString alloc] init];
+    
+    switch (self.CurrentTopic) {
+        case Topic_Life:
+        {
+            string = @"ta已经走啦，'公园'还有其他人等着你偶遇哦:)";
+        }
+            break;
+        case Topic_Motion:
+        {
+            string = @"ta已经走啦，'旅社'还有其他人等着你偶遇哦:)";
+        }
+            break;
+        case Topic_Movie:
+        {
+            string = @"ta已经走啦，'影院'还有其他人等着你偶遇哦:)";
+        }
+            break;
+        case Topic_Music:
+        {
+            string = @"ta已经走啦，'步行街'还有其他人等着你偶遇哦:)";
+        }
+            break;
+        case Topic_Study:
+        {
+            string = @"ta已经走啦，'校园'还有其他人等着你偶遇哦:)";
+        }
+            break;
+        case Topic_Work:
+        {
+            string = @"ta已经走啦，'咖啡厅'还有其他人等着你偶遇哦:)";
+        }
+            break;
+        default:
+            break;
+    }
+    
+    return string;
+}
+
+-(NSString*)GetCurrentTdTransferViewText{
+    NSString* string = [[NSString alloc] init];
+    
+    switch (self.CurrentTopic) {
+        case Topic_Life:
+        {
+            string = @"'公园'内暂时没有遇到其他人，试试穿越到其他场景:)";
+        }
+            break;
+        case Topic_Motion:
+        {
+            string = @"'旅社'内暂时没有遇到其他人，试试穿越到其他场景:)";
+        }
+            break;
+        case Topic_Movie:
+        {
+            string = @"'影院'内暂时没有遇到其他人，试试穿越到其他场景:)";
+        }
+            break;
+        case Topic_Music:
+        {
+            string = @"'步行街'内暂时没有遇到其他人，试试穿越到其他场景:)";
+        }
+            break;
+        case Topic_Study:
+        {
+            string = @"'校园'内暂时没有遇到其他人，试试穿越到其他场景:)";
+        }
+            break;
+        case Topic_Work:
+        {
+            string = @"'咖啡厅'内暂时没有遇到其他人，试试穿越到其他场景:)";
         }
             break;
         default:

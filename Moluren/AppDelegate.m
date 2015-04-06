@@ -43,7 +43,7 @@
          message:@"NotReachable"
          delegate:nil
          cancelButtonTitle:@"YES" otherButtonTitles:nil];*/
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"陌路人" message:@"没有网络" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"陌路人" message:@"亲，您已经离开'陌路人'的世界，请检查下网络设置" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
         [alert show];
     }else{
         [SharedSingleConfig Instance].networkIsOk = YES;

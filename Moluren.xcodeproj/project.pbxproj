@@ -111,6 +111,8 @@
 		9CB069101A7CFEDA005C84F6 /* NextHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB0690A1A7CFEDA005C84F6 /* NextHistoryViewController.m */; };
 		9CB069111A7CFEDA005C84F6 /* PreviousHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB0690C1A7CFEDA005C84F6 /* PreviousHistoryViewController.m */; };
 		9CB069121A7CFEDA005C84F6 /* MolurenHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB0690E1A7CFEDA005C84F6 /* MolurenHistoryViewController.m */; };
+		9CC949921AD00D9B00C9CFAC /* TdDisconnectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CC949911AD00D9B00C9CFAC /* TdDisconnectView.m */; };
+		9CC949951AD01C5800C9CFAC /* TdTransferView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CC949941AD01C5800C9CFAC /* TdTransferView.m */; };
 		9CCAE8171A5D5E5600E3A33A /* LanuchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAE80A1A5D5E5600E3A33A /* LanuchViewController.m */; };
 		9CCAE8181A5D5E5600E3A33A /* MolurenChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAE80C1A5D5E5600E3A33A /* MolurenChatViewController.m */; };
 		9CCAE8191A5D5E5600E3A33A /* MolurenHistoryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAE80E1A5D5E5600E3A33A /* MolurenHistoryDetailViewController.m */; };
@@ -406,6 +408,10 @@
 		9CB0690C1A7CFEDA005C84F6 /* PreviousHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PreviousHistoryViewController.m; path = MolurenHistoryViewControllerGroup/PreviousHistoryViewController.m; sourceTree = "<group>"; };
 		9CB0690D1A7CFEDA005C84F6 /* MolurenHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MolurenHistoryViewController.h; path = MolurenHistoryViewControllerGroup/MolurenHistoryViewController.h; sourceTree = "<group>"; };
 		9CB0690E1A7CFEDA005C84F6 /* MolurenHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MolurenHistoryViewController.m; path = MolurenHistoryViewControllerGroup/MolurenHistoryViewController.m; sourceTree = "<group>"; };
+		9CC949901AD00D9B00C9CFAC /* TdDisconnectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TdDisconnectView.h; path = View/TdDisconnectView.h; sourceTree = "<group>"; };
+		9CC949911AD00D9B00C9CFAC /* TdDisconnectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TdDisconnectView.m; path = View/TdDisconnectView.m; sourceTree = "<group>"; };
+		9CC949931AD01C5800C9CFAC /* TdTransferView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TdTransferView.h; path = View/TdTransferView.h; sourceTree = "<group>"; };
+		9CC949941AD01C5800C9CFAC /* TdTransferView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TdTransferView.m; path = View/TdTransferView.m; sourceTree = "<group>"; };
 		9CCAE8091A5D5E5600E3A33A /* LanuchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanuchViewController.h; sourceTree = "<group>"; };
 		9CCAE80A1A5D5E5600E3A33A /* LanuchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanuchViewController.m; sourceTree = "<group>"; };
 		9CCAE80B1A5D5E5600E3A33A /* MolurenChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MolurenChatViewController.h; sourceTree = "<group>"; };
@@ -1170,6 +1176,10 @@
 				9CD575D91ACC327D003916E1 /* ConfirmView.m */,
 				9CD051131ACF077400E886BA /* TdAlertView.h */,
 				9CD051141ACF077400E886BA /* TdAlertView.m */,
+				9CC949901AD00D9B00C9CFAC /* TdDisconnectView.h */,
+				9CC949911AD00D9B00C9CFAC /* TdDisconnectView.m */,
+				9CC949931AD01C5800C9CFAC /* TdTransferView.h */,
+				9CC949941AD01C5800C9CFAC /* TdTransferView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1492,6 +1502,7 @@
 				18287DEA19EAAE080074BDD9 /* JSMessageInputView.m in Sources */,
 				18287D1819EAAC140074BDD9 /* BaseViewController.m in Sources */,
 				9CD657221AC8398F0019499A /* SGAlertMenu.m in Sources */,
+				9CC949951AD01C5800C9CFAC /* TdTransferView.m in Sources */,
 				9CCAE81B1A5D5E5600E3A33A /* MolurenMainViewController.m in Sources */,
 				9CCAE82C1A5D613100E3A33A /* ZBMessageTextView.m in Sources */,
 				9CD6DBF51A655686007AEC30 /* DYNavigationController.m in Sources */,
@@ -1503,6 +1514,7 @@
 				18287E1F19EAAE080074BDD9 /* UIImage+JSMessagesView.m in Sources */,
 				9CDF117D1ACEC7CC00E655FA /* PersonNavigController.m in Sources */,
 				18CE73FC1A1E3A19004769F4 /* ChatHistoryEntity.m in Sources */,
+				9CC949921AD00D9B00C9CFAC /* TdDisconnectView.m in Sources */,
 				9CD367601AC6F288008E68DC /* TdTopic.m in Sources */,
 				18287E1E19EAAE080074BDD9 /* UIColor+JSMessagesView.m in Sources */,
 				9CCAE81D1A5D5E5600E3A33A /* NewLanuchViewController.m in Sources */,
